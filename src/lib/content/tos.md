@@ -1,3 +1,1 @@
-# Nutzungsbedingungen
-
-yada yada ...
+../../../content/tos.md
