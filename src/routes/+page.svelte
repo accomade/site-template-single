@@ -2,6 +2,7 @@
  
   import Photo001 from '$lib/components/photos/Photo001.svelte';
   import Photo002 from '$lib/components/photos/Photo002.svelte';
+  import Photo007 from '$lib/components/photos/Photo007.svelte';
 </script>
 
 
@@ -12,3 +13,4 @@
 
 <Photo002 alt="Something"/>
 <Photo001 alt="Koserower Strand"/>
+<Photo007 alt="placeholder"/>

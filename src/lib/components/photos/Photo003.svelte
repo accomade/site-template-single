@@ -2,9 +2,9 @@
 			<script lang="ts">
 				import { onMount } from 'svelte';
 				
-				import srcsetAvif from '$lib/photos/003.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=avif&srcset'
-				import srcsetWebp from '$lib/photos/003.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=webp&srcset'
-				import { src as placeholder, width, height } from '$lib/photos/003.jpg?width=200&blur&metadata'
+				import srcsetAvif from '../../../../photos/003.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=avif&srcset'
+				import srcsetWebp from '../../../../photos/003.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=webp&srcset'
+				import { src as placeholder, width, height } from '../../../../photos/003.jpg?width=200&blur&metadata'
 			
 				export let alt:string;
 			

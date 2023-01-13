@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"html/template"
 	"log"
@@ -12,35 +13,24 @@ type PhotoComponent struct {
 }
 
 func main() {
-	files, err := os.ReadDir("../photos")
-	if err != nil {
-		os.Exit(1)
-	}
 
-	log.Println("Cleaning old symlinks")
-	err = os.RemoveAll("../src/lib/photos")
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = os.Mkdir("../src/lib/photos", 0777)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	for _, f := range files {
-		fileName := f.Name()
-		log.Println("Found File", fileName)
-
-		compID := fileName[0:3]
+	/** creates 100 components ... and links existing files, otherwise placeholder*/
+	for i := 0; i < 100; i++ {
+		photoNumber := fmt.Sprintf("%03d", i+1)
+		compID := photoNumber
 		log.Println("Creating Component:", compID)
+
+		if _, err := os.Stat(fmt.Sprintf("../photos/%s.jpg", photoNumber)); errors.Is(err, os.ErrNotExist) {
+			photoNumber = "000"
+		}
 
 		t, err := template.New("photo-comp").Parse(`
 			<script lang="ts">
 				import { onMount } from 'svelte';
 				
-				import srcsetAvif from '$lib/photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=avif&srcset'
-				import srcsetWebp from '$lib/photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=webp&srcset'
-				import { src as placeholder, width, height } from '$lib/photos/{{.Number}}.jpg?width=200&blur&metadata'
+				import srcsetAvif from '../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=avif&srcset'
+				import srcsetWebp from '../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300;4100&format=webp&srcset'
+				import { src as placeholder, width, height } from '../../../../photos/{{.Number}}.jpg?width=200&blur&metadata'
 			
 				export let alt:string;
 			
@@ -83,16 +73,11 @@ func main() {
 		}
 		defer file.Close()
 
-		t.Execute(file, PhotoComponent{Number: compID})
-
-		log.Println("Creating symlink")
-		err = os.Symlink(
-			fmt.Sprintf("../../../photos/%s", fileName),
-			fmt.Sprintf("../src/lib/photos/%s.jpg", compID),
-		)
+		err = t.Execute(file, PhotoComponent{Number: photoNumber})
 		if err != nil {
 			log.Fatal(err)
 		}
+
 	}
 
 }
