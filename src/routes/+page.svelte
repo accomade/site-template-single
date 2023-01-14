@@ -11,6 +11,25 @@
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
-<Photo002 alt="Something"/>
-<Photo001 alt="Koserower Strand"/>
-<Photo007 alt="placeholder"/>
+<div class="photo-container">
+  <div class="span-2">
+    <Photo001 alt="Koserower Strand"/>
+  </div>
+  <Photo002 alt="Something"/>
+  <Photo007 alt="placeholder"/>
+</div>
+
+<style>
+  .span-2 {
+    grid-column: span 2;
+  }
+
+  .photo-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-auto-flow: dense;
+    gap: 1rem;
+  }
+
+</style>
