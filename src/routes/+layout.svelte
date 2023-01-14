@@ -8,7 +8,9 @@
     min-width: 100vw;
   }
 
-  * {
+  *,
+  *::before,
+  *::after { 
     box-sizing: border-box;
   }
 

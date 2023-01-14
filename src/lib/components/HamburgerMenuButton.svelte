@@ -13,11 +13,10 @@
 <button
 	on:click={toggleIsMenuOpen}
 	aria-pressed={$isMenuOpen}
-	class="menu-button"
+	aria-label="menu button"
 	tabindex={($isMenuOpen || !closeOnly) ? 0 : -1}
 >
-	<span class="sr-only">Toggle hamburger menu</span>
-	{#if closeOnly}
+	{#if $isMenuOpen}
 		<XSVG />
 	{:else}
 		<HamburgerSVG />
@@ -27,7 +26,9 @@
 
 <style>
 	button {
-		height: 1rem;
-		
+		background-color: transparent;
+		border: 0;
+		width: 3rem;
+    height: 3rem;
 	}
 </style>

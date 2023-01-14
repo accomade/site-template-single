@@ -23,6 +23,10 @@ For every occupation
 * occupation specific photos
 * description
 
+## configuration
+
+* menu items
+* translations
 
 ## Styling
 
