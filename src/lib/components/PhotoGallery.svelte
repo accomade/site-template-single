@@ -1,13 +1,27 @@
-<script>
+<script lang="ts">
+  import PhotoDispatcher from './PhotoDispatcher.svelte'
+  import type { GridPhoto } from '$lib/types/photos'
+  export let photoGrid: GridPhoto[]
 
 </script>
 
-<div class="photo-container">
- <slot></slot>
+<div class="grid-container">
+  {#each photoGrid as p }
+  <div 
+      class="photo-container" 
+      class:span-1={p.cols == 1}
+      class:span-2={p.cols == 2}
+      class:span-3={p.cols == 3}>
+    <PhotoDispatcher photoNumber={p.photo} alt={p.alt}/>
+  </div>
+  {/each}
 </div>
 
 
 <style>
+   .span-1 {
+    grid-column: span 1;
+  }
 
   .span-2 {
     grid-column: span 2;
@@ -17,8 +31,7 @@
     grid-column: span 3;
   }
 
-
-  .photo-container {
+  .grid-container {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -27,6 +40,9 @@
   }
 
   @media( max-width: 500px ) {
+    .span-1 {
+      grid-column: span 1;
+    } 
     .span-2 {
       grid-column: span 1;
     }
@@ -39,6 +55,9 @@
   }
 
   @media ( max-width: 800px) and ( min-width: 500px ) {
+    .span-1 {
+      grid-column: span 1;
+    }
     .span-2 {
       grid-column: span 1;
     }

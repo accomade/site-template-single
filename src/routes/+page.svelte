@@ -2,28 +2,21 @@
   import HamburgerMenuButton from '$lib/components/HamburgerMenuButton.svelte';
   import MainNav from '$lib/components/MainNav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import PhotoDispatcher from '$lib/components/PhotoDispatcher.svelte';
+  import PhotoGallery from '$lib/components/PhotoGallery.svelte';
 
-  import { translations } from '$lib/conf.js'
+  import { translations, nav, landing } from '$lib/conf.js'
   import { currentLang } from '$lib/stores/lang';
-  import { nav } from '$lib/conf.js';
   import { isMenuOpen } from '$lib/stores/menu';
   import type { I18n } from '$lib/types/i18n';
 
-  import Photo001 from '$lib/components/photos/Photo001.svelte';
-  import Photo002 from '$lib/components/photos/Photo002.svelte';
-  import Photo003 from '$lib/components/photos/Photo003.svelte'
-  import Photo004 from '$lib/components/photos/Photo004.svelte';
-  import Photo005 from '$lib/components/photos/Photo005.svelte';
-  import Photo006 from '$lib/components/photos/Photo006.svelte';
-  import Photo007 from '$lib/components/photos/Photo007.svelte';
-  import PhotoGallery from '$lib/components/PhotoGallery.svelte';
-  
   let i18n:I18n = translations;
   $: title = i18n.translations[$currentLang].title;
+  $: impressions = i18n.translations[$currentLang].landing.impressions;
 </script>
 
 <header class="header-image">
-  <Photo001 alt="Koserower Strand"></Photo001>
+  <PhotoDispatcher photoNumber={landing.headerPhoto} alt="Header Image"/>
 </header>
 
 <div class="floating-title">
@@ -39,16 +32,11 @@
 </div>
 
 <main>
-  <PhotoGallery>
-    <Photo002 alt="Koserower Strand"/>
-    <Photo003 alt="Something"/>
-    <Photo004 alt="Something"/>
-    <Photo005 alt="Something"/>
-    <Photo006 alt="Something"/>
-    <Photo007 alt="placeholder"/>
-  </PhotoGallery>
 
-
+  <section>
+    <h2>{ impressions }</h2>
+    <PhotoGallery photoGrid={landing.photoGrid}/>
+  </section>
 </main>
 
 <Footer/>
@@ -60,11 +48,11 @@
     top:0;
     left:0;
     width:100vw;
-    height:100vh;
+    height: calc(100vh - 2rem);
   }
 
   main {
-    margin-top: calc(100vh + 1rem);
+    margin-top: calc(100vh - 1rem);
   }
 
   .floating-title {

@@ -1,5 +1,8 @@
 export interface Translation {
   title: string,
+  landing: {
+    impressions: string
+  }
   nav: { [key: string]: string },
 }
 

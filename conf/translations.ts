@@ -6,6 +6,9 @@ const i18n:I18n = {
   translations: {
     en: {
       title: "Welcome to your holidays",
+      landing: {
+        impressions: "More Impressions",
+      },
       nav: {
         home: "Home",
         location: "Location",
@@ -18,6 +21,9 @@ const i18n:I18n = {
     },
     de: {
       title: "Willkommen in Ihrem Urlaub",
+      landing: {
+        impressions: "Weitere Eindrücke",
+      },
       nav: {
         home: "Startseite",
         location: "Der Ort",
