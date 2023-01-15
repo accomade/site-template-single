@@ -1,7 +1,8 @@
 <script lang="ts">
   import HamburgerMenuButton from '$lib/components/HamburgerMenuButton.svelte';
   import MainNav from '$lib/components/MainNav.svelte';
-  
+  import Footer from '$lib/components/Footer.svelte';
+
   import { translations } from '$lib/conf.js'
   import { currentLang } from '$lib/stores/lang';
   import { nav } from '$lib/conf.js';
@@ -15,6 +16,7 @@
   import Photo005 from '$lib/components/photos/Photo005.svelte';
   import Photo006 from '$lib/components/photos/Photo006.svelte';
   import Photo007 from '$lib/components/photos/Photo007.svelte';
+  import PhotoGallery from '$lib/components/PhotoGallery.svelte';
   
   let i18n:I18n = translations;
   $: title = i18n.translations[$currentLang].title;
@@ -37,22 +39,22 @@
 </div>
 
 <main>
-  <div class="photo-container">
-    <div class="span-2">
-      <Photo002 alt="Koserower Strand"/>
-    </div>
+  <PhotoGallery>
+    <Photo002 alt="Koserower Strand"/>
     <Photo003 alt="Something"/>
     <Photo004 alt="Something"/>
     <Photo005 alt="Something"/>
-    <div class="span-3">
-      <Photo006 alt="Something"/>
-    </div>
+    <Photo006 alt="Something"/>
     <Photo007 alt="placeholder"/>
-  </div>
+  </PhotoGallery>
+
+
 </main>
 
+<Footer/>
 
 <style>
+
   header {
     position: absolute;
     top:0;
@@ -84,7 +86,7 @@
     font-weight: bolder;
     font-size: 2.8rem;
     font-variant: small-caps;
-    color: white;
+    color: var(--title-font-color);
     filter: drop-shadow(0.2rem 0.3rem 0.2rem black);
   }
   

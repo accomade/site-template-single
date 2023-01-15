@@ -1,7 +1,9 @@
 :root {
   --main-bg-color: white;
   --main-font-color: #070707;
+  
   --nav-bg-color: rgba(7,7,7, 0.8);
   --nav-font-color: white; 
 
+  --title-font-color: white;
 }
