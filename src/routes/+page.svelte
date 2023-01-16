@@ -4,8 +4,8 @@
   import Footer from '$lib/components/Footer.svelte';
   import PhotoDispatcher from '$lib/components/PhotoDispatcher.svelte';
   import PhotoGallery from '$lib/components/PhotoGallery.svelte';
-
-  import { translations, nav, landing } from '$lib/conf.js'
+  import Map from '$lib/components/Map.svelte';
+  import { translations, nav, landing, maps } from '$lib/conf.js'
   import { currentLang } from '$lib/stores/lang';
   import { isMenuOpen } from '$lib/stores/menu';
   import type { I18n } from '$lib/types/i18n';
@@ -32,14 +32,17 @@
 </div>
 
 <main>
-
+  <section class="welcome-container">
+    
+  <Map {...maps}/>
+  </section>
   <section>
     <h2>{ impressions }</h2>
     <PhotoGallery photoGrid={landing.photoGrid}/>
   </section>
 </main>
 
-<Footer/>
+<Footer navItems={nav}/>
 
 <style>
 
@@ -53,11 +56,16 @@
 
   main {
     margin-top: calc(100vh - 1rem);
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
+
+  
 
   .floating-title {
     width: calc(100vw - 4rem);
-    height: 100vh;
+    height: calc(100vh - 2rem);
     position: absolute;
     top: 0;
     left: 0;
@@ -68,6 +76,7 @@
     justify-content: center;
     /* mix-blend-mode: difference; */
     text-align: center;
+    font-family: var(--title-font-family);
   }
 
   .floating-title h1 {
@@ -78,6 +87,12 @@
     filter: drop-shadow(0.2rem 0.3rem 0.2rem black);
   }
   
+  h2 {
+    font-weight: bolder;
+    font-size: 2.2rem;
+    font-variant: small-caps;
+  }
+
   @media( max-width: 300px ) {
     .floating-title h1 {
       font-size: 1.6rem;
@@ -92,44 +107,25 @@
     height: 3rem;
   }
 
-  .span-2 {
-    grid-column: span 2;
-  }
-
-  .span-3 {
-    grid-column: span 3;
-  }
 
 
-  .photo-container {
+  .welcome-container {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
     grid-auto-flow: dense;
   }
 
   @media( max-width: 500px ) {
-    .span-2 {
-      grid-column: span 1;
-    }
-    .span-3 {
-      grid-column: span 1;
-    }
-    .photo-container {
+    .welcome-container {
       grid-template-columns: 1fr;
+    
     }
-  }
 
-  @media ( max-width: 800px) and ( min-width: 500px ) {
-    .span-2 {
-      grid-column: span 1;
-    }
-    .span-3 {
-      grid-column: span 2;
-    }
-    .photo-container {
-      grid-template-columns: 1fr 1fr;
+    main {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 </style>

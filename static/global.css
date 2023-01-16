@@ -1,9 +1,16 @@
 :root {
+
   --main-bg-color: white;
   --main-font-color: #070707;
+  --main-font-family: Helvetica, Verdana, sans-serif;
   
   --nav-bg-color: rgba(7,7,7, 0.8);
   --nav-font-color: white; 
+  --nav-font-family: system-ui, sans-serif;
 
   --title-font-color: white;
+  --title-font-family: Helvetica, Verdana, sans-serif;
+  
+  --footer-font-color: white;
+  --footer-bg-color: #070707;
 }

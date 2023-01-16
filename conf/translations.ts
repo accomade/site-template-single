@@ -1,36 +1,36 @@
-import type { I18n } from "$lib/types/i18n"
+import type { I18n } from '$lib/types/i18n'
 
 const i18n:I18n = {
-  defaultLang: "de",
+  defaultLang: 'de',
   preferBrowserLang: true,
   translations: {
     en: {
-      title: "Welcome to your holidays",
+      title: 'Welcome to your holidays',
       landing: {
-        impressions: "More Impressions",
+        impressions: 'More Impressions',
       },
       nav: {
-        home: "Home",
-        location: "Location",
-        accomodations: "Apartments",
-        lang: "Language",
-        imprint: "Imprint",
-        terms: "Terms",
+        home: 'Home',
+        location: 'Location',
+        accomodations: 'Apartments',
+        lang: 'Language',
+        imprint: 'Imprint',
+        terms: 'Terms',
       
       }
     },
     de: {
-      title: "Willkommen in Ihrem Urlaub",
+      title: 'Willkommen in Ihrem Urlaub',
       landing: {
-        impressions: "Weitere Eindrücke",
+        impressions: 'Weitere Eindrücke',
       },
       nav: {
-        home: "Startseite",
-        location: "Der Ort",
-        accomodations: "Ferienwohnungen",
-        lang: "Sprache",
-        imprint: "Impressum",
-        terms: "AGB",
+        home: 'Startseite',
+        location: 'Der Ort',
+        accomodations: 'Ferienwohnungen',
+        lang: 'Sprache',
+        imprint: 'Impressum',
+        terms: 'AGB',
       }
     }
   }

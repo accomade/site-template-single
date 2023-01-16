@@ -2,6 +2,32 @@ import type { Landing } from '$lib/types/landing';
 
 const landing:Landing = {
   headerPhoto: "001",
+  content: [
+    "landing_town",
+    {
+      photo: "008",
+      alt: "Alt Text"
+    },
+    {
+      photo: "009",
+      alt: "Alt Text"
+    },
+    "landing_apartments",
+    {
+      photo: "010",
+      alt: "Wohnung 1",
+    },
+    {
+      photo: "011",
+      alt: "Wohnung 2",
+    },
+    {
+      photo: "012",
+      alt: "Wohnung 3",
+    },
+    "landing_directions",
+    "landing_contact",
+  ],
   photoGrid: [
     {
       photo: "002",

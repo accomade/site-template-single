@@ -19,7 +19,7 @@
 
 
 <style>
-   .span-1 {
+  .span-1 {
     grid-column: span 1;
   }
 
@@ -49,7 +49,7 @@
     .span-3 {
       grid-column: span 1;
     }
-    .photo-container {
+    .grid-container {
       grid-template-columns: 1fr;
     }
   }
@@ -64,7 +64,7 @@
     .span-3 {
       grid-column: span 2;
     }
-    .photo-container {
+    .grid-container {
       grid-template-columns: 1fr 1fr;
     }
   }

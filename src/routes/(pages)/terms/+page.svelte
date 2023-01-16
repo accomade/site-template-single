@@ -1,6 +1,10 @@
-<script>
-  import TOS from "$lib/components/TOS.svelte";
+<script lang="ts">
+  import { translations } from '$lib/conf';
+  import { currentLang } from '$lib/stores/lang';
+  
+  const importTOS = async (lang: string) => {
+    return import(`$lib/content/${lang}/footer.svelte`)
+  }
 </script>
 
-<h1>TOS</h1>
-<TOS/>
+

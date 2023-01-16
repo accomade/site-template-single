@@ -8,7 +8,8 @@
     min-width: 100vw;
     background-color: var(--main-bg-color);
     color: var(--main-font-color);
-    
+    font-family: var(--main-font-family);
+
   }
 
   *,

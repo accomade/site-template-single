@@ -58,7 +58,7 @@
     background-color: var(--nav-bg-color);
     color: var(--nav-font-color);
     height: 100vh;
-		font-family: system-ui, sans-serif;
+		font-family: var(--nav-font-family);
     font-size: 1.6rem;
     font-weight: bold;
 
