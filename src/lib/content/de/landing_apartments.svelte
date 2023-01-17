@@ -1,2 +1,1 @@
-<h2>Unsere Ferienwohnungen</h2>
 <p>Die Wohnungen befinden sich im historischen Ortskern von Koserow unweit der 800 Jahre alten Feldsteinkirche. Einkaufsmarkt, Ärztehaus, Apotheke und Sparkasse sind ca. 3min entfernt. Am schönen Ostseestrand sind sie in ca. 15 Gehminuten. Von den Wohnungen haben sie zum Teil freien Blick aufs Achterwasser.</p>

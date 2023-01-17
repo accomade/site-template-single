@@ -4,7 +4,6 @@
   import MainNav from '$lib/components/MainNav.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Section from '$lib/components/Section.svelte';
-  import Text from '$lib/components/blocks/Text.svelte';
 
   import { translations, nav, landing } from '$lib/conf.js'
   import { currentLang } from '$lib/stores/lang';
@@ -16,7 +15,7 @@
 </script>
 
 <header class="header-image">
-  <Photo photoNumber={landing.headerPhoto} alt="Header Image"/>
+  <Photo photo={landing.headerPhoto} alt="Header Image"/>
 </header>
 
 <div class="floating-title">

@@ -16,7 +16,7 @@
       class:span-1={p.cols == 1}
       class:span-2={p.cols == 2}
       class:span-3={p.cols == 3}>
-    <PhotoDispatcher photoNumber={p.photo} alt={p.alt}/>
+    <PhotoDispatcher photo={p.photo} alt={p.alt}/>
   </div>
   {/each}
 </div>

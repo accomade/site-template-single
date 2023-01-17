@@ -9,6 +9,8 @@ const i18n:I18n = {
       dict: {
         impressions: 'More Impressions',
         directions: 'Directions',
+        apartments: 'Apartments',
+        town: 'Koserow',
       },
       nav: {
         home: 'Home',
@@ -25,6 +27,8 @@ const i18n:I18n = {
       dict: {
         impressions: 'Weitere Eindrücke',
         directions: 'Ihre Anreise',
+        apartments: 'Ferienwohnungen',
+        town: 'Koserow',
       },
       nav: {
         home: 'Startseite',

@@ -14,7 +14,7 @@
   let gridTemplateColumns = "1fr";
   $: {
     if(!!columnCount && columnCount > 1) {
-      gridTemplateColumns = `repeat(${columnCount}, max-content)`
+      gridTemplateColumns = `repeat(${columnCount}, 1fr)`
     }
   }
 
@@ -31,7 +31,7 @@
     }
     else {
       if(!!columnCount && columnCount > 1) {
-        gridTemplateColumns = `repeat(${columnCount}, max-content)`
+        gridTemplateColumns = `repeat(${columnCount}, 1fr)`
       }
     }
   }

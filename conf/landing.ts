@@ -4,21 +4,54 @@ const landing:Landing = {
   headerPhoto: '001',
   sections: [
     {
-      header: 'directions',
+      header: 'town',
       columnCount: 2,
       blocks: [
         {
-          kind: 'map',
+          kind: 'text',
           content: {
-            lat: 54.0483609,
-            long:13.9965374,
-            zoom: 16,
+            ref: 'landing_town'
           }
         },
         {
+          kind: 'photo',
+          content:{
+            photo: '020',
+            alt: 'Town'
+          }
+        }
+
+      ]
+    },
+    {
+      header: 'apartments',
+      columnCount: 2,
+      blocks: [
+        {
           kind: 'text',
           content: {
-            ref: 'directions'
+            ref: 'landing_apartments'
+          }
+        },
+        {
+          kind: 'photo',
+          content: {
+            photo: '010',
+            alt: "Wohnung 1",
+          }
+        },
+        {
+          kind: 'photo',
+          content: {
+            photo: '011',
+            alt: "Wohnung 2",
+          }
+        },
+        {
+          kind: 'photo',
+          content: {
+            photo: '012',
+            alt: "Wohnung 3",
           }
         }
       ]
@@ -60,7 +93,27 @@ const landing:Landing = {
           }
         }
       ]
-    }
+    },
+    {
+      header: 'directions',
+      columnCount: 2,
+      blocks: [
+        {
+          kind: 'map',
+          content: {
+            lat: 54.0483609,
+            long:13.9965374,
+            zoom: 16,
+          }
+        },
+        {
+          kind: 'text',
+          content: {
+            ref: 'directions'
+          }
+        }
+      ]
+    },
   ]
 }
 
