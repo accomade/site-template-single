@@ -22,3 +22,9 @@
   <svelte:component this={mod.default}/>
 {/await}
 </div>
+
+<style>
+  .content {
+    text-align: left;
+  }
+</style>
