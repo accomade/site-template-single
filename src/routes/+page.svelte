@@ -51,7 +51,7 @@
   main {
     margin-top: calc(100vh - 1rem);
     text-align: center;
-    margin-left: 1rem;
+    margin-left: 2rem;
     margin-right: 1rem;
   }
 
