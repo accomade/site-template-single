@@ -27,15 +27,23 @@ func main() {
 		t, err := template.New("photo-comp").Parse(`
 			<script lang="ts">
 				import { onMount } from 'svelte';
-				
-				import srcsetAvif from '../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset'
-				import srcsetWebp from '../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=webp&srcset'
 				import { src as placeholder, width, height } from '../../../../photos/{{.Number}}.jpg?width=200&blur&metadata'
-			
+				
 				export let alt:string;
 			
+				const importFormats = async () => {
+					let srcsetAvif = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset')).default;
+					let srcsetWebp = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=webp&srcset')).default;
+
+					return {
+						avif: srcsetAvif,
+						webp: srcsetWebp
+					}
+				}
+
+				
 				let mounted = false;
-				onMount( async () => {
+				onMount( () => {
 					mounted = true;
 				})
 			
@@ -43,10 +51,13 @@ func main() {
 			
 			<picture>
 				{#if mounted}
-				<source srcset={srcsetAvif} type="image/avif"/>
-				<source srcset={srcsetWebp} type="image/webp"/>
+					{#await importFormats() then formats}
+						<source srcset={formats.avif} type="image/avif"/>
+						<source srcset={formats.webp} type="image/webp"/>
+					{/await}
 				{/if}
 				<img
+					loading="lazy"
 					src={placeholder}
 					{alt}
 					{width}
