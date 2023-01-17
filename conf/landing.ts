@@ -5,13 +5,20 @@ const landing:Landing = {
   sections: [
     {
       header: 'town',
-      columnCount: 2,
+      columnCount: 3,
       blocks: [
         {
           kind: 'text',
           content: {
             ref: 'landing_town'
           }
+        },
+        {
+          kind: 'weather',
+          content: {
+            
+          }
+
         },
         {
           kind: 'photo',
