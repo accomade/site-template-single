@@ -25,7 +25,8 @@ const landing:Landing = {
           kind: 'photo',
           content:{
             photo: '020',
-            alt: 'town'
+            alt: 'town_church',
+            link: 'http://www.koserow.de'
           }
         }
 
@@ -45,21 +46,24 @@ const landing:Landing = {
           kind: 'photo',
           content: {
             photo: '010',
-            alt: "apartment_1",
+            alt: "apartment_1_alt",
+            link: "/accomodations/acco_cornflower"
           }
         },
         {
           kind: 'photo',
           content: {
             photo: '011',
-            alt: "apartment_2",
+            alt: "apartment_2_alt",
+            link: "/accomodations/acco_sunflower"
           }
         },
         {
           kind: 'photo',
           content: {
             photo: '012',
-            alt: "apartment_3",
+            alt: "apartment_3_alt",
+            link: "/accomodations/acco_rosebush"
           }
         }
       ]
@@ -74,23 +78,23 @@ const landing:Landing = {
             photos: [
               {
                 photo: '003',
-                alt: 'beach_1',
-                cols: 3
+                alt: 'beach_alt',
+                cols: 2
               },
               {
                 photo: '004',
-                alt: 'beach_2',
-                cols: 2
-              },
-              {
-                photo: '005',
-                alt: 'beach_3',
+                alt: 'beach_alt',
                 cols: 1
               },
               {
-                photo: '006',
-                alt: 'beach_4',
+                photo: '005',
+                alt: 'beach_alt',
                 cols: 2
+              },
+              {
+                photo: '006',
+                alt: 'beach_alt',
+                cols: 1
               }
             ]
           }

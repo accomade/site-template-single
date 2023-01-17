@@ -12,7 +12,13 @@ const i18n:I18n = {
         apartments: 'Apartments',
         town: 'Koserow',
         koserow: 'Koserow',
-        weather: 'Weather'
+        weather: 'Weather',
+        town_church: 'Old church in Koserow',
+        apartment_1_alt: 'View on Apartment 1',
+        apartment_2_alt: 'View on Apartment 2',
+        apartment_3_alt: 'View on Apartment 3',
+        beach_alt: 'Beach',
+        
       },
       nav: {
         home: 'Home',
@@ -33,6 +39,12 @@ const i18n:I18n = {
         town: 'Koserow',
         koserow: 'Koserow',
         weather: 'Wetter',
+        town_church: 'Backsteinkirche in Koserow',
+        apartment_1_alt: 'Blick auf Wohnung 1',
+        apartment_2_alt: 'Blick auf Wohnung 2',
+        apartment_3_alt: 'Blick auf Wohnung 3',
+        beach_alt: 'Strand',
+
       },
       nav: {
         home: 'Startseite',
