@@ -23,5 +23,7 @@
 		"vite-imagetools": "^4.0.15"
 	},
 	"type": "module",
-	"engine": "node@>=18"
+	"engines": {
+		"node": ">=18"
+	}
 }
