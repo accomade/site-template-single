@@ -16,7 +16,8 @@ const landing:Landing = {
         {
           kind: 'weather',
           content: {
-            
+            header1: 'koserow',
+            header2: 'weather',
           }
 
         },
@@ -24,7 +25,7 @@ const landing:Landing = {
           kind: 'photo',
           content:{
             photo: '020',
-            alt: 'Town'
+            alt: 'town'
           }
         }
 
@@ -44,21 +45,21 @@ const landing:Landing = {
           kind: 'photo',
           content: {
             photo: '010',
-            alt: "Wohnung 1",
+            alt: "apartment_1",
           }
         },
         {
           kind: 'photo',
           content: {
             photo: '011',
-            alt: "Wohnung 2",
+            alt: "apartment_2",
           }
         },
         {
           kind: 'photo',
           content: {
             photo: '012',
-            alt: "Wohnung 3",
+            alt: "apartment_3",
           }
         }
       ]
@@ -72,29 +73,24 @@ const landing:Landing = {
           content: {
             photos: [
               {
-                photo: '002',
-                alt: 'Alt Text',
-                cols: 1
-              },
-              {
                 photo: '003',
-                alt: 'Alt Text',
+                alt: 'beach_1',
                 cols: 3
               },
               {
                 photo: '004',
-                alt: 'Alt Text',
+                alt: 'beach_2',
                 cols: 2
               },
               {
                 photo: '005',
-                alt: 'Alt Text',
+                alt: 'beach_3',
                 cols: 1
               },
               {
                 photo: '006',
-                alt: 'Alt Text',
-                cols: 1
+                alt: 'beach_4',
+                cols: 2
               }
             ]
           }

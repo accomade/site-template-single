@@ -11,6 +11,8 @@ const i18n:I18n = {
         directions: 'Directions',
         apartments: 'Apartments',
         town: 'Koserow',
+        koserow: 'Koserow',
+        weather: 'Weather'
       },
       nav: {
         home: 'Home',
@@ -29,6 +31,8 @@ const i18n:I18n = {
         directions: 'Ihre Anreise',
         apartments: 'Ferienwohnungen',
         town: 'Koserow',
+        koserow: 'Koserow',
+        weather: 'Wetter',
       },
       nav: {
         home: 'Startseite',

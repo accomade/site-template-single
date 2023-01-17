@@ -13,7 +13,7 @@ export interface Section {
 export interface TextBlock {
   kind: 'text'
   content: {
-    ref:string
+    ref: string
   }
 }
 

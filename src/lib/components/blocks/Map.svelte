@@ -9,7 +9,7 @@
 
   let mapDiv:HTMLDivElement;
   const mapsCallback = () => {
-    console.log('maps ready')
+    //console.log('maps ready')
     const place = { lat: lat, lng: long };
     // The map, centered at place
     

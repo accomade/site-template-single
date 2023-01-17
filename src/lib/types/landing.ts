@@ -1,4 +1,4 @@
-import type { PhotoNumber, GridPhoto } from './photos'
+import type { PhotoNumber } from './photos'
 import type { Section } from './blocks'
 
 
