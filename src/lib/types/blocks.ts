@@ -12,7 +12,9 @@ export interface Section {
 
 export interface TextBlock {
   kind: 'text'
-  content: string
+  content: {
+    ref:string
+  }
 }
 
 export interface PhotoBlock {

@@ -1,6 +1,10 @@
 <script lang="ts">
   import type { Block } from '$lib/types/blocks'
   import BlockBlock from '$lib/components/blocks/Block.svelte'
+  import { translations } from '$lib/conf';
+  import { currentLang } from '$lib/stores/lang';
+  
+  $: dict = translations.translations[$currentLang].dict
 
   export let header: string|undefined;
   export let columnCount: number|undefined;
@@ -38,11 +42,11 @@
 
 <section>
   {#if header} 
-  <h2>{header}</h2>
+  <h2>{ dict[header] ? dict[header] : header } </h2>
   {/if}
   <div 
-    class="section-content"
-    style="grid-template-columns: ${gridTemplateColumns}"
+    class="content"
+    style="grid-template-columns: {gridTemplateColumns}"
     >
     {#each blocks as b}
       <div class="block-container">
@@ -54,13 +58,18 @@
 
 <style>
   section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .content {
     display: grid;
     width: 100%;
-    display: grid;
     gap: 1rem;
     grid-auto-flow: dense;
   }
-  
+
   h2 {
     font-weight: bolder;
     font-size: 2.2rem;

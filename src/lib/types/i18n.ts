@@ -1,9 +1,11 @@
 export interface Translation {
   title: string,
-  landing: {
-    impressions: string
+  dict: {
+    [key: string]: string 
   }
-  nav: { [key: string]: string },
+  nav: { 
+    [key: string]: string 
+  },
 }
 
 export interface I18n { 

@@ -160,4 +160,6 @@ export interface GridPhoto extends Photo {
   cols: number,
 }
 
-export type PhotoGallery = GridPhoto[]
+export interface PhotoGallery {
+  photos: GridPhoto[]
+} 

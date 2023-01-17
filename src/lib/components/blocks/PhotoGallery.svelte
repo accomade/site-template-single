@@ -1,10 +1,13 @@
 <script lang="ts">
   import PhotoDispatcher from './Photo.svelte'
-  import type { PhotoGallery, GridPhoto } from '$lib/types/photos'
-  export let photos: PhotoGallery
+  import type { GridPhoto } from '$lib/types/photos'
+  export let photos: GridPhoto[]
 
+  /*
+  TODO make photos bigger/smaller on click
+  */
+ 
 </script>
-{@debug photos}
 
 <div class="grid-container">
   {#each photos as p }
