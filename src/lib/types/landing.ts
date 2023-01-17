@@ -1,8 +1,8 @@
 import type { PhotoNumber, GridPhoto } from './photos'
-import type { ContentBlock } from './content'
+import type { Section } from './blocks'
+
 
 export interface Landing {
   headerPhoto: PhotoNumber,
-  content: ContentBlock[],
-  photoGrid: GridPhoto[],
+  sections: Section[],
 }

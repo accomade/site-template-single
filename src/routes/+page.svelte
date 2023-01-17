@@ -1,22 +1,21 @@
 <script lang="ts">
+  import Photo from '$lib/components/blocks/Photo.svelte';
   import HamburgerMenuButton from '$lib/components/HamburgerMenuButton.svelte';
   import MainNav from '$lib/components/MainNav.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import PhotoDispatcher from '$lib/components/PhotoDispatcher.svelte';
-  import PhotoGallery from '$lib/components/PhotoGallery.svelte';
-  import Map from '$lib/components/Map.svelte';
-  import { translations, nav, landing, maps } from '$lib/conf.js'
+  import Section from '$lib/components/Section.svelte';
+  
+  import { translations, nav, landing } from '$lib/conf.js'
   import { currentLang } from '$lib/stores/lang';
   import { isMenuOpen } from '$lib/stores/menu';
-  import type { I18n } from '$lib/types/i18n';
-
-  let i18n:I18n = translations;
-  $: title = i18n.translations[$currentLang].title;
-  $: impressions = i18n.translations[$currentLang].landing.impressions;
+  
+  $: currentTranslation = translations.translations[$currentLang]
+  $: title = currentTranslation.title;
+  
 </script>
 
 <header class="header-image">
-  <PhotoDispatcher photoNumber={landing.headerPhoto} alt="Header Image"/>
+  <Photo photoNumber={landing.headerPhoto} alt="Header Image"/>
 </header>
 
 <div class="floating-title">
@@ -32,14 +31,9 @@
 </div>
 
 <main>
-  <section class="welcome-container">
-    
-  <Map {...maps}/>
-  </section>
-  <section>
-    <h2>{ impressions }</h2>
-    <PhotoGallery photoGrid={landing.photoGrid}/>
-  </section>
+  {#each landing.sections as s}
+  <Section {...s} />
+  {/each}
 </main>
 
 <Footer navItems={nav}/>
@@ -87,11 +81,7 @@
     filter: drop-shadow(0.2rem 0.3rem 0.2rem black);
   }
   
-  h2 {
-    font-weight: bolder;
-    font-size: 2.2rem;
-    font-variant: small-caps;
-  }
+ 
 
   @media( max-width: 300px ) {
     .floating-title h1 {
@@ -107,22 +97,7 @@
     height: 3rem;
   }
 
-
-
-  .welcome-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    grid-auto-flow: dense;
-  }
-
   @media( max-width: 500px ) {
-    .welcome-container {
-      grid-template-columns: 1fr;
-    
-    }
-
     main {
       margin-left: 0;
       margin-right: 0;

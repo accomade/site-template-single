@@ -4,7 +4,7 @@
   export let alt:string;
   export let photoNumber:PhotoNumber;
   
-  const importPhoto = () => import(`./photos/Photo${photoNumber}.svelte`);
+  const importPhoto = () => import(`../photos/Photo${photoNumber}.svelte`);
 </script>
 
 {#await importPhoto() then module }

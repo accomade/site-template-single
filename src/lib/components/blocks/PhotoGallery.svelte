@@ -1,12 +1,13 @@
 <script lang="ts">
-  import PhotoDispatcher from './PhotoDispatcher.svelte'
-  import type { GridPhoto } from '$lib/types/photos'
-  export let photoGrid: GridPhoto[]
+  import PhotoDispatcher from './Photo.svelte'
+  import type { PhotoGallery, GridPhoto } from '$lib/types/photos'
+  export let photos: PhotoGallery
 
 </script>
+{@debug photos}
 
 <div class="grid-container">
-  {#each photoGrid as p }
+  {#each photos as p }
   <div 
       class="photo-container" 
       class:span-1={p.cols == 1}
