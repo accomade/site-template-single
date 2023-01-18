@@ -7,7 +7,7 @@
 
   export let header1:string;
   export let header2:string;
-
+  export let location:string;
   
   const callback = () => {
     //TODO maybe do something here
@@ -25,7 +25,10 @@
   let dict:{[key:string]:string};
   $: {
     dict = translations.translations[$currentLang].dict
-    if(initialLoadDone) load(callback, window);
+    if(initialLoadDone) {
+      document.getElementById('weatherwidget-io-js')?.remove();
+      load(callback, window);
+    }
   }
 </script>
 
@@ -33,7 +36,7 @@
 
   <a 
     class="weatherwidget-io" 
-    href="https://forecast7.com/de/54d0514d00/koserow/"
+    href="https://forecast7.com/{$currentLang}{location}"
     data-label_1="{dict[header1] ? dict[header1] : header1}"
     data-label_2="{dict[header2] ? dict[header2] : header2}"
     data-theme="pure" >

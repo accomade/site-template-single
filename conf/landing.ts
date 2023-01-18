@@ -18,6 +18,7 @@ const landing:Landing = {
           content: {
             header1: 'koserow',
             header2: 'weather',
+            location: '/54d0514d00/koserow/',
           }
 
         },

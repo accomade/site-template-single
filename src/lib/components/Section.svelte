@@ -8,7 +8,7 @@
 
   export let header: string|undefined;
   export let columnCount: number|undefined;
-  
+  export let maxWidth = "80rem";
   export let blocks: Block[]
   
   let gridTemplateColumns = "1fr";
@@ -38,9 +38,9 @@
   
 </script>
 
-<svelte:body bind:clientWidth={clientWidth}></svelte:body>
+<svelte:window bind:innerWidth={clientWidth}/>
 
-<section>
+<section style="max-width: {maxWidth};">
   {#if header} 
   <h2>{ dict[header] ? dict[header] : header } </h2>
   {/if}

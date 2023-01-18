@@ -49,10 +49,15 @@
   }
 
   main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
     margin-top: calc(100vh - 1rem);
     text-align: center;
     margin-left: 2rem;
     margin-right: 1rem;
+
   }
 
   
