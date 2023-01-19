@@ -154,7 +154,9 @@ export type PhotoNumber =
 export interface Photo {
   photo: PhotoNumber,
   alt: string,
-  link?: string
+  link?: string,
+  maxHeight?: string|undefined
+  maxWidth?: string|undefined
 }
 
 export interface GridPhoto extends Photo {

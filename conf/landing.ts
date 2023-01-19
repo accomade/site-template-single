@@ -27,7 +27,8 @@ const landing:Landing = {
           content:{
             photo: '020',
             alt: 'town_church',
-            link: 'http://www.koserow.de'
+            link: 'http://www.koserow.de',
+            maxHeight: '15rem',
           }
         }
 
@@ -36,6 +37,7 @@ const landing:Landing = {
     {
       header: 'apartments',
       columnCount: 2,
+      maxWidth: '40rem',
       blocks: [
         {
           kind: 'text',

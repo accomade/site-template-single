@@ -27,6 +27,8 @@ const i18n:I18n = {
         lang: 'Language',
         imprint: 'Imprint',
         terms: 'Terms',
+        de: 'Deutsch',
+        en: 'English',
       
       }
     },
@@ -53,6 +55,8 @@ const i18n:I18n = {
         lang: 'Sprache',
         imprint: 'Impressum',
         terms: 'AGB',
+        de: 'Deutsch',
+        en: 'English',
       }
     }
   }

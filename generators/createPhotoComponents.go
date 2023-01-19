@@ -30,6 +30,8 @@ func main() {
 				import { src as placeholder, width, height } from '../../../../photos/{{.Number}}.jpg?width=200&blur&metadata'
 				
 				export let alt:string;
+				export let maxWidth:string;
+				export let maxHeight:string;
 			
 				const importFormats = async () => {
 					let srcsetAvif = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset')).default;
@@ -57,6 +59,7 @@ func main() {
 					{/await}
 				{/if}
 				<img
+					style="max-width:{maxWidth};max-height:{maxHeight};"
 					loading="lazy"
 					src={placeholder}
 					{alt}

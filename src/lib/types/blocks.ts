@@ -6,7 +6,8 @@ import type { Weather } from './weather'
 
 export interface Section {
   header: string | undefined
-  columnCount: number | undefined
+  columnCount?: number | undefined
+  maxWidth?: string
   blocks: Block[]
 }
 

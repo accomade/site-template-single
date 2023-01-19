@@ -7,7 +7,7 @@
   $: dict = translations.translations[$currentLang].dict
 
   export let header: string|undefined;
-  export let columnCount: number|undefined;
+  export let columnCount = 2;
   export let maxWidth = "80rem";
   export let blocks: Block[]
   

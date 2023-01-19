@@ -7,6 +7,8 @@
   export let alt:string;
   export let photo:PhotoNumber;
   export let link:string = "";
+  export let maxHeight:string = "100%"
+  export let maxWidth:string = "100%"
 
   $: dict = translations.translations[$currentLang].dict
     
@@ -16,9 +18,17 @@
 {#await importPhoto() then module }
   {#if link}
     <a href="{link}">
-      <svelte:component this={module.default} alt={dict[alt] ? dict[alt] : alt}></svelte:component>
+      <svelte:component 
+        this={module.default} 
+        {maxWidth}
+        {maxHeight}
+        alt={dict[alt] ? dict[alt] : alt} />
     </a>
   {:else}
-    <svelte:component this={module.default} alt={dict[alt] ? dict[alt] : alt}></svelte:component>
+    <svelte:component 
+      this={module.default} 
+      {maxHeight}
+      {maxWidth}
+      alt={dict[alt] ? dict[alt] : alt} />
   {/if}
 {/await}

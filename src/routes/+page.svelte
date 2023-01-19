@@ -3,7 +3,7 @@
   import HamburgerMenuButton from '$lib/components/HamburgerMenuButton.svelte';
   import MainNav from '$lib/components/MainNav.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import Section from '$lib/components/Section.svelte';
+  import Section from '$lib/components/blocks/Section.svelte';
 
   import { translations, nav, landing } from '$lib/conf.js'
   import { currentLang } from '$lib/stores/lang';

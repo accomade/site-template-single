@@ -33,7 +33,7 @@
 									name="language" 
 									value="{langKey}"
 									checked={langKey === $currentLang}>
-							<label for="{langKey}">{langKey}</label>
+							<label for="{langKey}">{currentTranslation[langKey] ? currentTranslation[langKey] : langKey}</label>
 						</div>
 						{/each}
 					</fieldset>
@@ -84,6 +84,8 @@
 		display: grid;
 		grid-template-columns: 1em auto;
 		gap: 0.5em;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 	
 </style>
