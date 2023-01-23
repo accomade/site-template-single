@@ -5,8 +5,6 @@
 
   import { currentLang } from '$lib/stores/lang';
   $: calendar = i18n.translations[$currentLang].calendar;
-  
-  //bind:loading={calLoading}
     
   export let calUrl:string;
   let calLoading = true;
@@ -18,6 +16,7 @@
   <Spinner />
   {/if}
   <OccuPlanWrapper 
+    bind:loading={calLoading}
     calUrl={calUrl} 
     translations={calendar}
     />
