@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { translations } from '$lib/conf';
+  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
-  $: currentTranslation = translations.translations[$currentLang]
+  $: currentTranslation = i18n.translations[$currentLang]
 
   
   export let ref:string

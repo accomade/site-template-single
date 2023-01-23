@@ -1,15 +1,15 @@
 <script lang="ts">
   import type { Block } from '$lib/types/blocks'
   import BlockBlock from '$lib/components/blocks/Block.svelte'
-  import { translations } from '$lib/conf';
+  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
   
-  $: dict = translations.translations[$currentLang].dict
+  $: dict = i18n.translations[$currentLang].dict
 
-  export let header: string|undefined;
+  export let header: string | undefined = undefined;
   export let columnCount = 2;
   export let maxWidth = "80rem";
-  export let blocks: Block[]
+  export let blocks: Block[] = [];
   
   let gridTemplateColumns = "1fr";
   $: {

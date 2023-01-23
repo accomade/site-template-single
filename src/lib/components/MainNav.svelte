@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { translations } from '$lib/conf.js'
+	import { i18n } from '$lib/conf.js'
   import { currentLang } from '$lib/stores/lang';
   
 	import type { Nav } from '$lib/types/nav';
 	import { isMenuOpen } from '$lib/stores/menu';
 	export let navItems:Nav
 	
-	let allTranslations = Object.keys(translations.translations);
-	$: currentTranslation = translations.translations[$currentLang].nav
+	let allTranslations = Object.keys(i18n.translations);
+	$: currentTranslation = i18n.translations[$currentLang].nav
 	
 </script>
 

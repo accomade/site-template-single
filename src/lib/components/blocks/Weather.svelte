@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { translations } from '$lib/conf';
+  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
 
   import { onMount } from 'svelte';
@@ -24,7 +24,7 @@
 
   let dict:{[key:string]:string};
   $: {
-    dict = translations.translations[$currentLang].dict
+    dict = i18n.translations[$currentLang].dict
     if(initialLoadDone) {
       document.getElementById('weatherwidget-io-js')?.remove();
       load(callback, window);

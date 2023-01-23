@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { translations } from '$lib/conf';
+  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
 
   import type { PhotoNumber } from '$lib/types/photos';
@@ -10,7 +10,7 @@
   export let maxHeight:string = "100%"
   export let maxWidth:string = "100%"
 
-  $: dict = translations.translations[$currentLang].dict
+  $: dict = i18n.translations[$currentLang].dict
     
   const importPhoto = () => import(`../photos/Photo${photo}.svelte`);
 </script>

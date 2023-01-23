@@ -18,7 +18,33 @@ const i18n:I18n = {
         apartment_2_alt: 'View on Apartment 2',
         apartment_3_alt: 'View on Apartment 3',
         beach_alt: 'Beach',
-        
+      },
+      calendar: {
+        weekdayLabels: {
+          1: 'Mo',
+          2: 'Tu',
+          3: 'We',
+          4: 'Th',
+          5: 'Fr',
+          6: 'Sa',
+          7: 'Su'
+        },
+        monthLabels: {
+          1: 'Jan',
+          2: 'Feb',
+          3: 'Mar',
+          4: 'Apr',
+          5: 'May',
+          6: 'Jun',
+          7: 'Jul',
+          8: 'Aug',
+          9: 'Sep',
+          10: 'Oct',
+          11: 'Nov',
+          12: 'Dec',
+        },
+        monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
+        weekendLabel: 'Weekend',
       },
       nav: {
         home: 'Home',
@@ -47,6 +73,33 @@ const i18n:I18n = {
         apartment_3_alt: 'Blick auf Wohnung 3',
         beach_alt: 'Strand',
 
+      },
+      calendar: {
+        weekdayLabels: {
+          1: 'Mo',
+          2: 'Di',
+          3: 'Mi',
+          4: 'Do',
+          5: 'Fr',
+          6: 'Sa',
+          7: 'So'
+        },
+        monthLabels: {
+          1: 'Jan',
+          2: 'Feb',
+          3: 'Mär',
+          4: 'Apr',
+          5: 'Mai',
+          6: 'Jun',
+          7: 'Jul',
+          8: 'Aug',
+          9: 'Sep',
+          10: 'Okt',
+          11: 'Nov',
+          12: 'Dez',
+        },
+        monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
+        weekendLabel: 'Wochenende',
       },
       nav: {
         home: 'Startseite',

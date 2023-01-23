@@ -1,14 +1,14 @@
 import type { Photo, PhotoGallery } from './photos'
 import type { Calendar } from './calendar'
 import type { Maps } from './maps'
-import type { PricingTable } from './pricingTable'
 import type { Weather } from './weather'
+import type { Amneties, Prices } from './accos'
 
 export interface Section {
-  header: string | undefined
+  header?: string | undefined
   columnCount?: number | undefined
   maxWidth?: string
-  blocks: Block[]
+  blocks?: Block[]
 }
 
 export interface TextBlock {
@@ -38,14 +38,19 @@ export interface MapBlock {
   content: Maps
 }
 
-export interface PricingTableBlock {
-  kind: 'pricing-table'
-  content: PricingTable
+export interface PricesBlock {
+  kind: 'prices'
+  content: Prices
 }
 
 export interface WeatherBlock {
   kind: 'weather'
   content: Weather
+}
+
+export interface AmnetiesBlock {
+  kind: 'amneties'
+  conent: Amneties
 }
 
 export type Block =
@@ -54,7 +59,7 @@ export type Block =
   PhotoGalleryBlock | 
   TextBlock | 
   CalendarBlock |
-  PricingTableBlock |
+  PricesBlock |
   WeatherBlock |
   MapBlock |
   undefined
