@@ -1,3 +1,18 @@
+<script>
+  //TODO make it work
+
+  /*
+  import '@beyonk/gdpr-cookie-consent-banner/dist/style.css' // optional, you can also define your own styles
+  // @ts-ignore
+  import GdprBanner from '@beyonk/gdpr-cookie-consent-banner' ///src/components/Banner.svelte'
+
+  const initAnalytics = () => {
+    // do something with segment.io or google analytics etc
+  }
+  <GdprBanner name="some" description="bar" on:analytics={initAnalytics} />
+  */
+</script>
+
 <slot></slot>
 
 <style>

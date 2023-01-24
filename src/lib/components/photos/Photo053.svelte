@@ -1,7 +1,7 @@
 
 			<script lang="ts">
 				import { onMount } from 'svelte';
-				import { src as placeholder, width, height } from '../../../../photos/000.jpg?width=200&blur&metadata'
+				import { src as placeholder, width, height } from '../../../../photos/000.jpg?w=200&blur&metadata'
 				
 				export let alt:string;
 				export let maxWidth:string;

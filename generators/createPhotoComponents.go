@@ -27,7 +27,7 @@ func main() {
 		t, err := template.New("photo-comp").Parse(`
 			<script lang="ts">
 				import { onMount } from 'svelte';
-				import { src as placeholder, width, height } from '../../../../photos/{{.Number}}.jpg?width=200&blur&metadata'
+				import { src as placeholder, width, height } from '../../../../photos/{{.Number}}.jpg?w=200&blur&metadata'
 				
 				export let alt:string;
 				export let maxWidth:string;

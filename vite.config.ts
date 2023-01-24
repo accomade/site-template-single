@@ -6,7 +6,7 @@ import type { UserConfig } from 'vite';
 const config: UserConfig = {
 	server: {
     fs: {
-      allow: ['conf', 'src', 'node_modules', 'content', 'photos', 'static']
+      allow: ['conf', 'src', 'node_modules', 'photos', 'static']
     }
   },
 	plugins: [sveltekit(), imagetools( {force: true} )]

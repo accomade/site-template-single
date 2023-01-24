@@ -1,0 +1,54 @@
+
+<script lang="ts">
+	import { onMount } from 'svelte';
+	// @ts-ignore
+	import { src as placeholder, width, height } from '../../../photos/000.jpg?w=200&blur&metadata'
+	
+	export let alt:string;
+	export let maxWidth:string;
+	export let maxHeight:string;
+
+	const importFormats = async () => {
+		// @ts-ignore
+		let srcsetAvif = (await import('../../../photos/000.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset&imagetools')).default;
+		// @ts-ignore
+		let srcsetWebp = (await import('../../../photos/000.jpg?w=300;500;700;900;1100;1700;2500;3300&format=webp&srcset')).default;
+
+		return {
+			avif: srcsetAvif,
+			webp: srcsetWebp
+		}
+	}
+
+	
+	let mounted = false;
+	onMount( () => {
+		mounted = true;
+	})
+
+</script>
+	
+<picture>
+	{#if mounted}
+		{#await importFormats() then formats}
+			<source srcset={formats.avif} type="image/avif"/>
+			<source srcset={formats.webp} type="image/webp"/>
+		{/await}
+	{/if}
+	<img
+		style="max-width:{maxWidth};max-height:{maxHeight};"
+		loading="lazy"
+		src={placeholder}
+		{alt}
+		{width}
+		{height}
+		/>
+</picture>
+
+<style>
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>

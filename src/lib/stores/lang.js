@@ -1,4 +1,4 @@
-import { i18n } from "$lib/conf.js";
+import { i18n } from "$lib/conf";
 import { writable } from "svelte/store";
 import { browser } from '$app/environment'
 

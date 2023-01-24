@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { i18n } from '$lib/conf.js'
+	import { i18n } from '$lib/conf'
   import { currentLang } from '$lib/stores/lang';
   
 	import type { Nav } from '$lib/types/nav';
