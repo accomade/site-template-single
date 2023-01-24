@@ -2,9 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   '@beyonk/gdpr-cookie-consent-banner': ^9.1.1
+  '@dinero.js/currencies': 2.0.0-alpha.13
   '@sveltejs/adapter-static': ^1.0.5
   '@sveltejs/kit': ^1.2.6
+  '@types/luxon': ^3.2.0
   '@typescript/lib-dom': npm:@types/web@^0.0.89
+  dinero.js: 2.0.0-alpha.13
+  luxon: ^3.2.1
   occuplan: ^0.0.7
   svelte: ^3.55.1
   svelte-check: ^3.0.2
@@ -14,12 +18,16 @@ specifiers:
   vite-imagetools: ^4.0.16
 
 dependencies:
+  '@dinero.js/currencies': 2.0.0-alpha.13
+  dinero.js: 2.0.0-alpha.13
+  luxon: 3.2.1
   occuplan: 0.0.7
 
 devDependencies:
   '@beyonk/gdpr-cookie-consent-banner': 9.1.1
   '@sveltejs/adapter-static': 1.0.5_@sveltejs+kit@1.2.6
   '@sveltejs/kit': 1.2.6_svelte@3.55.1+vite@4.0.4
+  '@types/luxon': 3.2.0
   '@typescript/lib-dom': /@types/web/0.0.89
   svelte: 3.55.1
   svelte-check: 3.0.2_svelte@3.55.1
@@ -35,6 +43,22 @@ packages:
     dependencies:
       js-cookie: 3.0.1
     dev: true
+
+  /@dinero.js/calculator-number/2.0.0-alpha.13:
+    resolution: {integrity: sha512-Mo/0FUVFq4dVb/RfBIASUxPFbQbkHYC0VBe36DgWfbbhwG6K6ONuzTLBU5W6LdrMpB7D/CxgZISdQ0pyZKwg9w==}
+    dependencies:
+      '@dinero.js/core': 2.0.0-alpha.13
+    dev: false
+
+  /@dinero.js/core/2.0.0-alpha.13:
+    resolution: {integrity: sha512-RLZz8WmYe1ehqD2YtTpzCzdk0Hqf6oaAVmRlULLkua6vuEVEXjPQEhuyTMLHcS6/Gppy9nuEw8mpSNvU+Sy8QQ==}
+    dependencies:
+      '@dinero.js/currencies': 2.0.0-alpha.13
+    dev: false
+
+  /@dinero.js/currencies/2.0.0-alpha.13:
+    resolution: {integrity: sha512-vEfDara+xAqOrLww80FyFVw4usWcCsR4HwhaoCvwIzB5UdsLPDeUviAGFi8CoWjtLCR44iIeOHdn9jDr7Jj+TQ==}
+    dev: false
 
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
@@ -352,6 +376,10 @@ packages:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
+  /@types/luxon/3.2.0:
+    resolution: {integrity: sha512-lGmaGFoaXHuOLXFvuju2bfvZRqxAqkHPx9Y9IQdQABrinJJshJwfNCKV+u7rR3kJbiqfTF/NhOkcxxAFrObyaA==}
+    dev: true
+
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
     dev: true
@@ -532,6 +560,14 @@ packages:
   /devalue/4.2.2:
     resolution: {integrity: sha512-Pkwd8qrI9O20VJ14fBNHu+on99toTNZFbgWRpZbC0zbDXpnE2WHYcrC1fHhMsF/3Ee+2yaW7vEujAT7fCYgqrA==}
     dev: true
+
+  /dinero.js/2.0.0-alpha.13:
+    resolution: {integrity: sha512-xuBgE/3/67SXOW/UKjmaRd/YJQkUSlYS+6DvfglFg1Mbfn2K7cp+WQcgU76CLJpJPkJABgILsPjw1Om9OJ5puA==}
+    dependencies:
+      '@dinero.js/calculator-number': 2.0.0-alpha.13
+      '@dinero.js/core': 2.0.0-alpha.13
+      '@dinero.js/currencies': 2.0.0-alpha.13
+    dev: false
 
   /end-of-stream/1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}

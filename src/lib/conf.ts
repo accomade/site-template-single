@@ -1,8 +1,8 @@
 import I18n from '../../conf/translations';
 import Nav from '../../conf/nav';
 import Landing from '../../conf/landing';
-import Accos from '../../conf/accos';
 
+import Accos from '../../conf/accos';
 import type { Acco } from './types/accos';
 
 

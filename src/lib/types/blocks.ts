@@ -2,7 +2,7 @@ import type { Photo, PhotoGallery } from './photos'
 import type { Calendar } from './calendar'
 import type { Maps } from './maps'
 import type { Weather } from './weather'
-import type { Amneties, Prices } from './accos'
+import type { Amneties, Pricing } from './accos'
 
 export interface Section {
   header?: string | undefined
@@ -38,9 +38,9 @@ export interface MapBlock {
   content: Maps
 }
 
-export interface PricesBlock {
-  kind: 'prices'
-  content: Prices
+export interface PricingBlock {
+  kind: 'pricing'
+  content: Pricing
 }
 
 export interface WeatherBlock {
@@ -59,7 +59,7 @@ export type Block =
   PhotoGalleryBlock | 
   TextBlock | 
   CalendarBlock |
-  PricesBlock |
+  PricingBlock |
   WeatherBlock |
   MapBlock |
   undefined

@@ -1,4 +1,10 @@
 import type { I18n } from '$lib/types/i18n'
+import type { DateTime } from 'luxon'
+import type { Dinero } from 'dinero.js'
+
+import { DateTime as lx } from 'luxon';
+import { EUR } from '@dinero.js/currencies'
+import { dinero, toDecimal } from 'dinero.js' 
 
 const i18n:I18n = {
   defaultLang: 'de',
@@ -18,6 +24,15 @@ const i18n:I18n = {
         apartment_2_alt: 'View on Apartment 2',
         apartment_3_alt: 'View on Apartment 3',
         beach_alt: 'Beach',
+        pricing: 'Spans and Prices',
+        from: 'From',
+        to: 'To',
+        timeRange: 'Span',
+        firstNight: 'First Night',
+        eachNight: 'Following Nights',
+        peopleNum: 'Number of Guests',
+        extraPerson: 'Additional Guest',
+        'pricing-footnote-acco-cornflower': 'Bedding and Towels are included',
       },
       calendar: {
         weekdayLabels: {
@@ -56,7 +71,14 @@ const i18n:I18n = {
         de: 'Deutsch',
         en: 'English',
       
-      }
+      },
+      formatDate(d:DateTime):string {
+        return d.setLocale('en').toFormat('MM/dd/yy')
+      },
+      formatMoney(d:Dinero<number>):string {
+        return toDecimal<number,string>(d, ({ value, currency }) => `${currency.code} ${value}`);
+      },
+     
     },
     de: {
       title: 'Willkommen in Ihrem Urlaub',
@@ -72,7 +94,17 @@ const i18n:I18n = {
         apartment_2_alt: 'Blick auf Wohnung 2',
         apartment_3_alt: 'Blick auf Wohnung 3',
         beach_alt: 'Strand',
-
+        pricing: 'Preisaufstellung',
+        from: 'Von',
+        to: 'Bis',
+        'base-number-of-people': 'Gästeanzahl',
+        'first-night-price': 'Erste Nacht',
+        'per-night-price': 'Jede Weitere Nacht',
+        'additional-person-price-1': 'Weiterer Gast',
+        'additional-person-desc-1': 'Hinweis',
+        'additional-person-text': 'Kleine Kinder (3 und jünger) sind kostenfrei',
+        'min-number-of-nights': 'Mindestaufenthalt',
+        'pricing-footnote-acco-cornflower': 'Handtücher und Bettwäsche sind inklusive',
       },
       calendar: {
         weekdayLabels: {
@@ -110,7 +142,13 @@ const i18n:I18n = {
         terms: 'AGB',
         de: 'Deutsch',
         en: 'English',
-      }
+      },
+      formatDate(d:DateTime):string {
+        return d.setLocale('de').toFormat('dd.MM.yyyy')
+      },
+      formatMoney(d:Dinero<number>):string {
+        return toDecimal<number,string>(d, ({ value, currency }) => `${value}${currency.code} `);
+      },
     }
   }
 }

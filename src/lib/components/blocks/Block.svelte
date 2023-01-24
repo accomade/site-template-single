@@ -7,7 +7,7 @@
   import Calendar from '$lib/components/blocks/Calendar.svelte';
   import Map from '$lib/components/blocks/Map.svelte';
   import PhotoGallery from '$lib/components/blocks/PhotoGallery.svelte';
-  import PricingTable from '$lib/components/blocks/PricingTable.svelte';
+  import Pricing from '$lib/components/blocks/Pricing.svelte';
   import Weather from '$lib/components/blocks//Weather.svelte';
 
   export let spec:Block;
@@ -37,8 +37,8 @@
         component = PhotoGallery
         props = spec.content
         break;
-      case 'pricing-table':
-        component = PricingTable
+      case 'pricing':
+        component = Pricing
         props = spec.content
         break;
       case 'weather':
