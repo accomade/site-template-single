@@ -4,6 +4,17 @@ import type { Dinero } from 'dinero.js'
 
 import { toDecimal } from 'dinero.js' 
 
+const formatMoney = (countryCode: string, d: Dinero<number>) => {
+  return toDecimal<number,string>(d, ({value, currency}) => {
+    
+    let f = parseFloat(value)
+    return new Intl.NumberFormat(
+      countryCode, 
+      { style: 'currency', currency: currency.code }).format(f)
+  })
+}
+
+
 const i18n:I18n = {
   defaultLang: 'de',
   preferBrowserLang: true,
@@ -27,10 +38,10 @@ const i18n:I18n = {
         to: 'To',
         timeRange: 'Dates',
         firstNight: 'First Night',
-        eachNight: 'Following Nights',
+        eachNight: 'Follow&shy;ing Nights',
         peopleNum: 'Number of Guests',
-        extraPerson: 'Additional Guest',
-        minNumNights: 'Shortest Period',
+        extraPerson: 'Addi&shy;tional Guest',
+        minNumNights: 'Shor&shy;test Period',
         'pricing-footnote-acco-cornflower': 'Bedding and Towels are included',
       },
       calendar: {
@@ -75,7 +86,7 @@ const i18n:I18n = {
         return d.setLocale('en').toFormat('MM/dd/yy')
       },
       formatMoney(d:Dinero<number>):string {
-        return toDecimal<number,string>(d, ({ value, currency }) => `${currency.code} ${value}`);
+        return formatMoney('en-US', d)
       },
       formatNumberOfGuests3(min:number, def:number, max:number):string {
         return `min: ${min} / standard: ${def} / max: ${max}`
@@ -88,21 +99,21 @@ const i18n:I18n = {
       },
       formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
         return `<ul>
-          <li>Adults: ${ toDecimal<number,string>(one, ({value, currency}) => `${currency.code} ${value}`) } per night</li>
-          <li>7 - 18: ${ toDecimal<number,string>(two, ({value, currency}) => `${currency.code} ${value}`) } per night</li> 
-          <li>less than 7: ${ toDecimal<number,string>(three, ({value, currency}) => `${currency.code} ${value}`) } per night</li> 
+          <li>Adults: ${ formatMoney('en-US', one) } per night</li>
+          <li>7 - 18: ${ formatMoney('en-US', two) } per night</li> 
+          <li>less than 7: ${ formatMoney('en-US', three) } per night</li> 
         </ul>
         `
       },
       formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string {
-        return `${ toDecimal<number,string>(one, ({value, currency}) => `${currency.code} ${value}`) } per night <br>
-          Discounted: ${ toDecimal<number,string>(two, ({value, currency}) => `${currency.code} ${value}`) } per night
+        return `${ formatMoney('en-US', one) } per night <br>
+          Discounted: ${ formatMoney('en-US', two) } per night
           (Children age 14 and younger, People with disabilities)
         </ul>
         `
       },
       formatAdditionalPersonPrices1(one:Dinero<number>):string {
-        return `${ toDecimal<number,string>(one, ({value, currency}) => `${currency.code} ${value}`) } per night`
+        return `${ formatMoney('en-US', one) } per night`
       },
       formatMinNumberOfNights(num:number):string {
         return `${num} nights`
@@ -126,13 +137,13 @@ const i18n:I18n = {
         pricing: 'Preisaufstellung',
         from: 'Von',
         to: 'Bis',
-        timeRange: 'Zeitraum',
-        firstNight: 'Erste Übernachtung',
+        timeRange: 'Zeit&shy;raum',
+        firstNight: 'Erste Über&shy;nach&shy;tung',
         eachNight: 'Jede weitere Nacht',
         peopleNum: 'Anzahl der Gäste',
-        extraPerson: 'Weiterer Gast',
-        minNumNights: 'Mindestaufenthalt',
-        'pricing-footnote-acco-cornflower': 'Handtücher und Bettwäsche sind inklusive',
+        extraPerson: 'Wei&shy;terer Gast',
+        minNumNights: 'Mindest&shy;aufent&shy;halt',
+        'pricing-footnote-acco-cornflower': 'Hand&shy;tücher und Bett&shy;wäsche sind in&shy;klu&shy;sive',
       },
       calendar: {
         weekdayLabels: {
@@ -175,7 +186,7 @@ const i18n:I18n = {
         return d.setLocale('de').toFormat('dd.MM.yyyy')
       },
       formatMoney(d:Dinero<number>):string {
-        return toDecimal<number,string>(d, ({ value, currency }) => `${value} ${currency.code}`);
+        return formatMoney('de-DE', d)
       },
       formatNumberOfGuests3(min:number|undefined, def:number|undefined, max:number|undefined):string {
         return `Minimale Belegung: ${min} <br>Normale Belegung: ${def} <br>Maximale Belegung: ${max}`
@@ -187,22 +198,22 @@ const i18n:I18n = {
         return `Belegung: ${def} Gäste`
       },
       formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
-        return `<ul>
-          <li>Erwachsene: ${ toDecimal<number,string>(one, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht</li>
-          <li>7 - 18: ${ toDecimal<number,string>(two, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht</li> 
-          <li>Jünger als 7: ${ toDecimal<number,string>(three, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht</li> 
+        return `<ul style="padding-inline-start: 0; padding-left: 1rem;">
+          <li>Erwachsene: ${ formatMoney('de-DE', one) } pro Nacht</li>
+          <li>7 - 18: ${ formatMoney('de-DE', two) } pro Nacht</li> 
+          <li>Jünger als 7: ${ formatMoney('de-DE', three) } pro Nacht</li> 
         </ul>
         `
       },
       formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string {
-        return `${ toDecimal<number,string>(one, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht<br>
-          Ermäßigt: ${ toDecimal<number,string>(two, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht
+        return `${ formatMoney('de-DE', one) } pro Nacht<br>
+          Ermäßigt: ${ formatMoney('de-DE', two) } pro Nacht
           (Kinder bis 14 inklusive, Menschen mit Behinderung)
         </ul>
         `
       },
       formatAdditionalPersonPrices1(one:Dinero<number>):string {
-        return `${ toDecimal<number,string>(one, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht`
+        return `${ formatMoney('de-DE', one) } pro Nacht`
       },
       formatMinNumberOfNights(num:number):string {
         return `${num} Nächte`

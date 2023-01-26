@@ -22,6 +22,26 @@ const accos = [
               entries: [
                 {
                   kind: 'range',
+                  from: DateTime.fromISO('2022-12-20'),
+                  to: DateTime.fromISO('2023-01-06'),
+                  
+                  entry: {
+                    firstNightPrice: dinero({amount: 8000, currency: EUR}),
+                    perNightPrice: dinero({amount: 3500, currency: EUR}),
+                    
+                    minNumberOfPeople: 1,
+                    baseNumberOfPeople: 2,
+                    maxNumberOfPeople: 4,
+                    
+                    additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+                    additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+                    additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    
+                    minNumberOfNights: 3,
+                  }
+                },
+                {
+                  kind: 'range',
                   from: DateTime.fromISO('2023-01-01'),
                   to: DateTime.fromISO('2023-03-24'),
                   

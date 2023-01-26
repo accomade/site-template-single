@@ -2,6 +2,15 @@
 
   --main-border: 1px solid rgb(2, 48, 71);
 
+  --table-bg-color-odd: rgb(243, 243, 243);
+  --table-bg-color-even: rgb(226, 226, 226);
+  --table-font-color-odd: black;
+  --table-font-color-even: black;
+  --table-header-bg-color: rgb(37, 37, 37);
+  --table-header-font-color: rgb(243, 243, 243);
+  
+  
+
   --main-bg-color: white;
   --main-font-color: #070707;
   --main-font-family: Helvetica, Verdana, sans-serif;
