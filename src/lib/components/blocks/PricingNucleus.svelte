@@ -18,7 +18,7 @@
         if( pricingSpec?.kind == "range" ) {
             
           if(pricingSpec.from && pricingSpec.to) {
-            formattedContent = `${t.formatDate(pricingSpec.from)} - ${t.formatDate(pricingSpec.to)}`
+            formattedContent = `${t.formatDate(pricingSpec.from)}<br>-<br>${t.formatDate(pricingSpec.to)}`
             break;
           }
           if(pricingSpec.from) {

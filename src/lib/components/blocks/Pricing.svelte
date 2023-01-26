@@ -12,8 +12,8 @@
   export let columns:PricingColumn[] = [];
   export let footnote:string = "";
 
-  const colStyle = {
-    timeRange: 'width: 10%', 
+  const colHeaderStyle = {
+    timeRange: 'width: 10%;', 
     firstNight: 'width: 10%',
     eachNight: 'width: 10%',
     peopleNum: 'width: 25%',
@@ -21,6 +21,14 @@
     minNumNights: 'width: 10%'
   }
 
+  const colCellStyle = {
+    timeRange: 'text-align:center;', 
+    firstNight: '',
+    eachNight: '',
+    peopleNum: '',
+    extraPerson: '',
+    minNumNights: ''
+  }
 </script>
 
 <figure class="pricing-wrapper">
@@ -37,7 +45,7 @@
       {/if}
       <tr>
       {#each columns as h} 
-        <th scope="col" style="{colStyle[h]}">{t.dict[h] ? t.dict[h] : h}</th>
+        <th scope="col" style="{colHeaderStyle[h]}">{t.dict[h] ? t.dict[h] : h}</th>
       {/each}
       </tr>
     </thead>
@@ -45,7 +53,7 @@
     {#each entries as e}
       <tr>
         {#each columns as h}
-        <td>  
+        <td style="{colCellStyle[h]}">  
           <PricingNucleus pricingSpec={e} pricingColumn={h} />
         </td>
         {/each}
