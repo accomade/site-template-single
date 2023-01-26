@@ -13,6 +13,13 @@ export interface Translation {
   },
   formatDate(d:DateTime): string,
   formatMoney(c:Dinero<number>): string,
+  formatNumberOfGuests3(min:number, def:number, max:number):string
+  formatNumberOfGuests2(def:number, max:number):string
+  formatNumberOfGuests1(def:number):string
+  formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string
+  formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string
+  formatAdditionalPersonPrices1(one:Dinero<number>):string   
+  formatMinNumberOfNights(num:number):string
   // Don't have this requirement
   //parseDate(s:string): DateTime,
   //parseMoney(s:string): Dinero<number>,

@@ -1,5 +1,7 @@
 :root {
 
+  --main-border: 1px solid rgb(2, 48, 71);
+
   --main-bg-color: white;
   --main-font-color: #070707;
   --main-font-family: Helvetica, Verdana, sans-serif;

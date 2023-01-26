@@ -1,34 +1,52 @@
 <script lang="ts">
-  import type { PricingEntry, PricingColumn } from "$lib/types/accos";
-  import { format } from '$lib/pricing';
+  import type { PricingRange, PricingEntry, PricingColumn} from "$lib/types/accos";
+  
+  import PricingNucleus from './PricingNucleus.svelte'
 
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
   $: t = i18n.translations[$currentLang];
 
-  export let entries:PricingEntry[];
-  export let use:PricingColumn[];
+  export let global:PricingEntry|undefined = undefined;
+  export let entries:PricingRange[] = [];
+  export let columns:PricingColumn[] = [];
   export let footnote:string = "";
 
-
+  const colStyle = {
+    timeRange: 'width: 10%', 
+    firstNight: 'width: 10%',
+    eachNight: 'width: 10%',
+    peopleNum: 'width: 25%',
+    extraPerson: 'width: 35%',
+    minNumNights: 'width: 10%'
+  }
 
 </script>
 
 <figure class="pricing-wrapper">
   <table class="pricing-table">
     <thead>
+      {#if global}
       <tr>
-      {#each use as h} 
-        <td>{t.dict[h] ? t.dict[h] : h}</td>
+        {#each columns as h}
+        <td>  
+          <PricingNucleus pricingSpec={global} pricingColumn={h} />
+        </td>
+        {/each}
+      </tr>
+      {/if}
+      <tr>
+      {#each columns as h} 
+        <th scope="col" style="{colStyle[h]}">{t.dict[h] ? t.dict[h] : h}</th>
       {/each}
       </tr>
     </thead>
     <tbody>
     {#each entries as e}
       <tr>
-        {#each use as h}
+        {#each columns as h}
         <td>  
-          { format(e, h, t) }
+          <PricingNucleus pricingSpec={e} pricingColumn={h} />
         </td>
         {/each}
       </tr>
@@ -37,7 +55,7 @@
     {#if footnote}
     <tfoot>
       <tr>
-        <td colspan="{use.length}">
+        <td colspan="{columns.length}">
           { t.dict[footnote] ? t.dict[footnote] : footnote }
         </td>
       </tr>
@@ -45,3 +63,25 @@
     {/if}
   </table>
 </figure>
+
+<style>
+  figure {
+    width: calc(100% - 2rem);
+    margin: 0;
+    border: var(--main-border);
+    padding: 1rem;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  th {
+    text-overflow: ellipsis;
+    overflow: clip;
+  }
+
+
+</style>

@@ -4,18 +4,18 @@ specifiers:
   '@beyonk/gdpr-cookie-consent-banner': ^9.1.1
   '@dinero.js/currencies': 2.0.0-alpha.13
   '@sveltejs/adapter-static': ^1.0.5
-  '@sveltejs/kit': ^1.2.6
+  '@sveltejs/kit': ^1.2.9
   '@types/luxon': ^3.2.0
   '@typescript/lib-dom': npm:@types/web@^0.0.89
   dinero.js: 2.0.0-alpha.13
   luxon: ^3.2.1
   occuplan: ^0.0.7
   svelte: ^3.55.1
-  svelte-check: ^3.0.2
+  svelte-check: ^3.0.3
   tslib: ^2.4.1
   typescript: ^4.9.4
   vite: ^4.0.4
-  vite-imagetools: ^4.0.16
+  vite-imagetools: ^4.0.17
 
 dependencies:
   '@dinero.js/currencies': 2.0.0-alpha.13
@@ -25,16 +25,16 @@ dependencies:
 
 devDependencies:
   '@beyonk/gdpr-cookie-consent-banner': 9.1.1
-  '@sveltejs/adapter-static': 1.0.5_@sveltejs+kit@1.2.6
-  '@sveltejs/kit': 1.2.6_svelte@3.55.1+vite@4.0.4
+  '@sveltejs/adapter-static': 1.0.5_@sveltejs+kit@1.2.9
+  '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.0.4
   '@types/luxon': 3.2.0
   '@typescript/lib-dom': /@types/web/0.0.89
   svelte: 3.55.1
-  svelte-check: 3.0.2_svelte@3.55.1
+  svelte-check: 3.0.3_svelte@3.55.1
   tslib: 2.4.1
   typescript: 4.9.4
   vite: 4.0.4
-  vite-imagetools: 4.0.16
+  vite-imagetools: 4.0.17
 
 packages:
 
@@ -313,16 +313,16 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-static/1.0.5_@sveltejs+kit@1.2.6:
+  /@sveltejs/adapter-static/1.0.5_@sveltejs+kit@1.2.9:
     resolution: {integrity: sha512-W5jbgvy9sbYEHs27NQOSFEun+zQwdcL4kpk5qc2kSHl8cKsP5wfXuWDTDRmD1Co40aFcesi5Az5ZzdnPI8KCVg==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.2.6_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.0.4
     dev: true
 
-  /@sveltejs/kit/1.2.6_svelte@3.55.1+vite@4.0.4:
-    resolution: {integrity: sha512-dESK7mYjIm9yQWA7esAbHg7MoWOpB8Ztgzmc7LAvrGlsg2bs1+NPhSPaMKs7CQFznkunzrlE4Q4irMPiXJQmIw==}
+  /@sveltejs/kit/1.2.9_svelte@3.55.1+vite@4.0.4:
+    resolution: {integrity: sha512-zHuYwMgCJpmgYoQ1EOIgNFNkBTKqErHH+fqZVfNmEw2hICoKZHIjqm8/fetRUtF71dqXq0TmPS/HuCCBHXQiZw==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -1153,8 +1153,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/3.0.2_svelte@3.55.1:
-    resolution: {integrity: sha512-DkhKhV0Jt0gh7q9DBB26+J2Vfb9y4/4JWxnbkXBZha7542LOhwvj3edJFjyJ+xjdaXyInZ+YRRYc3V6wytP2ew==}
+  /svelte-check/3.0.3_svelte@3.55.1:
+    resolution: {integrity: sha512-ByBFXo3bfHRGIsYEasHkdMhLkNleVfszX/Ns1oip58tPJlKdo5Ssr8kgVIuo5oq00hss8AIcdesuy0Xt0BcTvg==}
     hasBin: true
     peerDependencies:
       svelte: ^3.55.0
@@ -1308,8 +1308,8 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /vite-imagetools/4.0.16:
-    resolution: {integrity: sha512-kjTIcscDYEXLxTeCRVZVArygEOgFBoG6pno6H6wBpq6R07Lov/zRDG7UX/yw3DgMFzeVPWJW8YuItT7M0puSDw==}
+  /vite-imagetools/4.0.17:
+    resolution: {integrity: sha512-Nwe9zYrQBcIsmb21ABgr18WXycIa0CPnXpwJ6CmCHBZq0iies5PiYg2J45hQFmuEVNErX6ixARmNZILXxeJUXw==}
     engines: {node: '>=12.0.0'}
     dependencies:
       '@rollup/pluginutils': 5.0.2

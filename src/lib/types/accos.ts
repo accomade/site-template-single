@@ -12,35 +12,35 @@ export type PricingColumn =
   | "minNumNights"
   
 
-
 export type PricingEntry = {
-  from?: DateTime;
-  to?: DateTime;
+  kind: "entry",
+  firstNightPrice?: Dinero<number>
+  perNightPrice: Dinero<number>
   
-  firstNightPrice?: Dinero<number>,
-  perNightPrice: Dinero<number>,
+  minNumberOfNights?: number
   
-  minNumberOfNights?: number,
+  minNumberOfPeople?: number
+  baseNumberOfPeople?: number
+  maxNumberOfPeople?: number
   
-  minNumberOfPeople?: number,
-  baseNumberOfPeople?: number,
-  maxNumberOfPeople?: number,
-  
-  additionalPersonPrice1?: Dinero<number>,
-  additionalPersonDesc1?: string,
+  additionalPersonPrice1?: Dinero<number>
+  additionalPersonPrice2?: Dinero<number>
+  additionalPersonPrice3?: Dinero<number>
+}
 
-  additionalPersonPrice2?: Dinero<number>,
-  additionalPersonDesc2?: string,
-  
-  additionalPersonPrice3?: Dinero<number>,
-  additionalPersonDesc3?: string;
+export type PricingRange = {
+  kind: "range"
+  from?: DateTime
+  to?: DateTime
+  entry?: PricingEntry
 }
 
 
 export interface Pricing {
-  use: PricingColumn[]
-  entries: PricingEntry[]
-  footnote: string
+  global?: PricingEntry
+  columns?: PricingColumn[]
+  entries?: PricingRange[]
+  footnote?: string
 }
 
 export interface Amneties {

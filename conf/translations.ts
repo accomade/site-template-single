@@ -2,9 +2,7 @@ import type { I18n } from '$lib/types/i18n'
 import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
 
-import { DateTime as lx } from 'luxon';
-import { EUR } from '@dinero.js/currencies'
-import { dinero, toDecimal } from 'dinero.js' 
+import { toDecimal } from 'dinero.js' 
 
 const i18n:I18n = {
   defaultLang: 'de',
@@ -24,14 +22,15 @@ const i18n:I18n = {
         apartment_2_alt: 'View on Apartment 2',
         apartment_3_alt: 'View on Apartment 3',
         beach_alt: 'Beach',
-        pricing: 'Spans and Prices',
+        pricing: 'Dates and Prices',
         from: 'From',
         to: 'To',
-        timeRange: 'Span',
+        timeRange: 'Dates',
         firstNight: 'First Night',
         eachNight: 'Following Nights',
         peopleNum: 'Number of Guests',
         extraPerson: 'Additional Guest',
+        minNumNights: 'Shortest Period',
         'pricing-footnote-acco-cornflower': 'Bedding and Towels are included',
       },
       calendar: {
@@ -78,6 +77,36 @@ const i18n:I18n = {
       formatMoney(d:Dinero<number>):string {
         return toDecimal<number,string>(d, ({ value, currency }) => `${currency.code} ${value}`);
       },
+      formatNumberOfGuests3(min:number, def:number, max:number):string {
+        return `min: ${min} / standard: ${def} / max: ${max}`
+      },
+      formatNumberOfGuests2(def:number, max:number):string {
+        return `Guests ${def}<br>Maximum ${max}`
+      },
+      formatNumberOfGuests1(def:number):string {
+        return `Guests: ${def}`
+      },
+      formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
+        return `<ul>
+          <li>Adults: ${ toDecimal<number,string>(one, ({value, currency}) => `${currency.code} ${value}`) } per night</li>
+          <li>7 - 18: ${ toDecimal<number,string>(two, ({value, currency}) => `${currency.code} ${value}`) } per night</li> 
+          <li>less than 7: ${ toDecimal<number,string>(three, ({value, currency}) => `${currency.code} ${value}`) } per night</li> 
+        </ul>
+        `
+      },
+      formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string {
+        return `${ toDecimal<number,string>(one, ({value, currency}) => `${currency.code} ${value}`) } per night <br>
+          Discounted: ${ toDecimal<number,string>(two, ({value, currency}) => `${currency.code} ${value}`) } per night
+          (Children age 14 and younger, People with disabilities)
+        </ul>
+        `
+      },
+      formatAdditionalPersonPrices1(one:Dinero<number>):string {
+        return `${ toDecimal<number,string>(one, ({value, currency}) => `${currency.code} ${value}`) } per night`
+      },
+      formatMinNumberOfNights(num:number):string {
+        return `${num} nights`
+      }
      
     },
     de: {
@@ -97,13 +126,12 @@ const i18n:I18n = {
         pricing: 'Preisaufstellung',
         from: 'Von',
         to: 'Bis',
-        'base-number-of-people': 'Gästeanzahl',
-        'first-night-price': 'Erste Nacht',
-        'per-night-price': 'Jede Weitere Nacht',
-        'additional-person-price-1': 'Weiterer Gast',
-        'additional-person-desc-1': 'Hinweis',
-        'additional-person-text': 'Kleine Kinder (3 und jünger) sind kostenfrei',
-        'min-number-of-nights': 'Mindestaufenthalt',
+        timeRange: 'Zeitraum',
+        firstNight: 'Erste Übernachtung',
+        eachNight: 'Jede weitere Nacht',
+        peopleNum: 'Anzahl der Gäste',
+        extraPerson: 'Weiterer Gast',
+        minNumNights: 'Mindestaufenthalt',
         'pricing-footnote-acco-cornflower': 'Handtücher und Bettwäsche sind inklusive',
       },
       calendar: {
@@ -147,8 +175,39 @@ const i18n:I18n = {
         return d.setLocale('de').toFormat('dd.MM.yyyy')
       },
       formatMoney(d:Dinero<number>):string {
-        return toDecimal<number,string>(d, ({ value, currency }) => `${value}${currency.code} `);
+        return toDecimal<number,string>(d, ({ value, currency }) => `${value} ${currency.code}`);
       },
+      formatNumberOfGuests3(min:number|undefined, def:number|undefined, max:number|undefined):string {
+        return `Minimale Belegung: ${min} <br>Normale Belegung: ${def} <br>Maximale Belegung: ${max}`
+      },
+      formatNumberOfGuests2(def:number|undefined, max:number|undefined):string {
+        return `Normale Belegung: ${def} <br>Maximale Belegung: ${max}`
+      },
+      formatNumberOfGuests1(def:number|undefined):string {
+        return `Belegung: ${def} Gäste`
+      },
+      formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
+        return `<ul>
+          <li>Erwachsene: ${ toDecimal<number,string>(one, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht</li>
+          <li>7 - 18: ${ toDecimal<number,string>(two, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht</li> 
+          <li>Jünger als 7: ${ toDecimal<number,string>(three, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht</li> 
+        </ul>
+        `
+      },
+      formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string {
+        return `${ toDecimal<number,string>(one, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht<br>
+          Ermäßigt: ${ toDecimal<number,string>(two, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht
+          (Kinder bis 14 inklusive, Menschen mit Behinderung)
+        </ul>
+        `
+      },
+      formatAdditionalPersonPrices1(one:Dinero<number>):string {
+        return `${ toDecimal<number,string>(one, ({value, currency}) => `${value} ${currency.code}`) } pro Nacht`
+      },
+      formatMinNumberOfNights(num:number):string {
+        return `${num} Nächte`
+      }
+
     }
   }
 }
