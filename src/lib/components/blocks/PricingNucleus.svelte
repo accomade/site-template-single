@@ -8,9 +8,8 @@
   export let pricingSpec:PricingEntry|PricingRange
   $: pricingEntry = pricingSpec?.kind == "entry" ? pricingSpec : pricingSpec?.entry;
 
+
   export let pricingColumn:PricingColumn
-
-
   let formattedContent = ""
   $: {
     switch(pricingColumn) {
@@ -32,6 +31,7 @@
         }
         break;
       case "firstNight":
+        //console.log("firstNight", pricingEntry)
         if(pricingEntry?.firstNightPrice) {
           formattedContent = t.formatMoney(pricingEntry.firstNightPrice)
         }
@@ -123,4 +123,4 @@
 
 </script>
 
-<div class="cell-wrapper">{@html formattedContent}</div>
+<span class="cell-wrapper">{@html formattedContent}</span>

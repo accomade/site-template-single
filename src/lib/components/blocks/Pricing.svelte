@@ -6,7 +6,7 @@
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
   $: t = i18n.translations[$currentLang];
-
+  
   export let global:PricingEntry|undefined = undefined;
   export let entries:PricingRange[] = [];
 
@@ -48,18 +48,42 @@
 </script>
 
 <figure bind:clientWidth={w} class="pricing-wrapper">
+  {#if global}
+    <table class="pricing-table-global">
+      <thead>
+        <tr>
+          <th>{t.dict["globalPricing"] ? t.dict["globalPricing"]: "globalPricing"}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            {#if global.baseNumberOfPeople}
+              <strong>{@html t.dict["peopleNum"] ? t.dict["peopleNum"] : "peopleNum"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="peopleNum" />
+              <br><hr>
+            {/if}
+            {#if global.firstNightPrice}
+              <strong>{@html t.dict["firstNight"] ? t.dict["firstNight"] : "firstNight"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="firstNight" />
+            {/if}
+            {#if global.perNightPrice}
+              <strong>{@html t.dict["eachNight"] ? t.dict["eachNight"] : "eachNight"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="eachNight" />
+            {/if}
+            {#if global.additionalPersonPrice1}
+              <br><hr>
+              <strong>{@html t.dict["extraPerson"] ? t.dict["extraPerson"] : "extraPerson"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="extraPerson" />
+            {/if}
+            {#if global.minNumberOfNights}
+              <br><hr>
+              <strong>{@html t.dict["minNumNights"] ? t.dict["minNumNights"] : "minNumNights"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="minNumNights" />
+            {/if}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  {/if}
   {#if w > 799}
     <table class="pricing-table">
       <thead>
-        {#if global}
-        <tr>
-          {#each columns as h}
-          <td>  
-            <PricingNucleus pricingSpec={global} pricingColumn={h} />
-          </td>
-          {/each}
-        </tr>
-        {/if}
         <tr>
         {#each columns as h} 
           <th scope="col" style="{colHeaderStyle[h]}">{@html t.dict[h] ? t.dict[h] : h}</th>
@@ -89,17 +113,6 @@
     </table>
   {:else if w > 400 && w < 800 }
     <table class="pricing-table">
-      <thead>
-        {#if global}
-          {#each columns as h}
-          <tr>
-            <th colspan="2" scope="col">  
-              <PricingNucleus pricingSpec={global} pricingColumn={h} />
-            </th>
-          </tr>
-          {/each}
-        {/if}
-      </thead>
       {#each filteredEntries as e}
         <thead>
           <tr>
@@ -131,17 +144,6 @@
     </table>
   {:else}
   <table class="pricing-table">
-    <thead>
-      {#if global}
-        {#each columns as h}
-        <tr>
-          <th>  
-            <PricingNucleus pricingSpec={global} pricingColumn={h} />
-          </th>
-        </tr>
-        {/each}
-      {/if}
-    </thead>
     {#each filteredEntries as e}
       <thead>
         <tr>
@@ -190,24 +192,42 @@
     border-collapse: collapse;
   }
 
+  .pricing-table-global td {
+    padding: 1.5rem;
+  }
+
   th {
     text-overflow: ellipsis;
     overflow: clip;
     letter-spacing: 2px;
     padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
   }
 
   td {
-    padding-top: 0.2rem;
-    padding-bottom: 0.1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
     padding-right: 1rem;
     padding-left: 0.2rem;
+  }
+
+  @media(max-width: 400px) {
+    td {
+      text-align: center;
+    }
   }
 
   thead {
     background-color: var(--table-header-bg-color);
     color: var(--table-header-font-color);
+  }
+
+  tfoot {
+    background-color: var(--table-footer-bg-color);
+    color: var(--table-footer-font-color);
+  }
+  tfoot td {
+    padding: 1rem;
   }
 
   tbody tr:nth-child(odd) {

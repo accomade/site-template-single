@@ -71,6 +71,7 @@
   }
 
   h2 {
+    padding-left: 0.5rem;
     font-weight: bolder;
     font-size: 2.2rem;
     font-variant: small-caps;

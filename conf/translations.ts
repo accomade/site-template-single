@@ -34,6 +34,11 @@ const i18n:I18n = {
         apartment_3_alt: 'View on Apartment 3',
         beach_alt: 'Beach',
         pricing: 'Dates and Prices',
+        globalPricing: 'Default rates and conditions',
+        globalNightlyRate: 'Per Night',
+        globalMinimumStay: 'Minimum Stay',
+        globalPeopleCount: 'Number of People',
+        globalAdditionalPerson: 'Additional Guest',
         from: 'From',
         to: 'To',
         timeRange: 'Dates',
@@ -98,7 +103,20 @@ const i18n:I18n = {
         return `Guests: ${def}`
       },
       formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
-        return `<ul>
+        return `<style scoped>
+          ul {
+            padding-inline-start: 0; 
+            padding-left: 1rem;
+            margin-block-start: 0; 
+            margin-block-end: 0;
+          }
+          @media(max-width: 400px) {
+            ul {
+              list-style-type: none;
+            }
+          }
+        </style>
+        <ul>
           <li>Adults: ${ formatMoney('en-US', one) } per night</li>
           <li>7 - 18: ${ formatMoney('en-US', two) } per night</li> 
           <li>less than 7: ${ formatMoney('en-US', three) } per night</li> 
@@ -135,6 +153,11 @@ const i18n:I18n = {
         apartment_3_alt: 'Blick auf Wohnung 3',
         beach_alt: 'Strand',
         pricing: 'Preisaufstellung',
+        globalPricing: 'Allgemeine Angaben',
+        globalNightlyRate: 'Übernachtung',
+        globalMinimumStay: 'Mindestzeitraum',
+        globalPeopleCount: 'Personenanzahl',
+        globalAdditionalPerson: 'Zusätzlicher Gast',
         from: 'Von',
         to: 'Bis',
         timeRange: 'Zeit&shy;raum',
@@ -189,7 +212,7 @@ const i18n:I18n = {
         return formatMoney('de-DE', d)
       },
       formatNumberOfGuests3(min:number|undefined, def:number|undefined, max:number|undefined):string {
-        return `Minimale Belegung: ${min} <br>Normale Belegung: ${def} <br>Maximale Belegung: ${max}`
+        return `Minimale&nbsp;Belegung:&nbsp;${min} Normale&nbsp;Belegung:&nbsp;${def} Maximale&nbsp;Belegung:&nbsp;${max}`
       },
       formatNumberOfGuests2(def:number|undefined, max:number|undefined):string {
         return `Normale Belegung: ${def} <br>Maximale Belegung: ${max}`
@@ -198,7 +221,20 @@ const i18n:I18n = {
         return `Belegung: ${def} Gäste`
       },
       formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
-        return `<ul style="padding-inline-start: 0; padding-left: 1rem;">
+        return `<style scoped>
+        ul {
+          padding-inline-start: 0; 
+          padding-left: 1rem;
+           margin-block-start: 0; 
+           margin-block-end: 0;
+        }
+        @media(max-width: 400px) {
+          ul {
+            list-style-type: none;
+          }
+        }
+        </style>
+        <ul>
           <li>Erwachsene: ${ formatMoney('de-DE', one) } pro Nacht</li>
           <li>7 - 18: ${ formatMoney('de-DE', two) } pro Nacht</li> 
           <li>Jünger als 7: ${ formatMoney('de-DE', three) } pro Nacht</li> 
