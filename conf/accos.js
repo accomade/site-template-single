@@ -14,6 +14,12 @@ const accos = [
         columnCount: 1,
         blocks: [
           {
+            kind: 'amneties',
+            content: {
+              
+            }
+          },
+          {
             kind: 'pricing',
             content: {
               columns: [

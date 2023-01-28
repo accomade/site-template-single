@@ -43,6 +43,21 @@ export interface Pricing {
   footnote?: string
 }
 
+export interface SpecOption {
+  kind: 'boolean' | 'list' | 'number' | 'text' | 'size'
+  name: string
+  desc?: string
+}
+
+export interface Room {
+  perks: SpecOption[]
+}
+
+export interface LivingRoom extends Room {
+  kind: 'living'
+
+}
+
 export interface Bed {
   kind: 'kings' | 'queens' | 'solo' | 'bunkbed' | 'baby' | 'sleepingSofa'
   optional: boolean
@@ -80,6 +95,7 @@ export interface Kitchen {
   eatingTable?: boolean
   desc?: string
 }
+
 
 export interface LivingRoom {
   beds?: Bed[]
@@ -125,18 +141,27 @@ export interface Outdoors {
 
 export interface Amneties {
   size?: number
-  pets?: boolean
-  petsDesc?: string
-  vaccuum?: boolean
-  iron?: boolean
-
+  
   outdoors?: Outdoors[]
   bedrooms?: Bedroom[]
   bathrooms?: Bathroom[]
   kitchens?: Kitchen[]
   livingRooms?: LivingRoom[]
 
+
+  parkingLots?: number
+  parkingOnSite: boolean
+  parkingNearby: boolean
+
+  pets?: boolean
+  petsDesc?: string
+
   ac?: boolean
+  vaccuum?: boolean
+  iron?: boolean
+
+  airportShuttle?: boolean,
+  trainstation?: boolean,
 
   shopping?: string
   beach?: string
