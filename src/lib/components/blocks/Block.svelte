@@ -8,7 +8,8 @@
   import Map from '$lib/components/blocks/Map.svelte';
   import PhotoGallery from '$lib/components/blocks/PhotoGallery.svelte';
   import Pricing from '$lib/components/blocks/Pricing.svelte';
-  import Weather from '$lib/components/blocks//Weather.svelte';
+  import Weather from '$lib/components/blocks/Weather.svelte';
+  import Amneties from '$lib/components/blocks/Amneties.svelte';
 
   export let spec:Block;
   
@@ -39,6 +40,10 @@
         break;
       case 'pricing':
         component = Pricing
+        props = spec.content
+        break;
+      case 'amneties':
+        component = Amneties
         props = spec.content
         break;
       case 'weather':

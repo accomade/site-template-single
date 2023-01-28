@@ -50,7 +50,7 @@ export interface WeatherBlock {
 
 export interface AmnetiesBlock {
   kind: 'amneties'
-  conent: Amneties
+  content: Amneties
 }
 
 export type Block =
@@ -60,6 +60,7 @@ export type Block =
   TextBlock | 
   CalendarBlock |
   PricingBlock |
+  AmnetiesBlock |
   WeatherBlock |
   MapBlock |
   undefined
