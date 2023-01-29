@@ -7,17 +7,29 @@
   TODO make photos bigger/smaller on click
   */
  
+  let photoSizes = photos.map( (p) => p.cols)
+  const rotateCols = ( i:number ) => {
+    if(photoSizes[i] == 3) {
+      photoSizes[i] = 1
+    }
+    else {
+      photoSizes[i] = photoSizes[i] + 1
+    }
+  }
 </script>
 
 <div class="grid-container">
-  {#each photos as p }
-  <div 
-      class="photo-container" 
-      class:span-1={p.cols == 1}
-      class:span-2={p.cols == 2}
-      class:span-3={p.cols == 3}>
-    <PhotoDispatcher photo={p.photo} alt={p.alt}/>
-  </div>
+  {#each photos as p, i }
+    <button 
+        aria-label="resize" on:click={() => rotateCols(i)}
+        class="photo-container" 
+        class:span-1={photoSizes[i] == 1}
+        class:span-2={photoSizes[i] == 2}
+        class:span-3={photoSizes[i] == 3}>
+    
+      <PhotoDispatcher photo={p.photo} alt={p.alt}/>
+  
+    </button>
   {/each}
 </div>
 
@@ -33,6 +45,12 @@
 
   .span-3 {
     grid-column: span 3;
+  }
+
+  .photo-container {
+    padding: 0;
+    border: 0;
+    cursor: pointer;
   }
 
   .grid-container {
