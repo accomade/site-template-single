@@ -20,6 +20,10 @@ export interface Translation {
   formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string
   formatAdditionalPersonPrices1(one:Dinero<number>):string   
   formatMinNumberOfNights(num:number):string
+  formatSeating(n:number): string
+  formatNumberOf(n:number): string
+  formatSize(n: number): string
+  formatBed(n: number): string
   // Don't have this requirement
   //parseDate(s:string): DateTime,
   //parseMoney(s:string): Dinero<number>,

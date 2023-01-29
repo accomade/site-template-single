@@ -10,15 +10,151 @@ const accos = [
     displayName: 'Wohnung: Kornblume',
     sections: [
       {
-        header: 'pricing',
+        header: 'amneties',
         columnCount: 1,
         blocks: [
           {
             kind: 'amneties',
             content: {
-              
+              accoName: 'cornflower',
+              amneties: {
+                size: 55,
+                quiet: true,
+                desc: true,
+                shopping: true,
+                sightSeeing: true,
+                beach: true,
+                culture: true,
+                parkingLots: 2,
+                parkingOnSite: true,
+                trainStation: true,
+                onSiteContact: true,
+                pets: true,
+                petsDesc: true,
+                ac: true,
+                iron: true,
+                vaccuum: true,
+
+                bedrooms: [
+                  {
+                    size: 14,
+                    separated: true,
+                    tv: true,
+                    ac: true,
+                    beddingInclusive: true,
+                    beds: [
+                      {
+                        kind: 'kings',
+                        heads: 2
+                      }
+                    ]
+                  },
+                  {
+                    size: 22,
+                    beddingAvailable: true,
+                    beds: [
+                      {
+                        kind: 'solo',
+                        heads: 1,
+                        optional: true
+                      },
+                      {
+                        kind: 'bunkbed',
+                        heads: 2
+                      }
+                    ],
+                    desc: 'cornflower_bedroom_2_desc'
+                  }
+                ],
+
+                livingRooms: [
+                  {
+                    size: 16,
+                    beds: [
+                      {
+                        kind: 'sleepingSofa',
+                        heads: 2,
+                        optional: true,
+                      }
+                    ],
+                    tv: true,
+                    stereo: true,
+                    sofa: true,
+                    lounge: 4,
+                    chairs: 4,
+                    sofaTable: true,
+                    eatingTable: true,
+                    desc: 'cornflower_living_desc'
+                  }
+                ],
+
+                kitchens: [
+                  {
+                    size: 14,
+                    microwave: true,
+                    oven: true,
+                    fridge: true,
+                    freezer: true,
+                    dishwascher: true,
+                    integrated: true,
+                    coffeeMachines: [
+                      'nespresso', 'filter', 'beans'
+                    ],
+                    towels: true,
+                    chairs: 4,
+                    eatingTable: true,
+                    desc: 'cornflower_kitchen_desc'
+                  }
+                ],
+
+                bathrooms: [
+                  {
+                    size: 6,
+                    shower: true,
+                    bathtub: true,
+                    hairDryer: true,
+                    towelsIncluded: true,
+                    bathrobeAvailable: true,
+                    window: true,
+                    desc: 'cornflower_bathroom_desc'
+                  }
+                ],
+
+                outdoors: [
+                  {
+                    kind: 'terrace',
+                    fenced: true,
+                    size: 32,
+
+                  },
+                  {
+                    kind: 'backyard',
+                    fenced: true,
+                    size: 60,
+                    eatingTable: true,
+                    sofaTable: true,
+                    chairs: 6,
+                    lounge: 4,
+                    barbecue: true,
+                    barbecueType: 'charcoal',
+                    barbecueDesc: 'cornflower_barbecue_desc',
+                    shed: true,
+                    shedDesc: 'cornflower_shed_desc',
+                    bicycles: 2,
+                    bicyclesDesc: 'cornflower_bicycles_desc',
+                    pool: true,
+                    desc: 'cornflower_backyard_desc'
+                  }
+                ]
+              }
             }
-          },
+          }
+        ],
+      },
+      {
+        header: 'pricing',
+        columnCount: 1,
+        blocks: [
           {
             kind: 'pricing',
             content: {

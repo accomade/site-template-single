@@ -43,36 +43,7 @@ export interface Pricing {
   footnote?: string
 }
 
-export interface SpecOption {
-  kind: 'boolean' | 'list' | 'number' | 'text' | 'size'
-  name: string
-  desc?: string
-}
 
-export interface Room {
-  perks: SpecOption[]
-}
-
-export interface LivingRoom extends Room {
-  kind: 'living'
-
-}
-
-export interface Bed {
-  kind: 'kings' | 'queens' | 'solo' | 'bunkbed' | 'baby' | 'sleepingSofa'
-  optional: boolean
-  heads: number
-}
-
-export interface Bedroom {
-  beds?: Bed[]
-  separated?: boolean
-  tv?: boolean
-  ac?: boolean
-  beddingAvailable?: boolean
-  beddingInclusive?: boolean
-  desc?: string
-}
 
 export type CoffeeMachine = 
   | 'nespresso'
@@ -82,7 +53,28 @@ export type CoffeeMachine =
   | 'capsules'
   | 'none'
 
+
+export interface Bed {
+  kind: 'kings' | 'queens' | 'solo' | 'bunkbed' | 'baby' | 'sleepingSofa'
+  optional: boolean
+  heads: number
+}
+
+
+export interface Bedroom {
+  size?: number
+  beds?: Bed[]
+  separated?: boolean
+  tv?: boolean
+  ac?: boolean
+  beddingAvailable?: boolean
+  beddingInclusive?: boolean
+  desc?: string
+}
+
+
 export interface Kitchen {
+  size?: number
   microwave?: boolean
   oven?: boolean
   fridge?: boolean
@@ -98,18 +90,21 @@ export interface Kitchen {
 
 
 export interface LivingRoom {
+  size?: number
   beds?: Bed[]
   tv?: boolean
   stereo?: boolean
   sofa?: boolean
-  lounge?: boolean
+  lounge?: number
   chairs?: number
   sofaTable?: boolean
   eatingTable?: boolean
   ac?: boolean
+  desc?: string
 }
 
 export interface Bathroom {
+  size?: number
   shower?: boolean
   bathtub?: boolean
   hairDryer?: boolean
@@ -118,16 +113,19 @@ export interface Bathroom {
   bathrobeAvailable?: boolean
   bathrobeIncluded?: boolean
   window?: boolean
+  desc?: string
 }
 
 
 export interface Outdoors {
   kind: 'backyard' | 'terrace' | 'balcony'
+  fenced?: boolean
   size?: number
   eatingTable?: boolean
   sofaTable?: boolean
   chairs?: number
   lounge?: number
+  barbecue: boolean
   barbecueType?: 'gas' | 'charcoal' | 'electric'
   barbecueDesc?: string
   shed?: boolean
@@ -138,6 +136,7 @@ export interface Outdoors {
   poolDesc?: string
   desc?: string
 }
+
 
 export interface Amneties {
   size?: number
@@ -152,28 +151,33 @@ export interface Amneties {
   parkingLots?: number
   parkingOnSite: boolean
   parkingNearby: boolean
+  airportShuttle?: boolean,
+  trainStation?: boolean,
 
   pets?: boolean
-  petsDesc?: string
-
+  petsDesc?: boolean
   ac?: boolean
   vaccuum?: boolean
   iron?: boolean
 
-  airportShuttle?: boolean,
-  trainstation?: boolean,
+  //TODO add this options
+  washingMashine?: boolean
+  clothesDryer?: boolean
+  dryingRack?: boolean
+  sauna?: boolean
+  solarium?: boolean
+  whirlpool?: boolean
 
-  shopping?: string
-  beach?: string
-  culture?: string
-  sightSeeing?: string
+  shopping?: boolean
+  beach?: boolean
+  culture?: boolean
+  sightSeeing?: boolean
 
   quiet?: boolean
   busy?: boolean
-
   onSiteContact?: boolean
 
-  desc?: string
+  desc?: boolean
 }
 
 

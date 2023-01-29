@@ -34,4 +34,20 @@
     box-sizing: border-box;
   }
 
+  :global( h3 ) {
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 1.8rem;
+  } 
+
+  :global( h2 ) {
+    font-variant: small-caps;
+    font-size: 2.2rem;
+  } 
+
+  :global( h1 ) {
+    font-variant: small-caps;
+    font-size: 3rem;
+  } 
+
 </style>
