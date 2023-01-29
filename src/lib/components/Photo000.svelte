@@ -2,18 +2,21 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	// @ts-ignore
-	import { src as placeholder, width, height } from '../../../photos/000.jpg?w=200&blur&metadata'
+	import { src as placeholder, width, height } from '../../../photos/000.jpg?w=40&metadata'
 	
 	export let alt:string;
 	export let maxWidth:string;
 	export let maxHeight:string;
 
+	let sharpen = false;
 	const importFormats = async () => {
 		// @ts-ignore
 		let srcsetAvif = (await import('../../../photos/000.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset&imagetools')).default;
 		// @ts-ignore
 		let srcsetWebp = (await import('../../../photos/000.jpg?w=300;500;700;900;1100;1700;2500;3300&format=webp&srcset')).default;
 
+
+		sharpen = true;
 		return {
 			avif: srcsetAvif,
 			webp: srcsetWebp
@@ -36,6 +39,7 @@
 		{/await}
 	{/if}
 	<img
+		class:sharpen={sharpen}
 		style="max-width:{maxWidth};max-height:{maxHeight};"
 		loading="lazy"
 		src={placeholder}
@@ -50,5 +54,18 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		filter: blur(20px);
 	}
+
+	img.sharpen {
+		animation: sharpen .5s both;
+  }
+  @keyframes sharpen {
+    from {
+      filter: blur(20px);
+    }
+    to {
+      filter: blur(0px);
+    }
+  }
 </style>
