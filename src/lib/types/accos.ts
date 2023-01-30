@@ -83,8 +83,7 @@ export interface Kitchen {
   dishwasher?: boolean
   coffeeMachines?: CoffeeMachine[]
   towels?: boolean
-  chairs?: number
-  eatingTable?: boolean
+  eatingTable?: number
   desc?: string
 }
 
@@ -96,9 +95,8 @@ export interface LivingRoom {
   stereo?: boolean
   sofa?: boolean
   lounge?: number
-  chairs?: number
   sofaTable?: boolean
-  eatingTable?: boolean
+  eatingTable?: number
   ac?: boolean
   desc?: string
 }
@@ -121,9 +119,8 @@ export interface Outdoors {
   kind: 'backyard' | 'terrace' | 'balcony'
   fenced?: boolean
   size?: number
-  eatingTable?: boolean
+  eatingTable?: number
   sofaTable?: boolean
-  chairs?: number
   lounge?: number
   barbecue: boolean
   barbecueType?: 'gas' | 'charcoal' | 'electric'
@@ -160,12 +157,13 @@ export interface Amneties {
   vaccuum?: boolean
   iron?: boolean
 
-  //TODO add this options
   washingMashine?: boolean
   clothesDryer?: boolean
   dryingRack?: boolean
   sauna?: boolean
+  saunaDesc?: string
   solarium?: boolean
+  solariumDesc?: string
   whirlpool?: boolean
 
   shopping?: boolean

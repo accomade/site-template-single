@@ -82,7 +82,6 @@ const i18n:I18n = {
         
         sofaTable: 'Sofa Table',
         eatingTable: 'Eating Table',
-        chairs: 'Chairs',
 
         kitchenHeader: 'Kitchen',
         microwave: 'Microwave',
@@ -261,17 +260,19 @@ const i18n:I18n = {
         
         amneties: 'Informationen',
 
-        //TODO group apartment specific translations
-        cornflower_quiet: 'Very quiet location to relax',
-        cornflower_busy: 'In the heart of town, bustling live',
-        cornflower_desc: '<a>Sehr gemütliches Apartment ...</a>',
+        cornflower_quiet: 'Very quiet location to relax. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+
+        cornflower_busy: 'In the heart of town, bustling live. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',
+
+        cornflower_desc: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
         
-        cornflower_beach: '<a>Sehr gemütliches Apartment ...</a>',
-        cornflower_sightSeeing: '<a>Sehr gemütliches Apartment ...</a>',
-        cornflower_culture: '<a>Sehr gemütliches Apartment ...</a>',
-        cornflower_shopping: '<a>Sehr gemütliches Apartment ...</a>',
+        cornflower_beach: '<p>Strandnah ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+
+        cornflower_sightSeeing: '<p>Ausflugsziele ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed</p>',
+        cornflower_culture: '<p>Kulturelles Angebot ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        cornflower_shopping: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
         
-        cornflower_petsDesc: 'Kleine Hunde und Katzen sind in Ordnung (Aufpreis 10,- € für den gesamten Zeitraum)',
+        cornflower_petsDesc: 'Kleine Hunde und Katzen sind in Ordnung gegen Aufpreis von 10,- € für den gesamten Zeitraum',
 
         cornflower_bedroom_2_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls Ihre Kinder nicht alleine schlafen können oder wollen. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
 
@@ -283,11 +284,14 @@ const i18n:I18n = {
 
         cornflower_kitchen_desc: 'Bitte achten Sie darauf, dass der Geschirrspüler nicht ohne Spezialsalz läuft. Im Zweifel wenden Sie sich an die Verwaltung.',
 
-        cornflower_barbecue_desc: 'Holzohle und Grillanzünder sind vorhangen',
+        cornflower_barbecue_desc: 'Holzohle und Grillanzünder sind vorhanden',
 
         cornflower_shed_desc: 'Gartenschuppen mit Sandspielzeug für Kleinkinder, einer Tischtennisplatte und Unterstellmöglichkeit für bis zu 4 Fahrrädern',
 
         cornflower_bicycles_desc: 'Ein Damenrad und ein Herrenrad',
+
+
+        cornflower_pool_desc: 'Größe: 8x4m; mit Gegenstromanlage; beheizt; von Mai bis September nutzbar',
 
         beach: "Strand",
         sightSeeing: "Sehenswürdigkeiten",
@@ -308,7 +312,8 @@ const i18n:I18n = {
         onSiteContact: 'Contact person resides close by',
         
         roomsHeader: 'Zimmer',
-        bedroomHeader: 'Bedroom',
+        
+        bedroomHeader: 'Schlafzimmer',
         bedOptional: '(extra)',
         kings: 'Großes Doppelbett',
         queens: 'Doppelbett',
@@ -321,14 +326,13 @@ const i18n:I18n = {
         beddingAvailable: 'Bedding available',
         beddingInclusive: 'Bedding inclusive',
 
-        livingRoomHeader: 'Living Room',
+        livingRoomHeader: 'Wohnbereich',
         stereo: 'Stereo',
         lounge: 'Lounge Sofa',
         
         sofaTable: 'Sofa Table',
-        eatingTable: 'Eating Table',
-        chairs: 'Chairs',
-
+        eatingTable: 'Esstisch',
+        
         kitchenHeader: 'Kitchen',
         microwave: 'Microwave',
         oven: 'Oven',
@@ -347,7 +351,7 @@ const i18n:I18n = {
 
         kitchenIntegrated: 'Kitchen integrated in Living Area',
 
-        bathroomHeader: 'Bathroom',
+        bathroomHeader: 'Bad',
         shower: 'Shower',
         bathtub: 'Bathtub',
         hairDryer: 'Hairdryer',
@@ -357,6 +361,8 @@ const i18n:I18n = {
         bathrobeIncluded: 'Bathrobe Included',
         window: 'Window',
 
+        outdoorsHeader: 'Außenbereich',
+        
         backyard: 'Garten',
         terrace: 'Terrasse',
         balcony: 'Balkon',

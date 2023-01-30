@@ -35,6 +35,15 @@ const accos = [
                 iron: true,
                 vaccuum: true,
 
+                sauna: true,
+                saunaDesc: true,
+
+                solarium: true,
+                solariumDesc: true,
+                washingMachine: true,
+                clothesDryer: true,
+                dryingRack: true,
+
                 bedrooms: [
                   {
                     size: 14,
@@ -81,9 +90,8 @@ const accos = [
                     stereo: true,
                     sofa: true,
                     lounge: 4,
-                    chairs: 4,
                     sofaTable: true,
-                    eatingTable: true,
+                    eatingTable: 4,
                     desc: 'cornflower_living_desc'
                   }
                 ],
@@ -101,8 +109,7 @@ const accos = [
                       'nespresso', 'filter', 'beans'
                     ],
                     towels: true,
-                    chairs: 4,
-                    eatingTable: true,
+                    eatingTable: 4,
                     desc: 'cornflower_kitchen_desc'
                   }
                 ],
@@ -131,9 +138,8 @@ const accos = [
                     kind: 'backyard',
                     fenced: true,
                     size: 60,
-                    eatingTable: true,
+                    eatingTable: 6,
                     sofaTable: true,
-                    chairs: 6,
                     lounge: 4,
                     barbecue: true,
                     barbecueType: 'charcoal',
@@ -143,6 +149,7 @@ const accos = [
                     bicycles: 2,
                     bicyclesDesc: 'cornflower_bicycles_desc',
                     pool: true,
+                    poolDesc: 'cornflower_pool_desc',
                     desc: 'cornflower_backyard_desc'
                   }
                 ]
