@@ -10,7 +10,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@beyonk/gdpr-cookie-consent-banner": "^9.1.1",
+		"gdpr-cooco-banner": "^0.0.3",
 		"@sveltejs/adapter-static": "^1.0.5",
 		"@sveltejs/kit": "^1.2.9",
 		"@types/luxon": "^3.2.0",
@@ -29,7 +29,6 @@
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.13",
 		"dinero.js": "2.0.0-alpha.13",
-		"gdpr-cooco-banner": "^0.0.2",
 		"luxon": "^3.2.1",
 		"occuplan": "^0.0.7"
 	}

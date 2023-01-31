@@ -1,14 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@beyonk/gdpr-cookie-consent-banner': ^9.1.1
   '@dinero.js/currencies': 2.0.0-alpha.13
   '@sveltejs/adapter-static': ^1.0.5
   '@sveltejs/kit': ^1.2.9
   '@types/luxon': ^3.2.0
   '@typescript/lib-dom': npm:@types/web@^0.0.89
   dinero.js: 2.0.0-alpha.13
-  gdpr-cooco-banner: ^0.0.2
+  gdpr-cooco-banner: ^0.0.3
   luxon: ^3.2.1
   occuplan: ^0.0.7
   svelte: ^3.55.1
@@ -21,16 +20,15 @@ specifiers:
 dependencies:
   '@dinero.js/currencies': 2.0.0-alpha.13
   dinero.js: 2.0.0-alpha.13
-  gdpr-cooco-banner: 0.0.2
   luxon: 3.2.1
   occuplan: 0.0.7
 
 devDependencies:
-  '@beyonk/gdpr-cookie-consent-banner': 9.1.1
   '@sveltejs/adapter-static': 1.0.5_@sveltejs+kit@1.2.9
   '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.0.4
   '@types/luxon': 3.2.0
   '@typescript/lib-dom': /@types/web/0.0.89
+  gdpr-cooco-banner: 0.0.3
   svelte: 3.55.1
   svelte-check: 3.0.3_svelte@3.55.1
   tslib: 2.4.1
@@ -39,12 +37,6 @@ devDependencies:
   vite-imagetools: 4.0.17
 
 packages:
-
-  /@beyonk/gdpr-cookie-consent-banner/9.1.1:
-    resolution: {integrity: sha512-l3ltb21B1isHzu9LOoPNiyqtWUoz3oRspzeAgSFJsK9rOBa5U7sWv0PbXJS8EenAh4aBsQiCagCTUyPJtNw9lQ==}
-    dependencies:
-      js-cookie: 3.0.1
-    dev: true
 
   /@dinero.js/calculator-number/2.0.0-alpha.13:
     resolution: {integrity: sha512-Mo/0FUVFq4dVb/RfBIASUxPFbQbkHYC0VBe36DgWfbbhwG6K6ONuzTLBU5W6LdrMpB7D/CxgZISdQ0pyZKwg9w==}
@@ -668,11 +660,11 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /gdpr-cooco-banner/0.0.2:
-    resolution: {integrity: sha512-glRVbMcl1y2/F+F4+y5kqQay40FA9G0/f2KqxoXYjxGnmq90I3eLwCQLBUQnzDOD+EP1AqfAkHxKAKeH5QNTMA==}
+  /gdpr-cooco-banner/0.0.3:
+    resolution: {integrity: sha512-IVIAib0JQhG2GMlf1s/wJGhdZPeebz7P1N0RJT4fE4LOOge4shTpyM8dezPtMXymtcVpU7WOSroamOKHpIxGUQ==}
     dependencies:
       js-cookie: 3.0.1
-    dev: false
+    dev: true
 
   /github-from-package/0.0.0:
     resolution: {integrity: sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw==}
@@ -786,6 +778,7 @@ packages:
   /js-cookie/3.0.1:
     resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
     engines: {node: '>=12'}
+    dev: true
 
   /kleur/4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
