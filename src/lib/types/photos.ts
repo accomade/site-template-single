@@ -154,6 +154,7 @@ export type PhotoNumber =
 export interface Photo {
   photo: PhotoNumber,
   alt: string,
+  attribution?: string,
   link?: string,
   maxHeight?: string|undefined
   maxWidth?: string|undefined

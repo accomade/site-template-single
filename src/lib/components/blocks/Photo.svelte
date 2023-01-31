@@ -7,6 +7,7 @@
   export let alt:string;
   export let photo:PhotoNumber;
   export let link:string = "";
+  export let attribution:string = "";
   export let maxHeight:string = "100%"
   export let maxWidth:string = "100%"
 
@@ -31,4 +32,34 @@
       {maxWidth}
       alt={dict[alt] ? dict[alt] : alt} />
   {/if}
+
+  {#if attribution}
+  <div class="attribution-container"><div class="attribution-wrapper">{@html attribution}</div></div>
+  {/if}
 {/await}
+
+<style>
+
+  .attribution-wrapper {
+    color: var(--main-font-color);
+    background-color: rgba(225,225,225, 0.6);
+    font-size: 0.7rem;
+    font-weight: bolder;
+    padding: 0.2rem 0.7rem 0.1rem 0.7rem;
+    margin-right: 0.2rem;
+    border-radius: 1rem;
+  }
+
+  .attribution-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 0.5rem);
+    width: 100%;
+  }
+
+</style>

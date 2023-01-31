@@ -57,6 +57,10 @@
 </section>
 
 <style>
+  .block-container {
+    position: relative;
+  }
+
   section {
     display: flex;
     flex-direction: column;
