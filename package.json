@@ -10,7 +10,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"gdpr-cooco-banner": "^0.0.3",
+		"gdpr-cooco-banner": "^0.0.4",
 		"@sveltejs/adapter-static": "^1.0.5",
 		"@sveltejs/kit": "^1.2.9",
 		"@types/luxon": "^3.2.0",

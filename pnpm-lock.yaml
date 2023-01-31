@@ -7,7 +7,7 @@ specifiers:
   '@types/luxon': ^3.2.0
   '@typescript/lib-dom': npm:@types/web@^0.0.89
   dinero.js: 2.0.0-alpha.13
-  gdpr-cooco-banner: ^0.0.3
+  gdpr-cooco-banner: ^0.0.4
   luxon: ^3.2.1
   occuplan: ^0.0.7
   svelte: ^3.55.1
@@ -28,7 +28,7 @@ devDependencies:
   '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.0.4
   '@types/luxon': 3.2.0
   '@typescript/lib-dom': /@types/web/0.0.89
-  gdpr-cooco-banner: 0.0.3
+  gdpr-cooco-banner: 0.0.4
   svelte: 3.55.1
   svelte-check: 3.0.3_svelte@3.55.1
   tslib: 2.4.1
@@ -660,8 +660,8 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /gdpr-cooco-banner/0.0.3:
-    resolution: {integrity: sha512-IVIAib0JQhG2GMlf1s/wJGhdZPeebz7P1N0RJT4fE4LOOge4shTpyM8dezPtMXymtcVpU7WOSroamOKHpIxGUQ==}
+  /gdpr-cooco-banner/0.0.4:
+    resolution: {integrity: sha512-gMyxbg/Q4in2hB/taaeFQgzmkiSIvy/TFB2/8ERSkq3a0fMh+YtKHMShldSTkn5Sc61JsR5/bIe+Dnrebm6VUQ==}
     dependencies:
       js-cookie: 3.0.1
     dev: true
