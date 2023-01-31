@@ -22,6 +22,12 @@
   <h1>{ title }</h1>
 </div>
 
+<main>
+  {#each landing.sections as s}
+  <Section {...s} />
+  {/each}
+</main>
+
 {#if $isMenuOpen}
   <MainNav navItems={nav} />
 {/if}
@@ -29,12 +35,6 @@
 <div class="ham-wrapper">
   <HamburgerMenuButton/>
 </div>
-
-<main>
-  {#each landing.sections as s}
-  <Section {...s} />
-  {/each}
-</main>
 
 <Footer navItems={nav}/>
 

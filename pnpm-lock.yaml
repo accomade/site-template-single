@@ -8,6 +8,7 @@ specifiers:
   '@types/luxon': ^3.2.0
   '@typescript/lib-dom': npm:@types/web@^0.0.89
   dinero.js: 2.0.0-alpha.13
+  gdpr-cooco-banner: ^0.0.1
   luxon: ^3.2.1
   occuplan: ^0.0.7
   svelte: ^3.55.1
@@ -20,6 +21,7 @@ specifiers:
 dependencies:
   '@dinero.js/currencies': 2.0.0-alpha.13
   dinero.js: 2.0.0-alpha.13
+  gdpr-cooco-banner: 0.0.1
   luxon: 3.2.1
   occuplan: 0.0.7
 
@@ -666,6 +668,12 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
+  /gdpr-cooco-banner/0.0.1:
+    resolution: {integrity: sha512-6MK9wIP/hBiBPxt9zCsGV//+dq1i++Zcj0XAkeG6tnq9iPSpnbE0N9fa7iBt6CoAyr8uXHs8f0bN4wMX2mhslA==}
+    dependencies:
+      js-cookie: 3.0.1
+    dev: false
+
   /github-from-package/0.0.0:
     resolution: {integrity: sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw==}
     dev: true
@@ -778,7 +786,6 @@ packages:
   /js-cookie/3.0.1:
     resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
     engines: {node: '>=12'}
-    dev: true
 
   /kleur/4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
