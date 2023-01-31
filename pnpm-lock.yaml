@@ -8,7 +8,7 @@ specifiers:
   '@types/luxon': ^3.2.0
   '@typescript/lib-dom': npm:@types/web@^0.0.89
   dinero.js: 2.0.0-alpha.13
-  gdpr-cooco-banner: ^0.0.1
+  gdpr-cooco-banner: ^0.0.2
   luxon: ^3.2.1
   occuplan: ^0.0.7
   svelte: ^3.55.1
@@ -21,7 +21,7 @@ specifiers:
 dependencies:
   '@dinero.js/currencies': 2.0.0-alpha.13
   dinero.js: 2.0.0-alpha.13
-  gdpr-cooco-banner: 0.0.1
+  gdpr-cooco-banner: 0.0.2
   luxon: 3.2.1
   occuplan: 0.0.7
 
@@ -668,8 +668,8 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /gdpr-cooco-banner/0.0.1:
-    resolution: {integrity: sha512-6MK9wIP/hBiBPxt9zCsGV//+dq1i++Zcj0XAkeG6tnq9iPSpnbE0N9fa7iBt6CoAyr8uXHs8f0bN4wMX2mhslA==}
+  /gdpr-cooco-banner/0.0.2:
+    resolution: {integrity: sha512-glRVbMcl1y2/F+F4+y5kqQay40FA9G0/f2KqxoXYjxGnmq90I3eLwCQLBUQnzDOD+EP1AqfAkHxKAKeH5QNTMA==}
     dependencies:
       js-cookie: 3.0.1
     dev: false

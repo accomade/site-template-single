@@ -1,4 +1,5 @@
 import type { I18n as CalI18n} from 'occuplan/types/i18n'
+import type { Translation as CookieTrans } from 'gdpr-cooco-banner'
 import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
 
@@ -8,6 +9,7 @@ export interface Translation {
     [key: string]: string 
   }
   calendar: CalI18n,
+  cookies: CookieTrans,
   nav: { 
     [key: string]: string 
   },

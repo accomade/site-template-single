@@ -154,6 +154,28 @@ const i18n:I18n = {
         monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
         weekendLabel: 'Weekend',
       },
+      cookies: {
+        heading: 'This site uses cookies',
+        description: 'We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you\’ve provided to them or that they\’ve collected from your use of their services.',
+        acceptLabel: 'Accept all cookies',
+        rejectLabel: 'Only necessary cookies',
+        settingsLabel: 'Cookie settings',
+        closeLabel: 'Save & closen settings',
+        editLabel: 'Edit cookie settings',
+        
+        cookieDescriptions: {
+          necessary: 'Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.',
+          preferences: 'Preference cookies enable a website to remember information that changes the way the website behaves or looks, like your preferred language or the region that you are in.',
+          analytics: 'Analytics cookies help website owners to understand how visitors interact with websites by collecting and reporting information anonymously.',
+          marketing: 'Marketing cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third party advertisers.'
+        },
+        cookieLabels: {
+          necessary: 'Necessary cookies',
+          preferences: 'Preference cookies',
+          analytics: 'Analytics cookies',
+          marketing: 'Marketing cookies'
+        }
+      },
       nav: {
         home: 'Home',
         location: 'Location',
@@ -405,6 +427,29 @@ const i18n:I18n = {
         },
         monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
         weekendLabel: 'Wochenende',
+      },
+      cookies: 
+      {
+        heading: 'Diese Webseite verwendet Cookies',
+        description: 'Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unsere Website zu analysieren. Außerdem geben wir Informationen zu Ihrer Verwendung unserer Website an unsere Partner für soziale Medien, Werbung und Analysen weiter. Unsere Partner führen diese Informationen möglicherweise mit weiteren Daten zusammen, die Sie ihnen bereitgestellt haben oder die sie im Rahmen Ihrer Nutzung der Dienste gesammelt haben.',
+        acceptLabel: 'Alle akzeptieren',
+        rejectLabel: 'Nur Essentielle',
+        settingsLabel: 'Cookie Einstellungen',
+        closeLabel: 'Schließen & Speichern',
+        editLabel: 'Einstellungen anpassen',
+        
+        cookieDescriptions: {
+          necessary: 'Notwendige Cookies helfen dabei, eine Webseite nutzbar zu machen, indem sie Grundfunktionen wie Seitennavigation und Zugriff auf sichere Bereiche der Webseite ermöglichen. Die Webseite kann ohne diese Cookies nicht richtig funktionieren.',
+          preferences: 'Präferenz-Cookies ermöglichen einer Webseite sich an Informationen zu erinnern, die die Art beeinflussen, wie sich eine Webseite verhält oder aussieht, wie z. B. Ihre bevorzugte Sprache oder die Region in der Sie sich befinden.',
+          analytics: 'Analyse-Cookies helfen Webseiten-Besitzern zu verstehen, wie Besucher mit Webseiten interagieren, indem Informationen anonym gesammelt und gemeldet werden.',
+          marketing: 'Marketing-Cookies werden verwendet, um Besuchern auf Webseiten zu folgen. Die Absicht ist, Anzeigen zu zeigen, die relevant und ansprechend für den einzelnen Benutzer sind und daher wertvoller für Publisher und werbetreibende Drittparteien sind.'
+        },
+        cookieLabels: {
+          necessary: 'Notwendige Cookies',
+          preferences: 'Präferenz-Cookies',
+          analytics: 'Analyse-Cookies',
+          marketing: 'Marketing-Cookies'
+        }
       },
       nav: {
         home: 'Startseite',
