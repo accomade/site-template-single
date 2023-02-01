@@ -1,6 +1,9 @@
 import { i18n } from "$lib/conf";
-import { writable } from "svelte/store";
+import { get, writable } from "svelte/store";
 import { browser } from '$app/environment'
+import Cookie from 'js-cookie'
+
+import { cookieSelection } from "./cookies";
 
 let defaultLang = i18n.defaultLang;
 if(browser) {
@@ -13,7 +16,43 @@ if(browser) {
       defaultLang = shortCode;
     }
   }
+
+  const langCookie = Cookie.get('lang')
+  if (langCookie && !!i18n.translations[langCookie] ) {
+    defaultLang = langCookie
+  }
+}
+const langStore = writable(defaultLang)
+
+
+const handleCookie = () => {
+  const cs = get(cookieSelection)
+  if(cs.preferences) {
+
+    const expires = new Date()
+    expires.setDate(expires.getDate() + 365)
+    const cl = get(langStore)
+
+    //TODO only set cooking when preference cookies are allowed
+    Cookie.set('lang', cl, {
+      sameSite: 'strict',
+      path: '/',
+      expires 
+    })
+  } else {
+    Cookie.remove('lang')
+  }
 }
 
-export  const currentLang = writable(i18n.defaultLang)
+langStore.subscribe( () => {
+  handleCookie()
+})
+
+
+cookieSelection.subscribe( () => {
+  handleCookie()
+})
+
+
+export const currentLang = langStore
 
