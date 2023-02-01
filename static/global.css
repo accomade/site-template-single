@@ -11,7 +11,8 @@
   --table-footer-bg-color: rgb(37, 37, 37);
   --table-footer-font-color: rgb(243, 243, 243);
   
-  
+  --picture-link-bg-color: rgba(255,195,195,0.8);
+  --picture-link-font-color: black;
 
   --main-bg-color: white;
   --main-font-color: #070707;

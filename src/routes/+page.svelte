@@ -60,8 +60,6 @@
 
   }
 
-  
-
   .floating-title {
     width: calc(100vw - 4rem);
     height: calc(100vh - 2rem);

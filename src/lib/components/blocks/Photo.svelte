@@ -2,6 +2,7 @@
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
 
+  import LinkSvg from '$lib/components/svg/LinkSVG.svelte';
   import type { PhotoNumber } from '$lib/types/photos';
   
   export let alt:string;
@@ -24,21 +25,42 @@
         {maxWidth}
         {maxHeight}
         alt={dict[alt] ? dict[alt] : alt} />
+    
+      {#if attribution}
+      <div class="attribution-container"><div class="attribution-wrapper">{@html attribution}</div></div>
+      {/if}
+      
     </a>
+    <div class="link-icon-wrapper"><LinkSvg /></div>
   {:else}
     <svelte:component 
       this={module.default} 
       {maxHeight}
       {maxWidth}
       alt={dict[alt] ? dict[alt] : alt} />
+    {#if attribution}
+    <div class="attribution-container"><div class="attribution-wrapper">{@html attribution}</div></div>
+    {/if}
+      
   {/if}
 
-  {#if attribution}
-  <div class="attribution-container"><div class="attribution-wrapper">{@html attribution}</div></div>
-  {/if}
+  
 {/await}
 
 <style>
+
+  a {
+    display: block;
+  }
+
+  .link-icon-wrapper {
+    position: absolute;
+    top: -0.4rem;
+    right: -0.4rem;
+    background-color: var(--picture-link-bg-color);
+    padding: 0.4rem;
+    border-radius: 1rem;
+  }
 
   .attribution-wrapper {
     color: var(--main-font-color);
