@@ -23,5 +23,8 @@ export const load = (callback:VoidFunction, window:Window) => {
 
     document.body.appendChild(tag);
   }
+  else {
+    callback()
+  }
 
 }

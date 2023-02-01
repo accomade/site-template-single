@@ -1,6 +1,6 @@
 <script lang="ts"> 
   
-  import { onMount } from 'svelte';
+  import { onMount,onDestroy } from 'svelte';
   import { load } from '$lib/maps';
 
   export let lat: number;

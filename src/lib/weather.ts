@@ -10,4 +10,7 @@ export const load = (callback: VoidFunction, window:Window) => {
     tag.onload = callback;
     document.body.appendChild(tag)
   }
+  else {
+    callback()
+  }
 }
