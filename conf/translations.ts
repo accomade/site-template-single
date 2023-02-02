@@ -302,9 +302,11 @@ const i18n:I18n = {
         cornflower_culture: '<p>Kulturelles Angebot ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
         cornflower_shopping: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
         
-        cornflower_petsDesc: 'Kleine Hunde und Katzen sind in Ordnung gegen Aufpreis von 10,- € für den gesamten Zeitraum',
+        cornflower_pets_desc: 'Kleine Hunde und Katzen sind in Ordnung gegen Aufpreis von 10,- € für den gesamten Zeitraum',
+        cornflower_sauna_desc: 'Die Sauna kann ganzjährig verwendet werden',
 
-        cornflower_bedroom_2_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls Ihre Kinder nicht alleine schlafen können oder wollen. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
+
+        cornflower_bedroom_1_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls Ihre Kinder nicht alleine schlafen können oder wollen. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
 
         cornflower_living_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls jemand mal ausquartiert werden muss, wegen Schnarchen oder Ähnlichem. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
 
@@ -343,7 +345,9 @@ const i18n:I18n = {
         
         roomsHeader: 'Zimmer',
         
-        bedroomHeader: 'Schlafzimmer',
+        bedroom_1_label: 'Schlafzimmer 1',
+        bedroom_2_label: 'Schlafzimmer 2',
+
         bedOptional: '(extra)',
         kings: 'Großes Doppelbett',
         queens: 'Doppelbett',
@@ -359,7 +363,8 @@ const i18n:I18n = {
         livingRoomHeader: 'Wohnbereich',
         stereo: 'Stereo',
         lounge: 'Lounge Sofa',
-        
+        wifi: 'WLAN',
+
         sofaTable: 'Sofa Table',
         eatingTable: 'Esstisch',
         

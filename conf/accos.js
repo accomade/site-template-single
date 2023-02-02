@@ -19,138 +19,231 @@ const accos = [
               accoName: 'cornflower',
               amneties: {
                 size: 55,
-                quiet: true,
-                desc: true,
-                shopping: true,
-                sightSeeing: true,
-                beach: true,
-                culture: true,
-                parkingLots: 2,
-                parkingOnSite: true,
-                trainStation: true,
-                onSiteContact: true,
-                pets: true,
-                petsDesc: true,
-                ac: true,
-                iron: true,
-                vaccuum: true,
-
-                sauna: true,
-                saunaDesc: true,
-
-                solarium: true,
-                solariumDesc: true,
-                washingMachine: true,
-                clothesDryer: true,
-                dryingRack: true,
-
-                bedrooms: [
+                descriptions: [
                   {
-                    size: 14,
-                    separated: true,
-                    tv: true,
-                    ac: true,
-                    beddingInclusive: true,
-                    beds: [
+                    label: 'quiet',
+                    desc: 'cornflower_quiet',
+                  },
+                  {
+                    label: 'shopping',
+                    desc: 'cornflower_shopping',
+                  },
+                  {
+                    label: 'sightseeing',
+                    desc: 'cornflower_sightSeeing',
+                  },
+                  {
+                    label: 'beach',
+                    desc: 'cornflower_beach',
+                  },
+                  {
+                    label: 'culture',
+                    desc: 'cornflower_culture',
+                  },
+                  {
+                    label: 'desc',
+                    desc: 'cornflower_desc',
+                  },
+                ], 
+                sections: [
+                  {
+                    hr: true,
+                    specs: [
                       {
-                        kind: 'kings',
-                        heads: 2
+                        label: 'size',
+                        kind: 'size',
+                        value: 55,
+                      },
+                      {
+                        label: 'parkingLots',
+                        kind: 'numValue',
+                        value: 2
+                      },
+                      {
+                        label: 'parkingOnSite',
+                        kind: 'check',
+                        value: true,
+                      },
+                      {
+                        label: 'trainstation',
+                        kind: 'check',
+                        value: true,
+                      },
+                      {
+                        label: 'airportShuttle',
+                        kind: 'check',
+                        value: true,
+                      },
+                      {
+                        label: 'onSiteContact',
+                        kind: 'check',
+                        value: false,
+                      },
+                      {
+                        label: 'pets',
+                        desc: 'cornflower_pets_desc',
+                        kind: 'checkWithDesc',
+                        value: true,
                       }
                     ]
                   },
                   {
-                    size: 22,
-                    beddingAvailable: true,
-                    beds: [
+                    hr: true,
+                    header: 'Features',
+                    specs: [
                       {
-                        kind: 'solo',
-                        heads: 1,
-                        optional: true
+                        label: 'wifi',
+                        kind: 'check',
+                        value: true,
                       },
                       {
-                        kind: 'bunkbed',
-                        heads: 2
-                      }
-                    ],
-                    desc: 'cornflower_bedroom_2_desc'
-                  }
-                ],
-
-                livingRooms: [
-                  {
-                    size: 16,
-                    beds: [
+                        label: 'vaccuum',
+                        kind: 'check',
+                        value: true
+                      },
                       {
-                        kind: 'sleepingSofa',
-                        heads: 2,
-                        optional: true,
+                        label: 'ac',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'iron',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'washingMachine',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'dryingRack',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'clothesDryer',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'sauna',
+                        kind: 'checkWithDesc',
+                        desc: 'cornflower_sauna_desc',
+                        value: true
+                      },
+                      {
+                        label: 'whirlpool',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'solarium',
+                        kind: 'check',
+                        value: true
+                      },
+                    ]
+                  }
+                ],
+
+                rooms: [
+                  {
+                    header: 'bedroom_1_label',
+                    specs: [
+                      {
+                        kind: 'beds',
+                        value: [
+                          {
+                            kind: 'king',
+                            heads: 2
+                          },
+                          {
+                            kind: 'solo',
+                            heads: 1,
+                            optional: true
+                          }
+                        ]
+                      },
+
+                      {
+                        label: 'tv',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'ac',
+                        kind: 'check',
+                        value: true
+                      },
+                    ],
+                    desc: 'cornflower_bedroom_1_desc'
+                  },
+                  {
+                    header: 'bedroom_2_label',
+                    specs: [
+                      {
+                        kind: 'beds',
+                        value: [
+                          {
+                            kind: 'bunkbed',
+                            heads: 2
+                          }
+                        ]
+                      },
+
+                      {
+                        label: 'tv',
+                        kind: 'check',
+                        value: true
+                      },
+                      {
+                        label: 'ac',
+                        kind: 'check',
+                        value: true
+                      },
+                    ]
+                    
+                  },
+                  {
+                    header: 'kitchen',
+                    specs: [
+                      {
+                        label: 'coffemachine',
+                        kind: 'coffeeMachine',
+                        value: [
+                          'nespresso', 'beans', 'filter'
+                        ]
+                      },
+                      {
+                        label: 'eatingTable',
+                        kind: 'seats',
+                        value: 6
+                      },
+                      {
+                        label: 'microwave',
+                        kind: 'check',
+                        value: true
                       }
                     ],
-                    tv: true,
-                    stereo: true,
-                    sofa: true,
-                    lounge: 4,
-                    sofaTable: true,
-                    eatingTable: 4,
-                    desc: 'cornflower_living_desc'
-                  }
-                ],
-
-                kitchens: [
-                  {
-                    size: 14,
-                    microwave: true,
-                    oven: true,
-                    fridge: true,
-                    freezer: true,
-                    dishwascher: true,
-                    integrated: true,
-                    coffeeMachines: [
-                      'nespresso', 'filter', 'beans'
-                    ],
-                    towels: true,
-                    eatingTable: 4,
                     desc: 'cornflower_kitchen_desc'
-                  }
-                ],
-
-                bathrooms: [
-                  {
-                    size: 6,
-                    shower: true,
-                    bathtub: true,
-                    hairDryer: true,
-                    towelsIncluded: true,
-                    bathrobeAvailable: true,
-                    window: true,
-                    desc: 'cornflower_bathroom_desc'
                   }
                 ],
 
                 outdoors: [
                   {
-                    kind: 'terrace',
-                    fenced: true,
-                    size: 32,
-
-                  },
-                  {
-                    kind: 'backyard',
-                    fenced: true,
-                    size: 60,
-                    eatingTable: 6,
-                    sofaTable: true,
-                    lounge: 4,
-                    barbecue: true,
-                    barbecueType: 'charcoal',
-                    barbecueDesc: 'cornflower_barbecue_desc',
-                    shed: true,
-                    shedDesc: 'cornflower_shed_desc',
-                    bicycles: 2,
-                    bicyclesDesc: 'cornflower_bicycles_desc',
-                    pool: true,
-                    poolDesc: 'cornflower_pool_desc',
-                    desc: 'cornflower_backyard_desc'
+                    header: 'terrace',
+                    specs: [
+                      {
+                        label: 'size',
+                        kind: 'size',
+                        value: 32,
+                      },
+                      {
+                        label: 'fenced',
+                        kind: 'check',
+                        value: false,
+                      }
+                    ]
                   }
                 ]
               }

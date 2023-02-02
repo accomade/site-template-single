@@ -60,122 +60,48 @@ export interface Bed {
   heads: number
 }
 
-
-export interface Bedroom {
-  size?: number
-  beds?: Bed[]
-  separated?: boolean
-  tv?: boolean
-  ac?: boolean
-  beddingAvailable?: boolean
-  beddingInclusive?: boolean
-  desc?: string
-}
-
-
-export interface Kitchen {
-  size?: number
-  microwave?: boolean
-  oven?: boolean
-  fridge?: boolean
-  freezer?: boolean
-  integrated?: boolean
-  dishwasher?: boolean
-  coffeeMachines?: CoffeeMachine[]
-  towels?: boolean
-  eatingTable?: number
-  desc?: string
-}
-
-
-export interface LivingRoom {
-  size?: number
-  beds?: Bed[]
-  tv?: boolean
-  stereo?: boolean
-  sofa?: boolean
-  lounge?: number
-  sofaTable?: boolean
-  eatingTable?: number
-  ac?: boolean
-  desc?: string
-}
-
-export interface Bathroom {
-  size?: number
-  shower?: boolean
-  bathtub?: boolean
-  hairDryer?: boolean
-  towelsAvailable?: boolean
-  towelsIncluded?: boolean
-  bathrobeAvailable?: boolean
-  bathrobeIncluded?: boolean
-  window?: boolean
-  desc?: string
-}
-
-
-export interface Outdoors {
-  kind: 'backyard' | 'terrace' | 'balcony'
-  fenced?: boolean
-  size?: number
-  eatingTable?: number
-  sofaTable?: boolean
-  lounge?: number
-  barbecue: boolean
-  barbecueType?: 'gas' | 'charcoal' | 'electric'
-  barbecueDesc?: string
-  shed?: boolean
-  shedDesc?: string
-  bicycles?: number
-  bicyclesDesc?: string
-  pool?: boolean
-  poolDesc?: string
-  desc?: string
-}
-
+export type AmnetyNucleusType = 'longDesc' | 'string' | 'check' | 'checkWithDesc' | 'list' | 'numValue' | 'beds' | 'size' | 'seats' | 'coffeeMachine'
 
 export interface Amneties {
   size?: number
   
-  outdoors?: Outdoors[]
-  bedrooms?: Bedroom[]
-  bathrooms?: Bathroom[]
-  kitchens?: Kitchen[]
-  livingRooms?: LivingRoom[]
+  descriptions?: LabeledDesc[]
+  sections: AmnetiesSection[]
+
+  rooms: RoomsSection[]
+  outdoors: OutdoorsSection[]
+}
 
 
-  parkingLots?: number
-  parkingOnSite: boolean
-  parkingNearby: boolean
-  airportShuttle?: boolean,
-  trainStation?: boolean,
+export interface AmnetiesSection {
+  header?: string
+  hr?: boolean
+  specs: AmnetyNucleusSpec[]
+}
 
-  pets?: boolean
-  petsDesc?: boolean
-  ac?: boolean
-  vaccuum?: boolean
-  iron?: boolean
+export interface RoomsSection {
+  header: string
+  specs: AmnetyNucleusSpec[]
+  desc?: string
+}
 
-  washingMashine?: boolean
-  clothesDryer?: boolean
-  dryingRack?: boolean
-  sauna?: boolean
-  saunaDesc?: string
-  solarium?: boolean
-  solariumDesc?: string
-  whirlpool?: boolean
+export interface OutdoorsSection {
+  header: string
+  specs: AmnetyNucleusSpec[]
+  desc?: string
+}
 
-  shopping?: boolean
-  beach?: boolean
-  culture?: boolean
-  sightSeeing?: boolean
 
-  quiet?: boolean
-  busy?: boolean
-  onSiteContact?: boolean
+export interface AmnetyNucleusSpec {
+  label: string
+  kind: AmnetyNucleusType
+  value?: boolean | number| string | Bed[] | CoffeeMachine[] | undefined
+  desc?: string
+}
 
-  desc?: boolean
+export interface LabeledDesc {
+  label: string
+  desc: string
 }
 
 
