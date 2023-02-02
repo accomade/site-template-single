@@ -46,7 +46,8 @@
   a {
 		text-decoration: underline;
 		color: var(--nav-font-color);
-    font-family: var(--nav-font-family);
+    font-family: var(--nav-font-family, 'mono');
+    font-variant: var(--nav-font-variant, 'normal');
     font-size: 1.4rem;
     font-weight: bold;
 	}

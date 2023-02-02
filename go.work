@@ -1,0 +1,6 @@
+go 1.19
+
+use (
+	./generators/fonts
+	./generators/photos
+)

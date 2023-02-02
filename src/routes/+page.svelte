@@ -73,13 +73,13 @@
     justify-content: center;
     /* mix-blend-mode: difference; */
     text-align: center;
-    font-family: var(--title-font-family);
   }
 
   .floating-title h1 {
     font-weight: bolder;
     font-size: 2.8rem;
-    font-variant: small-caps;
+    font-family: var(--landing-title-font-family, 'sans-serif');
+    font-variant: var(--landing-title-font-variant, 'small-caps');
     color: var(--title-font-color);
     filter: drop-shadow(0.2rem 0.3rem 0.2rem black);
   }

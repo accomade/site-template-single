@@ -20,7 +20,7 @@ func main() {
 		compID := photoNumber
 		log.Println("Creating Component:", compID)
 
-		if _, err := os.Stat(fmt.Sprintf("../photos/%s.jpg", photoNumber)); errors.Is(err, os.ErrNotExist) {
+		if _, err := os.Stat(fmt.Sprintf("../../photos/%s.jpg", photoNumber)); errors.Is(err, os.ErrNotExist) {
 			photoNumber = "000"
 		}
 
@@ -97,7 +97,7 @@ func main() {
 		}
 
 		file, err := os.Create(
-			fmt.Sprintf("../src/lib/components/photos/Photo%s.svelte", compID))
+			fmt.Sprintf("../../src/lib/components/photos/Photo%s.svelte", compID))
 		if err != nil {
 			log.Fatal(err)
 		}

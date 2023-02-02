@@ -59,6 +59,7 @@
     color: var(--nav-font-color);
     height: 100vh;
 		font-family: var(--nav-font-family);
+		font-variant: var(--nav-font-variant);
     font-size: 1.6rem;
     font-weight: bold;
 
@@ -77,8 +78,9 @@
 	}
 
 	.radio-wrapper {
-		font-family: system-ui, sans-serif;
-		font-size: 1.6rem;
+		font-family: var(--nav-font-family);
+		font-variant: var(--nav-font-variant);
+    font-size: 1.6rem;
 		font-weight: bold;
 		line-height: 1.1;
 		display: grid;

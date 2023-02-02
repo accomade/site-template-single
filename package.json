@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+		"prebuild": "cd generators/photos/ && ./photos",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -29,7 +30,6 @@
 	},
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.13",
-		"@fontsource/arizonia": "^4.5.9",
 		"dinero.js": "2.0.0-alpha.13",
 		"js-cookie": "^3.0.1",
 		"luxon": "^3.2.1",

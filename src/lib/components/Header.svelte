@@ -1,6 +1,4 @@
 <script lang="ts">
-  import "@fontsource/arizonia"
-
   import { currentLang } from '$lib/stores/lang';
   import { i18n } from '$lib/conf';
   import Logo from '$lib/components/svg/LogoSVG.svelte';
@@ -19,6 +17,7 @@
 
 <style>
   header {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,11 +29,14 @@
   }
 
   .slug {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-family: var(--header-font-family, 'sans-serif');
+    font-variant: var(--header-font-variant, 'small-caps');
   }
 
   .header h1 {
-    font-family: var(--header-font-family, 'sans-serif');
+    font-family: var(--page-title-font-family, 'sans-serif');
+    font-variant: var(--page-title-font-variant, 'small-caps');
   }
 
   .logo {
