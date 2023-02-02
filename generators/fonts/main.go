@@ -26,9 +26,16 @@ type SiteFonts struct {
 	Header       FontDef `json:"header"`
 }
 
-func runPnpmAdd(font string) {
-	pack := fmt.Sprintf("@fontsource/%s", font)
-	addCmd := exec.Command("pnpm", "add", pack)
+func runPnpmAdd(distinctFonts []string) {
+	args := make([]string, 0, len(distinctFonts)+1)
+	args = append(args, "add")
+
+	for _, f := range distinctFonts {
+		pack := fmt.Sprintf("@fontsource/%s", f)
+		args = append(args, pack)
+	}
+
+	addCmd := exec.Command("pnpm", args...)
 	out, err := addCmd.CombinedOutput()
 	log.Println(string(out))
 	if err != nil {
@@ -61,12 +68,6 @@ func distinctFonts(fonts SiteFonts) (f []string) {
 	}
 
 	return
-}
-
-func importFonts(distictFonts []string) {
-	for _, f := range distictFonts {
-		runPnpmAdd(f)
-	}
 }
 
 func generateLoaderScript(distinctFonts []string) {
@@ -147,7 +148,7 @@ func main() {
 
 	dFonts := distinctFonts(fonts)
 
-	importFonts(dFonts)
+	runPnpmAdd(dFonts)
 	generateLoaderScript(dFonts)
 
 }
