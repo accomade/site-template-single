@@ -21,6 +21,10 @@ const i18n:I18n = {
   translations: {
     en: {
       title: 'Welcome to your holidays',
+      header: {
+        title: 'Holiday Apartments by Schumachers',
+        slug: 'THE place where you always wanted to spend your holidays.',
+      },
       dict: {
         impressions: 'More Impressions',
         directions: 'Directions',
@@ -252,6 +256,10 @@ const i18n:I18n = {
     },
     de: {
       title: 'Willkommen in Ihrem Urlaub',
+      header: {
+        title: 'Ferienwohnungen von Schumachers',
+        slug: 'Hier wollten sie schon immer ihre Ferien verbringen.',
+      },
       dict: {
         impressions: 'Weitere Eindrücke',
         directions: 'Ihre Anreise',

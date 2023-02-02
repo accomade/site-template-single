@@ -4,7 +4,11 @@ import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
 
 export interface Translation {
-  title: string,
+  title: string
+  header: {
+    title: string
+    slug: string
+  }
   dict: {
     [key: string]: string 
   }
@@ -13,8 +17,8 @@ export interface Translation {
   nav: { 
     [key: string]: string 
   },
-  formatDate(d:DateTime): string,
-  formatMoney(c:Dinero<number>): string,
+  formatDate(d:DateTime): string
+  formatMoney(c:Dinero<number>): string
   formatNumberOfGuests3(min:number, def:number, max:number):string
   formatNumberOfGuests2(def:number, max:number):string
   formatNumberOfGuests1(def:number):string

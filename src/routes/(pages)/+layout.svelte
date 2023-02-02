@@ -2,6 +2,11 @@
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
+  import HamburgerMenuButton from '$lib/components/HamburgerMenuButton.svelte';
+  import MainNav from '$lib/components/MainNav.svelte';
+  
+  import { isMenuOpen } from '$lib/stores/menu';
+  
   import { nav } from '$lib/conf';
 </script>
 
@@ -10,6 +15,15 @@
 <main>
   <slot></slot>
 </main>
+
+
+{#if $isMenuOpen}
+  <MainNav navItems={nav} />
+{/if}
+
+<div class="ham-wrapper">
+  <HamburgerMenuButton/>
+</div>
 
 <Footer navItems={nav}/>
 
@@ -20,5 +34,15 @@
     align-items: center;
     gap: 2rem;
   }
+
+
+  .ham-wrapper {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
 
 </style>

@@ -30,7 +30,7 @@
   on:analytics={ analyticsCookies }
   on:preferences={ preferenceCookies }
   on:marketing={ marketingCookies }
-  
+  showEditIcon={cookieSettings.showIcon}
   translation={currentTranslation.cookies} 
   choices={cookieSettings.types}/>
 
@@ -41,9 +41,9 @@
     margin: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: var(--main-bg-color);
-    color: var(--main-font-color);
-    font-family: var(--main-font-family);
+    background-color: var(--main-bg-color, 'white');
+    color: var(--main-font-color, 'black');
+    font-family: var(--main-font-family, 'sans-serif');
 
   }
 
@@ -65,6 +65,7 @@
   } 
 
   :global( h1 ) {
+    font-family: var(--title-font-family, 'sans-serif');
     font-variant: small-caps;
     font-size: 3rem;
   } 
