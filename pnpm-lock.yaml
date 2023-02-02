@@ -2,6 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@dinero.js/currencies': 2.0.0-alpha.13
+  '@fontsource/arizonia': ^4.5.9
+  '@fontsource/carrois-gothic': ^4.5.10
+  '@fontsource/raleway': ^4.5.12
   '@sveltejs/adapter-static': ^1.0.5
   '@sveltejs/kit': ^1.3.7
   '@types/js-cookie': ^3.0.2
@@ -21,10 +24,12 @@ specifiers:
 
 dependencies:
   '@dinero.js/currencies': 2.0.0-alpha.13
+  '@fontsource/arizonia': 4.5.9
+  '@fontsource/carrois-gothic': 4.5.10
+  '@fontsource/raleway': 4.5.12
   dinero.js: 2.0.0-alpha.13
   js-cookie: 3.0.1
   luxon: 3.2.1
-  occuplan: 0.0.7
 
 devDependencies:
   '@sveltejs/adapter-static': 1.0.5_@sveltejs+kit@1.3.7
@@ -33,6 +38,7 @@ devDependencies:
   '@types/luxon': 3.2.0
   '@typescript/lib-dom': /@types/web/0.0.89
   gdpr-cooco-banner: 0.0.4
+  occuplan: 0.0.7
   svelte: 3.55.1
   svelte-check: 3.0.3_svelte@3.55.1
   tslib: 2.5.0
@@ -255,6 +261,18 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fontsource/arizonia/4.5.9:
+    resolution: {integrity: sha512-F3P3CNejgD+Ks1u9eazWHxYlI1lqqwV+tm8nYz3cB8WjhTFvxpkbd9hJgMxMRe2g0sV4xYKJIIDnc1m2KxmV6A==}
+    dev: false
+
+  /@fontsource/carrois-gothic/4.5.10:
+    resolution: {integrity: sha512-yr5U+gl48YTpv0y9xB0MnNr5C+RrYvTkQ+nUjkXCeuS1mv71Bi3aHtzoa947CHZlZ0b/rWWrVHhoiyFrh1/a0g==}
+    dev: false
+
+  /@fontsource/raleway/4.5.12:
+    resolution: {integrity: sha512-uKs13d6NFWU4vf5LSDHK/cbaAw+UXkzz03fKjyvkKq8Nop+CeB6o8STEDkZD9/uOo3v3sgm59Wyw8uGWvxoCiA==}
+    dev: false
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
@@ -802,7 +820,6 @@ packages:
   /luxon/3.2.1:
     resolution: {integrity: sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==}
     engines: {node: '>=12'}
-    dev: false
 
   /magic-string/0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
@@ -905,7 +922,7 @@ packages:
     resolution: {integrity: sha512-1g+4nDKrcyFFQ8998kmL/1RZ358nDJZBXunsHYJPZ0JnT2DDzGxkiuMMOpDmsRqYKaM95WxKtBmsGU2zE42D5w==}
     dependencies:
       luxon: 3.2.1
-    dev: false
+    dev: true
 
   /once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}

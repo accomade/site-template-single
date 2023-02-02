@@ -1,4 +1,6 @@
 <script lang="ts">
+  import '$lib/loadFonts';
+
   import { Banner } from 'gdpr-cooco-banner';
   
   import { i18n, cookieSettings } from '$lib/conf'

@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"prebuild": "cd generators/photos/ && ./photos",
+		"prebuild": "cd generators/photos/ && ./photos && cd ../fonts && ./fonts",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -22,7 +22,9 @@
 		"tslib": "^2.5.0",
 		"typescript": "^4.9.5",
 		"vite": "^4.0.4",
-		"vite-imagetools": "^4.0.18"
+		"vite-imagetools": "^4.0.18",
+		"occuplan": "^0.0.7"
+	
 	},
 	"type": "module",
 	"engines": {
@@ -30,9 +32,11 @@
 	},
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.13",
+		"@fontsource/arizonia": "^4.5.9",
+		"@fontsource/carrois-gothic": "^4.5.10",
+		"@fontsource/raleway": "^4.5.12",
 		"dinero.js": "2.0.0-alpha.13",
 		"js-cookie": "^3.0.1",
-		"luxon": "^3.2.1",
-		"occuplan": "^0.0.7"
+		"luxon": "^3.2.1"
 	}
 }
