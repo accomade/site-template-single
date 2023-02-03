@@ -1,7 +1,6 @@
 <script lang="ts">
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
-  import CheckSvg from '$lib/components/svg/CheckSVG.svelte';
   $: trans = i18n.translations[$currentLang] 
   $: dict = trans.dict;
 
@@ -135,7 +134,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1%;
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 1%;
   }
 
@@ -143,7 +142,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1%;
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 1%;
   }
 

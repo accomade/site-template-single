@@ -14,6 +14,9 @@
 </script>
 
 {#if acco}
+  {#if acco.displayName }
+  <h2>{acco.displayName}</h2>
+  {/if}
   {#each acco.sections as s}
   <Section {...s}/>
   {/each}

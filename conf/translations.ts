@@ -3,6 +3,7 @@ import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
 
 import { toDecimal } from 'dinero.js' 
+import type { BedKind } from '$lib/types/accos'
 
 const formatMoney = (countryCode: string, d: Dinero<number>) => {
   return toDecimal<number,string>(d, ({value, currency}) => {
@@ -26,109 +27,109 @@ const i18n:I18n = {
         slug: 'THE place where you always wanted to spend your holidays.',
       },
       dict: {
-        impressions: 'More Impressions',
+        impressions: 'Some Impressions',
         directions: 'Directions',
         apartments: 'Apartments',
         town: 'Koserow',
-        koserow: 'Koserow',
         weather: 'Weather',
-        town_church: 'Old church in Koserow',
-        apartment_1_alt: 'View on Apartment 1',
-        apartment_2_alt: 'View on Apartment 2',
-        apartment_3_alt: 'View on Apartment 3',
-        beach_alt: 'Beach',
+        
         pricing: 'Dates and Prices',
-        globalPricing: 'Default rates and conditions',
+        globalPricing: 'Common Prices',
         globalNightlyRate: 'Per Night',
-        globalMinimumStay: 'Minimum Stay',
-        globalPeopleCount: 'Number of People',
+        globalMinimumStay: 'Minimum Nights to Stay',
+        globalPeopleCount: 'Number Of Guests',
         globalAdditionalPerson: 'Additional Guest',
         from: 'From',
         to: 'To',
-        timeRange: 'Dates',
+        timeRange: 'Range',
         firstNight: 'First Night',
-        eachNight: 'Follow&shy;ing Nights',
-        peopleNum: 'Number of Guests',
-        extraPerson: 'Addi&shy;tional Guest',
-        minNumNights: 'Shor&shy;test Period',
-        'pricing-footnote-acco-cornflower': 'Bedding and Towels are included',
+        eachNight: 'Every Other Night',
+        peopleNum: 'Number Of Guests',
+        extraPerson: 'Add. Guest',
+        minNumNights: 'Min. Stay',
         
-        amneties: 'Appartment Information',
-        amnetiesDesc: '<a>Very cosy apartment ...</a>',
-        parkingLots: 'Parking lots',
-        parkingOnSite: 'Parking on site',
-        parkingNearby: 'Parking in close proximity',
-        pets: 'Pets allowed',
-        vaccum: 'Vaccum',
-        iron: 'Iron',
-        airportShuttle: 'Airport shuttle can be arranged',
-        trainStation: 'Train station',
-        onSiteContact: 'Contact person resides close by',
-        quiet: 'Very quiet location to relax',
-        busy: 'In the heart of town, bustling live',
-
-        bedroomHeader: 'Bedroom',
+        amneties: 'All You Need To Know',
+        roomsHeader: 'Rooms',
+        outdoorsHeader: 'Outdoors',
+        
+        
+        size: 'Size',
         bedOptional: '(extra)',
         kings: 'Kingsize Bed',
         queens: 'Queensize Bed',
         solo: 'Single Bed',
         bunkbed: 'Bunk Bed',
-        baby: 'Baby Bed',
-        bedroomSeparated: 'Separated',
+        baby: 'Cot',
+
+        coffeeMachine: 'Coffee',
+        nespresso: 'Nespresso',
+        beans: 'fully automatic coffee machine',
+        portafilter: 'Portafilter',
+        filter: 'filter coffee machine',
+        capsules: 'Other Capsule Machine',
+        none: 'No Coffee Machine',
+        
+        koserow: 'Koserow',
+        town_church: 'Felssteinkirche in Koserow',
+        apartment_1_alt: 'View on Appartment 1',
+        apartment_2_alt: 'View on Appartment 2',
+        apartment_3_alt: 'View on Appartment 3',
+        beach_alt: 'Beach',
+        'pricing-footnote-acco-cornflower': 'Towels and bedding are included.',
+        
+        quiet: "Quiet Environment",
+        cornflower_quiet: 'Very quiet location to relax. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        shopping: "Shopping",
+        cornflower_shopping: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        sightSeeing: "Sightseeing",
+        cornflower_sightseeing: '<p>Ausflugsziele ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed</p>',
+        beach: "Beach",
+        cornflower_beach: '<p>Strandnah ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        culture: "Culture",
+        cornflower_culture: '<p>Kulturelles Angebot ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        desc: "Further Information",
+        cornflower_desc: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        
+
+        parkingLots: 'Parking Lots',
+        parkingOnSite: 'On site parking',
+        pets: 'Pets allowed',
+        cornflower_pets_desc: 'Small cats and dogs are allowed. But cost additional 10€ per whole vacation.',
+        airportShuttle: 'Airport shuttle can be arranged',
+        trainStation: 'Trainstaion shuttle can be arranged',
+        onSiteContact: 'Contact Person available',
+        onSiteContact_desc: 'Weekdays from 7:00 - 17:00',
+        
+        wifi: 'Free WIFI',
+        vaccuum: 'Vaccuum',
+        iron: 'Iron',
+        washingMachine: 'Washing machine',
+        dryingRack: 'Drying Rack',
+        clothesDryer: 'Clothes Dryer',
+        
+        sauna: 'Sauna',
+        cornflower_sauna_desc: 'The saune can be used whole year around',
+        whirlpool: 'Whirlpool',
+        solarium: 'Solarium',
+
+        
+        bedroom_1_label: 'Bed Room 1',
+        cornflower_bedroom_1_desc: 'The additional bed can be used in case your kids don\'t like or want to sleep alone in new environment. It\'s prohibited to sleep with more than 5 people in this apartment.',
+        bedroom_2_label: 'Bed Room 2',
+
         tv: 'TV',
         ac: 'AC',
-        beddingAvailable: 'Bedding available',
-        beddingInclusive: 'Bedding inclusive',
-
-        livingRoomHeader: 'Living Room',
-        stereo: 'Stereo',
-        lounge: 'Lounge Sofa',
-        
-        sofaTable: 'Sofa Table',
-        eatingTable: 'Eating Table',
 
         kitchenHeader: 'Kitchen',
+        eatingTable: 'Table',
         microwave: 'Microwave',
-        oven: 'Oven',
-        fridge: 'Fridge',
-        freezer: 'Freezer',
-        dishwascher: 'Dishwasher',
-        coffeeMachine: 'Coffee Machine',
-        towelsKitchen: 'Towels & Dishwashing Set',
-
-        nespresso: 'Nespresso Machine',
-        beans: 'Grinding Coffeemachine',
-        portafilter: 'Portafilter Coffeemaker',
-        filter: 'Drip Coffeemaker',
-        capsules: 'Other Capsules',
-        none: 'No Coffeemachine',
-
-        kitchenIntegrated: 'Kitchen integrated in Living Area',
-
-        bathroomHeader: 'Bathroom',
-        shower: 'Shower',
-        bathtub: 'Bathtub',
-        hairDryer: 'Hairdryer',
-        towelsAvailable: 'Towels Available',
-        towelsIncluded: 'Towels Included',
-        bathrobeAvailable: 'Bathrobe Available',
-        bathrobeIncluded: 'Bathrobe Included',
-        window: 'Window',
+        
+        
+        cornflower_backyard_desc: 'Big shielded garden pointing south wards. Ideal for sunbathing and relaxing.',
+        cornflower_kitchen_desc: 'Please make sure to always have enough salt in the dishes washer, otherwise it might break.',
 
         backyard: 'Backyard',
-        terrace: 'Terrace',
-        balcony: 'Balcony',
         fenced: 'Fenced',
-        size: 'Approx. Size',
-        barbecue: 'Barbecue',
-        barbecueType: 'Barbecue type',
-        gas: 'Gas',
-        charcoal: 'Charcoal',
-        electric: 'Electric',
-        shed: 'Shed',
-        bicycles: 'Bicycles',
-        pool: 'Pool',
-
 
       },
       calendar: {
@@ -249,7 +250,7 @@ const i18n:I18n = {
       formatSize(n: number): string {
         return `${n}&nbsp;m²`
       },
-      formatBed(n: number): string {
+      formatBed(n: number, kind: BedKind): string {
         return `for ${n}`
       }
      
@@ -265,13 +266,8 @@ const i18n:I18n = {
         directions: 'Ihre Anreise',
         apartments: 'Ferienwohnungen',
         town: 'Koserow',
-        koserow: 'Koserow',
         weather: 'Wetter',
-        town_church: 'Backsteinkirche in Koserow',
-        apartment_1_alt: 'Blick auf Wohnung 1',
-        apartment_2_alt: 'Blick auf Wohnung 2',
-        apartment_3_alt: 'Blick auf Wohnung 3',
-        beach_alt: 'Strand',
+        
         pricing: 'Preisaufstellung',
         globalPricing: 'Allgemeine Angaben',
         globalNightlyRate: 'Übernachtung',
@@ -286,104 +282,112 @@ const i18n:I18n = {
         peopleNum: 'Anzahl der Gäste',
         extraPerson: 'Wei&shy;terer Gast',
         minNumNights: 'Mindest&shy;aufent&shy;halt',
-        'pricing-footnote-acco-cornflower': 'Hand&shy;tücher und Bett&shy;wäsche sind in&shy;klu&shy;sive',
         
         amneties: 'Informationen',
-
-        cornflower_quiet: 'Very quiet location to relax. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-
-        cornflower_busy: 'In the heart of town, bustling live. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',
-
-        cornflower_desc: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
-        
-        cornflower_beach: '<p>Strandnah ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
-
-        cornflower_sightSeeing: '<p>Ausflugsziele ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed</p>',
-        cornflower_culture: '<p>Kulturelles Angebot ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
-        cornflower_shopping: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
-        
-        cornflower_pets_desc: 'Kleine Hunde und Katzen sind in Ordnung gegen Aufpreis von 10,- € für den gesamten Zeitraum',
-        cornflower_sauna_desc: 'Die Sauna kann ganzjährig verwendet werden',
-
-
-        cornflower_bedroom_1_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls Ihre Kinder nicht alleine schlafen können oder wollen. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
-
-        cornflower_living_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls jemand mal ausquartiert werden muss, wegen Schnarchen oder Ähnlichem. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
-
-        cornflower_backyard_desc: 'Großer Garten nach Süden. Nicht einsehbar. Eignet sich also besonders zum Sonnen und ungestörte Zeit verbringen.',
-
-        cornflower_bathroom_desc: 'Die Bademäntel können Sie gegen einen Pfand bei der Verwaltung erhalten.',
-
-        cornflower_kitchen_desc: 'Bitte achten Sie darauf, dass der Geschirrspüler nicht ohne Spezialsalz läuft. Im Zweifel wenden Sie sich an die Verwaltung.',
-
-        cornflower_barbecue_desc: 'Holzohle und Grillanzünder sind vorhanden',
-
-        cornflower_shed_desc: 'Gartenschuppen mit Sandspielzeug für Kleinkinder, einer Tischtennisplatte und Unterstellmöglichkeit für bis zu 4 Fahrrädern',
-
-        cornflower_bicycles_desc: 'Ein Damenrad und ein Herrenrad',
-
-
-        cornflower_pool_desc: 'Größe: 8x4m; mit Gegenstromanlage; beheizt; von Mai bis September nutzbar',
-
-        beach: "Strand",
-        sightSeeing: "Sehenswürdigkeiten",
-        culture: "Kulturelles Angebot",
-        shopping: "Einkaufsmöglichkeiten",
-        desc: "Allgemeine Informationen",
-        quiet: "Ruhig Gelegen",
-        busy: "Zentral Gelegen",
-
-        parkingLots: 'Parking lots',
-        parkingOnSite: 'Parking on site',
-        parkingNearby: 'Parking in close proximity',
-        pets: 'Pets allowed',
-        vaccum: 'Vaccum',
-        iron: 'Iron',
-        airportShuttle: 'Airport shuttle can be arranged',
-        trainStation: 'Train station',
-        onSiteContact: 'Contact person resides close by',
-        
         roomsHeader: 'Zimmer',
+        outdoorsHeader: 'Außenbereich',
         
-        bedroom_1_label: 'Schlafzimmer 1',
-        bedroom_2_label: 'Schlafzimmer 2',
-
+        
+        size: 'Fläche ca.',
         bedOptional: '(extra)',
         kings: 'Großes Doppelbett',
         queens: 'Doppelbett',
         solo: 'Einzelbett',
         bunkbed: 'Etagenbett',
         baby: 'Kinderbett',
-        bedroomSeparated: 'Separiert',
-        tv: 'TV',
-        ac: 'AC',
-        beddingAvailable: 'Bedding available',
-        beddingInclusive: 'Bedding inclusive',
 
-        livingRoomHeader: 'Wohnbereich',
-        stereo: 'Stereo',
-        lounge: 'Lounge Sofa',
-        wifi: 'WLAN',
-
-        sofaTable: 'Sofa Table',
-        eatingTable: 'Esstisch',
-        
-        kitchenHeader: 'Kitchen',
-        microwave: 'Microwave',
-        oven: 'Oven',
-        fridge: 'Fridge',
-        freezer: 'Freezer',
-        dishwascher: 'Geschirrspüler',
         coffeeMachine: 'Kaffee',
-        towelsKitchen: 'Towels & Dishwashing Set',
-
         nespresso: 'Nespresso Maschine',
         beans: 'Kaffeevollautomat',
         portafilter: 'Siebträgermaschine & Mühle',
         filter: 'Filtermaschine',
         capsules: 'Kapselmaschine',
         none: 'Keine Kaffeemaschine',
+        
+        koserow: 'Koserow',
+        town_church: 'Felssteinkirche in Koserow',
+        apartment_1_alt: 'Blick auf Wohnung 1',
+        apartment_2_alt: 'Blick auf Wohnung 2',
+        apartment_3_alt: 'Blick auf Wohnung 3',
+        beach_alt: 'Strand',
+        'pricing-footnote-acco-cornflower': 'Hand&shy;tücher und Bett&shy;wäsche sind in&shy;klu&shy;sive',
+        
+        quiet: "Ruhig Gelegen",
+        cornflower_quiet: 'Very quiet location to relax. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        shopping: "Einkaufsmöglichkeiten",
+        cornflower_shopping: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        sightSeeing: "Sehenswürdigkeiten",
+        cornflower_sightseeing: '<p>Ausflugsziele ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed</p>',
+        beach: "Strand",
+        cornflower_beach: '<p>Strandnah ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        culture: "Kulturelles Angebot",
+        cornflower_culture: '<p>Kulturelles Angebot ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        desc: "Allgemeine Informationen",
+        cornflower_desc: '<p>Sehr gemütliches Apartment ... Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+        
 
+        parkingLots: 'Parkplätze',
+        parkingOnSite: 'Parkplätze auf dem Gelände',
+        pets: 'Haustiere gestattet',
+        cornflower_pets_desc: 'Kleine Hunde und Katzen sind in Ordnung gegen Aufpreis von 10,- € für den gesamten Zeitraum',
+        airportShuttle: 'Flughafen-Transit kann organisiert werden',
+        trainStation: 'Transit von der Bahnstation kann organsiert werden',
+        onSiteContact: 'Kontaktperson vor Ort',
+        onSiteContact_desc: 'Wochentags von 7:00 - 17:00',
+        
+        wifi: 'Kostenloses WLAN',
+        vaccuum: 'Staubsauger',
+        iron: 'Bügeleisen und Bügelbrett',
+        washingMachine: 'Waschmaschine',
+        dryingRack: 'Wäscheständer',
+        clothesDryer: 'Wäschetrockner',
+        
+        sauna: 'Sauna',
+        cornflower_sauna_desc: 'Die Sauna kann ganzjährig verwendet werden',
+        whirlpool: 'Whirlpool',
+        solarium: 'Solarium',
+
+        
+        bedroom_1_label: 'Schlafzimmer 1',
+        cornflower_bedroom_1_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls Ihre Kinder nicht alleine schlafen können oder wollen. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
+        bedroom_2_label: 'Schlafzimmer 2',
+
+        tv: 'TV',
+        ac: 'Klimaanlage',
+
+        kitchenHeader: 'Küche',
+        eatingTable: 'Esstisch',
+        microwave: 'Mikrowelle',
+        
+        
+        cornflower_backyard_desc: 'Großer Garten nach Süden. Nicht einsehbar. Eignet sich also besonders zum Sonnen und ungestörte Zeit verbringen.',
+        cornflower_kitchen_desc: 'Bitte achten Sie darauf, dass der Geschirrspüler nicht ohne Spezialsalz läuft. Im Zweifel wenden Sie sich an die Verwaltung.',
+
+       
+        backyard: 'Garten',
+        fenced: 'Eingezäunt',
+        
+        /* TODO possible values integrate in Editor
+
+        living_desc: 'Die zusätzliche Aufbettung versteht sich als Service, falls jemand mal ausquartiert werden muss, wegen Schnarchen oder Ähnlichem. Es ist nicht gestattet mit mehr als 4 Personen in der Wohnung zu übernachten.',
+        bathroom_desc: 'Die Bademäntel können Sie gegen einen Pfand bei der Verwaltung erhalten.',
+        barbecue_desc: 'Holzohle und Grillanzünder sind vorhanden',
+        shed_desc: 'Gartenschuppen mit Sandspielzeug für Kleinkinder, einer Tischtennisplatte und Unterstellmöglichkeit für bis zu 4 Fahrrädern',
+        bicycles_desc: 'Ein Damenrad und ein Herrenrad',
+        pool_desc: 'Größe: 8x4m; mit Gegenstromanlage; beheizt; von Mai bis September nutzbar',
+        
+        stereo: 'Stereo',
+        lounge: 'Lounge Sofa',
+        
+        sofaTable: 'Sofa Table',
+        
+        oven: 'Oven',
+        fridge: 'Fridge',
+        freezer: 'Freezer',
+        dishwascher: 'Geschirrspüler',
+        towelsKitchen: 'Towels & Dishwashing Set',
+
+        
         kitchenIntegrated: 'Kitchen integrated in Living Area',
 
         bathroomHeader: 'Bad',
@@ -396,13 +400,9 @@ const i18n:I18n = {
         bathrobeIncluded: 'Bathrobe Included',
         window: 'Window',
 
-        outdoorsHeader: 'Außenbereich',
-        
-        backyard: 'Garten',
         terrace: 'Terrasse',
         balcony: 'Balkon',
         fenced: 'Eingezäunt',
-        size: 'Fläche ca.',
         barbecue: 'Grill',
         barbecueType: 'Grilltyp',
         gas: 'Gas',
@@ -411,7 +411,7 @@ const i18n:I18n = {
         shed: 'Gartenhaus',
         bicycles: 'Fahrräder',
         pool: 'Swimming Pool',
-
+        */
       
       },
       calendar: {
@@ -532,7 +532,7 @@ const i18n:I18n = {
       formatSize(n: number): string {
         return `${n}&nbsp;m²`
       },
-      formatBed(n: number): string {
+      formatBed(n: number, kind: BedKind): string {
         return `für ${n} Person(en)`
       }
     }

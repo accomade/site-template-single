@@ -2,6 +2,7 @@ import type { I18n as CalI18n} from 'occuplan/types/i18n'
 import type { Translation as CookieTrans } from 'gdpr-cooco-banner'
 import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
+import type { BedKind } from './accos'
 
 export interface Translation {
   title: string
@@ -29,7 +30,7 @@ export interface Translation {
   formatSeating(n:number): string
   formatNumberOf(n:number): string
   formatSize(n: number): string
-  formatBed(n: number): string
+  formatBed(n: number, kind: BedKind): string
   // Don't have this requirement
   //parseDate(s:string): DateTime,
   //parseMoney(s:string): Dinero<number>,

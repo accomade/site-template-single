@@ -16,7 +16,6 @@ const accos = [
           {
             kind: 'amneties',
             content: {
-              accoName: 'cornflower',
               amneties: {
                 size: 55,
                 descriptions: [
@@ -30,7 +29,7 @@ const accos = [
                   },
                   {
                     label: 'sightseeing',
-                    desc: 'cornflower_sightSeeing',
+                    desc: 'cornflower_sightseeing',
                   },
                   {
                     label: 'beach',
@@ -65,7 +64,7 @@ const accos = [
                         value: true,
                       },
                       {
-                        label: 'trainstation',
+                        label: 'trainStation',
                         kind: 'check',
                         value: true,
                       },
@@ -76,8 +75,9 @@ const accos = [
                       },
                       {
                         label: 'onSiteContact',
-                        kind: 'check',
-                        value: false,
+                        kind: 'checkWithDesc',
+                        value: true,
+                        desc: 'onSiteContact_desc',
                       },
                       {
                         label: 'pets',

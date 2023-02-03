@@ -53,9 +53,9 @@ export type CoffeeMachine =
   | 'capsules'
   | 'none'
 
-
+export type BedKind = 'kings' | 'queens' | 'solo' | 'bunkbed' | 'baby' | 'sleepingSofa'
 export interface Bed {
-  kind: 'kings' | 'queens' | 'solo' | 'bunkbed' | 'baby' | 'sleepingSofa'
+  kind: BedKind
   optional: boolean
   heads: number
 }
