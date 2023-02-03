@@ -15,6 +15,8 @@
 
   $: dict = i18n.translations[$currentLang].dict
     
+  let photoHeight = 0;
+
   const importPhoto = () => import(`../photos/Photo${photo}.svelte`);
 </script>
 
@@ -22,27 +24,40 @@
   {#if link}
     <a href="{link}">
       <svelte:component 
+        bind:clientHeight={photoHeight}
         this={module.default} 
         {maxWidth}
         {maxHeight}
         {eager}
         alt={dict[alt] ? dict[alt] : alt} />
     
-      {#if attribution}
-      <div class="attribution-container"><div class="attribution-wrapper">{@html attribution}</div></div>
-      {/if}
-      
+        {#if attribution}
+        <div 
+            style="height:calc({photoHeight}px - 0.5rem);"
+            class="attribution-container">
+          <div class="attribution-wrapper">
+            {@html attribution}
+          </div>
+        </div>
+        {/if}
     </a>
     <div class="link-icon-wrapper"><LinkSvg /></div>
   {:else}
     <svelte:component 
+      bind:clientHeight={photoHeight}
       this={module.default} 
       {maxHeight}
       {maxWidth}
       {eager}
       alt={dict[alt] ? dict[alt] : alt} />
     {#if attribution}
-    <div class="attribution-container"><div class="attribution-wrapper">{@html attribution}</div></div>
+    <div 
+        style="height:{photoHeight};"
+        class="attribution-container">
+      <div class="attribution-wrapper">
+        {@html attribution}
+      </div>
+    </div>
     {/if}
       
   {/if}
@@ -81,9 +96,9 @@
     justify-content: flex-end;
     flex-direction: column;
     position: absolute;
+    padding-bottom: 0.2rem;
     top: 0;
     left: 0;
-    height: calc(100% - 0.5rem);
     width: 100%;
   }
 

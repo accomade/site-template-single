@@ -30,8 +30,10 @@ func main() {
 				import { src as placeholder, width, height } from '../../../../photos/{{.Number}}.jpg?w=40&metadata'
 				
 				export let alt:string;
-				export let maxWidth:string;
-				export let maxHeight:string;
+				export let maxWidth:string="100%";
+				export let maxHeight:string="100%";
+				export let clientHeight:number;
+				export let clientWidth:number;
 				export let eager:boolean = false;
 
 				let sharpen = false;
@@ -54,7 +56,11 @@ func main() {
 			
 			</script>
 			
-			<picture>
+			<picture
+					bind:clientHeight={clientHeight}
+					bind:clientWidth={clientWidth}
+					style="max-width:{maxWidth};max-height:{maxHeight};"
+				>
 				{#if mounted}
 					{#await importFormats() then formats}
 						<source srcset={formats.avif} type="image/avif"/>
@@ -75,6 +81,12 @@ func main() {
 			</picture>
 			
 			<style>
+				picture {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+
 				img {
 					width: 100%;
 					height: 100%;
