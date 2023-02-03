@@ -7,6 +7,7 @@
   
   export let alt:string;
   export let photo:PhotoNumber;
+  export let eager:boolean = false;
   export let link:string = "";
   export let attribution:string = "";
   export let maxHeight:string = "100%"
@@ -24,6 +25,7 @@
         this={module.default} 
         {maxWidth}
         {maxHeight}
+        {eager}
         alt={dict[alt] ? dict[alt] : alt} />
     
       {#if attribution}
@@ -37,6 +39,7 @@
       this={module.default} 
       {maxHeight}
       {maxWidth}
+      {eager}
       alt={dict[alt] ? dict[alt] : alt} />
     {#if attribution}
     <div class="attribution-container"><div class="attribution-wrapper">{@html attribution}</div></div>

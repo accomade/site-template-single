@@ -14,7 +14,7 @@ specifiers:
   gdpr-cooco-banner: ^0.0.4
   js-cookie: ^3.0.1
   luxon: ^3.2.1
-  occuplan: ^0.0.7
+  occuplan: ^0.0.8
   svelte: ^3.55.1
   svelte-check: ^3.0.3
   tslib: ^2.5.0
@@ -38,7 +38,7 @@ devDependencies:
   '@types/luxon': 3.2.0
   '@typescript/lib-dom': /@types/web/0.0.89
   gdpr-cooco-banner: 0.0.4
-  occuplan: 0.0.7
+  occuplan: 0.0.8
   svelte: 3.55.1
   svelte-check: 3.0.3_svelte@3.55.1
   tslib: 2.5.0
@@ -918,8 +918,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan/0.0.7:
-    resolution: {integrity: sha512-1g+4nDKrcyFFQ8998kmL/1RZ358nDJZBXunsHYJPZ0JnT2DDzGxkiuMMOpDmsRqYKaM95WxKtBmsGU2zE42D5w==}
+  /occuplan/0.0.8:
+    resolution: {integrity: sha512-wSqn9yELxS/hnAww4lW/2wdurVhON6dIeOvcBf2D3x+CqTwm8K/1P88bIagNbDneiaflUT4SJk4D/TE5OFteXw==}
     dependencies:
       luxon: 3.2.1
     dev: true

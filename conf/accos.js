@@ -231,7 +231,7 @@ const accos = [
 
                 outdoors: [
                   {
-                    header: 'terrace',
+                    header: 'backyard',
                     specs: [
                       {
                         label: 'size',
@@ -243,7 +243,8 @@ const accos = [
                         kind: 'check',
                         value: false,
                       }
-                    ]
+                    ],
+                    desc: 'cornflower_backyard_desc'
                   }
                 ]
               }

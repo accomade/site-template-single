@@ -32,7 +32,8 @@ func main() {
 				export let alt:string;
 				export let maxWidth:string;
 				export let maxHeight:string;
-			
+				export let eager:boolean = false;
+
 				let sharpen = false;
 				const importFormats = async () => {
 					let srcsetAvif = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset')).default;
@@ -63,7 +64,9 @@ func main() {
 				<img
 					class:sharpen={sharpen}
 					style="max-width:{maxWidth};max-height:{maxHeight};"
-					loading="lazy"
+					loading={eager ? null : "lazy"}
+					decoding={eager ? null : "async"}
+					fetchPriority={eager ? "high" : null}
 					src={placeholder}
 					{alt}
 					{width}
@@ -77,6 +80,12 @@ func main() {
 					height: 100%;
 					object-fit: cover;
 					filter: blur(20px);
+					box-shadow: 0px 1.1px 2.2px rgba(0, 0, 0, 0.02),
+						0px 2.7px 5.3px rgba(0, 0, 0, 0.028),
+						0px 5px 10px rgba(0, 0, 0, 0.035),
+						0px 8.9px 17.9px rgba(0, 0, 0, 0.042),
+						0px 16.7px 33.4px rgba(0, 0, 0, 0.05),
+						0px 40px 80px rgba(0, 0, 0, 0.07);
 				}
 
 				img.sharpen {
@@ -90,6 +99,7 @@ func main() {
 						filter: blur(0px);
 					}
 				}
+
 			</style>
 		`)
 		if err != nil {

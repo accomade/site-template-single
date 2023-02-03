@@ -15,7 +15,7 @@
 </script>
 
 <header class="header-image">
-  <Photo photo={landing.headerPhoto} alt="Header Image"/>
+  <Photo photo={landing.headerPhoto} alt="Header Image" eager={true}/>
 </header>
 
 <div class="floating-title">
@@ -83,8 +83,6 @@
     color: var(--title-font-color);
     filter: drop-shadow(0.2rem 0.3rem 0.2rem black);
   }
-  
- 
 
   @media( max-width: 300px ) {
     .floating-title h1 {

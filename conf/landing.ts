@@ -38,7 +38,6 @@ const landing:Landing = {
     {
       header: 'apartments',
       columnCount: 2,
-      maxWidth: '40rem',
       blocks: [
         {
           kind: 'text',
