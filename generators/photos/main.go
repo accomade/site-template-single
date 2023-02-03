@@ -64,9 +64,9 @@ func main() {
 				<img
 					class:sharpen={sharpen}
 					style="max-width:{maxWidth};max-height:{maxHeight};"
-					loading={eager ? null : "lazy"}
-					decoding={eager ? null : "async"}
-					fetchPriority={eager ? "high" : null}
+					loading="{eager ? null : 'lazy'}"
+					decoding="{eager ? null : 'async'}"
+					fetchPriority="{eager ? 'high' : null}"
 					src={placeholder}
 					{alt}
 					{width}
