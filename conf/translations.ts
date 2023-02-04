@@ -38,6 +38,8 @@ const i18n:I18n = {
         shortPriceLabel: 'Price range',
         shortPriceFooter: 'For details please visit the apartments page',
 
+        availability: 'Availability',
+
         globalPricing: 'Common Prices',
         globalNightlyRate: 'Per Night',
         globalMinimumStay: 'Minimum Nights to Stay',
@@ -291,6 +293,8 @@ const i18n:I18n = {
         pricing: 'Preisaufstellung',
         shortPriceLabel: 'Übernachtungskosten',
         shortPriceFooter: 'Für Details gehen Sie auf die Seite der Ferienwohnung',
+
+        availability: 'Verfügbarkeit',
 
         globalPricing: 'Allgemeine Angaben',
         globalNightlyRate: 'Übernachtung',

@@ -15,9 +15,25 @@
 
 {#if acco}
   {#if acco.displayName }
-  <h2>{acco.displayName}</h2>
+  <h1>{acco.displayName}</h1>
   {/if}
   {#each acco.siteContent as s}
+  <div class="section-wrapper">
   <Section {...s}/>
+  </div>
   {/each}
 {/if}
+
+
+<style>
+  .section-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+
+</style>

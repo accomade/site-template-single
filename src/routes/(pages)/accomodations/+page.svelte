@@ -33,4 +33,9 @@
     color: var(--main-font-color);
   }
 
+  h1 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
 </style>

@@ -5,7 +5,10 @@
   import Spinner from '$lib/components/Spinner.svelte';
 
   import { currentLang } from '$lib/stores/lang';
-  $:formatAvailability = i18n.translations[$currentLang].formatAvailability;
+  $: trans = i18n.translations[$currentLang] 
+  $: dict = trans.dict;
+  $:formatAvailability = trans.formatAvailability;
+
   const fromFun = ( from:DateTime|null, forDays:number):string => {
     return formatAvailability(from, forDays, maxFutureDate)
   }
@@ -15,6 +18,7 @@
   export let maxFutureDate=DateTime.now().plus({years: 2})
   let calLoading = true;
 
+  const t = (c:string) => dict[c] ? dict[c] : c
 </script>
 
 <div class="cal-wrapper">
@@ -22,6 +26,7 @@
   <Spinner />
   {/if}
 
+  <h3>{t("availability")}</h3>
   <OccuPlanAvailableInfo
       let:available={av}
       {search}
@@ -41,6 +46,24 @@
   .cal-wrapper {
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  h3 {
+    margin: 0
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    list-style: none;
+    font-size: 1.2rem;
   }
 </style>
