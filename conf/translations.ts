@@ -33,7 +33,8 @@ const i18n:I18n = {
         apartments: 'Apartments',
         town: 'Koserow',
         weather: 'Weather',
-        
+        calendarHeader: 'Booking Plan',
+
         pricing: 'Dates and Prices',
         shortPriceLabel: 'Price range',
         cornflower_card_slug: 'For details please visit the apartments page',
@@ -164,6 +165,9 @@ const i18n:I18n = {
         },
         monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
         weekendLabel: 'Weekend',
+        typeNames: {
+          defaultOccupationTypeName: 'Occupied'
+        },
       },
       cookies: {
         heading: 'This site uses cookies',
@@ -290,6 +294,8 @@ const i18n:I18n = {
         town: 'Koserow',
         weather: 'Wetter',
         
+        calendarHeader: 'Belegungsplan',
+
         pricing: 'Preisaufstellung',
         shortPriceLabel: 'Übernachtungskosten',
         cornflower_card_slug: 'Für Details gehen Sie auf die Seite der Ferienwohnung',
@@ -467,6 +473,9 @@ const i18n:I18n = {
         },
         monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
         weekendLabel: 'Wochenende',
+        typeNames: {
+          defaultOccupationTypeName: 'Belegt'
+        },
       },
       cookies: 
       {

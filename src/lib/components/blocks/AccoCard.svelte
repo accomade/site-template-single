@@ -10,14 +10,14 @@
 
   export let acco:Acco
 
-  const t = ( d:string ) => dict[d] ? dict[d] : d
+  const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
 </script>
 
 <div class="accocard-wrapper">
   {#if acco && acco.cardContent } 
     <div class="title-with-slug">
       <h2>{acco.displayName}</h2>
-      <div class="slug">{t(acco.cardContent.slug)}</div>
+      <div class="slug">{t(acco.cardContent.slug, dict)}</div>
     </div>
     {#if acco.cardContent.coverPhoto}
     <div class="photo">

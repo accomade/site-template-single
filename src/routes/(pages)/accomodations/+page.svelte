@@ -8,10 +8,10 @@
   $: trans = i18n.translations[$currentLang] 
   $: dict = trans.dict;
 
-  const t = ( d:string ) => dict[d] ? dict[d] : d
+  const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
 </script>
 
-<h1>{t("accomodations")}</h1>
+<h1>{t("accomodations", dict)}</h1>
 
 <main style="max-width: {maxWidth};">
   {#each accos as a}

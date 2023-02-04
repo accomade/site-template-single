@@ -5,6 +5,7 @@
 
   import { currentLang } from '$lib/stores/lang';
   $: calendar = i18n.translations[$currentLang].calendar;
+  $: dict = i18n.translations[$currentLang].dict;
     
   export let calUrl:string;
   let calLoading = true;
@@ -18,6 +19,7 @@
   <OccuPlanWrapper 
     bind:loading={calLoading}
     calUrl={calUrl} 
+    headerContent={dict["calendarHeader"]}
     translations={calendar}
     />
 </div>

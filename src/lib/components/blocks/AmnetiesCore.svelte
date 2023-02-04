@@ -20,7 +20,6 @@
   import type { AmnetiesCore } from "$lib/types/accos";
   export let core:AmnetiesCore;
 
-  const t = ( d:string ) => dict[d] ? dict[d] : d
 </script>
 
 <div class="amneties-wrapper">

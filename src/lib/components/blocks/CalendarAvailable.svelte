@@ -8,8 +8,7 @@
   $: trans = i18n.translations[$currentLang] 
   $: dict = trans.dict;
   $:formatAvailability = trans.formatAvailability;
-
-  const fromFun = ( from:DateTime|null, forDays:number):string => {
+  $: fromFun = ( from:DateTime|null, forDays:number):string => {
     return formatAvailability(from, forDays, maxFutureDate)
   }
     
@@ -18,17 +17,17 @@
   export let maxFutureDate=DateTime.now().plus({years: 2})
   let calLoading = true;
 
-  const t = (c:string) => dict[c] ? dict[c] : c
+  const t = (c:string, d:typeof dict) => d[c] ? d[c] : c
 </script>
 
 <div class="cal-wrapper">
-  <h3>{t("availability")}</h3>
+  <h3>{t("availability", dict)}</h3>
   <OccuPlanAvailableInfo
       let:available={av}
       {search}
       bind:loading={calLoading}
       {calUrl}>
-      
+
       <ul>
         {#each search as s} 
         <li>{fromFun( av[s], s)}</li>

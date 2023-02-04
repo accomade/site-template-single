@@ -9,7 +9,7 @@
   
   export let amneties:Amneties
 
-  const t = ( d:string ) => dict[d] ? dict[d] : d
+  const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
 
 </script>
 
@@ -44,11 +44,11 @@
     {/if}
     {#if amneties.rooms}
       <div class="rooms-wrapper">
-        <h3>{t("roomsHeader")}</h3>
+        <h3>{t("roomsHeader", dict)}</h3>
         <div class="rooms-container">
           {#each amneties.rooms as r}
             <div class="room-wrapper"> 
-              <h4 class="rooms-header">{t(r.header)}</h4>
+              <h4 class="rooms-header">{t(r.header, dict)}</h4>
               {#if r.specs}
                 <dl>
                   {#each r.specs as sp}
@@ -62,7 +62,7 @@
                 </dl>
                 {#if r.desc}
                 <div class="room-desc">
-                  {t(r.desc)}
+                  {t(r.desc, dict)}
                 </div>
                 {/if}
               {/if}
@@ -73,14 +73,14 @@
     {/if}
     {#if amneties.outdoors}
     <div class="rooms-wrapper">
-      <h3>{t("outdoorsHeader")}</h3>
+      <h3>{t("outdoorsHeader", dict)}</h3>
       <div class="outdoors-container">
         {#each amneties.outdoors as r}
         <div 
           class:outdoor-wrapper={amneties.outdoors.length > 1}
           class:outdoor-wrapper-single={amneties.outdoors.length == 1}
         > 
-          <h4 class="room-header">{t(r.header)}</h4>
+          <h4 class="room-header">{t(r.header, dict)}</h4>
           {#if r.specs}
             <dl>
               {#each r.specs as sp}
@@ -94,7 +94,7 @@
             </dl>
             {#if r.desc}
             <div class="room-desc">
-              {t(r.desc)}
+              {t(r.desc, dict)}
             </div>
             {/if}
           {/if}

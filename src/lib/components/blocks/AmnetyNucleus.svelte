@@ -16,19 +16,19 @@
   
   $:t = dict[label] ? dict[label] : label
   
-  const tFun = (l:string):string => {
-    return dict[l] ? dict[l] : l
+  const tFun = (l:string, d:typeof dict):string => {
+    return d[l] ? d[l] : l
   }
 
-  const asNumber = ():string => {
+  $: asNumber = ():string => {
     return trans.formatNumberOf(value as number)
   }
 
-  const asSize = ():string => {
+  $: asSize = ():string => {
     return trans.formatSize(value as number)
   }
 
-  const asSeats = ():string => {
+  $: asSeats = ():string => {
     return trans.formatSeating(value as number)
   }
 
@@ -84,7 +84,7 @@
 {#if kind == "beds"}
   {#each asBeds as bed }
     <div class="option">
-      <dt>{tFun(bed.kind)}</dt><dd>{trans.formatBed(bed.heads)} {#if bed.optional}{tFun('bedOptional')}{/if}</dd>
+      <dt>{tFun(bed.kind, dict)}</dt><dd>{trans.formatBed(bed.heads, bed.kind)} {#if bed.optional}{tFun('bedOptional', dict)}{/if}</dd>
     </div>
   {/each}
 {/if}
@@ -111,12 +111,12 @@
         <ul class="coffee-machines">
         {#each asCoffeeMachines as cm, i}
           <li>
-          {tFun(cm)}
+          {tFun(cm,dict)}
           </li>
         {/each}
         </ul>
       {:else}
-      { tFun(asCoffeeMachines[0]) }
+      { tFun(asCoffeeMachines[0],dict) }
       {/if}
     </dd>
   </div>

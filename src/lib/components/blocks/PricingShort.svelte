@@ -9,7 +9,7 @@
   $: trans = i18n.translations[$currentLang];
   $: dict = trans.dict;
 
-  const t = ( d:string ) => dict[d] ? dict[d] : d
+  const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
 
   
   export let global:PricingEntry|undefined = undefined;
@@ -75,7 +75,7 @@
 </script>
 
 <div class="pricing-short-wrapper">
-  <h3>{t("shortPriceLabel")}    
+  <h3>{t("shortPriceLabel", dict)}    
     {#if showMinimum}<span>{trans.formatMinimumPrice(calculatedMinium)}</span>{/if}
     {#if showMaximun}<span>{trans.formatMaximumPrice(calculatedMaximum)}</span>{/if}
   </h3>
