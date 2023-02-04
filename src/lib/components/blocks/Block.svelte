@@ -10,6 +10,9 @@
   import Pricing from '$lib/components/blocks/Pricing.svelte';
   import Weather from '$lib/components/blocks/Weather.svelte';
   import Amneties from '$lib/components/blocks/Amneties.svelte';
+  import AccoCard from '$lib/components/blocks/AccoCard.svelte';
+  import PricingShort from './PricingShort.svelte';
+  import CalendarAvailable from './CalendarAvailable.svelte';
 
   export let spec:Block;
   
@@ -30,6 +33,10 @@
         component = Calendar
         props = spec.content
         break; 
+      case 'calendar-available':
+        component = CalendarAvailable;
+        props = spec.content;
+        break;
       case 'map':
         component = Map
         props = spec.content
@@ -42,12 +49,20 @@
         component = Pricing
         props = spec.content
         break;
+      case 'pricing-short':
+        component = PricingShort
+        props = spec.content
+        break;
       case 'amneties':
         component = Amneties
         props = spec.content
         break;
       case 'weather':
         component = Weather
+        props = spec.content
+        break;
+      case 'acco-card':
+        component = AccoCard
         props = spec.content
         break;
     }

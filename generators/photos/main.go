@@ -38,8 +38,8 @@ func main() {
 
 				let sharpen = false;
 				const importFormats = async () => {
-					let srcsetAvif = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset')).default;
-					let srcsetWebp = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;1700;2500;3300&format=webp&srcset')).default;
+					let srcsetAvif = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;2000;2600;3200;4000&format=avif&srcset')).default;
+					let srcsetWebp = (await import('../../../../photos/{{.Number}}.jpg?w=300;500;700;900;1100;2000;2600;3200;4000&format=webp&srcset')).default;
 
 					sharpen = true;
 					return {

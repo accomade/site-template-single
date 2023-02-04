@@ -29,11 +29,15 @@ const i18n:I18n = {
       dict: {
         impressions: 'Some Impressions',
         directions: 'Directions',
+        accomodations: 'Apartments',
         apartments: 'Apartments',
         town: 'Koserow',
         weather: 'Weather',
         
         pricing: 'Dates and Prices',
+        shortPriceLabel: 'Price range',
+        shortPriceFooter: 'For details please visit the apartments page',
+
         globalPricing: 'Common Prices',
         globalNightlyRate: 'Per Night',
         globalMinimumStay: 'Minimum Nights to Stay',
@@ -195,8 +199,23 @@ const i18n:I18n = {
       formatDate(d:DateTime):string {
         return d.setLocale('en').toFormat('MM/dd/yy')
       },
+      formatAvailability(from:DateTime|null, forDays:number, maxFutureDate:DateTime):string {
+        if(from == null) {
+          return `No availability for ${forDays} days until ${maxFutureDate.toFormat('dd.MM.yyyy')}`
+        }
+        return `Min. ${forDays} days from ${from.toFormat('dd.MM.yyyy')} available`
+      },
+
       formatMoney(d:Dinero<number>):string {
         return formatMoney('en-US', d)
+      },
+      formatMinimumPrice(d:Dinero<number>): string {
+        const mo = formatMoney('en-US', d)
+        return `From ${mo} per night`
+      },
+      formatMaximumPrice(d:Dinero<number>): string {
+        const mo = formatMoney('en-US', d)
+        return `To ${mo} per night`
       },
       formatNumberOfGuests3(min:number, def:number, max:number):string {
         return `min: ${min} / standard: ${def} / max: ${max}`
@@ -264,11 +283,15 @@ const i18n:I18n = {
       dict: {
         impressions: 'Weitere Eindrücke',
         directions: 'Ihre Anreise',
+        accomodations: 'Ferienwohnungen',
         apartments: 'Ferienwohnungen',
         town: 'Koserow',
         weather: 'Wetter',
         
         pricing: 'Preisaufstellung',
+        shortPriceLabel: 'Übernachtungskosten',
+        shortPriceFooter: 'Für Details gehen Sie auf die Seite der Ferienwohnung',
+
         globalPricing: 'Allgemeine Angaben',
         globalNightlyRate: 'Übernachtung',
         globalMinimumStay: 'Mindestzeitraum',
@@ -477,9 +500,26 @@ const i18n:I18n = {
       formatDate(d:DateTime):string {
         return d.setLocale('de').toFormat('dd.MM.yyyy')
       },
+
+      formatAvailability(from:DateTime|null, forDays:number, maxFutureDate:DateTime):string {
+        if(from == null) {
+          return `Nichts frei für ${forDays} Tage bis ${maxFutureDate.toFormat('dd.MM.yyyy')}`
+        }
+        return `Mindestens ${forDays} Tage ab dem ${from.toFormat('dd.MM.yyyy')} verfügbar`
+      },
+
       formatMoney(d:Dinero<number>):string {
         return formatMoney('de-DE', d)
       },
+      formatMinimumPrice(d:Dinero<number>): string {
+        const mo = formatMoney('de-DE', d)
+        return `Ab ${mo} pro Nacht`
+      },
+      formatMaximumPrice(d:Dinero<number>): string {
+        const mo = formatMoney('de-DE', d)
+        return `Maximal ${mo} pro Nacht`
+      },
+
       formatNumberOfGuests3(min:number|undefined, def:number|undefined, max:number|undefined):string {
         return `Minimale&nbsp;Belegung:&nbsp;${min} Normale&nbsp;Belegung:&nbsp;${def} Maximale&nbsp;Belegung:&nbsp;${max}`
       },

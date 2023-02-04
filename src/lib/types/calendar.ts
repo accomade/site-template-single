@@ -1,1 +1,7 @@
-export interface Calendar {}
+export interface Calendar {
+  calUrl: string,
+}
+
+export interface CalendarAvailable {
+  calUrl: string,
+}

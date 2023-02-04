@@ -17,7 +17,7 @@
   {#if acco.displayName }
   <h2>{acco.displayName}</h2>
   {/if}
-  {#each acco.sections as s}
+  {#each acco.siteContent as s}
   <Section {...s}/>
   {/each}
 {/if}

@@ -1,8 +1,8 @@
 import type { Photo, PhotoGallery } from './photos'
-import type { Calendar } from './calendar'
+import type { Calendar, CalendarAvailable } from './calendar'
 import type { Maps } from './maps'
 import type { Weather } from './weather'
-import type { Amneties, Pricing } from './accos'
+import type { Acco, Amneties, Pricing, PricingShort } from './accos'
 
 export interface Section {
   header?: string | undefined
@@ -33,6 +33,12 @@ export interface CalendarBlock {
   content: Calendar
 }
 
+export interface CalendarAvailableBlock {
+  kind: 'calendar-available'
+  content: CalendarAvailable
+}
+
+
 export interface MapBlock {
   kind: 'map'
   content: Maps
@@ -41,6 +47,11 @@ export interface MapBlock {
 export interface PricingBlock {
   kind: 'pricing'
   content: Pricing
+}
+
+export interface PricingShortBlock {
+  kind: 'pricing-short'
+  content: PricingShort
 }
 
 export interface WeatherBlock {
@@ -53,14 +64,22 @@ export interface AmnetiesBlock {
   content: Amneties
 }
 
+export interface AccoCardBlock {
+  kind: 'acco-card'
+  content: Acco
+}
+
 export type Block =
   TextBlock |
   PhotoBlock | 
   PhotoGalleryBlock | 
   TextBlock | 
   CalendarBlock |
+  CalendarAvailableBlock |
   PricingBlock |
+  PricingShortBlock |
   AmnetiesBlock |
   WeatherBlock |
   MapBlock |
+  AccoCardBlock |
   undefined

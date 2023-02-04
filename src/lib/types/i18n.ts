@@ -19,7 +19,10 @@ export interface Translation {
     [key: string]: string 
   },
   formatDate(d:DateTime): string
+  formatAvailability(from:DateTime|null, forDays:number, maxFutureDate:DateTime):string
   formatMoney(c:Dinero<number>): string
+  formatMinimumPrice(c:Dinero<number>): string
+  formatMaximumPrice(c:Dinero<number>): string
   formatNumberOfGuests3(min:number, def:number, max:number):string
   formatNumberOfGuests2(def:number, max:number):string
   formatNumberOfGuests1(def:number):string

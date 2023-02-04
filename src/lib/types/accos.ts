@@ -1,6 +1,7 @@
 import type { Section } from './blocks'
 import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
+import type { Photo } from './photos'
 
 
 export type PricingColumn = 
@@ -43,6 +44,13 @@ export interface Pricing {
   footnote?: string
 }
 
+export interface PricingShort {
+  global?: PricingEntry
+  entries?: PricingEntry[]
+  footnote?: string
+  showMaximum?: boolean
+  showMinimum?: boolean
+}
 
 
 export type CoffeeMachine = 
@@ -108,5 +116,9 @@ export interface LabeledDesc {
 export interface Acco {
   path: string
   displayName: string
-  sections: Section[] 
+  cardContent: {
+    coverPhoto: Photo
+    sections: Section[]
+  }
+  siteContent: Section[] 
 }
