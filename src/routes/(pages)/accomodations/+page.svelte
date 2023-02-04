@@ -1,7 +1,7 @@
 <script lang="ts">
   import AccoCard from "$lib/components/blocks/AccoCard.svelte";
   import { accos } from "$lib/conf";
-  export let maxWidth:string = "80rem";
+  export let maxWidth:string = "100rem";
 
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';

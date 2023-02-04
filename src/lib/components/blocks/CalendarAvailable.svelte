@@ -22,17 +22,13 @@
 </script>
 
 <div class="cal-wrapper">
-  {#if calLoading}
-  <Spinner />
-  {/if}
-
   <h3>{t("availability")}</h3>
   <OccuPlanAvailableInfo
       let:available={av}
       {search}
       bind:loading={calLoading}
       {calUrl}>
-
+      
       <ul>
         {#each search as s} 
         <li>{fromFun( av[s], s)}</li>
@@ -40,6 +36,9 @@
       </ul>
 
   </OccuPlanAvailableInfo>
+  {#if calLoading}
+  <Spinner size="5rem"/>
+  {/if}
 </div>
 
 <style>

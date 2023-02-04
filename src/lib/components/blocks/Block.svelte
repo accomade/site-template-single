@@ -13,7 +13,8 @@
   import AccoCard from '$lib/components/blocks/AccoCard.svelte';
   import PricingShort from './PricingShort.svelte';
   import CalendarAvailable from './CalendarAvailable.svelte';
-
+  import AmnetiesCore from './AmnetiesCore.svelte';
+  
   export let spec:Block;
   
   let props:any
@@ -55,6 +56,10 @@
         break;
       case 'amneties':
         component = Amneties
+        props = spec.content
+        break;
+      case 'amneties-core':
+        component = AmnetiesCore
         props = spec.content
         break;
       case 'weather':

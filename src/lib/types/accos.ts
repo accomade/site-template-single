@@ -1,4 +1,4 @@
-import type { Section } from './blocks'
+import type { Section, Block } from './blocks'
 import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
 import type { Photo } from './photos'
@@ -47,7 +47,6 @@ export interface Pricing {
 export interface PricingShort {
   global?: PricingEntry
   entries?: PricingEntry[]
-  footnote?: string
   showMaximum?: boolean
   showMinimum?: boolean
 }
@@ -69,6 +68,20 @@ export interface Bed {
 }
 
 export type AmnetyNucleusType = 'longDesc' | 'string' | 'check' | 'checkWithDesc' | 'list' | 'numValue' | 'beds' | 'size' | 'seats' | 'coffeeMachine'
+
+export interface AmnetiesCore {
+  peopleMin: number
+  peopleMax: number
+  size: number
+  bedRooms: number
+  bathRooms: number
+  pets: boolean
+  wifi: boolean
+  smoking: boolean
+  ac: boolean
+  tv: boolean
+  parking: boolean
+}
 
 export interface Amneties {
   size?: number
@@ -118,7 +131,8 @@ export interface Acco {
   displayName: string
   cardContent: {
     coverPhoto: Photo
-    sections: Section[]
+    slug: string
+    blocks: Block[]
   }
   siteContent: Section[] 
 }

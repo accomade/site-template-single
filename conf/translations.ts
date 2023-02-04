@@ -36,7 +36,7 @@ const i18n:I18n = {
         
         pricing: 'Dates and Prices',
         shortPriceLabel: 'Price range',
-        shortPriceFooter: 'For details please visit the apartments page',
+        cornflower_card_slug: 'For details please visit the apartments page',
 
         availability: 'Availability',
 
@@ -292,7 +292,7 @@ const i18n:I18n = {
         
         pricing: 'Preisaufstellung',
         shortPriceLabel: 'Übernachtungskosten',
-        shortPriceFooter: 'Für Details gehen Sie auf die Seite der Ferienwohnung',
+        cornflower_card_slug: 'Für Details gehen Sie auf die Seite der Ferienwohnung',
 
         availability: 'Verfügbarkeit',
 

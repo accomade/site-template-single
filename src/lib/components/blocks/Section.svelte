@@ -8,7 +8,7 @@
 
   export let header: string | undefined = undefined;
   export let columnCount = 2;
-  export let maxWidth = "80rem";
+  export let maxWidth = "100rem";
   export let blocks: Block[] = [];
   
   let gridTemplateColumns = "1fr";
@@ -80,4 +80,5 @@
     font-size: 2.2rem;
     font-variant: small-caps;
   }
+
 </style>

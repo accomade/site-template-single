@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  let size:string="1rem"
+  export let size:string="1rem"
 
 </script>
 

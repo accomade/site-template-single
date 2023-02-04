@@ -1,6 +1,6 @@
 <script>
 
-  let size="1rem"
+  export let size="1rem"
   //let color="black"
 
 </script>

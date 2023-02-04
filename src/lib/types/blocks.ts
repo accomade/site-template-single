@@ -64,6 +64,11 @@ export interface AmnetiesBlock {
   content: Amneties
 }
 
+export interface AmnetiesCoreBlock {
+  kind: 'amneties-core'
+  content: AmnetiesCoreBlock
+}
+
 export interface AccoCardBlock {
   kind: 'acco-card'
   content: Acco
@@ -79,6 +84,7 @@ export type Block =
   PricingBlock |
   PricingShortBlock |
   AmnetiesBlock |
+  AmnetiesCoreBlock |
   WeatherBlock |
   MapBlock |
   AccoCardBlock |

@@ -16,8 +16,7 @@
   export let entries:PricingRange[] = [];
   export let showMaximun=true;
   export let showMinimum=true;
-  export let footnote:string = '';
-
+  
   let filteredEntries:PricingRange[] = [];
   $: {
     let now = DateTime.now()
@@ -76,15 +75,10 @@
 </script>
 
 <div class="pricing-short-wrapper">
-  <h3 class:with-footnote={!!footnote}>{t("shortPriceLabel")}    
+  <h3>{t("shortPriceLabel")}    
     {#if showMinimum}<span>{trans.formatMinimumPrice(calculatedMinium)}</span>{/if}
     {#if showMaximun}<span>{trans.formatMaximumPrice(calculatedMaximum)}</span>{/if}
   </h3>
-  {#if footnote}
-    <div class="footnote-wrapper">
-      {@html t(footnote)}
-    </div>
-  {/if}
 </div>
 
 <style>
@@ -96,15 +90,7 @@
 
   .pricing-short-wrapper h3 {
     margin-top: 0;
-  }
-
-  .with-footnote {
     margin-bottom: 0;
   }
-
-  .footnote-wrapper {
-    margin-bottom: 2rem;
-  }
-
 
 </style>

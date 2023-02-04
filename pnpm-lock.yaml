@@ -14,7 +14,7 @@ specifiers:
   gdpr-cooco-banner: ^0.0.4
   js-cookie: ^3.0.1
   luxon: ^3.2.1
-  occuplan: ^0.0.11
+  occuplan: ^0.0.12
   svelte: ^3.55.1
   svelte-check: ^3.0.3
   tslib: ^2.5.0
@@ -38,7 +38,7 @@ devDependencies:
   '@types/luxon': 3.2.0
   '@typescript/lib-dom': /@types/web/0.0.89
   gdpr-cooco-banner: 0.0.4
-  occuplan: 0.0.11
+  occuplan: 0.0.12
   svelte: 3.55.1
   svelte-check: 3.0.3_svelte@3.55.1
   tslib: 2.5.0
@@ -918,8 +918,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan/0.0.11:
-    resolution: {integrity: sha512-4r6c51t4Qz1S0dA9a3AKept258vD/S1JhiUU8IfFpoQYOpm7eFGeLJF1cRggFscVQONFruRnYsR4jQn5aeGzYQ==}
+  /occuplan/0.0.12:
+    resolution: {integrity: sha512-egimirAmcRcKbkvgA2w/LIG9Uiwxsk86scvChWBDBHNWwyXbT9D1/0LoUvMuM0VB7luE1R52UvkJo64C6kQ2lg==}
     dependencies:
       luxon: 3.2.1
     dev: true
@@ -1046,8 +1046,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/3.12.1:
-    resolution: {integrity: sha512-t9elERrz2i4UU9z7AwISj3CQcXP39cWxgRWLdf4Tm6aKm1eYrqHIgjzXBgb67GNY1sZckTFFi0oMozh3/S++Ig==}
+  /rollup/3.13.0:
+    resolution: {integrity: sha512-HJwQtrXAc0AmyDohTJ/2c+Bx/sWPScJLlAUJ1kuD7rAkCro8Cr2SnVB2gVYBiSLxpgD2kZ24jbyXtG++GumrYQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -1370,7 +1370,7 @@ packages:
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.1
-      rollup: 3.12.1
+      rollup: 3.13.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
