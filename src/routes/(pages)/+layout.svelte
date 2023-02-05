@@ -16,6 +16,8 @@
   <slot></slot>
 </main>
 
+<Footer navItems={nav}/>
+
 
 {#if $isMenuOpen}
   <MainNav navItems={nav} />
@@ -25,7 +27,6 @@
   <HamburgerMenuButton/>
 </div>
 
-<Footer navItems={nav}/>
 
 <style>
   main {

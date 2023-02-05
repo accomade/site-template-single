@@ -89,5 +89,10 @@
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}
+
+	ul {
+		padding-left: 3rem;
+		margin: 0;
+	}
 	
 </style>
