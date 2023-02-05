@@ -37,20 +37,6 @@ const accos = [
         {
           kind: 'pricing-short',
           content: {
-            global: {
-              kind: 'entry',
-              firstNightPrice: dinero({amount: 8500, currency: EUR}),
-              perNightPrice: dinero({amount: 5500, currency: EUR}),
-              additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
-              additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
-              additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
-              
-              minNumberOfPeople: 1,
-              baseNumberOfPeople: 2,
-              maxNumberOfPeople: 4,
-              
-              minNumberOfNights: 5,
-            },
             entries: [
               {
                 kind: 'range',
@@ -168,7 +154,8 @@ const accos = [
                 }
               },
 
-            ]
+            ],
+            footnote: 'pricing-footnote-acco-cornflower'
           }
         },  
         {
@@ -583,6 +570,61 @@ const accos = [
   {
     path: 'acco_sunflower',
     displayName: 'Wohnung: Sonnenblume',
+    cardContent: {
+      coverPhoto: {
+          photo: '012',
+          alt: 'apartment_1_alt',
+          link: "/accomodations/acco_sunflower",
+      },
+      slug: 'cornflower_card_slug',
+      blocks: [
+        {
+          kind: 'amneties-core',
+          content: {
+            core: {
+              peopleMin: 2,
+              peopleMax: 5,
+              size: 65, //?? 
+              bedRooms: 2, //??
+              bathRooms: 2,
+              pets: false,
+              wifi: true,
+              smoking: false,
+              ac: true,
+              tv: true,
+              parking: false,
+            }
+          }
+        },
+        {
+          kind: 'pricing-short',
+          content: {
+            global: {
+              kind: 'entry',
+              firstNightPrice: dinero({amount: 8500, currency: EUR}),
+              perNightPrice: dinero({amount: 5500, currency: EUR}),
+              additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+              additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+              additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+              
+              minNumberOfPeople: 1,
+              baseNumberOfPeople: 2,
+              maxNumberOfPeople: 4,
+              
+              minNumberOfNights: 5,
+            },
+          }
+        },  
+        {
+          kind: 'calendar-available',
+          content: {
+            calUrl: 'https://calendar.google.com/calendar/ical/0512a05fa900ee7118de13a14d5244d3ebe2eba056af845e76996e6b9c4f885c%40group.calendar.google.com/public/basic.ics',
+            search: [3, 14, 21]
+          }
+        },
+
+      ]
+    },
     siteContent: [
       {
         header: 'pricing',
@@ -634,6 +676,183 @@ const accos = [
   {
     path: 'acco_rosebush',
     displayName: 'Wohnung: Buschwindröschen',
+    cardContent: {
+      coverPhoto: {
+          photo: '011',
+          alt: 'apartment_1_alt',
+          link: "/accomodations/acco_rosebush",
+      },
+      slug: 'cornflower_card_slug',
+      blocks: [
+        {
+          kind: 'amneties-core',
+          content: {
+            core: {
+              peopleMin: 2,
+              peopleMax: 6,
+              size: 80, //?? 
+              bedRooms: 3, //??
+              bathRooms: 2,
+              pets: false,
+              wifi: true,
+              smoking: false,
+              ac: true,
+              tv: true,
+              parking: true,
+            }
+          }
+        },
+        {
+          kind: 'pricing-short',
+          content: {
+            global: {
+              kind: 'entry',
+              firstNightPrice: dinero({amount: 9500, currency: EUR}),
+              perNightPrice: dinero({amount: 7500, currency: EUR}),
+              additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+              additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+              additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+              
+              minNumberOfPeople: 1,
+              baseNumberOfPeople: 2,
+              maxNumberOfPeople: 4,
+              
+              minNumberOfNights: 5,
+            },
+            columns: [
+              'timeRange', 'firstNight', 'eachNight', 'peopleNum', 'extraPerson', 'minNumNights'
+            ],
+            entries: [
+              {
+                kind: 'range',
+                from: DateTime.fromISO('2022-12-20'),
+                to: DateTime.fromISO('2023-01-06'),
+                
+                entry: {
+                  firstNightPrice: dinero({amount: 8000, currency: EUR}),
+                  perNightPrice: dinero({amount: 3500, currency: EUR}),
+                  
+                  minNumberOfPeople: 1,
+                  baseNumberOfPeople: 2,
+                  maxNumberOfPeople: 4,
+                  
+                  additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+                  additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+                  additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  
+                  minNumberOfNights: 3,
+                }
+              },
+              {
+                kind: 'range',
+                from: DateTime.fromISO('2023-01-01'),
+                to: DateTime.fromISO('2023-03-24'),
+                
+                entry: {
+                  firstNightPrice: dinero({amount: 5500, currency: EUR}),
+                  perNightPrice: dinero({amount: 3500, currency: EUR}),
+                  
+                  minNumberOfPeople: 1,
+                  baseNumberOfPeople: 2,
+                  maxNumberOfPeople: 4,
+                  
+                  additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+                  additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+                  additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  
+                  minNumberOfNights: 3,
+                }
+              },
+              {
+                kind: 'range',
+                from: DateTime.fromISO('2023-03-25'),
+                to: DateTime.fromISO('2023-06-30'),
+                entry: {
+                  
+                  firstNightPrice: dinero({amount: 5000, currency: EUR}),
+                  perNightPrice: dinero({amount: 3000, currency: EUR}),
+                  
+                  minNumberOfPeople: 1,
+                  baseNumberOfPeople: 2,
+                  maxNumberOfPeople: 4,
+                  
+                  additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+                  additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+                  additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  minNumberOfNights: 3,
+                }
+              },
+              {
+                kind: 'range',
+                from: DateTime.fromISO('2023-07-01'),
+                to: DateTime.fromISO('2023-08-31'),
+                entry: {
+                  
+                  firstNightPrice: dinero({amount: 8500, currency: EUR}),
+                  perNightPrice: dinero({amount: 5500, currency: EUR}),
+                  
+                  minNumberOfPeople: 1,
+                  baseNumberOfPeople: 2,
+                  maxNumberOfPeople: 4,
+                  
+                  additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+                  additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+                  additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  minNumberOfNights: 7,
+                }
+              },
+              {
+                kind: 'range',
+                from: DateTime.fromISO('2023-09-01'),
+                to: DateTime.fromISO('2023-12-20'),
+                entry: {
+                  
+                  firstNightPrice: dinero({amount: 5500, currency: EUR}),
+                  perNightPrice: dinero({amount: 3500, currency: EUR}),
+                  
+                  minNumberOfPeople: 1,
+                  baseNumberOfPeople: 2,
+                  maxNumberOfPeople: 4,
+                  
+                  additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+                  additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+                  additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  minNumberOfNights: 3,
+                }
+              },
+              {
+                kind: 'range',
+                from: DateTime.fromISO('2023-12-21'),
+                to: DateTime.fromISO('2024-01-05'),
+                entry: {
+                  firstNightPrice: dinero({amount: 8500, currency: EUR}),
+                  perNightPrice: dinero({amount: 5500, currency: EUR}),
+                  
+                  minNumberOfPeople: 1,
+                  baseNumberOfPeople: 2,
+                  maxNumberOfPeople: 4,
+                  
+                  additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
+                  additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
+                  additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  minNumberOfNights: 5,
+                }
+              },
+
+            ],
+            footnote: 'pricing-footnote-acco-cornflower'
+          }
+        },  
+        {
+          kind: 'calendar-available',
+          content: {
+            calUrl: 'https://calendar.google.com/calendar/ical/0512a05fa900ee7118de13a14d5244d3ebe2eba056af845e76996e6b9c4f885c%40group.calendar.google.com/public/basic.ics',
+            search: [3, 14, 21]
+          }
+        },
+
+      ]
+    },
     siteContent: [
       {
         header: 'pricing',
@@ -644,8 +863,8 @@ const accos = [
             content: {
               global: {
                 kind: 'entry',
-                firstNightPrice: dinero({amount: 8500, currency: EUR}),
-                perNightPrice: dinero({amount: 5500, currency: EUR}),
+                firstNightPrice: dinero({amount: 9500, currency: EUR}),
+                perNightPrice: dinero({amount: 7500, currency: EUR}),
                 additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                 additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                 additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
@@ -795,7 +1014,7 @@ const accos = [
           {
             kind: 'photo',
             content: {
-              photo: '012',
+              photo: '011',
               alt: 'apartment_1_alt'
             }
 

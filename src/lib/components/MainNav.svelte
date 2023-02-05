@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
+	
 	import { i18n } from '$lib/conf'
   import { currentLang } from '$lib/stores/lang';
   
@@ -8,16 +10,24 @@
 	
 	let allTranslations = Object.keys(i18n.translations);
 	$: currentTranslation = i18n.translations[$currentLang].nav
-	
+
+	const close = () => {
+		isMenuOpen.set(false)
+	}
+
 </script>
 
 <!-- Contents of this file will be used in the header and the responsive hamburger menu. -->
-<nav class="main-nav" class:open={$isMenuOpen}>
+
+
+<button class="not-nav" on:click={close} transition:fade></button>
+
+<nav class="main-nav" class:open={$isMenuOpen} transition:fade>
 	<ul>
 		{#each Object.entries(navItems.main) as [navKey, route]}
 			{#if route}
 				<li>
-					<a href="{route}">{ currentTranslation[navKey] }</a>
+					<a href="{route}" on:click|stopPropagation={close}>{ currentTranslation[navKey] }</a>
 				</li>
 			{:else if navKey == "lang" }
 				{#if allTranslations.length > 1}
@@ -63,7 +73,19 @@
     font-size: 1.6rem;
     font-weight: bold;
 
-		overflow-y: scroll;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	.not-nav {
+		border: none;
+		position: fixed;
+    top: 0;
+    right: 0;
+		bottom: 0;
+		left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+		overflow-y: hidden;
 		overflow-x: hidden;
 	}
 
