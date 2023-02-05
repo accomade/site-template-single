@@ -19,7 +19,7 @@
   header {
     position: relative;
     display: flex;
-
+    justify-content: center;
     margin: 0;
     width: 100vw;
     color: var(--header-font-color);
@@ -27,16 +27,20 @@
   }
 
   .text-wrapper {
+    min-height: 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 10rem;
+    margin-right: 8rem;
   }
 
   .slug {
     font-size: 1.6rem;
     font-family: var(--header-font-family, 'sans-serif');
     font-variant: var(--header-font-variant, 'small-caps');
+    margin-bottom: 1rem;
   }
 
   .header h1 {
@@ -47,12 +51,28 @@
   }
 
   .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+
     margin-left: 0.6rem;
     margin-top: 0.6rem;
     width: 10rem;
   }
 
+  @media (max-width: 550px) {
+    .text-wrapper {
+      margin-left: 10rem;
+      margin-right: 2rem;
+    }
+  }
+
   @media (max-width: 500px) {
+    .text-wrapper {
+      min-height: 6rem;
+      margin-left: 6rem;
+    }
+
     .slug {
       display: none;
     }
@@ -65,6 +85,12 @@
   }
 
   @media (max-width: 300px) {
+    .text-wrapper {
+      min-height: 4rem;
+      margin-left: 0.5rem;
+      margin-right: 1rem;
+    }
+
     .logo {
       display: none;
     }
@@ -72,5 +98,6 @@
       padding-left: 1rem;
     }
   }
+
 
 </style>
