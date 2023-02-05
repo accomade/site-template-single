@@ -14,6 +14,10 @@
   
 </script>
 
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
+
 <header class="header-image">
   <Photo photo={landing.headerPhoto} alt="Header Image" eager={true}/>
 </header>

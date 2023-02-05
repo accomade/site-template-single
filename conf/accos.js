@@ -381,7 +381,7 @@ const accos = [
                     header: 'kitchen',
                     specs: [
                       {
-                        label: 'coffemachine',
+                        label: 'coffeeMachine',
                         kind: 'coffeeMachine',
                         value: [
                           'nespresso', 'beans', 'filter'

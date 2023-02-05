@@ -10,11 +10,18 @@
       goto('/accomodations')
     }
   }
-
 </script>
+
+<svelte:head>
+  {#if acco && acco.displayName }
+  <title>{acco.displayName ? acco.displayName : data.accoHandle}</title>
+  {/if}
+</svelte:head>
+
 
 {#if acco}
   {#if acco.displayName }
+  
   <h1>{acco.displayName}</h1>
   {/if}
   {#each acco.siteContent as s}

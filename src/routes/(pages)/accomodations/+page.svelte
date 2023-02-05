@@ -11,6 +11,10 @@
   const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
 </script>
 
+<svelte:head>
+  <title>{trans.nav.accomodations ? trans.nav.accomodations : 'Accomodations'}</title>
+</svelte:head>
+
 <h1>{t("accomodations", dict)}</h1>
 
 <main style="max-width: {maxWidth};">
