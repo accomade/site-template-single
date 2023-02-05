@@ -2,7 +2,7 @@ import type { Photo, PhotoGallery } from './photos'
 import type { Calendar, CalendarAvailable } from './calendar'
 import type { Maps } from './maps'
 import type { Weather } from './weather'
-import type { Acco, Amneties, Pricing, PricingShort } from './accos'
+import type { AccoCard, Amneties, AmnetiesCore, Pricing, PricingShort } from './accos'
 
 export interface Section {
   header?: string | undefined
@@ -66,12 +66,12 @@ export interface AmnetiesBlock {
 
 export interface AmnetiesCoreBlock {
   kind: 'amneties-core'
-  content: AmnetiesCoreBlock
+  content: AmnetiesCore
 }
 
 export interface AccoCardBlock {
   kind: 'acco-card'
-  content: Acco
+  content: AccoCard
 }
 
 export type Block =

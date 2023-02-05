@@ -4,6 +4,48 @@ const landing:Landing = {
   headerPhoto: '001',
   sections: [
     {
+      columnCount: 1,
+      blocks: [
+        {
+          kind: 'acco-card',
+          content: {
+            acco: {
+              path: 'acco_cornflower',
+              displayName: 'Wohnung: Kornblume',
+              cardContent: {
+                coverPhoto: {
+                  photo: '010',
+                  alt: 'apartment_1_alt',
+                  link: '/accomodations/acco_cornflower',
+                },
+                slug: 'cornflower_card_slug',
+                blocks: [
+                  {
+                    kind: 'amneties-core',
+                    content: {
+                      core: {
+                        peopleMin: 1,
+                        peopleMax: 4,
+                        size: 55, //?? 
+                        bedRooms: 2, //??
+                        bathRooms: 1,
+                        pets: true,
+                        wifi: true,
+                        smoking: true,
+                        ac: false,
+                        tv: false,
+                        parking: false,
+                      }
+                    }
+                  },
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       header: 'town',
       columnCount: 3,
       blocks: [

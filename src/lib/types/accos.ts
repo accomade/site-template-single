@@ -70,17 +70,19 @@ export interface Bed {
 export type AmnetyNucleusType = 'longDesc' | 'string' | 'check' | 'checkWithDesc' | 'list' | 'numValue' | 'beds' | 'size' | 'seats' | 'coffeeMachine'
 
 export interface AmnetiesCore {
-  peopleMin: number
-  peopleMax: number
-  size: number
-  bedRooms: number
-  bathRooms: number
-  pets: boolean
-  wifi: boolean
-  smoking: boolean
-  ac: boolean
-  tv: boolean
-  parking: boolean
+  //core: {
+    peopleMin: number
+    peopleMax: number
+    size: number
+    bedRooms: number
+    bathRooms: number
+    pets: boolean
+    wifi: boolean
+    smoking: boolean
+    ac: boolean
+    tv: boolean
+    parking: boolean
+  //}
 }
 
 export interface Amneties {
@@ -125,14 +127,17 @@ export interface LabeledDesc {
   desc: string
 }
 
+export interface AccoCard {
+  acco: Acco
+}
 
 export interface Acco {
   path: string
   displayName: string
-  cardContent: {
+  cardContent?: {
     coverPhoto: Photo
     slug: string
     blocks: Block[]
   }
-  siteContent: Section[] 
+  siteContent?: Section[] 
 }

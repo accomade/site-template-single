@@ -188,7 +188,7 @@ const accos = [
                     desc: 'cornflower_shopping',
                   },
                   {
-                    label: 'sightseeing',
+                    label: 'sightSeeing',
                     desc: 'cornflower_sightseeing',
                   },
                   {

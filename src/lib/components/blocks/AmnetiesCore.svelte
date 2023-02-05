@@ -15,41 +15,42 @@
   import { i18n } from '$lib/conf';  
   import { currentLang } from '$lib/stores/lang';
   $: trans = i18n.translations[$currentLang] 
-  $: dict = trans.dict;
-
+  
   import type { AmnetiesCore } from "$lib/types/accos";
   export let core:AmnetiesCore;
+
+  $: theCore = core
 
 </script>
 
 <div class="amneties-wrapper">
-  {#if core}
+  {#if theCore}
   <div class="element-wrapper">
     <AreaSvg size="2rem"/>
     <div>
-    {@html trans.formatSize(core.size)}
+    {@html trans.formatSize(theCore.size)}
     </div>
   </div>
   <div class="element-wrapper">
     <PeopleSvg size="2rem"/>
     <div>
-    {core.peopleMin}-{core.peopleMax}
+    {theCore.peopleMin}-{theCore.peopleMax}
     </div>
   </div>
   <div class="element-wrapper">
     <BedroomSvg size="2rem"/>
     <div>
-    {core.bedRooms}
+    {theCore.bedRooms}
     </div>
   </div>
   <div class="element-wrapper">
     <BathroomSvg size="2rem"/>
     <div>
-    {core.bathRooms}
+    {theCore.bathRooms}
     </div>
   </div>
   <div class="bool-element-wrapper">
-    {#if !core.pets}
+    {#if !theCore.pets}
     <div class="main-icon-container">
       <PetsSvg size="1.6rem"/>
     </div>
@@ -63,7 +64,7 @@
     {/if}
   </div>
   <div class="bool-element-wrapper">
-    {#if !core.wifi}
+    {#if !theCore.wifi}
     <div class="main-icon-container">
       <WifiSvg size="1.6rem"/>
     </div>
@@ -75,7 +76,7 @@
     {/if}
   </div>
   <div class="bool-element-wrapper">
-    {#if !core.smoking}
+    {#if !theCore.smoking}
     <div class="main-icon-container">
       <SmokingSvg size="1.6rem"/>
     </div>
@@ -87,7 +88,7 @@
     {/if}
   </div>
   <div class="bool-element-wrapper">
-    {#if !core.ac}
+    {#if !theCore.ac}
     <div class="main-icon-container">
       <AcSvg size="1.6rem"/>
     </div>
@@ -99,7 +100,7 @@
     {/if}
   </div>
   <div class="bool-element-wrapper">
-    {#if !core.tv}
+    {#if !theCore.tv}
     <div class="main-icon-container">
       <TvSvg size="1.6rem"/>
     </div>
@@ -111,7 +112,7 @@
     {/if}
   </div>
   <div class="bool-element-wrapper">
-    {#if !core.parking}
+    {#if !theCore.parking}
     <div class="main-icon-container">
       <ParkingSvg size="1.6rem"/>
     </div>
