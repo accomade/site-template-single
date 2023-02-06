@@ -46,9 +46,10 @@ export interface Pricing {
 
 export interface PricingShort {
   global?: PricingEntry
-  entries?: PricingEntry[]
+  entries?: PricingRange[]
   showMaximum?: boolean
   showMinimum?: boolean
+  footnote?: string
 }
 
 
@@ -61,29 +62,20 @@ export type CoffeeMachine =
   | 'none'
 
 export type BedKind = 'kings' | 'queens' | 'solo' | 'bunkbed' | 'baby' | 'sleepingSofa'
-export interface Bed {
+
+export type BedSpec = {
   kind: BedKind
-  optional: boolean
+  optional?: boolean
   heads: number
 }
 
+export interface Beds {
+  specs: BedSpec[]
+}
+
+
 export type AmnetyNucleusType = 'longDesc' | 'string' | 'check' | 'checkWithDesc' | 'list' | 'numValue' | 'beds' | 'size' | 'seats' | 'coffeeMachine'
 
-export interface AmnetiesCore {
-  //core: {
-    peopleMin: number
-    peopleMax: number
-    size: number
-    bedRooms: number
-    bathRooms: number
-    pets: boolean
-    wifi: boolean
-    smoking: boolean
-    ac: boolean
-    tv: boolean
-    parking: boolean
-  //}
-}
 
 export interface Amneties {
   size?: number
@@ -116,10 +108,26 @@ export interface OutdoorsSection {
 
 
 export interface AmnetyNucleusSpec {
-  label: string
+  label?: string
   kind: AmnetyNucleusType
-  value?: boolean | number| string | Bed[] | CoffeeMachine[] | undefined
+  value?: boolean | number | string | Beds | CoffeeMachine[] | undefined
   desc?: string
+}
+
+
+export interface AmnetiesCore {
+  peopleMin: number
+  peopleMax: number
+  size: number
+  bedRooms: number
+  bathRooms: number
+  pets: boolean
+  wifi: boolean
+  smoking: boolean
+  ac: boolean
+  tv: boolean
+  parking: boolean
+
 }
 
 export interface LabeledDesc {

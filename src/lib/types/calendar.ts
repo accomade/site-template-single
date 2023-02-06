@@ -4,4 +4,5 @@ export interface Calendar {
 
 export interface CalendarAvailable {
   calUrl: string,
+  search: number[],
 }

@@ -1,10 +1,11 @@
 import { DateTime } from 'luxon'
 import { EUR } from '@dinero.js/currencies'
 import { dinero } from 'dinero.js'
+import type { Acco } from '$lib/types/accos';
 /*
 
 */
-const accos = [
+const accos:Acco[] = [
   {
     path: 'acco_cornflower',
     displayName: 'Wohnung: Kornblume',
@@ -44,6 +45,7 @@ const accos = [
                 to: DateTime.fromISO('2023-01-06'),
                 
                 entry: {
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 8000, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
@@ -64,6 +66,7 @@ const accos = [
                 to: DateTime.fromISO('2023-03-24'),
                 
                 entry: {
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
@@ -83,7 +86,7 @@ const accos = [
                 from: DateTime.fromISO('2023-03-25'),
                 to: DateTime.fromISO('2023-06-30'),
                 entry: {
-                  
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 5000, currency: EUR}),
                   perNightPrice: dinero({amount: 3000, currency: EUR}),
                   
@@ -102,6 +105,7 @@ const accos = [
                 from: DateTime.fromISO('2023-07-01'),
                 to: DateTime.fromISO('2023-08-31'),
                 entry: {
+                  kind: 'entry',
                   
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
@@ -121,6 +125,7 @@ const accos = [
                 from: DateTime.fromISO('2023-09-01'),
                 to: DateTime.fromISO('2023-12-20'),
                 entry: {
+                  kind: 'entry',
                   
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
@@ -140,6 +145,8 @@ const accos = [
                 from: DateTime.fromISO('2023-12-21'),
                 to: DateTime.fromISO('2024-01-05'),
                 entry: {
+                  kind: 'entry',
+                  
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
                   
@@ -305,24 +312,25 @@ const accos = [
                     ]
                   }
                 ],
-
                 rooms: [
                   {
                     header: 'bedroom_1_label',
                     specs: [
                       {
                         kind: 'beds',
-                        value: [
-                          {
-                            kind: 'king',
-                            heads: 2
-                          },
-                          {
-                            kind: 'solo',
-                            heads: 1,
-                            optional: true
-                          }
-                        ]
+                        value: {
+                          specs: [
+                            {
+                              kind: 'kings',
+                              heads: 2
+                            },
+                            {
+                              kind: 'solo',
+                              heads: 1,
+                              optional: true
+                            }
+                          ]
+                        }
                       },
 
                       {
@@ -343,12 +351,14 @@ const accos = [
                     specs: [
                       {
                         kind: 'beds',
-                        value: [
-                          {
-                            kind: 'bunkbed',
-                            heads: 2
-                          }
-                        ]
+                        value: {
+                          specs: [
+                            {
+                              kind: 'bunkbed',
+                              heads: 2
+                            }
+                          ]
+                        }
                       },
 
                       {
@@ -429,6 +439,7 @@ const accos = [
                   to: DateTime.fromISO('2023-01-06'),
                   
                   entry: {
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 8000, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
@@ -449,6 +460,7 @@ const accos = [
                   to: DateTime.fromISO('2023-03-24'),
                   
                   entry: {
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
@@ -468,7 +480,7 @@ const accos = [
                   from: DateTime.fromISO('2023-03-25'),
                   to: DateTime.fromISO('2023-06-30'),
                   entry: {
-                    
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 5000, currency: EUR}),
                     perNightPrice: dinero({amount: 3000, currency: EUR}),
                     
@@ -487,7 +499,7 @@ const accos = [
                   from: DateTime.fromISO('2023-07-01'),
                   to: DateTime.fromISO('2023-08-31'),
                   entry: {
-                    
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     
@@ -506,7 +518,7 @@ const accos = [
                   from: DateTime.fromISO('2023-09-01'),
                   to: DateTime.fromISO('2023-12-20'),
                   entry: {
-                    
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
@@ -525,6 +537,7 @@ const accos = [
                   from: DateTime.fromISO('2023-12-21'),
                   to: DateTime.fromISO('2024-01-05'),
                   entry: {
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     
@@ -719,9 +732,6 @@ const accos = [
               
               minNumberOfNights: 5,
             },
-            columns: [
-              'timeRange', 'firstNight', 'eachNight', 'peopleNum', 'extraPerson', 'minNumNights'
-            ],
             entries: [
               {
                 kind: 'range',
@@ -729,6 +739,7 @@ const accos = [
                 to: DateTime.fromISO('2023-01-06'),
                 
                 entry: {
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 8000, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
@@ -749,6 +760,7 @@ const accos = [
                 to: DateTime.fromISO('2023-03-24'),
                 
                 entry: {
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
@@ -768,7 +780,7 @@ const accos = [
                 from: DateTime.fromISO('2023-03-25'),
                 to: DateTime.fromISO('2023-06-30'),
                 entry: {
-                  
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 5000, currency: EUR}),
                   perNightPrice: dinero({amount: 3000, currency: EUR}),
                   
@@ -787,7 +799,7 @@ const accos = [
                 from: DateTime.fromISO('2023-07-01'),
                 to: DateTime.fromISO('2023-08-31'),
                 entry: {
-                  
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
                   
@@ -806,7 +818,7 @@ const accos = [
                 from: DateTime.fromISO('2023-09-01'),
                 to: DateTime.fromISO('2023-12-20'),
                 entry: {
-                  
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
@@ -825,6 +837,7 @@ const accos = [
                 from: DateTime.fromISO('2023-12-21'),
                 to: DateTime.fromISO('2024-01-05'),
                 entry: {
+                  kind: 'entry',
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
                   
@@ -885,6 +898,7 @@ const accos = [
                   to: DateTime.fromISO('2023-01-06'),
                   
                   entry: {
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 8000, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
@@ -905,6 +919,7 @@ const accos = [
                   to: DateTime.fromISO('2023-03-24'),
                   
                   entry: {
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
@@ -924,7 +939,7 @@ const accos = [
                   from: DateTime.fromISO('2023-03-25'),
                   to: DateTime.fromISO('2023-06-30'),
                   entry: {
-                    
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 5000, currency: EUR}),
                     perNightPrice: dinero({amount: 3000, currency: EUR}),
                     
@@ -943,7 +958,7 @@ const accos = [
                   from: DateTime.fromISO('2023-07-01'),
                   to: DateTime.fromISO('2023-08-31'),
                   entry: {
-                    
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     
@@ -962,7 +977,7 @@ const accos = [
                   from: DateTime.fromISO('2023-09-01'),
                   to: DateTime.fromISO('2023-12-20'),
                   entry: {
-                    
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
@@ -981,6 +996,7 @@ const accos = [
                   from: DateTime.fromISO('2023-12-21'),
                   to: DateTime.fromISO('2024-01-05'),
                   entry: {
+                    kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     

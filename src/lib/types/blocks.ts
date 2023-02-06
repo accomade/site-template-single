@@ -61,12 +61,16 @@ export interface WeatherBlock {
 
 export interface AmnetiesBlock {
   kind: 'amneties'
-  content: Amneties
+  content: {
+    amneties: Amneties
+  }
 }
 
 export interface AmnetiesCoreBlock {
   kind: 'amneties-core'
-  content: AmnetiesCore
+  content: {
+    core: AmnetiesCore
+  }
 }
 
 export interface AccoCardBlock {

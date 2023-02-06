@@ -1,7 +1,7 @@
 <script lang="ts">
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
-  import type { AmnetyNucleusType, Bed, CoffeeMachine } from '$lib/types/accos';
+  import type { AmnetyNucleusType, Beds, CoffeeMachine } from '$lib/types/accos';
 
   import CheckSvg from '$lib/components/svg/CheckSVG.svelte';
   import NoCheckSvg from '$lib/components/svg/NoCheckSVG.svelte';
@@ -11,7 +11,7 @@
   export let label:string="";
   export let kind:AmnetyNucleusType;
   
-  export let value: boolean | number | string | Bed[] | CoffeeMachine[] | undefined = "";
+  export let value: boolean | number | string | Beds | CoffeeMachine[] | undefined = "";
   export let desc: string = "";
   
   $:t = dict[label] ? dict[label] : label
@@ -33,7 +33,7 @@
   }
 
   $: asCheck = value as boolean
-  $: asBeds = value as Bed[]
+  $: asBeds = value as Beds
   $: asCoffeeMachines = value as CoffeeMachine[]
 
   $: asString = value as string
@@ -82,7 +82,7 @@
 {/if}
 
 {#if kind == "beds"}
-  {#each asBeds as bed }
+  {#each asBeds.specs as bed }
     <div class="option">
       <dt>{tFun(bed.kind, dict)}</dt><dd>{trans.formatBed(bed.heads, bed.kind)} {#if bed.optional}{tFun('bedOptional', dict)}{/if}</dd>
     </div>
