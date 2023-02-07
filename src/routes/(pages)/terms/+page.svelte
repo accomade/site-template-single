@@ -4,7 +4,7 @@
   $: trans = i18n.translations[$currentLang] 
   
   const importTOS = async (lang: string) => {
-    return import(`$lib/content/de/tos.svelte`)
+    return import(`../../../lib/content/${lang}/tos.svelte`)
   }
 </script>
 

@@ -3,6 +3,6 @@
   Kordula Schumacher<br>
   Achterstr. 3<br>
   17459 Koserow<br>
-  Email: kordulaschumacher [at] gmail.com<br>
-  Phone: 038375 20562<br>
+  E-Mail: kordulaschumacher [at] gmail.com<br>
+  Telephone: 038375 20562<br>
 </p>
