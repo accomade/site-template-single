@@ -1,12 +1,7 @@
 <script lang="ts">
   export let name:string = 'Kordula Schumacher'
-  export let legalContact:string = `
-    Achterstr. 3<br>
-    17459 Koserow - Deutschland<br>
-    Telefon: 038375 - 20562<br>
-    E-Mail: <a href="mailto:G.Schumacher@koserow.de">G.Schumacher@koserow.de</a>`;
-  export let arrivalTime = "15:00"
-  export let leaveTime = "10:00"
+  export let arrivalTime = '15:00'
+  export let leaveTime = '10:00'
 
 </script>
 
