@@ -27,9 +27,18 @@ const i18n:I18n = {
         slug: 'THE place where you always wanted to spend your holidays.',
       },
       dict: {
+        home: 'Home',
+        location: 'Location',
+        accomodations: 'Apartments',
+        lang: 'Language',
+        imprint: 'Imprint',
+        terms: 'Terms',
+        de: 'Deutsch',
+        en: 'English',
+        usedom: 'Isle of Usedom',
+
         impressions: 'Some Impressions',
         directions: 'Directions',
-        accomodations: 'Apartments',
         apartments: 'Apartments',
         town: 'Koserow',
         weather: 'Weather',
@@ -191,17 +200,6 @@ const i18n:I18n = {
           marketing: 'Marketing cookies'
         }
       },
-      nav: {
-        home: 'Home',
-        location: 'Location',
-        accomodations: 'Apartments',
-        lang: 'Language',
-        imprint: 'Imprint',
-        terms: 'Terms',
-        de: 'Deutsch',
-        en: 'English',
-      
-      },
       formatDate(d:DateTime):string {
         return d.setLocale('en').toFormat('MM/dd/yy')
       },
@@ -287,9 +285,18 @@ const i18n:I18n = {
         slug: 'Hier wollten sie schon immer ihre Ferien verbringen.',
       },
       dict: {
+        home: 'Startseite',
+        location: 'Der Ort',
+        accomodations: 'Ferienwohnungen',
+        lang: 'Sprache',
+        imprint: 'Impressum',
+        terms: 'AGB',
+        de: 'Deutsch',
+        en: 'English',
+        usedom: 'Insel Usedom',
+
         impressions: 'Weitere Eindrücke',
         directions: 'Ihre Anreise',
-        accomodations: 'Ferienwohnungen',
         apartments: 'Ferienwohnungen',
         town: 'Koserow',
         weather: 'Wetter',
@@ -499,16 +506,6 @@ const i18n:I18n = {
           analytics: 'Analyse-Cookies',
           marketing: 'Marketing-Cookies'
         }
-      },
-      nav: {
-        home: 'Startseite',
-        location: 'Der Ort',
-        accomodations: 'Ferienwohnungen',
-        lang: 'Sprache',
-        imprint: 'Impressum',
-        terms: 'AGB',
-        de: 'Deutsch',
-        en: 'English',
       },
       formatDate(d:DateTime):string {
         return d.setLocale('de').toFormat('dd.MM.yyyy')

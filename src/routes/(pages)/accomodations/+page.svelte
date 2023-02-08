@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>{trans.nav.accomodations ? trans.nav.accomodations : 'Accomodations'}</title>
+  <title>{t("accomodations", dict)}</title>
 </svelte:head>
 
 <h1>{t("accomodations", dict)}</h1>

@@ -44,7 +44,8 @@ const handleCookie = () => {
   }
 }
 
-langStore.subscribe( () => {
+langStore.subscribe( ( val ) => {
+  if(document?.documentElement?.lang) document.documentElement.lang=val
   handleCookie()
 })
 

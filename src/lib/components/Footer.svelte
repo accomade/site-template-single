@@ -3,9 +3,9 @@
   import { currentLang } from '$lib/stores/lang';
   
 	import type { Nav } from '$lib/types/nav';
+  import NavItem from './NavItem.svelte';
   
-  export let navItems:Nav
-	$: currentTranslation = i18n.translations[$currentLang]
+  export let nav:Nav
 
   const importFooter = async (lang: string) => {
     return import(`$lib/content/${lang}/footer.svelte`)
@@ -15,10 +15,10 @@
 
 <footer>
   <div class="nav">
-    {#each Object.entries(navItems.footer) as [navKey, route] }
-      <div class="link-wrapper">
-        <a href={route}>{ currentTranslation.nav[navKey] }</a>
-      </div>
+    {#each nav.footer as n }
+    <div class="link-wrapper">
+      <NavItem {n}/>
+    </div>
     {/each}
   </div>
   <div class="content">
@@ -43,16 +43,14 @@
     justify-content: right;
   }
 
-  a {
+  .link-wrapper {
 		text-decoration: underline;
 		color: var(--nav-font-color);
     font-family: var(--nav-font-family, 'mono');
     font-variant: var(--nav-font-variant, 'normal');
     font-size: 1.4rem;
     font-weight: bold;
-	}
-
-  .link-wrapper {
+	
     display: flex;
     align-items: center;
     margin-left: 1rem;

@@ -3,12 +3,14 @@
   import { currentLang } from '$lib/stores/lang';
 
   import LinkSvg from '$lib/components/svg/LinkSVG.svelte';
+  import ExtLinkSvg from '$lib/components/svg/ExtLinkSVG.svelte';
   import type { PhotoNumber } from '$lib/types/photos';
   
   export let alt:string;
   export let photo:PhotoNumber;
   export let eager:boolean = false;
   export let link:string = "";
+  export let external:boolean = false;
   export let attribution:string = "";
   export let maxHeight:string = "100%"
   export let maxWidth:string = "100%"
@@ -22,6 +24,32 @@
 
 {#await importPhoto() then module }
   {#if link}
+    {#if external}
+    <a 
+        href="{link}"
+        target="_blank" 
+        rel="noreferrer noopener">
+
+      <svelte:component 
+        bind:clientHeight={photoHeight}
+        this={module.default} 
+        {maxWidth}
+        {maxHeight}
+        {eager}
+        alt={dict[alt] ? dict[alt] : alt} />
+    
+        {#if attribution}
+        <div 
+            style="height:calc({photoHeight}px - 0.5rem);"
+            class="attribution-container">
+          <div class="attribution-wrapper">
+            {@html attribution}
+          </div>
+        </div>
+        {/if}
+    </a>
+    <div class="link-icon-wrapper"><ExtLinkSvg size="1.8rem"/></div>
+    {:else}
     <a href="{link}">
       <svelte:component 
         bind:clientHeight={photoHeight}
@@ -41,7 +69,8 @@
         </div>
         {/if}
     </a>
-    <div class="link-icon-wrapper"><LinkSvg /></div>
+    <div class="link-icon-wrapper"><LinkSvg size="1.4rem" /></div>
+    {/if}
   {:else}
     <svelte:component 
       bind:clientHeight={photoHeight}

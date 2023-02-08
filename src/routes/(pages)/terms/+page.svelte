@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>{trans.nav.terms ? trans.nav.terms : 'Terms'}</title>
+  <title>{trans.dict.terms ? trans.dict.terms : 'Terms'}</title>
 </svelte:head>
 
 <div class="terms-wrapper">

@@ -15,9 +15,6 @@ export interface Translation {
   }
   calendar: CalI18n,
   cookies: CookieTrans,
-  nav: { 
-    [key: string]: string 
-  },
   formatDate(d:DateTime): string
   formatAvailability(from:DateTime|null, forDays:number, maxFutureDate:DateTime):string
   formatMoney(c:Dinero<number>): string

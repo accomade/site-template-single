@@ -156,6 +156,7 @@ export interface Photo {
   alt: string,
   attribution?: string,
   link?: string,
+  external?: boolean,
   maxHeight?: string|undefined
   maxWidth?: string|undefined
 }

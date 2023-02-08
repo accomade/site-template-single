@@ -71,6 +71,7 @@ const landing:Landing = {
             alt: 'town_church',
             attribution: '<a href="https://commons.wikimedia.org/wiki/File:Koserowkirche.jpg">Unukorno</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons',
             link: 'http://www.koserow.de',
+            external: true,
             maxHeight: '15rem',
           }
         }

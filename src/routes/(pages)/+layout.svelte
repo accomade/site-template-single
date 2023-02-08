@@ -16,11 +16,11 @@
   <slot></slot>
 </main>
 
-<Footer navItems={nav}/>
+<Footer nav={nav}/>
 
 
 {#if $isMenuOpen}
-  <MainNav navItems={nav} />
+  <MainNav nav={nav} />
 {/if}
 
 <div class="ham-wrapper">

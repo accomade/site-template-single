@@ -10,7 +10,7 @@
 
 
 <svelte:head>
-  <title>{trans.nav.imprint ? trans.nav.imprint : 'Imprint'}</title>
+  <title>{trans.dict.imprint ? trans.dict.imprint : 'Imprint'}</title>
 </svelte:head>
 
 

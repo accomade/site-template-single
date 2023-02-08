@@ -33,14 +33,14 @@
 </main>
 
 {#if $isMenuOpen}
-  <MainNav navItems={nav} />
+  <MainNav nav={nav} />
 {/if}
 
 <div class="ham-wrapper">
   <HamburgerMenuButton/>
 </div>
 
-<Footer navItems={nav}/>
+<Footer nav={nav}/>
 
 <style>
 
@@ -60,7 +60,7 @@
     margin-top: calc(100vh - 1rem);
     text-align: center;
     margin-left: 2rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
 
   }
 

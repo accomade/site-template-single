@@ -6,10 +6,13 @@
   
 	import type { Nav } from '$lib/types/nav';
 	import { isMenuOpen } from '$lib/stores/menu';
-	export let navItems:Nav
+	import NavItem from './NavItem.svelte';
+	
+	export let nav:Nav
+
 	
 	let allTranslations = Object.keys(i18n.translations);
-	$: currentTranslation = i18n.translations[$currentLang].nav
+	$: dict = i18n.translations[$currentLang].dict
 
 	const close = () => {
 		isMenuOpen.set(false)
@@ -17,44 +20,35 @@
 
 </script>
 
-<!-- Contents of this file will be used in the header and the responsive hamburger menu. -->
-
-
 <button class="not-nav" on:click={close} transition:fade></button>
 
 <nav class="main-nav" class:open={$isMenuOpen} transition:fade>
 	<ul>
-		{#each Object.entries(navItems.main) as [navKey, route]}
-			{#if route}
-				<li>
-					<a href="{route}" on:click|stopPropagation={close}>{ currentTranslation[navKey] }</a>
-				</li>
-			{:else if navKey == "lang" }
-				{#if allTranslations.length > 1}
-				<li>
-					<fieldset>
-						<legend>{ currentTranslation[navKey] }</legend>
-				
-						{#each allTranslations as langKey}
-						<div class="radio-wrapper">
-							<input 
-									type="radio"
-									bind:group={$currentLang}
-									name="language" 
-									value="{langKey}"
-									checked={langKey === $currentLang}>
-							<label for="{langKey}">{currentTranslation[langKey] ? currentTranslation[langKey] : langKey}</label>
-						</div>
-						{/each}
-					</fieldset>
-				</li>
-				{/if}
-			{:else}
-				<li>
-					<span>{ currentTranslation[navKey] }</span>
-				</li>
-			{/if}
+		{#each nav.main as n}
+		<li>
+			<NavItem {n}/>
+		</li>
 		{/each}
+
+		{#if allTranslations.length > 1}
+		<li>
+			<fieldset>
+				<legend>{ dict['lang'] }</legend>
+		
+				{#each allTranslations as langKey}
+				<div class="radio-wrapper">
+					<input 
+							type="radio"
+							bind:group={$currentLang}
+							name="language" 
+							value="{langKey}"
+							checked={langKey === $currentLang}>
+					<label for="{langKey}">{dict[langKey] ? dict[langKey] : langKey}</label>
+				</div>
+				{/each}
+			</fieldset>
+		</li>
+		{/if}
 	</ul>
 </nav>
 
@@ -92,11 +86,6 @@
 	li {
 		list-style: none;
 		margin-bottom: 1rem;
-	}
-
-	a {
-		text-decoration: underline;
-		color: var(--nav-font-color);
 	}
 
 	.radio-wrapper {
