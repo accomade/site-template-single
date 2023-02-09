@@ -24,11 +24,13 @@
   
   <h1>{acco.displayName}</h1>
   {/if}
-  {#each acco.siteContent as s}
-  <div class="section-wrapper">
-  <Section {...s}/>
-  </div>
-  {/each}
+  {#if acco.siteContent}
+    {#each acco.siteContent as s}
+    <div class="section-wrapper">
+    <Section {...s}/>
+    </div>
+    {/each}
+  {/if}
 {/if}
 
 

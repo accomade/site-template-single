@@ -38,11 +38,8 @@
 
 <style>
   :global( body, html ) {
-    overflow-x: hidden;
     padding: 0;
     margin: 0;
-    min-height: 100vh;
-    min-width: 100vw;
     background-color: var(--main-bg-color, 'white');
     color: var(--main-font-color, 'black');
   }

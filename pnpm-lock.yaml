@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@dinero.js/currencies': 2.0.0-alpha.1
+  '@dinero.js/currencies': 2.0.0-alpha.13
   '@fontsource/arizonia': ^4.5.9
   '@fontsource/carrois-gothic': ^4.5.10
   '@fontsource/raleway': ^4.5.12
@@ -10,7 +10,7 @@ specifiers:
   '@types/js-cookie': ^3.0.2
   '@types/luxon': ^3.2.0
   '@typescript/lib-dom': npm:@types/web@^0.0.91
-  dinero.js: 1.9.1
+  dinero.js: 2.0.0-alpha.13
   gdpr-cooco-banner: ^0.0.4
   js-cookie: ^3.0.1
   luxon: ^3.2.1
@@ -23,11 +23,11 @@ specifiers:
   vite-imagetools: ^4.0.18
 
 dependencies:
-  '@dinero.js/currencies': 2.0.0-alpha.1
+  '@dinero.js/currencies': 2.0.0-alpha.13
   '@fontsource/arizonia': 4.5.9
   '@fontsource/carrois-gothic': 4.5.10
   '@fontsource/raleway': 4.5.12
-  dinero.js: 1.9.1
+  dinero.js: 2.0.0-alpha.13
   js-cookie: 3.0.1
   luxon: 3.2.1
 
@@ -48,8 +48,20 @@ devDependencies:
 
 packages:
 
-  /@dinero.js/currencies/2.0.0-alpha.1:
-    resolution: {integrity: sha512-JoKY6q3AOm2II44qLp6VMGn+j+p6QC39m3DFogKZXsucWIIvzt7c2v04DZrrHWLNnDYNzITOnbQ7f2pGbONjig==}
+  /@dinero.js/calculator-number/2.0.0-alpha.13:
+    resolution: {integrity: sha512-Mo/0FUVFq4dVb/RfBIASUxPFbQbkHYC0VBe36DgWfbbhwG6K6ONuzTLBU5W6LdrMpB7D/CxgZISdQ0pyZKwg9w==}
+    dependencies:
+      '@dinero.js/core': 2.0.0-alpha.13
+    dev: false
+
+  /@dinero.js/core/2.0.0-alpha.13:
+    resolution: {integrity: sha512-RLZz8WmYe1ehqD2YtTpzCzdk0Hqf6oaAVmRlULLkua6vuEVEXjPQEhuyTMLHcS6/Gppy9nuEw8mpSNvU+Sy8QQ==}
+    dependencies:
+      '@dinero.js/currencies': 2.0.0-alpha.13
+    dev: false
+
+  /@dinero.js/currencies/2.0.0-alpha.13:
+    resolution: {integrity: sha512-vEfDara+xAqOrLww80FyFVw4usWcCsR4HwhaoCvwIzB5UdsLPDeUviAGFi8CoWjtLCR44iIeOHdn9jDr7Jj+TQ==}
     dev: false
 
   /@esbuild/android-arm/0.16.17:
@@ -569,8 +581,12 @@ packages:
     resolution: {integrity: sha512-JG6Q248aN0pgFL57e3zqTVeFraBe+5W2ugvv1mLXsJP6YYIYJhRZhAl7QP8haJrqob6X10F9NEkuCvNILZTPeQ==}
     dev: true
 
-  /dinero.js/1.9.1:
-    resolution: {integrity: sha512-1HXiF2vv3ZeRQ23yr+9lFxj/PbZqutuYWJnE0qfCB9xYBPnuaJ8lXtli1cJM0TvUXW1JTOaePldmqN5JVNxKSA==}
+  /dinero.js/2.0.0-alpha.13:
+    resolution: {integrity: sha512-xuBgE/3/67SXOW/UKjmaRd/YJQkUSlYS+6DvfglFg1Mbfn2K7cp+WQcgU76CLJpJPkJABgILsPjw1Om9OJ5puA==}
+    dependencies:
+      '@dinero.js/calculator-number': 2.0.0-alpha.13
+      '@dinero.js/core': 2.0.0-alpha.13
+      '@dinero.js/currencies': 2.0.0-alpha.13
     dev: false
 
   /end-of-stream/1.4.4:

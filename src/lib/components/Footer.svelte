@@ -65,7 +65,7 @@
     color: var(--footer-font-color);
     background-color: var(--footer-bg-color);
     margin-top: 1rem;
-    width: calc(100vw - 4rem);
+    width: calc(100vw - 5rem);
 
     padding-top: 1rem;
     padding-bottom: 1rem;
