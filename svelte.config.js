@@ -19,7 +19,6 @@ const config = {
 				"/",
 				"/accomodations",
 				"/imprint",
-				"/location",
 				"/terms",
 				...Accos.map( (a) => { return `/accomodations/${a.path}`})
 			]
