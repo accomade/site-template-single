@@ -9,7 +9,7 @@ const config: UserConfig = {
       allow: ['conf', 'src', 'node_modules', 'photos', 'static']
     }
   },
-	plugins: [sveltekit(), imagetools( {force: true} )]
+	plugins: [sveltekit(), imagetools()] // {force: true} )]
 };
 
 export default config;
