@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.1",
-		"@sveltejs/kit": "^1.5.3",
+		"@sveltejs/kit": "^1.5.5",
 		"@types/js-cookie": "^3.0.2",
 		"@types/luxon": "^3.2.0",
 		"@types/web": "^0.0.91",
@@ -31,10 +31,10 @@
 	},
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.13",
-		"dinero.js": "2.0.0-alpha.13",
 		"@fontsource/arizonia": "^4.5.9",
 		"@fontsource/carrois-gothic": "^4.5.10",
 		"@fontsource/raleway": "^4.5.12",
+		"dinero.js": "2.0.0-alpha.13",
 		"js-cookie": "^3.0.1",
 		"luxon": "^3.2.1"
 	}

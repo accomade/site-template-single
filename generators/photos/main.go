@@ -18,13 +18,13 @@ func main() {
 	for i := 0; i < 150; i++ {
 		photoNumber := fmt.Sprintf("%03d", i+1)
 		compID := photoNumber
-		log.Println("Creating Component:", compID)
 
 		if _, err := os.Stat(fmt.Sprintf("../../photos/%s.jpg", photoNumber)); errors.Is(err, os.ErrNotExist) {
 			//photoNumber = "000"
 			// skip unknown files ... let's see if this improves build times ...
 			continue
 		}
+		log.Println("Creating Component:", compID)
 
 		t, err := template.New("photo-comp").Parse(`
 			<script lang="ts">
