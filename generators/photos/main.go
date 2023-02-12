@@ -14,7 +14,7 @@ type PhotoComponent struct {
 
 func main() {
 
-	/** creates 150 components ... and links existing files, otherwise placeholder*/
+	/** creates at max 150 components ... for existing files */
 	for i := 0; i < 150; i++ {
 		photoNumber := fmt.Sprintf("%03d", i+1)
 		compID := photoNumber

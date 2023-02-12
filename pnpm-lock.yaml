@@ -6,7 +6,7 @@ specifiers:
   '@fontsource/carrois-gothic': ^4.5.10
   '@fontsource/raleway': ^4.5.12
   '@sveltejs/adapter-static': ^2.0.1
-  '@sveltejs/kit': ^1.5.5
+  '@sveltejs/kit': ^1.5.6
   '@types/js-cookie': ^3.0.2
   '@types/luxon': ^3.2.0
   '@types/web': ^0.0.91
@@ -14,7 +14,7 @@ specifiers:
   gdpr-cooco-banner: ^0.0.4
   js-cookie: ^3.0.1
   luxon: ^3.2.1
-  occuplan: ^0.0.13
+  occuplan: ^0.0.14
   svelte: ^3.55.1
   svelte-check: ^3.0.3
   tslib: ^2.5.0
@@ -32,13 +32,13 @@ dependencies:
   luxon: 3.2.1
 
 devDependencies:
-  '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.5.5
-  '@sveltejs/kit': 1.5.5_svelte@3.55.1+vite@4.1.1
+  '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.5.6
+  '@sveltejs/kit': 1.5.6_svelte@3.55.1+vite@4.1.1
   '@types/js-cookie': 3.0.2
   '@types/luxon': 3.2.0
   '@types/web': 0.0.91
   gdpr-cooco-banner: 0.0.4
-  occuplan: 0.0.13
+  occuplan: 0.0.14
   svelte: 3.55.1
   svelte-check: 3.0.3_svelte@3.55.1
   tslib: 2.5.0
@@ -329,16 +329,16 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-static/2.0.1_@sveltejs+kit@1.5.5:
+  /@sveltejs/adapter-static/2.0.1_@sveltejs+kit@1.5.6:
     resolution: {integrity: sha512-o5/q3YwD/ErxYCFlK1v3ydvldyNKk1lh3oeyxn4mhz+Pkbx/uuxhzmbOpytTlp5aVqNHDVsb04xadUzOFCDDzw==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@sveltejs/kit': 1.5.5_svelte@3.55.1+vite@4.1.1
+      '@sveltejs/kit': 1.5.6_svelte@3.55.1+vite@4.1.1
     dev: true
 
-  /@sveltejs/kit/1.5.5_svelte@3.55.1+vite@4.1.1:
-    resolution: {integrity: sha512-NJry1mvcIBITVe9WyAGu39Cf33z8wRKzut/Oug4zqMVUpX+i7fG17+GyvLCh9GXdmIkqwSeSMROHDKRODvd6BA==}
+  /@sveltejs/kit/1.5.6_svelte@3.55.1+vite@4.1.1:
+    resolution: {integrity: sha512-CHVeQpbcwSIUekF6WwevmExKXyfHnzM5nlCEUv13lGgfJ0zKA0ny5YwIe40vccrm5w5Caec7jMTt9Ih3McJr5g==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -918,8 +918,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan/0.0.13:
-    resolution: {integrity: sha512-Gxt+OnltwirYN2dzisSDz9EZTVzeJWajQ9k+WvYm8kxWzvkwmP1VVx0O/jUDxAlgO035VThwHoeIm5x/A9imiQ==}
+  /occuplan/0.0.14:
+    resolution: {integrity: sha512-0dz4LcWOAT7dAt0X0I4sZlf/9nSe4dXj7Te421QPG9RK4bu3Bsd0MaIEYGpCOgifC8PWjF0beQBOWiIMSuxAyw==}
     dependencies:
       luxon: 3.2.1
     dev: true
