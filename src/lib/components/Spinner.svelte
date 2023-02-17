@@ -1,6 +1,7 @@
 <script>
   export let color="darkgrey"
   export let size="20vw"
+  export let disableScrollingOnBody=false
 </script>
 
 <div class="background">
@@ -20,11 +21,13 @@
 </div>
 
 <svelte:head>
+  {#if disableScrollingOnBody}
   <style>
     body {
       overflow: hidden;
     }
   </style>
+  {/if}
 </svelte:head>
 
 <style>
