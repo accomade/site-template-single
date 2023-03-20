@@ -27,7 +27,7 @@
         class:span-2={photoSizes[i] == 2}
         class:span-3={photoSizes[i] == 3}>
     
-      <PhotoDispatcher photo={p.photo} alt={p.alt}/>
+      <PhotoDispatcher photoPath={p.photoPath} alt={p.alt}/>
   
     </button>
   {/each}

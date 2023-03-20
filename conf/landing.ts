@@ -1,7 +1,13 @@
 import type { Landing } from '$lib/types/landing';
 
+import { PUBLIC_PHOTOS_BASE_PATH } from '$env/static/public';
+import { PUBLIC_USER_ID } from '$env/static/public';
+
+const basePath = `${PUBLIC_PHOTOS_BASE_PATH}/users/${PUBLIC_USER_ID}`
+
+
 const landing:Landing = {
-  headerPhoto: '001',
+  headerPhoto: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
   sections: [
     {
       columnCount: 1,
@@ -14,7 +20,7 @@ const landing:Landing = {
               displayName: 'Wohnung: Kornblume',
               cardContent: {
                 coverPhoto: {
-                  photo: '010',
+                  photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                   alt: 'apartment_1_alt',
                   link: '/accomodations/acco_cornflower',
                 },
@@ -67,7 +73,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content:{
-            photo: '020',
+            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
             alt: 'town_church',
             attribution: '<a href="https://commons.wikimedia.org/wiki/File:Koserowkirche.jpg">Unukorno</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons',
             link: 'http://www.koserow.de',
@@ -91,7 +97,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photo: '010',
+            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
             alt: "apartment_1_alt",
             link: "/accomodations/acco_cornflower"
           }
@@ -99,7 +105,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photo: '011',
+            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
             alt: "apartment_2_alt",
             link: "/accomodations/acco_sunflower"
           }
@@ -107,7 +113,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photo: '012',
+            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
             alt: "apartment_3_alt",
             link: "/accomodations/acco_rosebush"
           }
@@ -123,22 +129,22 @@ const landing:Landing = {
           content: {
             photos: [
               {
-                photo: '003',
+                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
                 cols: 2
               },
               {
-                photo: '004',
+                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
                 cols: 1
               },
               {
-                photo: '005',
+                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
                 cols: 2
               },
               {
-                photo: '006',
+                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
                 cols: 1
               }

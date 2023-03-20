@@ -1,29 +1,15 @@
 
 <script lang="ts">
+	import { TwicImg } from '@twicpics/components/sveltekit'
 	import { onMount } from 'svelte';
-	// @ts-ignore
-	import { src as placeholder, width, height } from '../../../photos/000.jpg?w=40&metadata'
-	
+
+	export let frame = false;
+	export let photoPath:string;
+
 	export let alt:string;
-	export let maxWidth:string;
-	export let maxHeight:string;
+	//export let maxWidth:string;
+	//export let maxHeight:string;
 	export let eager:boolean = false;
-
-	let sharpen = false;
-	const importFormats = async () => {
-		// @ts-ignore
-		let srcsetAvif = (await import('../../../photos/000.jpg?w=300;500;700;900;1100;1700;2500;3300&format=avif&srcset&imagetools')).default;
-		// @ts-ignore
-		let srcsetWebp = (await import('../../../photos/000.jpg?w=300;500;700;900;1100;1700;2500;3300&format=webp&srcset')).default;
-
-
-		sharpen = true;
-		return {
-			avif: srcsetAvif,
-			webp: srcsetWebp
-		}
-	}
-
 	
 	let mounted = false;
 	onMount( () => {
@@ -31,33 +17,34 @@
 	})
 
 </script>
-	
-<picture>
-	{#if mounted}
-		{#await importFormats() then formats}
-			<source srcset={formats.avif} type="image/avif"/>
-			<source srcset={formats.webp} type="image/webp"/>
-		{/await}
-	{/if}
-	<img
-		class:sharpen={sharpen}
-		style="max-width:{maxWidth};max-height:{maxHeight};"
-		loading={eager ? null : "lazy"}
-		decoding={eager ? null : "async"}
-		fetchPriority={eager ? "high" : null}
-		src={placeholder}
-		{alt}
-		{width}
-		{height}
+
+{#if frame}
+	<div class="frame">
+		<TwicImg 
+			src={photoPath}
+			{alt}
+			ratio="none"
+			mode="cover"
+			{eager}
 		/>
-</picture>
+	</div>
+{:else}
+	<TwicImg 
+		src={photoPath}
+		{alt}
+		ratio="none"
+		mode="cover"
+		{eager}
+	/>
+{/if}
+	
+
 
 <style>
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		filter: blur(20px);
+	.frame {
+		width:100%;
+		height:100%;
+		padding: 0.3rem;
 		box-shadow: 0px 1.1px 2.2px rgba(0, 0, 0, 0.02),
 			0px 2.7px 5.3px rgba(0, 0, 0, 0.028),
 			0px 5px 10px rgba(0, 0, 0, 0.035),
@@ -65,17 +52,4 @@
 			0px 16.7px 33.4px rgba(0, 0, 0, 0.05),
 			0px 40px 80px rgba(0, 0, 0, 0.07);
 	}
-
-	img.sharpen {
-		animation: sharpen .5s both;
-  }
-  @keyframes sharpen {
-    from {
-      filter: blur(20px);
-    }
-    to {
-      filter: blur(0px);
-    }
-  }
-
 </style>

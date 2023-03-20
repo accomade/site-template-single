@@ -1,15 +1,14 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { imagetools } from 'vite-imagetools'
 
 import type { UserConfig } from 'vite';
 
 const config: UserConfig = {
 	server: {
     fs: {
-      allow: ['conf', 'src', 'node_modules', 'photos', 'static']
+      allow: ['conf', 'src', 'node_modules', 'static']
     }
   },
-	plugins: [sveltekit(), imagetools()] // {force: true} )]
+	plugins: [sveltekit()] // {force: true} )]
 };
 
 export default config;

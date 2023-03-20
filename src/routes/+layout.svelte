@@ -6,6 +6,13 @@
   import { i18n, cookieSettings } from '$lib/conf'
   import { currentLang } from '$lib/stores/lang';
   import { cookieSelection } from '$lib/stores/cookies';
+
+  // Here is an example of +layout.svelte file
+  import { installTwicPics } from "@twicpics/components/sveltekit";
+  import "@twicpics/components/style.css";
+  installTwicPics( {
+      "domain": `https://accomade.twic.pics`,
+  } );
   
   $: currentTranslation = i18n.translations[$currentLang]
   

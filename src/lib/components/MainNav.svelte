@@ -40,7 +40,8 @@
 					<input 
 							type="radio"
 							bind:group={$currentLang}
-							name="language" 
+							name="language"
+							id="{langKey}"
 							value="{langKey}"
 							checked={langKey === $currentLang}>
 					<label for="{langKey}">{dict[langKey] ? dict[langKey] : langKey}</label>

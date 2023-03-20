@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"prebuild": "cd generators/photos/ && ./photos && cd ../fonts && ./fonts",
+		"prebuild": "cd generators/fonts && ./fonts",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -12,17 +12,18 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.1",
-		"@sveltejs/kit": "^1.10.0",
+		"@sveltejs/kit": "^1.13.0",
+		"@twicpics/components": "^0.15.1",
 		"@types/js-cookie": "^3.0.3",
 		"@types/luxon": "^3.2.0",
-		"@types/web": "^0.0.91",
+		"@types/web": "^0.0.99",
 		"gdpr-cooco-banner": "^0.0.4",
 		"occuplan": "^0.0.14",
-		"svelte": "^3.55.1",
-		"svelte-check": "^3.0.4",
+		"svelte": "^3.57.0",
+		"svelte-check": "^3.1.4",
 		"tslib": "^2.5.0",
-		"typescript": "^4.9.5",
-		"vite": "^4.1.4",
+		"typescript": "^5.0.2",
+		"vite": "^4.2.1",
 		"vite-imagetools": "^4.0.18"
 	},
 	"type": "module",
@@ -30,11 +31,11 @@
 		"node": ">=18"
 	},
 	"dependencies": {
-		"@dinero.js/currencies": "2.0.0-alpha.13",
+		"@dinero.js/currencies": "2.0.0-alpha.14",
 		"@fontsource/arizonia": "^4.5.9",
 		"@fontsource/carrois-gothic": "^4.5.10",
 		"@fontsource/raleway": "^4.5.12",
-		"dinero.js": "2.0.0-alpha.13",
+		"dinero.js": "2.0.0-alpha.14",
 		"js-cookie": "^3.0.1",
 		"luxon": "^3.3.0"
 	}
