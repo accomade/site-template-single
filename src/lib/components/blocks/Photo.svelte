@@ -5,13 +5,20 @@
   import LinkSvg from '$lib/components/svg/LinkSVG.svelte';
   import ExtLinkSvg from '$lib/components/svg/ExtLinkSVG.svelte';
   import Photo000 from '../Photo000.svelte';
-  
+
   export let alt:string;
   export let photoPath:string;
   export let eager:boolean = false;
   export let link:string = "";
   export let external:boolean = false;
-  export let attribution:string = "";
+  export let attribution:string|undefined = undefined;
+  export let ratio = "none";
+  export let frame = false;
+
+  export let width="100%"
+  export let height="100%"
+  
+  export const className:string = "photo-container-sizing";
 
   $: dict = i18n.translations[$currentLang].dict
   let photoHeight = 0;
@@ -20,13 +27,17 @@
 {#if link}
   {#if external}
   <a 
+      style="width: {width}; height: {height};" 
       href="{link}"
       target="_blank" 
       rel="noreferrer noopener">
 
     <Photo000
+      {frame}
+      {className}
       {photoPath}
       {eager}
+      {ratio}
       alt={dict[alt] ? dict[alt] : alt} />
   
       {#if attribution}
@@ -41,10 +52,16 @@
   </a>
   <div class="link-icon-wrapper"><ExtLinkSvg size="1.8rem"/></div>
   {:else}
-  <a href="{link}">
+  <a 
+    style="width: {width}; height: {height};"
+    href="{link}">
+    
     <Photo000
+      {frame}
       {photoPath}
+      {className}
       {eager}
+      {ratio}
       alt={dict[alt] ? dict[alt] : alt} />
   
       {#if attribution}
@@ -60,9 +77,13 @@
   <div class="link-icon-wrapper"><LinkSvg size="1.4rem" /></div>
   {/if}
 {:else}
+<div style="width: {width}; height: {height};">
   <Photo000
+    {frame}
     {photoPath}
+    {className}
     {eager}
+    {ratio}
     alt={dict[alt] ? dict[alt] : alt} />
   {#if attribution}
   <div 
@@ -73,10 +94,15 @@
     </div>
   </div>
   {/if}
-    
+</div>
 {/if}
 
 <style>
+
+  :global(.photo-container-sizing) {
+    width: 100%;
+    height: 100%;
+  }
 
   a {
     display: block;

@@ -131,22 +131,18 @@ const landing:Landing = {
               {
                 photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
-                cols: 2
               },
               {
                 photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
-                cols: 1
               },
               {
                 photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
-                cols: 2
               },
               {
                 photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
                 alt: 'beach_alt',
-                cols: 1
               }
             ]
           }

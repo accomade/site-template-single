@@ -33,8 +33,26 @@
 body,html {
   font-family: var(--main-font-family, 'sans-serif');
   font-variant: var(--main-font-variant, 'small-caps');
+  
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 h4 {
   font-family: var(--header-font-family, 'sans-serif');

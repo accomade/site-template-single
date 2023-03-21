@@ -1,56 +1,80 @@
 <script lang="ts">
-  import PhotoDispatcher from './Photo.svelte'
-  import type { GridPhoto } from '$lib/types/photos'
-  export let photos: GridPhoto[]
+  import PhotoComponent from './Photo.svelte'
+  import type { GridPhoto, Photo } from '$lib/types/photos'
+    import { fly } from 'svelte/transition';
+  
+  export let photos: Photo[]
+  export let gridPhotoWidth = 300;
 
-  /*
-  TODO make photos bigger/smaller on click
-  */
- 
-  let photoSizes = photos.map( (p) => p.cols)
-  const rotateCols = ( i:number ) => {
-    if(photoSizes[i] == 3) {
-      photoSizes[i] = 1
+  let galleryContainer:HTMLDivElement;
+  
+  let gridPhotos:GridPhoto[] = photos.map( (p:Photo):GridPhoto => {
+    return {
+      photo: p,
+      zoomed: false,
+      id: crypto.randomUUID(),
+    } 
+  })
+
+  let width = 1000;
+  $: numberOfCols = Math.floor(width/gridPhotoWidth);
+
+  const zoom = (z:GridPhoto, i:number) => {
+    let unzoom = false
+    if(z.zoomed) {
+      unzoom = true
     }
-    else {
-      photoSizes[i] = photoSizes[i] + 1
+
+    gridPhotos.forEach( (p:GridPhoto) => p.zoomed = false );
+    gridPhotos.splice(i,1)
+
+    if(!unzoom) {
+      z.zoomed = true;
     }
+    gridPhotos = [z, ...gridPhotos]
+
+    galleryContainer.scrollIntoView();
   }
+
 </script>
 
-<div class="grid-container">
-  {#each photos as p, i }
-    <button 
-        aria-label="resize" on:click={() => rotateCols(i)}
-        class="photo-container" 
-        class:span-1={photoSizes[i] == 1}
-        class:span-2={photoSizes[i] == 2}
-        class:span-3={photoSizes[i] == 3}>
+<div 
+    bind:this={galleryContainer}
+    style="
+      grid-template-columns: [firstLine] repeat({numberOfCols}, 1fr) [lastLine];
+    "
+    class="grid-container" bind:clientWidth={width}>
+  {#each gridPhotos as p, i  (p.id)}
+    <div 
+        class:complete-row={p.zoomed}
+        aria-label="resize" 
+        on:click={() => zoom(p,i)}
+        on:keypress={() => zoom(p,i)}
+        class="photo-container">
     
-      <PhotoDispatcher photoPath={p.photoPath} alt={p.alt}/>
+      <PhotoComponent
+        frame={true}
+        ratio={p.zoomed ? "16/9" : "1"}
+        photoPath={p.photo.photoPath} 
+        alt={p.photo.alt}/>
   
-    </button>
+    </div>
   {/each}
 </div>
 
 
 <style>
-  .span-1 {
-    grid-column: span 1;
-  }
-
-  .span-2 {
-    grid-column: span 2;
-  }
-
-  .span-3 {
-    grid-column: span 3;
+  .complete-row {
+    grid-column-start: firstLine;
+    grid-column-end: lastLine;
   }
 
   .photo-container {
     padding: 0;
     border: 0;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
   }
 
   .grid-container {
@@ -58,36 +82,5 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
-    grid-auto-flow: dense;
-  }
-
-  @media( max-width: 500px ) {
-    .span-1 {
-      grid-column: span 1;
-    } 
-    .span-2 {
-      grid-column: span 1;
-    }
-    .span-3 {
-      grid-column: span 1;
-    }
-    .grid-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media ( max-width: 800px) and ( min-width: 500px ) {
-    .span-1 {
-      grid-column: span 1;
-    }
-    .span-2 {
-      grid-column: span 1;
-    }
-    .span-3 {
-      grid-column: span 2;
-    }
-    .grid-container {
-      grid-template-columns: 1fr 1fr;
-    }
   }
 </style>

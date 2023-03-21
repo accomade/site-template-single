@@ -9,10 +9,13 @@ export interface Photo {
   maxWidth?: string|undefined
 }
 
-export interface GridPhoto extends Photo {
-  cols: number,
+export interface GridPhoto {
+  photo: Photo,
+  zoomed: boolean,
+  id: string,
 }
 
 export interface PhotoGallery {
-  photos: GridPhoto[]
+  gridPhotoWidth?: number;
+  photos: Photo[]
 } 

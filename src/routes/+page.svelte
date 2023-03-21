@@ -19,7 +19,10 @@
 </svelte:head>
 
 <header class="header-image">
-  <Photo photoPath={landing.headerPhoto} alt="Header Image" eager={true}/>
+  <Photo 
+    photoPath={landing.headerPhoto} 
+    alt="Header Image" 
+    eager={true}/>
 </header>
 
 <div class="floating-title">

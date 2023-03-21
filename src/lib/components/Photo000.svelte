@@ -5,12 +5,13 @@
 
 	export let frame = false;
 	export let photoPath:string;
-
+	export let className:string;
 	export let alt:string;
 	//export let maxWidth:string;
 	//export let maxHeight:string;
 	export let eager:boolean = false;
-	
+	export let ratio = "none";
+
 	let mounted = false;
 	onMount( () => {
 		mounted = true;
@@ -21,26 +22,35 @@
 {#if frame}
 	<div class="frame">
 		<TwicImg 
+			class={className}
 			src={photoPath}
 			{alt}
-			ratio="none"
+			{ratio}
 			mode="cover"
 			{eager}
 		/>
 	</div>
 {:else}
-	<TwicImg 
-		src={photoPath}
-		{alt}
-		ratio="none"
-		mode="cover"
-		{eager}
-	/>
+	<div class="no-frame">
+		<TwicImg 
+			class={className}
+			src={photoPath}
+			{alt}
+			{ratio}
+			mode="cover"
+			{eager}
+		/>
+	</div>
 {/if}
 	
 
 
 <style>
+
+	.no-frame {
+		width:100%;
+		height:100%;
+	}
 	.frame {
 		width:100%;
 		height:100%;
