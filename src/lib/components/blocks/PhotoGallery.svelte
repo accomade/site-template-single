@@ -1,10 +1,19 @@
 <script lang="ts">
   import PhotoComponent from './Photo.svelte'
   import type { GridPhoto, Photo } from '$lib/types/photos'
-    import { fly } from 'svelte/transition';
-  
+  import { browser } from '$app/environment'
+
   export let photos: Photo[]
   export let gridPhotoWidth = 300;
+
+  let landscape = true
+  if(browser) {
+    landscape = window.innerWidth > window.innerHeight
+    window.onresize = () => {
+      landscape = window.innerWidth > window.innerHeight
+    }
+  }
+  $: ratio = landscape ? "16/9" : "9/16"
 
   let galleryContainer:HTMLDivElement;
   
@@ -54,7 +63,7 @@
     
       <PhotoComponent
         frame={true}
-        ratio={p.zoomed ? "16/9" : "1"}
+        ratio={p.zoomed ? ratio : "1"}
         photoPath={p.photo.photoPath} 
         alt={p.photo.alt}/>
   
