@@ -27,6 +27,7 @@
 {#if link}
   {#if external}
   <a 
+      bind:clientHeight={photoHeight}
       style="width: {width}; height: {height};" 
       href="{link}"
       target="_blank" 
@@ -40,21 +41,23 @@
       {ratio}
       alt={dict[alt] ? dict[alt] : alt} />
   
-      {#if attribution}
-      <div 
-          style="height:calc({photoHeight}px - 0.5rem);"
-          class="attribution-container">
-        <div class="attribution-wrapper">
-          {@html attribution}
-        </div>
+    {#if attribution}
+    <div 
+        style="height:calc({photoHeight}px - 0.5rem);"
+        class="attribution-container">
+      <div class="attribution-wrapper">
+        {@html attribution}
       </div>
-      {/if}
+    </div>
+    {/if}
+    <div class="link-icon-wrapper"><ExtLinkSvg size="1.8rem"/></div>
   </a>
-  <div class="link-icon-wrapper"><ExtLinkSvg size="1.8rem"/></div>
+ 
   {:else}
   <a 
-    style="width: {width}; height: {height};"
-    href="{link}">
+      bind:clientHeight={photoHeight}
+      style="width: {width}; height: {height};"
+      href="{link}">
     
     <Photo000
       {frame}
@@ -63,21 +66,25 @@
       {eager}
       {ratio}
       alt={dict[alt] ? dict[alt] : alt} />
-  
-      {#if attribution}
-      <div 
-          style="height:calc({photoHeight}px - 0.5rem);"
-          class="attribution-container">
-        <div class="attribution-wrapper">
-          {@html attribution}
-        </div>
+
+    {#if attribution}
+    <div 
+        style="height:calc({photoHeight}px - 0.5rem);"
+        class="attribution-container">
+      <div class="attribution-wrapper">
+        {@html attribution}
       </div>
-      {/if}
+    </div>
+    {/if}
+    <div class="link-icon-wrapper"><LinkSvg size="1.4rem" /></div>
   </a>
-  <div class="link-icon-wrapper"><LinkSvg size="1.4rem" /></div>
+  
   {/if}
 {:else}
-<div style="width: {width}; height: {height};">
+<div 
+    bind:clientHeight={photoHeight}
+    style="width: {width}; height: {height};">
+  
   <Photo000
     {frame}
     {photoPath}
@@ -85,6 +92,7 @@
     {eager}
     {ratio}
     alt={dict[alt] ? dict[alt] : alt} />
+
   {#if attribution}
   <div 
       style="height:{photoHeight};"
@@ -106,6 +114,7 @@
 
   a {
     display: block;
+    position: relative;
   }
 
   .link-icon-wrapper {

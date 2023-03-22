@@ -78,7 +78,7 @@ const landing:Landing = {
             attribution: '<a href="https://commons.wikimedia.org/wiki/File:Koserowkirche.jpg">Unukorno</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons',
             link: 'http://www.koserow.de',
             external: true,
-            maxHeight: '15rem',
+            height: '15rem',
           }
         }
 
@@ -99,7 +99,8 @@ const landing:Landing = {
           content: {
             photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
             alt: "apartment_1_alt",
-            link: "/accomodations/acco_cornflower"
+            link: "/accomodations/acco_cornflower",
+            height: "30vh",
           }
         },
         {
@@ -107,7 +108,8 @@ const landing:Landing = {
           content: {
             photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
             alt: "apartment_2_alt",
-            link: "/accomodations/acco_sunflower"
+            link: "/accomodations/acco_sunflower",
+            height: "40vh",
           }
         },
         {
@@ -115,7 +117,8 @@ const landing:Landing = {
           content: {
             photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
             alt: "apartment_3_alt",
-            link: "/accomodations/acco_rosebush"
+            link: "/accomodations/acco_rosebush",
+            height: "40vh",
           }
         }
       ]

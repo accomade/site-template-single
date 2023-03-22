@@ -9,6 +9,7 @@
   export let header: string | undefined = undefined;
   export let columnCount = 2;
   export let maxWidth = "100rem";
+  export let minWidth = "100rem";
   export let blocks: Block[] = [];
   
   let gridTemplateColumns = "1fr";
@@ -40,7 +41,7 @@
 
 <svelte:window bind:innerWidth={clientWidth}/>
 
-<section style="max-width: {maxWidth};">
+<section style="max-width: {maxWidth}; min-width: {minWidth};">
   {#if header} 
   <h2>{ dict[header] ? dict[header] : header } </h2>
   {/if}
@@ -62,6 +63,8 @@
   }
 
   section {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -79,6 +82,7 @@
     font-weight: bolder;
     font-size: 2.2rem;
     font-variant: small-caps;
+    margin-bottom: 0.8rem;
   }
 
 </style>

@@ -2,6 +2,12 @@ import { DateTime } from 'luxon'
 import { EUR } from '@dinero.js/currencies'
 import { dinero } from 'dinero.js'
 import type { Acco } from '$lib/types/accos';
+
+import { PUBLIC_PHOTOS_BASE_PATH } from '$env/static/public';
+import { PUBLIC_USER_ID } from '$env/static/public';
+
+const basePath = `${PUBLIC_PHOTOS_BASE_PATH}/users/${PUBLIC_USER_ID}`
+
 /*
 
 */
@@ -11,7 +17,7 @@ const accos:Acco[] = [
     displayName: 'Wohnung: Kornblume',
     cardContent: {
       coverPhoto: {
-          photo: '010',
+          photoPath: '`${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`',
           alt: 'apartment_1_alt',
           link: "/accomodations/acco_cornflower",
       },
@@ -571,7 +577,7 @@ const accos:Acco[] = [
           {
             kind: 'photo',
             content: {
-              photo: '011',
+              photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
               alt: 'apartment_1_alt'
             }
 
@@ -585,7 +591,7 @@ const accos:Acco[] = [
     displayName: 'Wohnung: Sonnenblume',
     cardContent: {
       coverPhoto: {
-          photo: '012',
+          photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
           alt: 'apartment_1_alt',
           link: "/accomodations/acco_sunflower",
       },
@@ -677,7 +683,7 @@ const accos:Acco[] = [
           {
             kind: 'photo',
             content: {
-              photo: '012',
+              photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
               alt: 'apartment_1_alt'
             }
 
@@ -691,7 +697,7 @@ const accos:Acco[] = [
     displayName: 'Wohnung: Buschwindröschen',
     cardContent: {
       coverPhoto: {
-          photo: '011',
+          photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
           alt: 'apartment_1_alt',
           link: "/accomodations/acco_rosebush",
       },
@@ -1030,7 +1036,7 @@ const accos:Acco[] = [
           {
             kind: 'photo',
             content: {
-              photo: '011',
+              photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
               alt: 'apartment_1_alt'
             }
 

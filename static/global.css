@@ -54,6 +54,11 @@ body,html {
   padding: 0;
 }
 
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 h4 {
   font-family: var(--header-font-family, 'sans-serif');
   font-variant: var(--header-font-variant, 'small-caps');
@@ -66,6 +71,8 @@ h3 {
   font-variant: var(--header-font-variant, 'small-caps');
   text-align: center;
   font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+  margin-top: 1rem;
 } 
 
 h2 {

@@ -5,8 +5,9 @@ export interface Photo {
   attribution?: string,
   link?: string,
   external?: boolean,
-  maxHeight?: string|undefined
-  maxWidth?: string|undefined
+  height?: string|undefined
+  ratio?: string|undefined
+  width?: string|undefined
 }
 
 export interface GridPhoto {
