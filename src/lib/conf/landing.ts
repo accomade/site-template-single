@@ -7,50 +7,8 @@ const basePath = `${PUBLIC_PHOTOS_BASE_PATH}/users/${PUBLIC_USER_ID}`
 
 
 const landing:Landing = {
-  headerPhoto: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
+  headerPhoto: `${basePath}/hero.jpg`,
   sections: [
-    {
-      columnCount: 1,
-      blocks: [
-        {
-          kind: 'acco-card',
-          content: {
-            acco: {
-              path: 'acco_cornflower',
-              displayName: 'Wohnung: Kornblume',
-              cardContent: {
-                coverPhoto: {
-                  photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
-                  alt: 'apartment_1_alt',
-                  link: '/accomodations/acco_cornflower',
-                },
-                slug: 'cornflower_card_slug',
-                blocks: [
-                  {
-                    kind: 'amneties-core',
-                    content: {
-                      core: {
-                        peopleMin: 1,
-                        peopleMax: 4,
-                        size: 55, //?? 
-                        bedRooms: 2, //??
-                        bathRooms: 1,
-                        pets: true,
-                        wifi: true,
-                        smoking: true,
-                        ac: false,
-                        tv: false,
-                        parking: false,
-                      }
-                    }
-                  },
-                ]
-              }
-            }
-          }
-        }
-      ]
-    },
     {
       header: 'town',
       columnCount: 3,
@@ -73,7 +31,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content:{
-            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+            photoPath: `${basePath}/church_koserow.jpg`,
             alt: 'town_church',
             attribution: '<a href="https://commons.wikimedia.org/wiki/File:Koserowkirche.jpg">Unukorno</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons',
             link: 'http://www.koserow.de',
@@ -97,7 +55,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+            photoPath: `${basePath}/building_1`,
             alt: "apartment_1_alt",
             link: "/accomodations/acco_cornflower",
             height: "30vh",
@@ -106,7 +64,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+            photoPath: `${basePath}/building_2`,
             alt: "apartment_2_alt",
             link: "/accomodations/acco_sunflower",
             height: "40vh",
@@ -115,7 +73,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+            photoPath: `${basePath}/building_3`,
             alt: "apartment_3_alt",
             link: "/accomodations/acco_rosebush",
             height: "40vh",
@@ -132,19 +90,27 @@ const landing:Landing = {
           content: {
             photos: [
               {
-                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+                photoPath: `${basePath}/beach_1.jpg`,
                 alt: 'beach_alt',
               },
               {
-                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+                photoPath: `${basePath}/beach_2.jpg`,
                 alt: 'beach_alt',
               },
               {
-                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+                photoPath: `${basePath}/beach_3.jpg`,
                 alt: 'beach_alt',
               },
               {
-                photoPath: `${basePath}/bb347d9b-0969-4d10-9150-bc92820add17`,
+                photoPath: `${basePath}/beach_4.jpg`,
+                alt: 'beach_alt',
+              },
+              {
+                photoPath: `${basePath}/beach_5.jpg`,
+                alt: 'beach_alt',
+              },
+              {
+                photoPath: `${basePath}/beach_6.jpg`,
                 alt: 'beach_alt',
               }
             ]
@@ -159,8 +125,9 @@ const landing:Landing = {
         {
           kind: 'map',
           content: {
+            address: 'Achterstr. 3, 17459 Koserows',
             lat: 54.0483609,
-            long:13.9965374,
+            long: 13.9965374,
             zoom: 16,
           }
         },

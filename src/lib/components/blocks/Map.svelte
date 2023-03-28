@@ -1,11 +1,12 @@
 <script lang="ts"> 
-  
-  import { onMount,onDestroy } from 'svelte';
+  import { onMount } from 'svelte';
   import { load } from '$lib/maps';
 
   export let lat: number;
   export let long: number;
   export let zoom: number;
+  export let address: string = 'Achterstr. 4, 17459 Koserow';
+
 
   let mapDiv:HTMLDivElement;
   const mapsCallback = () => {
@@ -18,6 +19,8 @@
       {
         zoom: zoom,
         center: place,
+        fullscreenControl: false,
+        mapTypeControl: false,   
       }
     );
 
@@ -35,12 +38,30 @@
 
 </script>
 
-
-<div bind:this={mapDiv} id="map"></div>
+<div class="wrapper">
+  <div class="map" bind:this={mapDiv} id="map"></div>
+  <div class="nav-floater">
+    <a href=" https://www.google.com/maps/dir//{address}/@{lat},{long},{zoom-6}z/" rel="noreferrer noopener" target="_blank">{address}</a>
+  </div>
+</div>
 
 <style>
-  div {
+  .wrapper {
     width: 100%;
-    min-height: 10rem;
+    position: relative;
+  }
+  .nav-floater{
+    position: absolute;
+    top: 0;
+    padding: 1rem;
+    color: var(--picture-link-font-color);
+    background-color: var(--picture-link-bg-color);
+  }
+  a {
+    color: var(--picture-link-font-color);
+  }
+  .map {
+    width: 100%;
+    min-height: 60vh;
   }
 </style>

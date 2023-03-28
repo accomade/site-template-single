@@ -9,7 +9,7 @@
   export let header: string | undefined = undefined;
   export let columnCount = 2;
   export let maxWidth = "100rem";
-  export let minWidth = "100rem";
+  export let minWidth = "100%";
   export let blocks: Block[] = [];
   
   let gridTemplateColumns = "1fr";
