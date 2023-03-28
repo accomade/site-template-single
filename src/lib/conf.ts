@@ -1,8 +1,8 @@
-import I18n from '../../conf/translations';
-import Nav from '../../conf/nav';
-import Landing from '../../conf/landing';
-import CookieSettings from '../../conf/cookies';
-import Accos from '../../conf/accos';
+import I18n from './conf/translations';
+import Nav from './conf/nav';
+import Landing from './conf/landing';
+import CookieSettings from './conf/cookies';
+import Accos from './conf/accos';
 
 import type { Acco } from './types/accos';
 

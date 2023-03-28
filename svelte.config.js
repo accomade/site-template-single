@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
-import Accos from './conf/accoPaths.js';
+import Accos from './src/lib/conf/accoPaths.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

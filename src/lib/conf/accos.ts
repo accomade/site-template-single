@@ -3,14 +3,12 @@ import { EUR } from '@dinero.js/currencies'
 import { dinero } from 'dinero.js'
 import type { Acco } from '$lib/types/accos';
 
-import { PUBLIC_PHOTOS_BASE_PATH } from '$env/static/public';
-import { PUBLIC_USER_ID } from '$env/static/public';
+import { PUBLIC_PHOTOS_BASE_PATH } from './settings';
+import { PUBLIC_USER_ID } from './settings';
 
 const basePath = `${PUBLIC_PHOTOS_BASE_PATH}/users/${PUBLIC_USER_ID}`
 
-/*
-
-*/
+/**/
 const accos:Acco[] = [
   {
     path: 'acco_cornflower',

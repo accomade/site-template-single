@@ -1,4 +1,4 @@
-import { PUBLIC_MAPS_API_KEY } from '$env/static/public'
+import { PUBLIC_MAPS_API_KEY } from '$lib/conf/settings'
 
 declare global {
   interface Window { 
