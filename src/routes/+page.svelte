@@ -51,7 +51,7 @@
     position: absolute;
     top:0;
     left:0;
-    width: calc(100vw - 1rem);
+    width: 100%;
     height: calc(100vh - 2rem);
   }
 
@@ -68,7 +68,7 @@
   }
 
   .floating-title {
-    width: calc(100vw - 5rem);
+    width: 100%;
     height: calc(100vh - 2rem);
     position: absolute;
     top: 0;

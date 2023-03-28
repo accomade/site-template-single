@@ -11,22 +11,13 @@ const landing:Landing = {
   sections: [
     {
       header: 'town',
-      columnCount: 3,
+      columnCount: 2,
       blocks: [
         {
           kind: 'text',
           content: {
             ref: 'landing_town'
           }
-        },
-        {
-          kind: 'weather',
-          content: {
-            header1: 'koserow',
-            header2: 'weather',
-            location: '/54d0514d00/koserow/',
-          }
-
         },
         {
           kind: 'photo',
@@ -36,9 +27,24 @@ const landing:Landing = {
             attribution: '<a href="https://commons.wikimedia.org/wiki/File:Koserowkirche.jpg">Unukorno</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons',
             link: 'http://www.koserow.de',
             external: true,
-            height: '15rem',
+            height: '60vh',
           }
-        }
+        },
+      ]
+    },
+    {
+      header: 'weather',
+      columnCount: 1,
+      blocks: [ 
+        {
+          kind: 'weather',
+          content: {
+            header1: 'koserow',
+            header2: 'weather',
+            location: '/54d0514d00/koserow/',
+          }
+
+        },
 
       ]
     },
@@ -55,7 +61,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photoPath: `${basePath}/building_1`,
+            photoPath: `${basePath}/building_1.jpg`,
             alt: "apartment_1_alt",
             link: "/accomodations/acco_cornflower",
             height: "30vh",
@@ -64,7 +70,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photoPath: `${basePath}/building_2`,
+            photoPath: `${basePath}/building_2.jpg`,
             alt: "apartment_2_alt",
             link: "/accomodations/acco_sunflower",
             height: "40vh",
@@ -73,7 +79,7 @@ const landing:Landing = {
         {
           kind: 'photo',
           content: {
-            photoPath: `${basePath}/building_3`,
+            photoPath: `${basePath}/building_3.jpg`,
             alt: "apartment_3_alt",
             link: "/accomodations/acco_rosebush",
             height: "40vh",
@@ -125,7 +131,7 @@ const landing:Landing = {
         {
           kind: 'map',
           content: {
-            address: 'Achterstr. 3, 17459 Koserows',
+            address: 'Achterstr. 3, 17459 Koserow',
             lat: 54.0483609,
             long: 13.9965374,
             zoom: 16,

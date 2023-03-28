@@ -16,5 +16,7 @@
 <style>
   .content {
     text-align: left;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
   }
 </style>
