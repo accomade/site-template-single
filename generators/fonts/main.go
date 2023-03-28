@@ -130,7 +130,7 @@ func generateFontsCss(fonts SiteFonts) {
 
 func main() {
 
-	j, err := os.Open("../../conf/fonts.json")
+	j, err := os.Open("../../src/lib/conf/fonts.json")
 	if err != nil {
 		log.Fatal(err)
 	}
