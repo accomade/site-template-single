@@ -30,6 +30,10 @@ const i18n:I18n = {
         home: 'Home',
         location: 'Location',
         accomodations: 'Apartments',
+        accoCornflower: 'Cornflower',
+        accoSunflower: 'Sunflower',
+        accoRosebush: 'Rosebush',
+
         lang: 'Language',
         imprint: 'Imprint',
         terms: 'Terms',
@@ -221,45 +225,8 @@ const i18n:I18n = {
         const mo = formatMoney('en-US', d)
         return `To ${mo} per night`
       },
-      formatNumberOfGuests3(min:number, def:number, max:number):string {
-        return `min: ${min} / standard: ${def} / max: ${max}`
-      },
-      formatNumberOfGuests2(def:number, max:number):string {
-        return `Guests ${def}<br>Maximum ${max}`
-      },
-      formatNumberOfGuests1(def:number):string {
-        return `Guests: ${def}`
-      },
-      formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
-        return `<style scoped>
-          ul {
-            padding-inline-start: 0; 
-            padding-left: 1rem;
-            margin-block-start: 0; 
-            margin-block-end: 0;
-          }
-          @media(max-width: 400px) {
-            ul {
-              list-style-type: none;
-            }
-          }
-        </style>
-        <ul>
-          <li>Adults: ${ formatMoney('en-US', one) } per night</li>
-          <li>7 - 18: ${ formatMoney('en-US', two) } per night</li> 
-          <li>less than 7: ${ formatMoney('en-US', three) } per night</li> 
-        </ul>
-        `
-      },
-      formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string {
-        return `${ formatMoney('en-US', one) } per night <br>
-          Discounted: ${ formatMoney('en-US', two) } per night
-          (Children age 14 and younger, People with disabilities)
-        </ul>
-        `
-      },
-      formatAdditionalPersonPrices1(one:Dinero<number>):string {
-        return `${ formatMoney('en-US', one) } per night`
+      formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string {
+        return `${ formatMoney('en-US', price) } (${ terms ? terms : 'contact us'})`
       },
       formatMinNumberOfNights(num:number):string {
         return `${num} nights`
@@ -288,6 +255,10 @@ const i18n:I18n = {
         home: 'Startseite',
         location: 'Der Ort',
         accomodations: 'Ferienwohnungen',
+        accoCornflower: 'Kornblume',
+        accoSunflower: 'Sonnenblume',
+        accoRosebush: 'Buschwindröschen',
+
         lang: 'Sprache',
         imprint: 'Impressum',
         terms: 'AGB',
@@ -530,45 +501,8 @@ const i18n:I18n = {
         return `Maximal ${mo} pro Nacht`
       },
 
-      formatNumberOfGuests3(min:number|undefined, def:number|undefined, max:number|undefined):string {
-        return `Minimale&nbsp;Belegung:&nbsp;${min} Normale&nbsp;Belegung:&nbsp;${def} Maximale&nbsp;Belegung:&nbsp;${max}`
-      },
-      formatNumberOfGuests2(def:number|undefined, max:number|undefined):string {
-        return `Normale Belegung: ${def} <br>Maximale Belegung: ${max}`
-      },
-      formatNumberOfGuests1(def:number|undefined):string {
-        return `Belegung: ${def} Gäste`
-      },
-      formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string {
-        return `<style scoped>
-        ul {
-          padding-inline-start: 0; 
-          padding-left: 1rem;
-           margin-block-start: 0; 
-           margin-block-end: 0;
-        }
-        @media(max-width: 400px) {
-          ul {
-            list-style-type: none;
-          }
-        }
-        </style>
-        <ul>
-          <li>Erwachsene: ${ formatMoney('de-DE', one) } pro Nacht</li>
-          <li>7 - 18: ${ formatMoney('de-DE', two) } pro Nacht</li> 
-          <li>Jünger als 7: ${ formatMoney('de-DE', three) } pro Nacht</li> 
-        </ul>
-        `
-      },
-      formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string {
-        return `${ formatMoney('de-DE', one) } pro Nacht<br>
-          Ermäßigt: ${ formatMoney('de-DE', two) } pro Nacht
-          (Kinder bis 14 inklusive, Menschen mit Behinderung)
-        </ul>
-        `
-      },
-      formatAdditionalPersonPrices1(one:Dinero<number>):string {
-        return `${ formatMoney('de-DE', one) } pro Nacht`
+      formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string {
+        return `${ formatMoney('de-DE', price) } (${ terms ? terms : 'auf Anfrage'})`
       },
       formatMinNumberOfNights(num:number):string {
         return `${num} Nächte`

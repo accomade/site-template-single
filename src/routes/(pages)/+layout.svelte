@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100vw - 1.5rem);
+    width: 100%;
   }
 
 

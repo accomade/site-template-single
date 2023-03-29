@@ -25,21 +25,19 @@
   export let footnote:string = "";
 
   const colHeaderStyle = {
-    timeRange: 'width: 10%;', 
-    firstNight: 'width: 10%',
-    eachNight: 'width: 10%',
-    peopleNum: 'width: 25%',
+    timeRange: 'width: 20%;', 
+    firstNight: 'width: 15%',
+    eachNight: 'width: 15%',
     extraPerson: 'width: 35%',
-    minNumNights: 'width: 10%'
+    minNumNights: 'width: 15%'
   }
 
   const colCellStyle = {
     timeRange: 'text-align:center;', 
     firstNight: 'text-align:right;',
     eachNight: 'text-align:right;',
-    peopleNum: 'text-align:center;',
     extraPerson: 'text-align:left;',
-    minNumNights: 'text-align:left;'
+    minNumNights: 'text-align:right;'
   }
 
   let w:number = 801;
@@ -58,10 +56,6 @@
       <tbody>
         <tr>
           <td>
-            {#if global.baseNumberOfPeople}
-              <strong>{@html t.dict["peopleNum"] ? t.dict["peopleNum"] : "peopleNum"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="peopleNum" />
-              <br><hr>
-            {/if}
             {#if global.firstNightPrice}
               <strong>{@html t.dict["firstNight"] ? t.dict["firstNight"] : "firstNight"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="firstNight" />
             {/if}
@@ -205,8 +199,8 @@
   }
 
   td {
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     padding-right: 1rem;
     padding-left: 0.2rem;
   }

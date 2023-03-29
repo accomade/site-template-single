@@ -15,7 +15,7 @@ const accos:Acco[] = [
     displayName: 'Wohnung: Kornblume',
     cardContent: {
       coverPhoto: {
-          photoPath: '`${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`',
+          photoPath: `${basePath}/building_1.jpg`,
           alt: 'apartment_1_alt',
           link: "/accomodations/acco_cornflower",
       },
@@ -53,13 +53,12 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 8000, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
                   
                   minNumberOfNights: 3,
                 }
@@ -73,14 +72,13 @@ const accos:Acco[] = [
                   kind: 'entry',
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
-                  
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
+                    
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
                   
                   minNumberOfNights: 3,
                 }
@@ -94,13 +92,14 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 5000, currency: EUR}),
                   perNightPrice: dinero({amount: 3000, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
                   
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 3,
                 }
               },
@@ -114,13 +113,13 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 7,
                 }
               },
@@ -134,13 +133,13 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 3,
                 }
               },
@@ -154,13 +153,14 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
                   
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 5,
                 }
               },
@@ -434,7 +434,7 @@ const accos:Acco[] = [
             kind: 'pricing',
             content: {
               columns: [
-                'timeRange', 'firstNight', 'eachNight', 'peopleNum', 'extraPerson', 'minNumNights'
+                'timeRange', 'firstNight', 'eachNight', 'extraPerson', 'minNumNights'
               ],
               entries: [
                 {
@@ -447,13 +447,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 8000, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
                     
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
                     
                     minNumberOfNights: 3,
                   }
@@ -468,13 +468,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
                     
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
                     
                     minNumberOfNights: 3,
                   }
@@ -488,13 +488,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 5000, currency: EUR}),
                     perNightPrice: dinero({amount: 3000, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
+                    
                     minNumberOfNights: 3,
                   }
                 },
@@ -507,13 +507,12 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
                     minNumberOfNights: 7,
                   }
                 },
@@ -526,13 +525,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
+
                     minNumberOfNights: 3,
                   }
                 },
@@ -545,13 +544,12 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
                     minNumberOfNights: 5,
                   }
                 },
@@ -563,7 +561,7 @@ const accos:Acco[] = [
         ]
       },
       {
-        columnCount: 2,
+        columnCount: 1,
         blocks: [
           {
             kind: 'calendar',
@@ -572,16 +570,33 @@ const accos:Acco[] = [
             }
 
           },
+        ]
+      },
+      {
+        header: 'impressions',
+        columnCount: 1,
+        blocks: [  
           {
-            kind: 'photo',
+            kind: 'photo-gallery',
             content: {
-              photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
-              alt: 'apartment_1_alt'
+              photos: [
+                {
+                  photoPath: `${basePath}/kitchen_1.jpg`,
+                  alt: 'kitchen',
+                },
+                {
+                  photoPath: `${basePath}/living_1.jpg`,
+                  alt: 'living',
+                },
+                {
+                  photoPath: `${basePath}/bed_1.jpg`,
+                  alt: 'bed',
+                },
+              ]
             }
-
           }
-        ]  
-      }
+        ]
+      },
     ]
   },
   {
@@ -589,7 +604,7 @@ const accos:Acco[] = [
     displayName: 'Wohnung: Sonnenblume',
     cardContent: {
       coverPhoto: {
-          photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
+          photoPath: `${basePath}/building_2.jpg`,
           alt: 'apartment_1_alt',
           link: "/accomodations/acco_sunflower",
       },
@@ -623,10 +638,9 @@ const accos:Acco[] = [
               additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
               additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
               additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
-              
-              minNumberOfPeople: 1,
-              baseNumberOfPeople: 2,
-              maxNumberOfPeople: 4,
+              additionalPersonText1: 'adults',
+              additionalPersonText2: '7-14',
+              additionalPersonText3: '0-6',
               
               minNumberOfNights: 5,
             },
@@ -657,10 +671,9 @@ const accos:Acco[] = [
                 additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                 additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                 additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
-                
-                minNumberOfPeople: 1,
-                baseNumberOfPeople: 2,
-                maxNumberOfPeople: 4,
+                additionalPersonText1: 'adults',
+                additionalPersonText2: '7-14',
+                additionalPersonText3: '0-6',
                 
                 minNumberOfNights: 5,
               },
@@ -669,7 +682,7 @@ const accos:Acco[] = [
         ]
       },
       {
-        columnCount: 2,
+        columnCount: 1,
         blocks: [
           {
             kind: 'calendar',
@@ -678,16 +691,33 @@ const accos:Acco[] = [
             }
 
           },
+        ]
+      },
+      {
+        header: 'impressions',
+        columnCount: 1,
+        blocks: [  
           {
-            kind: 'photo',
+            kind: 'photo-gallery',
             content: {
-              photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
-              alt: 'apartment_1_alt'
+              photos: [
+                {
+                  photoPath: `${basePath}/kitchen_2.jpg`,
+                  alt: 'kitchen',
+                },
+                {
+                  photoPath: `${basePath}/living_2.jpg`,
+                  alt: 'living',
+                },
+                {
+                  photoPath: `${basePath}/bed_4.jpg`,
+                  alt: 'bed',
+                },
+              ]
             }
-
           }
-        ]  
-      }
+        ]
+      },
     ]
   },
   {
@@ -695,7 +725,7 @@ const accos:Acco[] = [
     displayName: 'Wohnung: Buschwindröschen',
     cardContent: {
       coverPhoto: {
-          photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
+          photoPath: `${basePath}/building_3.jpg`,
           alt: 'apartment_1_alt',
           link: "/accomodations/acco_rosebush",
       },
@@ -729,10 +759,9 @@ const accos:Acco[] = [
               additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
               additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
               additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
-              
-              minNumberOfPeople: 1,
-              baseNumberOfPeople: 2,
-              maxNumberOfPeople: 4,
+              additionalPersonText1: 'adults',
+              additionalPersonText2: '7-14',
+              additionalPersonText3: '0-6',
               
               minNumberOfNights: 5,
             },
@@ -747,14 +776,13 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 8000, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
-                  
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 3,
                 }
               },
@@ -768,13 +796,12 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
                   
                   minNumberOfNights: 3,
                 }
@@ -788,13 +815,13 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 5000, currency: EUR}),
                   perNightPrice: dinero({amount: 3000, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 3,
                 }
               },
@@ -807,13 +834,13 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+                  
                   minNumberOfNights: 7,
                 }
               },
@@ -826,13 +853,13 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
                   perNightPrice: dinero({amount: 3500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 3,
                 }
               },
@@ -845,13 +872,13 @@ const accos:Acco[] = [
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
                   perNightPrice: dinero({amount: 5500, currency: EUR}),
                   
-                  minNumberOfPeople: 1,
-                  baseNumberOfPeople: 2,
-                  maxNumberOfPeople: 4,
-                  
                   additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                   additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                   additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                  additionalPersonText1: 'adults',
+                  additionalPersonText2: '7-14',
+                  additionalPersonText3: '0-6',
+
                   minNumberOfNights: 5,
                 }
               },
@@ -867,7 +894,6 @@ const accos:Acco[] = [
             search: [3, 14, 21]
           }
         },
-
       ]
     },
     siteContent: [
@@ -885,15 +911,14 @@ const accos:Acco[] = [
                 additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                 additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                 additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
-                
-                minNumberOfPeople: 1,
-                baseNumberOfPeople: 2,
-                maxNumberOfPeople: 4,
+                additionalPersonText1: 'adults',
+                additionalPersonText2: '7-14',
+                additionalPersonText3: '0-6',
                 
                 minNumberOfNights: 5,
               },
               columns: [
-                'timeRange', 'firstNight', 'eachNight', 'peopleNum', 'extraPerson', 'minNumNights'
+                'timeRange', 'firstNight', 'eachNight', 'extraPerson', 'minNumNights'
               ],
               entries: [
                 {
@@ -906,13 +931,12 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 8000, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
                     
                     minNumberOfNights: 3,
                   }
@@ -927,14 +951,12 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
-                    
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
                     minNumberOfNights: 3,
                   }
                 },
@@ -947,13 +969,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 5000, currency: EUR}),
                     perNightPrice: dinero({amount: 3000, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
+
                     minNumberOfNights: 3,
                   }
                 },
@@ -966,13 +988,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
+
                     minNumberOfNights: 7,
                   }
                 },
@@ -985,13 +1007,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
                     perNightPrice: dinero({amount: 3500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
+
                     minNumberOfNights: 3,
                   }
                 },
@@ -1004,13 +1026,13 @@ const accos:Acco[] = [
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
                     perNightPrice: dinero({amount: 5500, currency: EUR}),
                     
-                    minNumberOfPeople: 1,
-                    baseNumberOfPeople: 2,
-                    maxNumberOfPeople: 4,
-                    
                     additionalPersonPrice1: dinero({amount: 1000, currency: EUR}),
                     additionalPersonPrice2: dinero({amount: 500, currency: EUR}),
                     additionalPersonPrice3: dinero({amount: 0, currency: EUR}),
+                    additionalPersonText1: 'adults',
+                    additionalPersonText2: '7-14',
+                    additionalPersonText3: '0-6',
+                    
                     minNumberOfNights: 5,
                   }
                 },
@@ -1022,7 +1044,7 @@ const accos:Acco[] = [
         ]
       },
       {
-        columnCount: 2,
+        columnCount: 1,
         blocks: [
           {
             kind: 'calendar',
@@ -1031,16 +1053,33 @@ const accos:Acco[] = [
             }
 
           },
+        ]
+      },
+      {
+        header: 'impressions',
+        columnCount: 1,
+        blocks: [  
           {
-            kind: 'photo',
+            kind: 'photo-gallery',
             content: {
-              photoPath: `${basePath}/981040dd-d193-42d6-a10d-44dcda4f0019`,
-              alt: 'apartment_1_alt'
+              photos: [
+                {
+                  photoPath: `${basePath}/kitchen_3.jpg`,
+                  alt: 'kitchen',
+                },
+                {
+                  photoPath: `${basePath}/living_3.jpg`,
+                  alt: 'living',
+                },
+                {
+                  photoPath: `${basePath}/bed_3.jpg`,
+                  alt: 'bed',
+                },
+              ]
             }
-
           }
-        ]  
-      }
+        ]
+      },
     ]
   }
 ]

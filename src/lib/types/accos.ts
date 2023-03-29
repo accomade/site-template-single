@@ -8,7 +8,6 @@ export type PricingColumn =
   | 'timeRange'
   | 'firstNight'
   | 'eachNight'
-  | 'peopleNum' //includes min-def-max
   | 'extraPerson'
   | 'minNumNights'
   
@@ -20,13 +19,13 @@ export type PricingEntry = {
   
   minNumberOfNights?: number
   
-  minNumberOfPeople?: number
-  baseNumberOfPeople?: number
-  maxNumberOfPeople?: number
-  
   additionalPersonPrice1?: Dinero<number>
   additionalPersonPrice2?: Dinero<number>
   additionalPersonPrice3?: Dinero<number>
+
+  additionalPersonText1?: string
+  additionalPersonText2?: string
+  additionalPersonText3?: string
 }
 
 export type PricingRange = {

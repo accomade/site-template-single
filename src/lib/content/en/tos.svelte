@@ -3,7 +3,7 @@
   <h3>Introduction</h3>
   <p>Welcome to our holiday rental website, where you can book a comfortable and stylish holiday apartment for your next getaway. By using our website, you agree to be bound by these terms and conditions, which govern your use of our site and the services we provide.</p>
   <h3>Booking and Payment</h3>
-  <p>To make a booking, please contact us via email oder telephon.</p>
+  <p>To make a booking, please contact us via email or telephon.</p>
   <h3>Cancellation and Refunds</h3>
   <p>You may cancel your booking at any time up to 21 days before your arrival date. If you cancel within this time frame, we will refund the full amount of your booking. If you cancel after this time, we will retain the full amount of your booking.</p>
   <h3>Arrival and Departure</h3>
@@ -77,3 +77,18 @@
   <h2>Further Questions</h2>
   <p>If you have any questions regarding these Terms, please contact us.</p>
 </section>
+
+<style>
+  p {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  ol {
+    padding-left: 2rem;
+  }
+
+  ul {
+    padding: 1rem;
+  }
+</style>

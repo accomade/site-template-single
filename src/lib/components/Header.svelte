@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     margin: 0;
-    width: calc(100vw - 1rem);
+    width: 100%;
     color: var(--header-font-color);
     background-color: var(--header-bg-color);
   }

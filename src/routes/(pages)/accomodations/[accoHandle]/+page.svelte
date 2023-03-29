@@ -37,6 +37,7 @@
 <style>
   .section-wrapper {
     margin-bottom: 2rem;
+    width: 100%;
   }
 
   h1 {

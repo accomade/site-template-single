@@ -17,7 +17,7 @@
         if( pricingSpec?.kind == "range" ) {
             
           if(pricingSpec.from && pricingSpec.to) {
-            formattedContent = `${t.formatDate(pricingSpec.from)}<br>-<br>${t.formatDate(pricingSpec.to)}`
+            formattedContent = `${t.formatDate(pricingSpec.from)} - ${t.formatDate(pricingSpec.to)}`
             break;
           }
           if(pricingSpec.from) {
@@ -41,74 +41,18 @@
           formattedContent = t.formatMoney(pricingEntry.perNightPrice)
         }
         break;
-      case "peopleNum":
-        if(pricingEntry) {
-          if(pricingEntry.minNumberOfPeople &&
-              pricingEntry.baseNumberOfPeople &&
-              pricingEntry.maxNumberOfPeople
-            ) 
-            {
-
-              formattedContent = t.formatNumberOfGuests3(
-                pricingEntry.minNumberOfPeople,
-                pricingEntry.baseNumberOfPeople,
-                pricingEntry.maxNumberOfPeople,
-              )
-              break;
-            }
-
-            if(pricingEntry.baseNumberOfPeople &&
-              pricingEntry.maxNumberOfPeople
-            ) 
-            {
-
-              formattedContent = t.formatNumberOfGuests2(
-                pricingEntry.baseNumberOfPeople,
-                pricingEntry.maxNumberOfPeople,
-              )
-              break;
-            }
-            if(pricingEntry.baseNumberOfPeople) {
-              formattedContent = t.formatNumberOfGuests1(pricingEntry.baseNumberOfPeople)
-              break;
-            }
-        }
-
-        break;
       case "extraPerson":
-        if(
-          pricingEntry &&
-          pricingEntry.additionalPersonPrice1 &&
-          pricingEntry.additionalPersonPrice2 &&
-          pricingEntry.additionalPersonPrice3
-        ){
-          formattedContent = t.formatAdditionalPersonPrices3(
-            pricingEntry.additionalPersonPrice1,
-            pricingEntry.additionalPersonPrice2,
-            pricingEntry.additionalPersonPrice3
-          )
-          break;
+        formattedContent = '<div style="display:flex; column-gap: 2rem; padding-left:1rem;flex-wrap: wrap;">';
+        if(pricingEntry && pricingEntry.additionalPersonPrice1) {
+          formattedContent += `<span>${t.formatAdditionalPersonPrice(pricingEntry.additionalPersonPrice1, pricingEntry.additionalPersonText1)}</span>`
         }
-        if(
-          pricingEntry &&
-          pricingEntry.additionalPersonPrice1 &&
-          pricingEntry.additionalPersonPrice2
-        ){
-          formattedContent = t.formatAdditionalPersonPrices2(
-            pricingEntry.additionalPersonPrice1,
-            pricingEntry.additionalPersonPrice2
-          )
-          break;
+        if(pricingEntry && pricingEntry.additionalPersonPrice2) {
+          formattedContent += `<span>${t.formatAdditionalPersonPrice(pricingEntry.additionalPersonPrice2, pricingEntry.additionalPersonText2)}</span>`
         }
-        if(
-          pricingEntry &&
-          pricingEntry.additionalPersonPrice1
-        ){
-          formattedContent = t.formatAdditionalPersonPrices1(
-            pricingEntry.additionalPersonPrice1
-          )
-          break;
+        if(pricingEntry && pricingEntry.additionalPersonPrice3) {
+          formattedContent += `<span>${t.formatAdditionalPersonPrice(pricingEntry.additionalPersonPrice3, pricingEntry.additionalPersonText3)}</span>`
         }
+        formattedContent+="</div>"
 
         break;
       case "minNumNights":

@@ -54,6 +54,10 @@
 </nav>
 
 <style>
+	fieldset {
+		padding-left: 1rem;
+	}
+
 	nav {
 		position: fixed;
     padding-right: 1rem;

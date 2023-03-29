@@ -20,12 +20,7 @@ export interface Translation {
   formatMoney(c:Dinero<number>): string
   formatMinimumPrice(c:Dinero<number>): string
   formatMaximumPrice(c:Dinero<number>): string
-  formatNumberOfGuests3(min:number, def:number, max:number):string
-  formatNumberOfGuests2(def:number, max:number):string
-  formatNumberOfGuests1(def:number):string
-  formatAdditionalPersonPrices3(one:Dinero<number>, two:Dinero<number>, three:Dinero<number>):string
-  formatAdditionalPersonPrices2(one:Dinero<number>, two:Dinero<number>):string
-  formatAdditionalPersonPrices1(one:Dinero<number>):string   
+  formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string
   formatMinNumberOfNights(num:number):string
   formatSeating(n:number): string
   formatNumberOf(n:number): string

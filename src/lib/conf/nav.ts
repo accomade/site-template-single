@@ -13,6 +13,24 @@ const nav:Nav = {
       external: false,
     },
     {
+      key: 'accoCornflower',
+      path: '/accomodations/acco_cornflower',
+      sub: true,
+      external: false,
+    },
+    {
+      key: 'accoSunflower',
+      path: '/accomodations/acco_sunflower',
+      sub: true,
+      external: false,
+    },
+    {
+      key: 'accoRosebush',
+      path: '/accomodations/acco_rosebush',
+      sub: true,
+      external: false,
+    },
+    {
       key: 'koserow',
       path: 'http://www.koserower.de',
       external: true, 
