@@ -7,6 +7,7 @@
   export let zoom: number;
   export let address: string = 'Achterstr. 4, 17459 Koserow';
 
+  $: navUrl=`https://www.google.com/maps/dir//${encodeURIComponent(address)}/@${lat},${long},${zoom-6}z/`
 
   let mapDiv:HTMLDivElement;
   const mapsCallback = () => {
@@ -41,7 +42,7 @@
 <div class="wrapper">
   <div class="map" bind:this={mapDiv} id="map"></div>
   <div class="nav-floater">
-    <a href=" https://www.google.com/maps/dir//{address}/@{lat},{long},{zoom-6}z/" rel="noreferrer noopener" target="_blank">{address}</a>
+    <a href="{navUrl}" rel="noreferrer noopener" target="_blank">{address}</a>
   </div>
 </div>
 
