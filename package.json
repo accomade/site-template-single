@@ -18,7 +18,7 @@
 		"@types/luxon": "^3.2.0",
 		"@types/web": "^0.0.99",
 		"gdpr-cooco-banner": "^0.0.4",
-		"occuplan": "^0.0.14",
+		"occuplan": "^0.0.21",
 		"svelte": "^3.58.0",
 		"svelte-check": "^3.1.4",
 		"tslib": "^2.5.0",
@@ -36,6 +36,7 @@
 		"@fontsource/raleway": "^4.5.12",
 		"dinero.js": "2.0.0-alpha.14",
 		"js-cookie": "^3.0.1",
-		"luxon": "^3.3.0"
+		"luxon": "^3.3.0",
+		"squirrelly": "^8.0.8"
 	}
 }

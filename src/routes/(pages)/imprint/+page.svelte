@@ -4,7 +4,7 @@
   $: trans = i18n.translations[$currentLang] 
   
   const importImprint = async (lang: string) => {
-    return import(`../../../lib/content/${lang}/imprint.svelte`)
+    return import(`../../../lib/conf/content/${lang}/imprint.svelte`)
   }
 </script>
 

@@ -3,7 +3,7 @@
   
   export let ref:string
   const importContent = async (lang: string) => {
-    return import(`../../content/${lang}/${ref}.svelte`)
+    return import(`../../conf/content/${lang}/${ref}.svelte`)
   }
 </script>
 

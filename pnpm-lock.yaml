@@ -22,6 +22,9 @@ dependencies:
   luxon:
     specifier: ^3.3.0
     version: 3.3.0
+  squirrelly:
+    specifier: ^8.0.8
+    version: 8.0.8
 
 devDependencies:
   '@sveltejs/adapter-static':
@@ -46,8 +49,8 @@ devDependencies:
     specifier: ^0.0.4
     version: 0.0.4
   occuplan:
-    specifier: ^0.0.14
-    version: 0.0.14
+    specifier: ^0.0.21
+    version: 0.0.21
   svelte:
     specifier: ^3.58.0
     version: 3.58.0
@@ -780,10 +783,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan@0.0.14:
-    resolution: {integrity: sha512-0dz4LcWOAT7dAt0X0I4sZlf/9nSe4dXj7Te421QPG9RK4bu3Bsd0MaIEYGpCOgifC8PWjF0beQBOWiIMSuxAyw==}
+  /occuplan@0.0.21:
+    resolution: {integrity: sha512-Ll+oUo2C5ycJWtB95itwFCeI4ktB/pMUj2r8uLg4tdxk/SZczzp/FFfLRGgzWqQgKO1mCGVqDo/ia/aRA5bplg==}
     dependencies:
       luxon: 3.3.0
+      svelte: 3.58.0
     dev: true
 
   /once@1.4.0:
@@ -920,6 +924,11 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /squirrelly@8.0.8:
+    resolution: {integrity: sha512-7dyZJ9Gw86MmH0dYLiESsjGOTj6KG8IWToTaqBuB6LwPI+hyNb6mbQaZwrfnAQ4cMDnSWMUvX/zAYDLTSWLk/w==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}

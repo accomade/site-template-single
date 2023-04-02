@@ -4,6 +4,8 @@ import Landing from './conf/landing';
 import CookieSettings from './conf/cookies';
 import Accos from './conf/accos';
 
+import './conf/formats';
+
 import type { Acco } from './types/accos';
 
 

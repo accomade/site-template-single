@@ -1,0 +1,14 @@
+{
+  "de":
+    {
+      "monthHeader": "{{month}} / {{year}}",
+      "date": "MM/dd/yy",
+      "maxFutureDate": ""
+    },
+  "en":
+    {
+      "monthHeader": "{{month}} / {{year}}",
+      "date": "dd.MM.yyyy",
+      "maxFutureDate": ""
+    }
+}

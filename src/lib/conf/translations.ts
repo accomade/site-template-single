@@ -1,6 +1,7 @@
 import type { I18n } from '$lib/types/i18n'
 import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
+import { format } from './formats.js'
 
 import { toDecimal } from 'dinero.js' 
 import type { BedKind } from '$lib/types/accos'
@@ -15,6 +16,9 @@ const formatMoney = (countryCode: string, d: Dinero<number>) => {
   })
 }
 
+const formatDate = (d:DateTime, format:string):string => {
+  return d.setLocale('en').toFormat(format)
+}
 
 const i18n:I18n = {
   defaultLang: 'de',
@@ -176,7 +180,9 @@ const i18n:I18n = {
           11: 'Nov',
           12: 'Dec',
         },
-        monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
+        monthHeaderFormatFun: (month:string, year:string) => {
+          return format('monthHeader','en', {month, year})
+        },
         weekendLabel: 'Weekend',
         typeNames: {
           defaultOccupationTypeName: 'Occupied'
