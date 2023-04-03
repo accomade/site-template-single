@@ -1,12 +1,19 @@
 {
   "de":
     {
+      "locale": "de-DE",
+      "dateFormat": "dd.MM.yyyy",
       "monthHeader": "{{month}} / {{year}}",
-      "maxFutureDate": ""
+      "maxFutureDate": "",
+      "nothingAvailable": "Nichts frei für {{forDays}} Tage bis {{maxFutureDate}}",
+      "availableFromFor": "Mindestens {{forDays}} Tage ab dem ${{from}} verfügbar"
     },
   "en":
     {
+      "locale": "en-US",
+      "dateFormat": "dd.MM.yyyy",
       "monthHeader": "{{month}} / {{year}}",
-      "maxFutureDate": ""
+      "maxFutureDate": "",
+      "nothingAvailable": ""
     }
 }

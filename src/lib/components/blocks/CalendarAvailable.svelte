@@ -3,13 +3,13 @@
   import { DateTime } from 'luxon'
   import { i18n } from '$lib/conf';
   import Spinner from '$lib/components/Spinner.svelte';
+  import { formatAvailability } from '$lib/conf/formats';
 
   import { currentLang } from '$lib/stores/lang';
   $: trans = i18n.translations[$currentLang] 
   $: dict = trans.dict;
-  $:formatAvailability = trans.formatAvailability;
   $: fromFun = ( from:DateTime|null, forDays:number):string => {
-    return formatAvailability(from, forDays, maxFutureDate)
+    return formatAvailability($currentLang, from, forDays, maxFutureDate)
   }
     
   export let calUrl:string;

@@ -15,7 +15,7 @@
 		"@sveltejs/kit": "^1.15.0",
 		"@twicpics/components": "^0.16.1",
 		"@types/js-cookie": "^3.0.3",
-		"@types/luxon": "^3.2.0",
+		"@types/luxon": "^3.2.1",
 		"@types/web": "^0.0.99",
 		"gdpr-cooco-banner": "^0.0.4",
 		"occuplan": "^0.0.21",

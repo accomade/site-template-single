@@ -2,13 +2,16 @@
   "de": {
     "calendar": {
       "weekdayLabels": ["Mo", "Di", "Mi", "Do","Fr", "Sa", "So"],
-      "monthLabels:": ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
+      "monthLabels:": ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+      "weekendLabel": "Wochenende",
+      "typeNames": {
+        "defaultOccupationsTypeName": "Belegt"
+      }
     },
     "site": {
       "title": "Willkommen in Ihrem Urlaub",
       "headerTitle": "Ferienwohnungen von Schumachers",
       "headerSlug": "Hier wollten sie schon immer ihre Ferien verbringen.",
-      "dateFormat": "dd.MM.yyyy",
       "home": "Startseite",
       "location": "Der Ort",
       "accomodations": "Ferienwohnungen",
@@ -134,11 +137,18 @@
     }
   },
   "en": {
+    "calendar": {
+      "weekdayLabels": ["Mo", "Tu", "We", "Th","Fr", "Sa", "Su"],
+      "monthLabels:": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "weekendLabel": "Weekend",
+      "typeNames": {
+        "defaultOccupationsTypeName": "Occupied"
+      }
+    },
     "site": {
       "title": "Welcome to your holidays",
       "headerTitle": "Holiday Apartments by Schumachers",
       "headerSlug": "THE place where you always wanted to spend your holidays.",
-      "dateFormat": "MM/dd/yy"  ,
       "home": "Home",
       "location": "Location",
       "accomodations": "Apartments",

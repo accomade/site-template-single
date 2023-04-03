@@ -1,25 +1,14 @@
 import type { I18n } from '$lib/types/i18n'
 import type { DateTime } from 'luxon'
 import type { Dinero } from 'dinero.js'
-import { format } from './formats.js'
+import { 
+  formatMoney, 
+  formatMonthHeader,
+  formatAvailability
+} from './formats.js'
 
-import { toDecimal } from 'dinero.js' 
 import type { BedKind } from '$lib/types/accos'
 import * as dict from './dict.json'
-
-const formatMoney = (countryCode: string, d: Dinero<number>) => {
-  return toDecimal<number,string>(d, ({value, currency}) => {
-    
-    let f = parseFloat(value)
-    return new Intl.NumberFormat(
-      countryCode, 
-      { style: 'currency', currency: currency.code }).format(f)
-  })
-}
-
-const formatDate = (d:DateTime, format:string):string => {
-  return d.setLocale('en').toFormat(format)
-}
 
 const i18n:I18n = {
   defaultLang: 'de',
@@ -58,7 +47,7 @@ const i18n:I18n = {
           12: 'Dec',
         },
         monthHeaderFormatFun: (month:string, year:string) => {
-          return format('monthHeader','en', {month, year})
+          formatMonthHeader('en', month, year)
         },
         weekendLabel: 'Weekend',
         typeNames: {
@@ -76,18 +65,18 @@ const i18n:I18n = {
       },
 
       formatMoney(d:Dinero<number>):string {
-        return formatMoney('en-US', d)
+        return formatMoney('en', d)
       },
       formatMinimumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('en-US', d)
+        const mo = formatMoney('en', d)
         return `From ${mo} per night`
       },
       formatMaximumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('en-US', d)
+        const mo = formatMoney('en', d)
         return `To ${mo} per night`
       },
       formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string {
-        return `${ formatMoney('en-US', price) } (${ terms ? terms : 'contact us'})`
+        return `${ formatMoney('en', price) } (${ terms ? terms : 'contact us'})`
       },
       formatMinNumberOfNights(num:number):string {
         return `${num} nights`
@@ -149,26 +138,23 @@ const i18n:I18n = {
       },
 
       formatAvailability(from:DateTime|null, forDays:number, maxFutureDate:DateTime):string {
-        if(from == null) {
-          return `Nichts frei für ${forDays} Tage bis ${maxFutureDate.toFormat('dd.MM.yyyy')}`
-        }
-        return `Mindestens ${forDays} Tage ab dem ${from.toFormat('dd.MM.yyyy')} verfügbar`
+        return formatAvailability('de', from, forDays, maxFutureDate)
       },
 
       formatMoney(d:Dinero<number>):string {
-        return formatMoney('de-DE', d)
+        return formatMoney('de', d)
       },
       formatMinimumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('de-DE', d)
+        const mo = formatMoney('de', d)
         return `Ab ${mo} pro Nacht`
       },
       formatMaximumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('de-DE', d)
+        const mo = formatMoney('de', d)
         return `Maximal ${mo} pro Nacht`
       },
 
       formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string {
-        return `${ formatMoney('de-DE', price) } (${ terms ? terms : 'auf Anfrage'})`
+        return `${ formatMoney('de', price) } (${ terms ? terms : 'auf Anfrage'})`
       },
       formatMinNumberOfNights(num:number):string {
         return `${num} Nächte`
