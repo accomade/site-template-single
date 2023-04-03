@@ -1,5 +1,9 @@
 {
   "de": {
+    "calendar": {
+      "weekdayLabels": ["Mo", "Di", "Mi", "Do","Fr", "Sa", "So"],
+      "monthLabels:": ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
+    },
     "site": {
       "title": "Willkommen in Ihrem Urlaub",
       "headerTitle": "Ferienwohnungen von Schumachers",
