@@ -40,8 +40,8 @@ devDependencies:
     specifier: ^3.0.3
     version: 3.0.3
   '@types/luxon':
-    specifier: ^3.2.1
-    version: 3.2.1
+    specifier: ^3.2.2
+    version: 3.2.2
   '@types/web':
     specifier: ^0.0.99
     version: 0.0.99
@@ -49,8 +49,8 @@ devDependencies:
     specifier: ^0.0.4
     version: 0.0.4
   occuplan:
-    specifier: ^0.0.21
-    version: 0.0.21
+    specifier: ^0.0.24
+    version: 0.0.24(svelte@3.58.0)
   svelte:
     specifier: ^3.58.0
     version: 3.58.0
@@ -403,8 +403,8 @@ packages:
     resolution: {integrity: sha512-Xe7IImK09HP1sv2M/aI+48a20VX+TdRJucfq4vfRVy6nWN8PYPOEnlMRSgxJAgYQIXJVL8dZ4/ilAM7dWNaOww==}
     dev: true
 
-  /@types/luxon@3.2.1:
-    resolution: {integrity: sha512-49uU4h0D58OySiSRnZD9NLy9/POKup3I20HIgZsH112D2dz/WwyUf2oxJO3lLxD1ogNpa4LqeYm9z97+jkxROg==}
+  /@types/luxon@3.2.2:
+    resolution: {integrity: sha512-CuF9hIlsxGpJO4EztrW23/q1L9ctQfb5JM9mnLCJhhA8z81K2b4LTVjQYySXWhFV5SMyUsPYH/IcvvXDCKwa2g==}
     dev: true
 
   /@types/pug@2.0.6:
@@ -783,8 +783,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan@0.0.21:
-    resolution: {integrity: sha512-Ll+oUo2C5ycJWtB95itwFCeI4ktB/pMUj2r8uLg4tdxk/SZczzp/FFfLRGgzWqQgKO1mCGVqDo/ia/aRA5bplg==}
+  /occuplan@0.0.24(svelte@3.58.0):
+    resolution: {integrity: sha512-mKdwA9h4Ti1G8ZKWnzlGxczFC2+Eu+lYGmkF23qe9MeeMe+JHfwmnw1taufHDZEmAe/jdtgSDjKgUYPTjB6JuQ==}
+    peerDependencies:
+      svelte: ^3.54.0
     dependencies:
       luxon: 3.3.0
       svelte: 3.58.0
