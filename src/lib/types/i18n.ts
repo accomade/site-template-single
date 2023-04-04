@@ -1,4 +1,4 @@
-import type { I18n as CalI18n} from 'occuplan/types/i18n'
+import type { I18n as CalI18n} from 'occuplan'
 import type { Translation as CookieTrans } from 'gdpr-cooco-banner'
 
 export interface Translation {
