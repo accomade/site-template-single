@@ -10,7 +10,7 @@
   import { isMenuOpen } from '$lib/stores/menu';
   
   $: currentTranslation = i18n.translations[$currentLang]
-  $: title = currentTranslation.title;
+  $: title = currentTranslation.dict.title;
   
 </script>
 

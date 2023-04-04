@@ -2,6 +2,7 @@
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
   $: t = i18n.translations[$currentLang];
+  import { formatDate, formatMoney } from '$lib/conf/formats';
 
   import type { PricingEntry, PricingRange, PricingColumn} from "$lib/types/accos";
   
@@ -17,15 +18,15 @@
         if( pricingSpec?.kind == "range" ) {
             
           if(pricingSpec.from && pricingSpec.to) {
-            formattedContent = `${t.formatDate(pricingSpec.from)} - ${t.formatDate(pricingSpec.to)}`
+            formattedContent = `${formatDate($currentLang, pricingSpec.from)} - ${formatDate($currentLang,pricingSpec.to)}`
             break;
           }
           if(pricingSpec.from) {
-            formattedContent = `${t.dict.from} ${t.formatDate(pricingSpec.from)}}`
+            formattedContent = `${t.dict.from} ${formatDate($currentLang,pricingSpec.from)}}`
             break;
           }
           if(pricingSpec.to) {
-            formattedContent = `${t.dict.to} ${t.formatDate(pricingSpec.to)}`
+            formattedContent = `${t.dict.to} ${formatDate($currentLang,pricingSpec.to)}`
             break;
           }
         }
@@ -33,12 +34,12 @@
       case "firstNight":
         //console.log("firstNight", pricingEntry)
         if(pricingEntry?.firstNightPrice) {
-          formattedContent = t.formatMoney(pricingEntry.firstNightPrice)
+          formattedContent = formatMoney($currentLang, pricingEntry.firstNightPrice)
         }
         break;
       case "eachNight":
         if(pricingEntry?.perNightPrice) {
-          formattedContent = t.formatMoney(pricingEntry.perNightPrice)
+          formattedContent = formatMoney($currentLang, pricingEntry.perNightPrice)
         }
         break;
       case "extraPerson":

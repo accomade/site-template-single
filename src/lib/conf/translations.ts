@@ -15,11 +15,6 @@ const i18n:I18n = {
   preferBrowserLang: true,
   translations: {
     en: {
-      title: 'Welcome to your holidays',
-      header: {
-        title: 'Holiday Apartments by Schumachers',
-        slug: 'THE place where you always wanted to spend your holidays.',
-      },
       dict: dict.en.site,
       cookies: dict.en.cookies,
       calendar: {
@@ -96,11 +91,6 @@ const i18n:I18n = {
      
     },
     de: {
-      title: 'Willkommen in Ihrem Urlaub',
-      header: {
-        title: 'Ferienwohnungen von Schumachers',
-        slug: 'Hier wollten sie schon immer ihre Ferien verbringen.',
-      },
       dict: dict.de.site,
       cookies: dict.de.cookies,
       calendar: {

@@ -10,8 +10,8 @@
 <header>
   <div class="logo"><Logo/></div>
   <div class="text-wrapper">
-    <div class="header"><h1>{trans.header.title}</h1></div>
-    <div class="slug">{trans.header.slug}</div>
+    <div class="header"><h1>{trans.dict.headerTitle}</h1></div>
+    <div class="slug">{trans.dict.headerSlug}</div>
   </div>
 </header>
 

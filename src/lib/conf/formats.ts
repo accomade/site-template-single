@@ -79,3 +79,15 @@ export const formatAvailability = (
     forDays
   })
 }
+
+
+/*
+formatMinimumPrice(c:Dinero<number>): string
+formatMaximumPrice(c:Dinero<number>): string
+formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string
+formatMinNumberOfNights(num:number):string
+formatSeating(n:number): string
+formatNumberOf(n:number): string
+formatSize(n: number): string
+formatBed(n: number, kind: BedKind): string
+*/
