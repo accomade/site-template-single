@@ -1,168 +1,77 @@
-import type { I18n } from '$lib/types/i18n'
-import type { DateTime } from 'luxon'
-import type { Dinero } from 'dinero.js'
+import type { I18n, Translation } from '$lib/types/i18n'
+
 import { 
-  formatMoney, 
   formatMonthHeader,
-  formatAvailability
 } from './formats.js'
 
-import type { BedKind } from '$lib/types/accos'
-import * as dict from './dict.json'
+import * as translations from './translations.json'
 
-const i18n:I18n = {
-  defaultLang: 'de',
-  preferBrowserLang: true,
-  translations: {
-    en: {
-      dict: dict.en.site,
-      cookies: dict.en.cookies,
-      calendar: {
-        weekdayLabels: {
-          1: 'Mo',
-          2: 'Tu',
-          3: 'We',
-          4: 'Th',
-          5: 'Fr',
-          6: 'Sa',
-          7: 'Su'
-        },
-        monthLabels: {
-          1: 'Jan',
-          2: 'Feb',
-          3: 'Mar',
-          4: 'Apr',
-          5: 'May',
-          6: 'Jun',
-          7: 'Jul',
-          8: 'Aug',
-          9: 'Sep',
-          10: 'Oct',
-          11: 'Nov',
-          12: 'Dec',
-        },
-        monthHeaderFormatFun: (month:string, year:string) => {
-          formatMonthHeader('en', month, year)
-        },
-        weekendLabel: 'Weekend',
-        typeNames: {
-          defaultOccupationTypeName: 'Occupied'
-        },
-      },
-      formatDate(d:DateTime):string {
-        return d.setLocale('en').toFormat('MM/dd/yy')
-      },
-      formatAvailability(from:DateTime|null, forDays:number, maxFutureDate:DateTime):string {
-        if(from == null) {
-          return `No availability for ${forDays} days until ${maxFutureDate.toFormat('dd.MM.yyyy')}`
-        }
-        return `Min. ${forDays} days from ${from.toFormat('dd.MM.yyyy')} available`
-      },
+const mappedTranslations:I18n = {
+  defaultLang: translations.defaultLang,
+  preferBrowserLang: translations.preferBrowserLang,
+  translations: {}
+}
 
-      formatMoney(d:Dinero<number>):string {
-        return formatMoney('en', d)
-      },
-      formatMinimumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('en', d)
-        return `From ${mo} per night`
-      },
-      formatMaximumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('en', d)
-        return `To ${mo} per night`
-      },
-      formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string {
-        return `${ formatMoney('en', price) } (${ terms ? terms : 'contact us'})`
-      },
-      formatMinNumberOfNights(num:number):string {
-        return `${num} nights`
-      },
-      formatSeating(n:number):string {
-        return `Seating for ${n} people`
-      }, 
-      formatNumberOf(n: number):string {
-        return `${n} pieces`
-      },
-      formatSize(n: number): string {
-        return `${n}&nbsp;m²`
-      },
-      formatBed(n: number, kind: BedKind): string {
-        return `for ${n}`
-      }
-     
+for ( const tEntry of Object.entries(translations.translations)) {
+  const [lang, jsonT] = tEntry;
+  const t:Translation = {
+    dict: jsonT.site,
+    cookies: jsonT.cookies,
+  }
+  
+  t.calendar = {
+    weekdayLabels: {
+      1: jsonT.calendar.weekdayLabels[0],
+      2: jsonT.calendar.weekdayLabels[1],
+      3: jsonT.calendar.weekdayLabels[2],
+      4: jsonT.calendar.weekdayLabels[3],
+      5: jsonT.calendar.weekdayLabels[4],
+      6: jsonT.calendar.weekdayLabels[5],
+      7: jsonT.calendar.weekdayLabels[6],
     },
-    de: {
-      dict: dict.de.site,
-      cookies: dict.de.cookies,
-      calendar: {
-        weekdayLabels: {
-          1: 'Mo',
-          2: 'Di',
-          3: 'Mi',
-          4: 'Do',
-          5: 'Fr',
-          6: 'Sa',
-          7: 'So'
-        },
-        monthLabels: {
-          1: 'Jan',
-          2: 'Feb',
-          3: 'Mär',
-          4: 'Apr',
-          5: 'Mai',
-          6: 'Jun',
-          7: 'Jul',
-          8: 'Aug',
-          9: 'Sep',
-          10: 'Okt',
-          11: 'Nov',
-          12: 'Dez',
-        },
-        monthHeaderFormatFun: ( monthLabel:string, year:string) => `${monthLabel} / ${year}`,
-        weekendLabel: 'Wochenende',
-        typeNames: {
-          defaultOccupationTypeName: 'Belegt'
-        },
-      },
-      formatDate(d:DateTime):string {
-        return d.setLocale('de').toFormat('dd.MM.yyyy')
-      },
+    monthLabels: {
+      1: jsonT.calendar.monthLabels[0],
+      2: jsonT.calendar.monthLabels[1],
+      3: jsonT.calendar.monthLabels[2],
+      4: jsonT.calendar.monthLabels[3],
+      5: jsonT.calendar.monthLabels[4],
+      6: jsonT.calendar.monthLabels[5],
+      7: jsonT.calendar.monthLabels[6],
+      8: jsonT.calendar.monthLabels[7],
+      9: jsonT.calendar.monthLabels[8],
+      10: jsonT.calendar.monthLabels[9],
+      11: jsonT.calendar.monthLabels[10],
+      12: jsonT.calendar.monthLabels[11],
+    },
+    weekendLabel: jsonT.calendar.weekendLabel,
+    typeNames: {
+      defaultOccupationsTypeName: jsonT.calendar.typeNames.defaultOccupationsTypeName
+    },
+    monthHeaderFormatFun: (month:string, year:string) => {
+      return formatMonthHeader(lang, month, year)
+    },
+  }
 
-      formatAvailability(from:DateTime|null, forDays:number, maxFutureDate:DateTime):string {
-        return formatAvailability('de', from, forDays, maxFutureDate)
-      },
+  if(!mappedTranslations.translations) {
+    mappedTranslations.translations = {}
+  }
+  mappedTranslations.translations[lang] = t
+}
 
-      formatMoney(d:Dinero<number>):string {
-        return formatMoney('de', d)
-      },
-      formatMinimumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('de', d)
-        return `Ab ${mo} pro Nacht`
-      },
-      formatMaximumPrice(d:Dinero<number>): string {
-        const mo = formatMoney('de', d)
-        return `Maximal ${mo} pro Nacht`
-      },
+export const dictEntry = (lang:string, key:string):string|undefined => {
+  let res = undefined;
 
-      formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string {
-        return `${ formatMoney('de', price) } (${ terms ? terms : 'auf Anfrage'})`
-      },
-      formatMinNumberOfNights(num:number):string {
-        return `${num} Nächte`
-      },
-      formatSeating(n:number):string {
-        return `Sitzplätze für ${n} Erwachsene`
-      },
-      formatNumberOf(n: number):string {
-        return `Anzahl ${n}`
-      },
-      formatSize(n: number): string {
-        return `${n}&nbsp;m²`
-      },
-      formatBed(n: number, kind: BedKind): string {
-        return `für ${n} Person(en)`
+  if(mappedTranslations.translations) {
+    const t = mappedTranslations.translations[lang]
+    if(t) {
+      const dict = t.dict
+      if(dict) {
+        res = dict[key]
       }
     }
   }
+  return res
 }
 
+const i18n:I18n = mappedTranslations
 export default i18n;

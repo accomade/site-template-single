@@ -3,6 +3,8 @@ import formats from './formats.json'
 import type { Dinero } from 'dinero.js'
 import { toDecimal } from 'dinero.js' 
 import type { DateTime } from 'luxon'
+import type { BedKind } from '$lib/types/accos'
+import { dictEntry } from './translations'
 
 const fTemplates = {}
 
@@ -74,20 +76,51 @@ export const formatAvailability = (
     })
   }
   const fr = formatDate(lang, from)
-  return format('availabelFromFor', lang, {
+  return format('availableFromFor', lang, {
     from: fr,
     forDays
   })
 }
 
+export const formatMinimumPrice = (lang:string, d:Dinero<number>):string => {
+  const minPrice = formatMoney(lang,d)
+  return format('minimumPrice',lang,{
+    minPrice
+  })
+}
 
-/*
-formatMinimumPrice(c:Dinero<number>): string
-formatMaximumPrice(c:Dinero<number>): string
-formatAdditionalPersonPrice(price:Dinero<number>, terms:string|undefined):string
-formatMinNumberOfNights(num:number):string
-formatSeating(n:number): string
-formatNumberOf(n:number): string
-formatSize(n: number): string
-formatBed(n: number, kind: BedKind): string
-*/
+export const formatMaximumPrice = (lang:string, d:Dinero<number>):string => {
+  const maxPrice = formatMoney(lang,d)
+  return format('maximumPrice',lang,{
+    maxPrice
+  })
+}
+
+export const formatAdditionalPersonPrice = (lang:string, d:Dinero<number>, terms:string|undefined):string => {
+  const price = formatMoney(lang,d)
+  return format('additionalPersonPrice',lang,{
+    price,
+    terms
+  })
+}
+
+export const formatMinNumberOfNights = (lang:string, num:number):string => {
+  return format('minNumberOfNights',lang,{num})
+} 
+
+export const formatSeating = (lang:string, num:number):string => {
+  return format('seating',lang,{num})
+} 
+
+export const formatNumberOf = (lang:string, num:number):string => {
+  return format('numberOf',lang,{num})
+} 
+
+export const formatSize = (lang:string, size:number):string => {
+  return format('size',lang,{size})
+}
+
+export const formatBed = (lang:string, num:number, bedKind:BedKind):string => {
+  const bedString = dictEntry(lang, bedKind)  
+  return format('bed', lang, {num, bed:bedString})
+}

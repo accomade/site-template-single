@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { i18n } from '$lib/conf';
+  import { dictEntry } from '$lib/conf/translations';
   import { currentLang } from '$lib/stores/lang';
-  $: trans = i18n.translations[$currentLang] 
   
   const importTOS = async (lang: string) => {
     return import(`../../../lib/conf/content/${lang}/tos.svelte`)
@@ -9,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <title>{trans.dict.terms ? trans.dict.terms : 'Terms'}</title>
+  <title>{dictEntry($currentLang, 'terms')}</title>
 </svelte:head>
 
 <div class="terms-wrapper">

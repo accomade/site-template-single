@@ -2,6 +2,7 @@
   import { OccuPlanAvailableInfo } from 'occuplan'
   import { DateTime } from 'luxon'
   import { i18n } from '$lib/conf';
+  import { dictEntry } from '$lib/conf/translations';
   import Spinner from '$lib/components/Spinner.svelte';
   import { formatAvailability } from '$lib/conf/formats';
 
@@ -17,11 +18,10 @@
   export let maxFutureDate=DateTime.now().plus({years: 2})
   let calLoading = true;
 
-  const t = (c:string, d:typeof dict) => d[c] ? d[c] : c
 </script>
 
 <div class="cal-wrapper">
-  <h3>{t("availability", dict)}</h3>
+  <h3>{dictEntry($currentLang, "availability")}</h3>
   <OccuPlanAvailableInfo
       let:available={av}
       {search}

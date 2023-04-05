@@ -2,15 +2,15 @@
   import type { PricingRange, PricingEntry} from "$lib/types/accos";
   import { DateTime } from 'luxon';
   import { add, allocate, dinero, multiply, greaterThan, lessThan, type Dinero } from 'dinero.js'
-  import { EUR, TTD } from '@dinero.js/currencies';
+  import { EUR } from '@dinero.js/currencies';
 
-  import { i18n } from '$lib/conf';
+  import { 
+    formatMaximumPrice,
+    formatMinimumPrice, 
+  } 
+  from "$lib/conf/formats";
+  import { dictEntry } from "$lib/conf/translations";
   import { currentLang } from '$lib/stores/lang';
-  $: trans = i18n.translations[$currentLang];
-  $: dict = trans.dict;
-
-  const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
-
   
   export let global:PricingEntry|undefined = undefined;
   export let entries:PricingRange[] = [];
@@ -75,9 +75,9 @@
 </script>
 
 <div class="pricing-short-wrapper">
-  <h3>{t("shortPriceLabel", dict)}    
-    {#if showMinimum}<span>{trans.formatMinimumPrice(calculatedMinium)}</span>{/if}
-    {#if showMaximun}<span>{trans.formatMaximumPrice(calculatedMaximum)}</span>{/if}
+  <h3>{dictEntry($currentLang, "shortPriceLabel")}    
+    {#if showMinimum}<span>{formatMinimumPrice($currentLang, calculatedMinium)}</span>{/if}
+    {#if showMaximun}<span>{formatMaximumPrice($currentLang, calculatedMaximum)}</span>{/if}
   </h3>
 </div>
 

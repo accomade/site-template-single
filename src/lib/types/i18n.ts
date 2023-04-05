@@ -2,16 +2,16 @@ import type { I18n as CalI18n} from 'occuplan'
 import type { Translation as CookieTrans } from 'gdpr-cooco-banner'
 
 export interface Translation {
-  dict: {
+  dict?: {
     [key: string]: string 
   },
-  calendar: CalI18n,
-  cookies: CookieTrans,
+  calendar?: CalI18n,
+  cookies?: CookieTrans,
 }
 
 export interface I18n { 
-  defaultLang: string,
-  preferBrowserLang: boolean,
+  defaultLang?: string,
+  preferBrowserLang?: boolean,
   translations: {
     [key: string]: Translation
   } 

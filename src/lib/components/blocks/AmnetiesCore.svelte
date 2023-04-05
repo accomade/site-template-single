@@ -12,9 +12,8 @@
   import TvSvg from '../svg/TvSVG.svelte';
   import WifiSvg from '../svg/WifiSVG.svelte';
 
-  import { i18n } from '$lib/conf';  
+  import { formatSize } from '$lib/conf/formats';
   import { currentLang } from '$lib/stores/lang';
-  $: trans = i18n.translations[$currentLang] 
   
   import type { AmnetiesCore } from "$lib/types/accos";
   export let core:AmnetiesCore;
@@ -28,7 +27,7 @@
   <div class="element-wrapper">
     <AreaSvg size="2rem"/>
     <div>
-    {@html trans.formatSize(theCore.size)}
+    {@html formatSize($currentLang, theCore.size)}
     </div>
   </div>
   <div class="element-wrapper">

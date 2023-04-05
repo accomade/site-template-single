@@ -5,8 +5,16 @@
 
   import CheckSvg from '$lib/components/svg/CheckSVG.svelte';
   import NoCheckSvg from '$lib/components/svg/NoCheckSVG.svelte';
+  import { dictEntry } from '$lib/conf/translations'
   $: trans = i18n.translations[$currentLang] 
   $: dict = trans.dict;
+
+  import { 
+    formatNumberOf,
+    formatSeating,
+    formatSize,
+    formatBed,
+  } from '$lib/conf/formats';
 
   export let label:string="";
   export let kind:AmnetyNucleusType;
@@ -14,22 +22,20 @@
   export let value: boolean | number | string | Beds | CoffeeMachine[] | undefined = "";
   export let desc: string = "";
   
-  $:t = dict[label] ? dict[label] : label
-  
-  const tFun = (l:string, d:typeof dict):string => {
-    return d[l] ? d[l] : l
-  }
+  $:t = dictEntry($currentLang,label) ? dictEntry($currentLang,label) : label
 
+
+  
   $: asNumber = ():string => {
-    return trans.formatNumberOf(value as number)
+    return formatNumberOf($currentLang, value as number)
   }
 
   $: asSize = ():string => {
-    return trans.formatSize(value as number)
+    return formatSize($currentLang, value as number)
   }
 
   $: asSeats = ():string => {
-    return trans.formatSeating(value as number)
+    return formatSeating($currentLang, value as number)
   }
 
   $: asCheck = value as boolean
@@ -37,9 +43,9 @@
   $: asCoffeeMachines = value as CoffeeMachine[]
 
   $: asString = value as string
-  $: asLookupString = dict[asString] ? dict[asString] : asString
+  $: asLookupString = dictEntry($currentLang,asString) ? dictEntry($currentLang,asString) : asString
 
-  $: descLookup = dict[desc] ? dict[desc] : desc
+  $: descLookup = dictEntry($currentLang,desc) ? dictEntry($currentLang,desc) : desc
 
 </script>
 
@@ -84,7 +90,7 @@
 {#if kind == "beds"}
   {#each asBeds.specs as bed }
     <div class="option">
-      <dt>{tFun(bed.kind, dict)}</dt><dd>{trans.formatBed(bed.heads, bed.kind)} {#if bed.optional}{tFun('bedOptional', dict)}{/if}</dd>
+      <dt>{dictEntry($currentLang, bed.kind)}</dt><dd>{formatBed($currentLang, bed.heads, bed.kind)} {#if bed.optional}{dictEntry($currentLang,'bedOptional')}{/if}</dd>
     </div>
   {/each}
 {/if}
@@ -111,12 +117,12 @@
         <ul class="coffee-machines">
         {#each asCoffeeMachines as cm, i}
           <li>
-          {tFun(cm,dict)}
+          {dictEntry($currentLang,cm)}
           </li>
         {/each}
         </ul>
       {:else}
-      { tFun(asCoffeeMachines[0],dict) }
+      { dictEntry($currentLang, asCoffeeMachines[0]) }
       {/if}
     </dd>
   </div>

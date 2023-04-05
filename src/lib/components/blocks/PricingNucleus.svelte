@@ -1,5 +1,11 @@
 <script lang="ts">
   import { i18n } from '$lib/conf';
+  import { dictEntry } from '$lib/conf/translations';
+  import { 
+    formatAdditionalPersonPrice,
+    formatMinNumberOfNights,
+  } from '$lib/conf/formats'
+
   import { currentLang } from '$lib/stores/lang';
   $: t = i18n.translations[$currentLang];
   import { formatDate, formatMoney } from '$lib/conf/formats';
@@ -22,11 +28,11 @@
             break;
           }
           if(pricingSpec.from) {
-            formattedContent = `${t.dict.from} ${formatDate($currentLang,pricingSpec.from)}}`
+            formattedContent = `${dictEntry($currentLang, 'from')} ${formatDate($currentLang,pricingSpec.from)}}`
             break;
           }
           if(pricingSpec.to) {
-            formattedContent = `${t.dict.to} ${formatDate($currentLang,pricingSpec.to)}`
+            formattedContent = `${dictEntry($currentLang,'to')} ${formatDate($currentLang,pricingSpec.to)}`
             break;
           }
         }
@@ -45,20 +51,20 @@
       case "extraPerson":
         formattedContent = '<div style="display:flex; column-gap: 2rem; padding-left:1rem;flex-wrap: wrap;">';
         if(pricingEntry && pricingEntry.additionalPersonPrice1) {
-          formattedContent += `<span>${t.formatAdditionalPersonPrice(pricingEntry.additionalPersonPrice1, pricingEntry.additionalPersonText1)}</span>`
+          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice1, pricingEntry.additionalPersonText1)}</span>`
         }
         if(pricingEntry && pricingEntry.additionalPersonPrice2) {
-          formattedContent += `<span>${t.formatAdditionalPersonPrice(pricingEntry.additionalPersonPrice2, pricingEntry.additionalPersonText2)}</span>`
+          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice2, pricingEntry.additionalPersonText2)}</span>`
         }
         if(pricingEntry && pricingEntry.additionalPersonPrice3) {
-          formattedContent += `<span>${t.formatAdditionalPersonPrice(pricingEntry.additionalPersonPrice3, pricingEntry.additionalPersonText3)}</span>`
+          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice3, pricingEntry.additionalPersonText3)}</span>`
         }
         formattedContent+="</div>"
 
         break;
       case "minNumNights":
         if(pricingEntry && pricingEntry.minNumberOfNights) {
-          formattedContent = t.formatMinNumberOfNights(pricingEntry.minNumberOfNights)
+          formattedContent = formatMinNumberOfNights($currentLang, pricingEntry.minNumberOfNights)
         }
         break;
       default:
