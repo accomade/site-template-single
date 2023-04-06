@@ -1,31 +1,30 @@
 <script lang="ts">
-  import type { Acco } from '$lib/types/accos';
+  import type { AccoCardContent } from '$lib/types/accos';
   import PhotoBlock from './Photo.svelte';
   import BlockBlock from './Block.svelte';
 
-  import { i18n } from '$lib/conf';
+  import { dictEntry } from '$lib/conf/translations';
   import { currentLang } from '$lib/stores/lang';
-  $: trans = i18n.translations[$currentLang] 
-  $: dict = trans.dict;
 
-  export let acco:Acco
+  export let cardContent:AccoCardContent
+  export let displayName:string
+  export let path:string
 
-  const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
 </script>
 
 <div class="accocard-wrapper">
-  {#if acco && acco.cardContent } 
+  {#if cardContent } 
     <div class="title-with-slug">
-      <h2>{acco.displayName}</h2>
-      <div class="slug">{t(acco.cardContent.slug, dict)}</div>
+      <h2>{displayName}</h2>
+      <div class="slug">{dictEntry($currentLang,cardContent.slug)}</div>
     </div>
-    {#if acco.cardContent.coverPhoto}
+    {#if cardContent.coverPhoto}
     <div class="photo">
-      <PhotoBlock {...acco.cardContent.coverPhoto} />
+      <PhotoBlock {...cardContent.coverPhoto} />
     </div>
     {/if}
-    {#if acco.cardContent.blocks}
-      {#each acco.cardContent.blocks as b,i}
+    {#if cardContent.blocks}
+      {#each cardContent.blocks as b,i}
       <div class="block-container-{i}">
         <BlockBlock spec={b}/>
       </div>

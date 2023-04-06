@@ -1,14 +1,48 @@
-import { DateTime } from 'luxon'
-import { EUR } from '@dinero.js/currencies'
-import { dinero } from 'dinero.js'
 import type { Acco } from '$lib/types/accos';
+import { mapJsonBlock, type Block, type Section } from '$lib/types/blocks';
+import accosJson from './accos.json' assert {type: 'json'};
 
-import { PUBLIC_PHOTOS_BASE_PATH } from './settings';
-import { PUBLIC_USER_ID } from './settings';
+let basePath:string='prev/users/template1'
 
-const basePath = `${PUBLIC_PHOTOS_BASE_PATH}/users/${PUBLIC_USER_ID}`
+const accos:Acco[] = accosJson.map( (aj) => {
+  const a:Acco = {
+    displayName: aj.displayName,
+    path: aj.path
+  }
+  a.cardContent = {
+    coverPhoto: aj.cardContent.coverPhoto,
+    slug: aj.cardContent.slug,
+    blocks: aj.cardContent.blocks.map( bj => {
+      //@ts-ignore
+      const b:Block = mapJsonBlock(bj)
+      console.log(bj)
+      return b;
+    }),
+  }
+  
+  
+  a.siteContent = aj.siteContent.map( sj => {
+    const s:Section = {
+      header: sj.header,
+      columnCount: sj.columnCount,
+    }
+    if(sj.blocks) {
+      s.blocks = sj.blocks.map(bj => {
+        //@ts-ignore
+        const b:Block = mapJsonBlock(bj)
+        //console.log(bj)
+        return b;
+      })
+    }
 
-/**/
+    return s 
+  })
+  return a
+});
+export default accos;
+
+
+/*
 const accos:Acco[] = [
   {
     path: 'acco_cornflower',
@@ -45,8 +79,8 @@ const accos:Acco[] = [
             entries: [
               {
                 kind: 'range',
-                from: DateTime.fromISO('2022-12-20'),
-                to: DateTime.fromISO('2023-01-06'),
+                from: DateTime.fromISO('2022-12-20',{zone:'utc'}),
+                to: DateTime.fromISO('2023-01-06',{zone:'utc'}),
                 
                 entry: {
                   kind: 'entry',
@@ -65,8 +99,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-01-01'),
-                to: DateTime.fromISO('2023-03-24'),
+                from: DateTime.fromISO('2023-01-01',{zone:'utc'}),
+                to: DateTime.fromISO('2023-03-24',{zone:'utc'}),
                 
                 entry: {
                   kind: 'entry',
@@ -85,8 +119,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-03-25'),
-                to: DateTime.fromISO('2023-06-30'),
+                from: DateTime.fromISO('2023-03-25',{zone:'utc'}),
+                to: DateTime.fromISO('2023-06-30',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   firstNightPrice: dinero({amount: 5000, currency: EUR}),
@@ -105,8 +139,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-07-01'),
-                to: DateTime.fromISO('2023-08-31'),
+                from: DateTime.fromISO('2023-07-01',{zone:'utc'}),
+                to: DateTime.fromISO('2023-08-31',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   
@@ -125,8 +159,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-09-01'),
-                to: DateTime.fromISO('2023-12-20'),
+                from: DateTime.fromISO('2023-09-01',{zone:'utc'}),
+                to: DateTime.fromISO('2023-12-20',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   
@@ -145,8 +179,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-12-21'),
-                to: DateTime.fromISO('2024-01-05'),
+                from: DateTime.fromISO('2023-12-21',{zone:'utc'}),
+                to: DateTime.fromISO('2024-01-05',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   
@@ -439,8 +473,8 @@ const accos:Acco[] = [
               entries: [
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2022-12-20'),
-                  to: DateTime.fromISO('2023-01-06'),
+                  from: DateTime.fromISO('2022-12-20',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-01-06',{zone:'utc'}),
                   
                   entry: {
                     kind: 'entry',
@@ -460,8 +494,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-01-01'),
-                  to: DateTime.fromISO('2023-03-24'),
+                  from: DateTime.fromISO('2023-01-01',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-03-24',{zone:'utc'}),
                   
                   entry: {
                     kind: 'entry',
@@ -481,8 +515,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-03-25'),
-                  to: DateTime.fromISO('2023-06-30'),
+                  from: DateTime.fromISO('2023-03-25',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-06-30',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 5000, currency: EUR}),
@@ -500,8 +534,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-07-01'),
-                  to: DateTime.fromISO('2023-08-31'),
+                  from: DateTime.fromISO('2023-07-01',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-08-31',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
@@ -518,8 +552,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-09-01'),
-                  to: DateTime.fromISO('2023-12-20'),
+                  from: DateTime.fromISO('2023-09-01',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-12-20',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
@@ -537,8 +571,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-12-21'),
-                  to: DateTime.fromISO('2024-01-05'),
+                  from: DateTime.fromISO('2023-12-21',{zone:'utc'}),
+                  to: DateTime.fromISO('2024-01-05',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
@@ -768,8 +802,8 @@ const accos:Acco[] = [
             entries: [
               {
                 kind: 'range',
-                from: DateTime.fromISO('2022-12-20'),
-                to: DateTime.fromISO('2023-01-06'),
+                from: DateTime.fromISO('2022-12-20',{zone:'utc'}),
+                to: DateTime.fromISO('2023-01-06',{zone:'utc'}),
                 
                 entry: {
                   kind: 'entry',
@@ -788,8 +822,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-01-01'),
-                to: DateTime.fromISO('2023-03-24'),
+                from: DateTime.fromISO('2023-01-01',{zone:'utc'}),
+                to: DateTime.fromISO('2023-03-24',{zone:'utc'}),
                 
                 entry: {
                   kind: 'entry',
@@ -808,8 +842,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-03-25'),
-                to: DateTime.fromISO('2023-06-30'),
+                from: DateTime.fromISO('2023-03-25',{zone:'utc'}),
+                to: DateTime.fromISO('2023-06-30',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   firstNightPrice: dinero({amount: 5000, currency: EUR}),
@@ -827,8 +861,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-07-01'),
-                to: DateTime.fromISO('2023-08-31'),
+                from: DateTime.fromISO('2023-07-01',{zone:'utc'}),
+                to: DateTime.fromISO('2023-08-31',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
@@ -846,8 +880,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-09-01'),
-                to: DateTime.fromISO('2023-12-20'),
+                from: DateTime.fromISO('2023-09-01',{zone:'utc'}),
+                to: DateTime.fromISO('2023-12-20',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   firstNightPrice: dinero({amount: 5500, currency: EUR}),
@@ -865,8 +899,8 @@ const accos:Acco[] = [
               },
               {
                 kind: 'range',
-                from: DateTime.fromISO('2023-12-21'),
-                to: DateTime.fromISO('2024-01-05'),
+                from: DateTime.fromISO('2023-12-21',{zone:'utc'}),
+                to: DateTime.fromISO('2024-01-05',{zone:'utc'}),
                 entry: {
                   kind: 'entry',
                   firstNightPrice: dinero({amount: 8500, currency: EUR}),
@@ -923,8 +957,8 @@ const accos:Acco[] = [
               entries: [
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2022-12-20'),
-                  to: DateTime.fromISO('2023-01-06'),
+                  from: DateTime.fromISO('2022-12-20',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-01-06',{zone:'utc'}),
                   
                   entry: {
                     kind: 'entry',
@@ -943,8 +977,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-01-01'),
-                  to: DateTime.fromISO('2023-03-24'),
+                  from: DateTime.fromISO('2023-01-01',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-03-24',{zone:'utc'}),
                   
                   entry: {
                     kind: 'entry',
@@ -962,8 +996,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-03-25'),
-                  to: DateTime.fromISO('2023-06-30'),
+                  from: DateTime.fromISO('2023-03-25',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-06-30',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 5000, currency: EUR}),
@@ -981,8 +1015,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-07-01'),
-                  to: DateTime.fromISO('2023-08-31'),
+                  from: DateTime.fromISO('2023-07-01',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-08-31',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
@@ -1000,8 +1034,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-09-01'),
-                  to: DateTime.fromISO('2023-12-20'),
+                  from: DateTime.fromISO('2023-09-01',{zone:'utc'}),
+                  to: DateTime.fromISO('2023-12-20',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 5500, currency: EUR}),
@@ -1019,8 +1053,8 @@ const accos:Acco[] = [
                 },
                 {
                   kind: 'range',
-                  from: DateTime.fromISO('2023-12-21'),
-                  to: DateTime.fromISO('2024-01-05'),
+                  from: DateTime.fromISO('2023-12-21',{zone:'utc'}),
+                  to: DateTime.fromISO('2024-01-05',{zone:'utc'}),
                   entry: {
                     kind: 'entry',
                     firstNightPrice: dinero({amount: 8500, currency: EUR}),
@@ -1085,3 +1119,5 @@ const accos:Acco[] = [
 ]
 
 export default accos
+
+*/

@@ -1,6 +1,8 @@
 import type { Section, Block } from './blocks'
 import type { DateTime } from 'luxon'
+import { DateTime as luxon } from 'luxon'
 import type { Dinero } from 'dinero.js'
+import { dinero } from 'dinero.js'
 import type { Photo } from './photos'
 
 
@@ -28,19 +30,97 @@ export type PricingEntry = {
   additionalPersonText3?: string
 }
 
-export type PricingRange = {
+export type JsonDinero = {
+  amount: number
+  currency: {
+    code: string
+    base: number
+    exponent: number
+  }
+}
+
+export type JsonPricingEntry = {
+  kind: 'entry',
+  firstNightPrice?: JsonDinero
+  perNightPrice: JsonDinero
+  
+  minNumberOfNights?: number
+  
+  additionalPersonPrice1?: JsonDinero
+  additionalPersonPrice2?: JsonDinero
+  additionalPersonPrice3?: JsonDinero
+
+  additionalPersonText1?: string
+  additionalPersonText2?: string
+  additionalPersonText3?: string
+}
+
+export const mapJsonPricingEntry = (jp:JsonPricingEntry):PricingEntry => {
+  const p:PricingEntry = {
+    kind: jp.kind,
+    perNightPrice: dinero(jp.perNightPrice),
+    additionalPersonText1: jp.additionalPersonText1,
+    additionalPersonText2: jp.additionalPersonText2,
+    additionalPersonText3: jp.additionalPersonText3,
+    minNumberOfNights: jp.minNumberOfNights,
+
+  }
+  if(jp.additionalPersonPrice1) p.additionalPersonPrice1 = dinero(jp.additionalPersonPrice1)
+  if(jp.additionalPersonPrice2) p.additionalPersonPrice2 = dinero(jp.additionalPersonPrice2)
+  if(jp.additionalPersonPrice3) p.additionalPersonPrice3 = dinero(jp.additionalPersonPrice3)
+  if(jp.firstNightPrice) p.firstNightPrice = dinero(jp.firstNightPrice)
+  return p
+}
+
+export interface PricingRange {
   kind: 'range'
   from?: DateTime
   to?: DateTime
   entry?: PricingEntry
 }
 
+export interface JsonPricingRange {
+  kind: 'range',
+  from?: string,
+  to?: string,
+  entry?: JsonPricingEntry
+}
+
+export const mapJsonPricingRange = (jp:JsonPricingRange):PricingRange => {
+  const pr:PricingRange = {
+    kind: jp.kind,
+  }
+  if(jp.from) pr.from = luxon.fromISO(jp.from,{zone:'utc'})
+  if(jp.to) pr.to = luxon.fromISO(jp.to,{zone:'utc'})
+  if(jp.entry) pr.entry = mapJsonPricingEntry(jp.entry)
+
+  return pr
+}
 
 export interface Pricing {
   global?: PricingEntry
   columns?: PricingColumn[]
   entries?: PricingRange[]
   footnote?: string
+}
+
+export interface JsonPricing {
+  global?: JsonPricingEntry
+  columns?: PricingColumn[]
+  entries?: JsonPricingRange[]
+  footnote?: string
+}
+
+export const mapJsonPricing = (jp: JsonPricing): Pricing => {
+  const p:Pricing = {
+    columns: jp.columns,
+    footnote: jp.footnote,
+  }
+  if(jp.entries) p.entries = jp.entries.map( e => mapJsonPricingRange(e))
+
+  if(jp.global) p.global = mapJsonPricingEntry(jp.global)
+
+  return p
 }
 
 export interface PricingShort {
@@ -51,6 +131,25 @@ export interface PricingShort {
   footnote?: string
 }
 
+export interface JsonPricingShort {
+  global?: JsonPricingEntry
+  entries?: JsonPricingRange[]
+  showMaximum?: boolean
+  showMinimum?: boolean
+  footnote?: string
+}
+
+export const mapJsonPricingShort = (jp:JsonPricingShort):PricingShort => {
+  const p:PricingShort = {
+    showMaximum: jp.showMaximum,
+    showMinimum: jp.showMinimum,
+    footnote: jp.footnote
+  }
+  if(jp.global) p.global = mapJsonPricingEntry(jp.global)
+  if(jp.entries) p.entries = jp.entries.map(e => mapJsonPricingRange(e))
+
+  return p
+}
 
 export type CoffeeMachine = 
   | 'nespresso'
@@ -135,16 +234,21 @@ export interface LabeledDesc {
 }
 
 export interface AccoCard {
-  acco: Acco
+  cardContent: AccoCardContent
+  path: string
+  displayName: string
+  
+}
+
+export interface AccoCardContent {
+  coverPhoto: Photo
+  slug: string
+  blocks: Block[]
 }
 
 export interface Acco {
   path: string
   displayName: string
-  cardContent?: {
-    coverPhoto: Photo
-    slug: string
-    blocks: Block[]
-  }
+  cardContent?: AccoCardContent
   siteContent?: Section[] 
 }

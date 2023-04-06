@@ -24,11 +24,11 @@ for( const entry of Object.entries(formats)) {
 //@ts-ignore
 export const format = (templateName, lang, data) => {
   const fullTemplateName = `${lang}_${templateName}`
-  console.log(fullTemplateName)
+  //console.log(fullTemplateName)
   
   //@ts-ignore
   const templFun = fTemplates[fullTemplateName]
-  console.log(templFun)
+  //console.log(templFun)
   if(!templFun) return '[UNDEFINED]'
 
   return templFun(data, Sqrl.defaultConfig)

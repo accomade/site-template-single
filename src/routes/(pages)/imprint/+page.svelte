@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
-  $: trans = i18n.translations[$currentLang] 
-  
+  import { dictEntry } from '$lib/conf/translations';
+
   const importImprint = async (lang: string) => {
     return import(`../../../lib/conf/content/${lang}/imprint.svelte`)
   }
@@ -10,7 +9,7 @@
 
 
 <svelte:head>
-  <title>{trans.dict.imprint ? trans.dict.imprint : 'Imprint'}</title>
+  <title>{dictEntry($currentLang,'imprint')}</title>
 </svelte:head>
 
 
