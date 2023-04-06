@@ -8,8 +8,7 @@
 
   export let cardContent:AccoCardContent
   export let displayName:string
-  export let path:string
-
+  
 </script>
 
 <div class="accocard-wrapper">

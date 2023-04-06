@@ -5,7 +5,12 @@ import { PUBLIC_USER_ID } from './settings';
 
 const basePath = `${PUBLIC_PHOTOS_BASE_PATH}/users/${PUBLIC_USER_ID}`
 
+import landingJson from './landing.json' assert {type:'json'}
 
+const landing:Landing = landingJson
+export default landing
+
+/*
 const landing:Landing = {
   headerPhoto: `${basePath}/hero.jpg`,
   sections: [
@@ -148,4 +153,7 @@ const landing:Landing = {
   ]
 }
 
+//console.log(JSON.stringify(landing,undefined,2))
+
 export default landing;
+*/
