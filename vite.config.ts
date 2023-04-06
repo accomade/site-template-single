@@ -8,6 +8,11 @@ const config: UserConfig = {
       allow: ['src', 'node_modules', 'static']
     }
   },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true
+    }
+  },
 	plugins: [sveltekit()] // {force: true} )]
 };
 
