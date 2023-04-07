@@ -15,7 +15,6 @@ const accos:Acco[] = accosJson.map( (aj) => {
     blocks: aj.cardContent.blocks.map( bj => {
       //@ts-ignore
       const b:Block = mapJsonBlock(bj)
-      console.log(bj)
       return b;
     }),
   }

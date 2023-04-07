@@ -260,7 +260,7 @@
         "acceptLabel": "Accept all cookies",
         "rejectLabel": "Only necessary cookies",
         "settingsLabel": "Cookie settings",
-        "closeLabel": "Save & closen settings",
+        "closeLabel": "Save & close settings",
         "editLabel": "Edit cookie settings",
         "cookieDescriptions": {
           "necessary": "Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.",
