@@ -42,7 +42,9 @@
     }
     gridPhotos = [z, ...gridPhotos]
 
-    galleryContainer.scrollIntoView();
+    setTimeout( () => {
+      galleryContainer.scrollIntoView();
+    }, 100)
   }
 
 </script>
