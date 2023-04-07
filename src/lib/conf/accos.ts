@@ -2,7 +2,7 @@ import type { Acco } from '$lib/types/accos';
 import { mapJsonBlock, type Block, type Section } from '$lib/types/blocks';
 import accosJson from './accos.json' assert {type: 'json'};
 
-let basePath:string='prev/users/template1'
+//let basePath:string='prev/users/template1'
 
 const accos:Acco[] = accosJson.map( (aj) => {
   const a:Acco = {
