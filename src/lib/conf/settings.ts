@@ -1,5 +1,3 @@
 import settingsJson from './settings.json'
 
-export const PUBLIC_PHOTOS_BASE_PATH=settingsJson.PUBLIC_PHOTOS_BASE_PATH
-export const PUBLIC_USER_ID=settingsJson.PUBLIC_USER_ID
 export const PUBLIC_MAPS_API_KEY=settingsJson.PUBLIC_MAPS_API_KEY

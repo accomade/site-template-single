@@ -1,6 +1,6 @@
 import type { Acco } from '$lib/types/accos';
 import { mapJsonBlock, type Block, type Section } from '$lib/types/blocks';
-import accosJson from './accos.json' assert {type: 'json'};
+import accosJson from './accos.json'
 
 //let basePath:string='prev/users/template1'
 

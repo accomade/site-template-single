@@ -1,7 +1,7 @@
 import type { Landing } from '$lib/types/landing';
 import { mapJsonBlock, type Section } from '$lib/types/blocks';
 
-import landingJson from './landing.json' assert {type:'json'}
+import landingJson from './landing.json'
 
 const landing:Landing = {
   headerPhoto: landingJson.headerPhoto,

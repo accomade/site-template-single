@@ -1,15 +1,8 @@
-<script lang="ts">
-  export let name:string = 'Kordula Schumacher'
-  export let arrivalTime = '15:00'
-  export let leaveTime = '10:00'
-
-</script>
-
 <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
 
 <section>
   <h2>Allgemeines</h2>
-  <p>Diese Allgemeinen Geschäftsbedingungen (im Folgenden "AGB") gelten für alle Buchungen und Übernachtungen in den von {name} angebotenen Ferienwohnungen. Mit der Buchung der Ferienwohnung akzeptiert der Kunde diese AGB.</p>
+  <p>Diese Allgemeinen Geschäftsbedingungen (im Folgenden "AGB") gelten für alle Buchungen und Übernachtungen in den von Kordula Schumacher angebotenen Ferienwohnungen. Mit der Buchung der Ferienwohnung akzeptiert der Kunde diese AGB.</p>
   
   <h2>Buchung und Bezahlung</h2>
   <p>Die Buchung einer Ferienwohnung kann telefonisch, per E-Mail oder über die Website des Unternehmens erfolgen. Die Bezahlung erfolgt bei Ankunft in der Ferienwohnung in bar oder vorab per Uberweisung.</p>
@@ -18,7 +11,7 @@
   <p>Im Falle einer Stornierung bis zu 21 Tagen vor Anreise wird keine Stornierungsgebühr erhoben. Bei Stornierungen innerhalb von 21 Tagen vor Anreise wird die volle Übernachtungspreis berechnet.</p>
   
   <h2>An- und Abreise</h2>
-  <p>Die Anreise in die Ferienwohnung ist ab {arrivalTime} möglich. Die Abreise ist bis {leaveTime} erforderlich.</p>
+  <p>Die Anreise in die Ferienwohnung ist ab 15:00 Uhr möglich. Die Abreise ist bis 10:00 Uhr erforderlich.</p>
   
   <h2>Haftung</h2>
   <p>Der Anbieter haftet nicht für Schäden oder Verluste, die während des Aufenthalts in der Ferienwohnung entstehen. Der Kunde ist verpflichtet, die Ferienwohnung in einwandfreiem Zustand zu hinterlassen und für jeglichen Schaden aufzukommen, den er während seines Aufenthalts verursacht hat.</p>
@@ -40,10 +33,10 @@
 <section>
   <h2>Datenschutzhinweis</h2>
   <h3>Erfassung und Verarbeitung von Daten</h3>
-  <p>{name} und der Betreiber der Webseite (<a target="_blank" rel="noreferrer noopener" href="https://accoma.de">Accomade - Dirk Porsche</a>) erfassen und verarbeiten personenbezogene Daten, die im Zusammenhang mit der Buchung und Übernachtung in einer Ferienwohnung anfallen. Diese Daten werden ausschließlich zur Abwicklung der Buchung und Übernachtung genutzt und nicht an Dritte weitergegeben.</p>
+  <p>Kordula Schumacher und der Betreiber der Webseite (<a target="_blank" rel="noreferrer noopener" href="https://accoma.de">Accomade - Dirk Porsche</a>) erfassen und verarbeiten personenbezogene Daten, die im Zusammenhang mit der Buchung und Übernachtung in einer Ferienwohnung anfallen. Diese Daten werden ausschließlich zur Abwicklung der Buchung und Übernachtung genutzt und nicht an Dritte weitergegeben.</p>
   <h3>Rechte des Kunden</h3>
-  <p>Der Kunde hat das Recht auf Auskunft, Berichtigung und Löschung seiner personenbezogenen Daten. Diese Rechte können schriftlich an {name} geltend gemacht werden.</p>
+  <p>Der Kunde hat das Recht auf Auskunft, Berichtigung und Löschung seiner personenbezogenen Daten. Diese Rechte können schriftlich an Kordula Schumacher geltend gemacht werden.</p>
   <h3>Datensicherheit</h3>
-  <p>{name} und der Betreiber der Webseite (<a target="_blank" rel="noreferrer noopener" href="https://accoma.de">Accomade - Dirk Porsche</a>) sichern zu, dass alle personenbezogenen Daten des Kunden gemäß den geltenden Datenschutzgesetzen geschützt werden.</p>
+  <p>Kordula Schumacher und der Betreiber der Webseite (<a target="_blank" rel="noreferrer noopener" href="https://accoma.de">Accomade - Dirk Porsche</a>) sichern zu, dass alle personenbezogenen Daten des Kunden gemäß den geltenden Datenschutzgesetzen geschützt werden.</p>
 </section>
 

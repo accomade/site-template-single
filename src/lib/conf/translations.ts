@@ -4,7 +4,7 @@ import {
   formatMonthHeader,
 } from './formats.js'
 
-import * as translations from './translations.json'
+import translations from './translations.json'
 
 const mappedTranslations:I18n = {
   defaultLang: translations.defaultLang,

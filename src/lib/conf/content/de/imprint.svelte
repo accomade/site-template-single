@@ -1,16 +1,12 @@
-<script lang="ts">
-  export let name:string = `Kordula Schumacher`
-  export let legalContact:string = `
+<h1>Impressum</h1>
+<section class="contact">
+  <strong>Kordula Schumacher</strong><br>
+  <p>
     Achterstr. 3<br>
     17459 Koserow - Deutschland<br>
     Telefon: 038375 - 20562<br>
-    E-Mail: <a href="mailto:G.Schumacher@koserow.de">G.Schumacher@koserow.de</a>`;
-</script>
-
-<h1>Impressum</h1>
-<section class="contact">
-  <strong>{name}</strong><br>
-  <p>{@html legalContact}</p>
+    E-Mail: <a href="mailto:G.Schumacher@koserow.de">G.Schumacher@koserow.de</a>
+  </p>
 </section>
 <section>
   <h2>Urheberrechte</h2>
