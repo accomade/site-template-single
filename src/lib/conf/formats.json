@@ -4,7 +4,6 @@
       "locale": "de-DE",
       "dateFormat": "dd.MM.yyyy",
       "monthHeader": "{{month}} / {{year}}",
-      "maxFutureDate": "",
       "nothingAvailable": "Nichts frei für {{forDays}} Tage bis {{maxFutureDate}}",
       "availableFromFor": "Mindestens {{forDays}} Tage ab dem ${{from}} verfügbar",
 
@@ -22,7 +21,6 @@
       "locale": "en-US",
       "dateFormat": "dd.MM.yyyy",
       "monthHeader": "{{month}} / {{year}}",
-      "maxFutureDate": "",
       "nothingAvailable": "No availability for {{forDays}} days until {{maxFutureDate}}",
       "availableFromFor": "Min. {{forDays}} days from {{from}} available",
 
