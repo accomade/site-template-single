@@ -11,8 +11,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^2.0.1",
-		"@sveltejs/kit": "^1.15.2",
+		"@sveltejs/adapter-static": "^2.0.2",
+		"@sveltejs/kit": "^1.15.7",
 		"@twicpics/components": "^0.16.1",
 		"@types/js-cookie": "^3.0.3",
 		"@types/luxon": "^3.3.0",
@@ -23,11 +23,11 @@
 		"svelte-check": "^3.2.0",
 		"tslib": "^2.5.0",
 		"typescript": "^5.0.4",
-		"vite": "^4.2.1"
+		"vite": "^4.3.1"
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=18"
+		"node": ">=18 <20"
 	},
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.14",
