@@ -5,7 +5,7 @@
 
   import { currentLang } from '$lib/stores/lang';
   $: calendar = i18n.translations[$currentLang].calendar;
-  $: dict = i18n.translations[$currentLang].dict;
+  $: dict = i18n.translations[$currentLang].site;
     
   export let calUrl:string;
   let calLoading = true;

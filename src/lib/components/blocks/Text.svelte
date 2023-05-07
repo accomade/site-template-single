@@ -1,16 +1,14 @@
 <script lang="ts">
   import { currentLang } from '$lib/stores/lang';
-  
+  import { i18n } from '$lib/conf';
+ 
   export let ref:string
-  const importContent = async (lang: string) => {
-    return import(`../../conf/content/${lang}/${ref}.svelte`)
-  }
+  $: trans = i18n.translations[$currentLang]
+  
 </script>
 
 <div class="content">
-{#await importContent( $currentLang ) then mod}
-  <svelte:component this={mod.default}/>
-{/await}
+{@html trans.site[ref]}
 </div>
 
 <style>

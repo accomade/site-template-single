@@ -17,14 +17,3 @@
   <li>From the station, you can take a taxi or walk to your destination.</li>
   <li>We can arrange a pickup if you have a lot of luggage.</li>
 </ol>
-
-<style>
-  p {
-    margin-bottom: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  ol {
-    padding-left: 1rem;
-  }
-</style>

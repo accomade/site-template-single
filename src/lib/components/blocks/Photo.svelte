@@ -20,7 +20,7 @@
   
   export const className:string = "photo-container-sizing";
 
-  $: dict = i18n.translations[$currentLang].dict
+  $: dict = i18n.translations[$currentLang].site
   let photoHeight = 0;
 </script>
 

@@ -24,7 +24,7 @@
 
   let dict:{[key:string]:string};
   $: {
-    dict = i18n.translations[$currentLang].dict
+    dict = i18n.translations[$currentLang].site
     if(initialLoadDone) {
       document.getElementById('weatherwidget-io-js')?.remove();
       load(callback, window);

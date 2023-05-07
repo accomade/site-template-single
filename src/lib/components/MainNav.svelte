@@ -12,7 +12,7 @@
 
 	
 	let allTranslations = Object.keys(i18n.translations);
-	$: dict = i18n.translations[$currentLang].dict
+	$: dict = i18n.translations[$currentLang].site
 
 	const close = () => {
 		isMenuOpen.set(false)

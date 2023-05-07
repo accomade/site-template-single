@@ -8,7 +8,7 @@
 
   import { currentLang } from '$lib/stores/lang';
   $: trans = i18n.translations[$currentLang] 
-  $: dict = trans.dict;
+  $: dict = trans.site;
   $: fromFun = ( from:DateTime|null, forDays:number):string => {
     return formatAvailability($currentLang, from, forDays, maxFutureDate)
   }

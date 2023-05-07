@@ -7,7 +7,7 @@
   import NoCheckSvg from '$lib/components/svg/NoCheckSVG.svelte';
   import { dictEntry } from '$lib/conf/translations'
   $: trans = i18n.translations[$currentLang] 
-  $: dict = trans.dict;
+  $: dict = trans.site;
 
   import { 
     formatNumberOf,

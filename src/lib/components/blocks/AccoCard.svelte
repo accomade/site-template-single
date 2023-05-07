@@ -8,10 +8,33 @@
 
   export let cardContent:AccoCardContent
   export let displayName:string
-  
+  export let path:string|undefined
+
 </script>
 
 <div class="accocard-wrapper">
+  {#if path}
+  <a href="{path}">
+    {#if cardContent } 
+      <div class="title-with-slug">
+        <h2>{displayName}</h2>
+        <div class="slug">{dictEntry($currentLang,cardContent.slug)}</div>
+      </div>
+      {#if cardContent.coverPhoto}
+      <div class="photo">
+        <PhotoBlock {...cardContent.coverPhoto} />
+      </div>
+      {/if}
+      {#if cardContent.blocks}
+        {#each cardContent.blocks as b,i}
+        <div class="block-container-{i}">
+          <BlockBlock spec={b}/>
+        </div>
+        {/each}
+      {/if}
+    {/if}
+  </a>
+  {:else}
   {#if cardContent } 
     <div class="title-with-slug">
       <h2>{displayName}</h2>
@@ -30,6 +53,7 @@
       {/each}
     {/if}
   {/if}
+{/if}
 </div>
 
 <style>

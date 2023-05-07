@@ -3,7 +3,7 @@
   import { i18n } from '$lib/conf'
   import ExtLinkSvg  from "./svg/ExtLinkSVG.svelte";
   import { currentLang } from '$lib/stores/lang';  
-  $: dict = i18n.translations[$currentLang].dict
+  $: dict = i18n.translations[$currentLang].site
 
   export let n:NavItem
 

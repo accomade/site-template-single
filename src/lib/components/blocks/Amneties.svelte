@@ -2,7 +2,7 @@
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
   $: trans = i18n.translations[$currentLang] 
-  $: dict = trans.dict;
+  $: dict = trans.site;
 
   import type { Amneties } from "$lib/types/accos";
   import AmnetyNucleus from '$lib/components/blocks/AmnetyNucleus.svelte';

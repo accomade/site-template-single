@@ -4,7 +4,7 @@
   import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
   
-  $: dict = i18n.translations[$currentLang].dict
+  $: dict = i18n.translations[$currentLang].site
 
   export let header: string | undefined = undefined;
   export let columnCount = 2;
