@@ -57,8 +57,9 @@ for ( const tEntry of Object.entries(translations.translations)) {
   mappedTranslations.translations[lang] = t
 }
 
-export const dictEntry = (lang:string, key:string):string|undefined => {
+export const dictEntry = (lang:string, key:string|undefined):string|undefined => {
   let res = undefined;
+  if(!key) return
 
   if(mappedTranslations.translations) {
     const t = mappedTranslations.translations[lang]
@@ -66,10 +67,11 @@ export const dictEntry = (lang:string, key:string):string|undefined => {
       const dict = t.site
       if(dict) {
         res = dict[key]
+        if (res) return res
       }
     }
   }
-  return res
+  return key
 }
 
 const i18n:I18n = mappedTranslations

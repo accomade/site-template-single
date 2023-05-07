@@ -51,13 +51,13 @@
       case "extraPerson":
         formattedContent = '<div style="display:flex; column-gap: 2rem; padding-left:1rem;flex-wrap: wrap;">';
         if(pricingEntry && pricingEntry.additionalPersonPrice1) {
-          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice1, pricingEntry.additionalPersonText1)}</span>`
+          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice1, dictEntry($currentLang, pricingEntry.additionalPersonText1))}</span>`
         }
         if(pricingEntry && pricingEntry.additionalPersonPrice2) {
-          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice2, pricingEntry.additionalPersonText2)}</span>`
+          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice2, dictEntry($currentLang, pricingEntry.additionalPersonText2))}</span>`
         }
         if(pricingEntry && pricingEntry.additionalPersonPrice3) {
-          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice3, pricingEntry.additionalPersonText3)}</span>`
+          formattedContent += `<span>${formatAdditionalPersonPrice($currentLang,pricingEntry.additionalPersonPrice3, dictEntry($currentLang, pricingEntry.additionalPersonText3))}</span>`
         }
         formattedContent+="</div>"
 

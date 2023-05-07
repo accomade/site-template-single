@@ -3,9 +3,8 @@
   import { DateTime } from 'luxon';
   import PricingNucleus from './PricingNucleus.svelte'
 
-  import { i18n } from '$lib/conf';
+  import { dictEntry } from "$lib/conf/translations";
   import { currentLang } from '$lib/stores/lang';
-  $: t = i18n.translations[$currentLang];
   
   export let global:PricingEntry|undefined = undefined;
   export let entries:PricingRange[] = [];
@@ -42,9 +41,6 @@
 
   let w:number = 801;
 
-  $: dict = t.site
-
-
 </script>
 
 <figure bind:clientWidth={w} class="pricing-wrapper">
@@ -52,25 +48,25 @@
     <table class="pricing-table-global">
       <thead>
         <tr>
-          <th>{dict["globalPricing"] ? dict["globalPricing"]: "globalPricing"}</th>
+          <th>{dictEntry($currentLang,"globalPricing")}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
             {#if global.firstNightPrice}
-              <strong>{@html dict["firstNight"] ? dict["firstNight"] : "firstNight"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="firstNight" />
+              <strong>{@html dictEntry($currentLang,"firstNight")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="firstNight" />
             {/if}
             {#if global.perNightPrice}
-              <strong>{@html dict["eachNight"] ? dict["eachNight"] : "eachNight"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="eachNight" />
+              <strong>{@html dictEntry($currentLang,"eachNight")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="eachNight" />
             {/if}
             {#if global.additionalPersonPrice1}
               <br><hr>
-              <strong>{@html dict["extraPerson"] ? dict["extraPerson"] : "extraPerson"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="extraPerson" />
+              <strong>{@html dictEntry($currentLang,"extraPerson")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="extraPerson" />
             {/if}
             {#if global.minNumberOfNights}
               <br><hr>
-              <strong>{@html dict["minNumNights"] ? dict["minNumNights"] : "minNumNights"}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="minNumNights" />
+              <strong>{@html dictEntry($currentLang,"minNumNights")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="minNumNights" />
             {/if}
           </td>
         </tr>
@@ -82,7 +78,7 @@
       <thead>
         <tr>
         {#each columns as h} 
-          <th scope="col" style="{colHeaderStyle[h]}">{@html dict[h] ? dict[h] : h}</th>
+          <th scope="col" style="{colHeaderStyle[h]}">{@html dictEntry($currentLang, h)}</th>
         {/each}
         </tr>
       </thead>
@@ -101,7 +97,7 @@
       <tfoot>
         <tr>
           <td colspan="{columns.length}">
-            {@html dict[footnote] ? dict[footnote] : footnote }
+            {@html dictEntry($currentLang,footnote)}
           </td>
         </tr>
       </tfoot>
@@ -121,7 +117,7 @@
           {#each columns as h}
             {#if h !== "timeRange"}
             <tr>
-              <th scope="row">{@html dict[h] ? dict[h] : h}</th>
+              <th scope="row">{@html dictEntry($currentLang, h)}</th>
               <td><PricingNucleus pricingSpec={e} pricingColumn={h} /></td>
             </tr>
             {/if}
@@ -132,7 +128,7 @@
       <tfoot>
         <tr>
           <td colspan="2">
-            {@html dict[footnote] ? dict[footnote] : footnote }
+            {@html dictEntry($currentLang,footnote)}
           </td>
         </tr>
       </tfoot>
@@ -152,7 +148,7 @@
         {#each columns as h}
           {#if h !== "timeRange"}
           <tr>
-            <th scope="row">{@html dict[h] ? dict[h] : h}</th>
+            <th scope="row">{@html dictEntry($currentLang,h)}</th>
           </tr>
           <tr>
             <td><PricingNucleus pricingSpec={e} pricingColumn={h} /></td>
@@ -165,7 +161,7 @@
     <tfoot>
       <tr>
         <td>
-          {@html dict[footnote] ? dict[footnote] : footnote }
+          {@html dictEntry($currentLang, footnote)}
         </td>
       </tr>
     </tfoot>
