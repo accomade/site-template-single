@@ -1,14 +1,11 @@
 <script lang="ts">
   import { currentLang } from '$lib/stores/lang';
-  
+  import { dictEntry } from '$lib/conf/translations';
+
 	import type { Nav } from '$lib/types/nav';
   import NavItem from './NavItem.svelte';
   
   export let nav:Nav
-
-  const importFooter = async (lang: string) => {
-    return import(`$lib/conf/content/${lang}/footer.svelte`)
-  }
 
 </script>
 
@@ -21,9 +18,7 @@
     {/each}
   </div>
   <div class="content">
-    {#await importFooter( $currentLang ) then mod}
-    <svelte:component this={mod.default} />
-    {/await}
+    {@html dictEntry($currentLang, 'footer_html')}
   </div>
 </footer>
 

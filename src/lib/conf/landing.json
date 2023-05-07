@@ -8,7 +8,7 @@
         {
           "kind": "text",
           "content": {
-            "ref": "landing_town"
+            "ref": "landing_town_html"
           }
         },
         {
@@ -45,7 +45,7 @@
         {
           "kind": "text",
           "content": {
-            "ref": "landing_apartments"
+            "ref": "landing_apartments_html"
           }
         },
         {
@@ -130,7 +130,7 @@
         {
           "kind": "text",
           "content": {
-            "ref": "directions"
+            "ref": "directions_html"
           }
         }
       ]

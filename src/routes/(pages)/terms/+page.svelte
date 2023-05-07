@@ -1,10 +1,6 @@
 <script lang="ts">
   import { dictEntry } from '$lib/conf/translations';
   import { currentLang } from '$lib/stores/lang';
-  
-  const importTOS = async (lang: string) => {
-    return import(`../../../lib/conf/content/${lang}/tos.svelte`)
-  }
 </script>
 
 <svelte:head>
@@ -12,10 +8,7 @@
 </svelte:head>
 
 <div class="terms-wrapper">
-  {#await importTOS($currentLang) then mod}
-
-    <svelte:component this={mod.default}></svelte:component>
-  {/await}
+  {@html dictEntry($currentLang, 'tos_html')}
 </div>
 
 

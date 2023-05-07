@@ -2,9 +2,6 @@
   import { currentLang } from '$lib/stores/lang';
   import { dictEntry } from '$lib/conf/translations';
 
-  const importImprint = async (lang: string) => {
-    return import(`../../../lib/conf/content/${lang}/imprint.svelte`)
-  }
 </script>
 
 
@@ -15,10 +12,7 @@
 
 
 <div class="terms-wrapper">
-  {#await importImprint($currentLang) then mod}
-
-    <svelte:component this={mod.default}></svelte:component>
-  {/await}
+  {@html dictEntry($currentLang, 'imprint_html')}
 </div>
 
 
