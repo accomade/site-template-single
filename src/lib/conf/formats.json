@@ -11,7 +11,7 @@
       "maximumPrice": "Maximal {{maxPrice}} pro Nacht",
       "additionalPersonPrice": "{{price}} ({{@if(terms)}}{{terms}}{{#else}}auf Anfrage{{/if}})",
       "minNumberOfNights": "{{num}} Nächte",
-      "formatSeating": "Sitzplätze für {{num}} Erwachsene",
+      "seating": "Sitzplätze für {{num}} Erwachsene",
       "numberOf": "Anzahl {{num}}",
       "size": "{{size}}&nbsp;m²",
       "bed": "für {{num}} Person(en)"
@@ -28,7 +28,7 @@
       "maximumPrice": "To {{maxPrice}} per night",
       "additionalPersonPrice": "{{price}} ({{@if(terms)}}{{terms}}{{#else}}contact us{{/if}})",
       "minNumberOfNights": "{{num}} nights",
-      "formatSeating": "Seating for {{num}} people",
+      "seating": "Seating for {{num}} people",
       "numberOf": "{{num}} pieces",
       "size": "{{size}}&nbsp;m²",
       "bed": "for {{num}}"
