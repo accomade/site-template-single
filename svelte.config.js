@@ -21,7 +21,7 @@ const config = {
 				"/accomodations",
 				"/imprint",
 				"/terms",
-				...Accos.map( (a) => { return `/accomodations/${a.path}`})
+				...Accos.map( (a) => a.path )
 			]
 		},
 	}
