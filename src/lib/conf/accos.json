@@ -1,6 +1,6 @@
 [
   {
-    "path": "acco_cornflower",
+    "path": "/accomodations/acco_cornflower",
     "displayName": "Wohnung: Kornblume",
     "cardContent": {
       "coverPhoto": {
@@ -1038,7 +1038,7 @@
     ]
   },
   {
-    "path": "acco_sunflower",
+    "path": "/accomodations/acco_sunflower",
     "displayName": "Wohnung: Sonnenblume",
     "cardContent": {
       "coverPhoto": {
@@ -1239,7 +1239,7 @@
     ]
   },
   {
-    "path": "acco_rosebush",
+    "path": "/accomodations/acco_rosebush",
     "displayName": "Wohnung: Buschwindröschen",
     "cardContent": {
       "coverPhoto": {

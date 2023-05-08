@@ -117,6 +117,11 @@
   }
 
 
+  a {
+    text-decoration: initial;
+    color: var(--main-font-color);
+  }
+
   @media (max-width: 999px) {
     .accocard-wrapper {
       grid-template-rows: [first-row-line] auto [second-row-line] auto [third-row-line] auto [fourth-row-line];

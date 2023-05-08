@@ -16,12 +16,10 @@
 <main style="max-width: {maxWidth};">
   {#each accos as a}
     {#if a.cardContent}
-    <a href="/accomodations/{a.path}">
     <AccoCard 
       cardContent={a.cardContent}
       displayName={a.displayName}
       path={a.path}/>
-    </a>
     {/if}
   {/each}
 </main>
@@ -31,11 +29,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  a {
-    text-decoration: initial;
-    color: var(--main-font-color);
   }
 
   h1 {
