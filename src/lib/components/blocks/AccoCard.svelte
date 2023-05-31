@@ -1,40 +1,17 @@
 <script lang="ts">
   import type { AccoCardContent } from '$lib/types/accos';
-  import PhotoBlock from './Photo.svelte';
-  import BlockBlock from './Block.svelte';
+  import Photo from './Photo.svelte';
+  import Block from './Block.svelte';
 
   import { dictEntry } from '$lib/conf/translations';
   import { currentLang } from '$lib/stores/lang';
 
   export let cardContent:AccoCardContent
   export let displayName:string
-  export let path:string|undefined
 
 </script>
 
 <div class="accocard-wrapper">
-  {#if path}
-  <a href="{path}">
-    {#if cardContent } 
-      <div class="title-with-slug">
-        <h2>{displayName}</h2>
-        <div class="slug">{dictEntry($currentLang,cardContent.slug)}</div>
-      </div>
-      {#if cardContent.coverPhoto}
-      <div class="photo">
-        <PhotoBlock {...cardContent.coverPhoto} />
-      </div>
-      {/if}
-      {#if cardContent.blocks}
-        {#each cardContent.blocks as b,i}
-        <div class="block-container-{i}">
-          <BlockBlock spec={b}/>
-        </div>
-        {/each}
-      {/if}
-    {/if}
-  </a>
-  {:else}
   {#if cardContent } 
     <div class="title-with-slug">
       <h2>{displayName}</h2>
@@ -42,18 +19,17 @@
     </div>
     {#if cardContent.coverPhoto}
     <div class="photo">
-      <PhotoBlock {...cardContent.coverPhoto} />
+      <Photo {...cardContent.coverPhoto} />
     </div>
     {/if}
     {#if cardContent.blocks}
       {#each cardContent.blocks as b,i}
       <div class="block-container-{i}">
-        <BlockBlock spec={b}/>
+        <Block spec={b}/>
       </div>
       {/each}
     {/if}
   {/if}
-{/if}
 </div>
 
 <style>
@@ -114,12 +90,6 @@
     text-align: right;
     font-style: italic;
     margin-bottom: 1rem;
-  }
-
-
-  a {
-    text-decoration: initial;
-    color: var(--main-font-color);
   }
 
   @media (max-width: 999px) {

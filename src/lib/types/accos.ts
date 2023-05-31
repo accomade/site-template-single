@@ -235,9 +235,7 @@ export interface LabeledDesc {
 
 export interface AccoCard {
   cardContent: AccoCardContent
-  path: string
   displayName: string
-  
 }
 
 export interface AccoCardContent {

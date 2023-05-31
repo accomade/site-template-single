@@ -19,7 +19,7 @@
     <AccoCard 
       cardContent={a.cardContent}
       displayName={a.displayName}
-      path={a.path}/>
+      />
     {/if}
   {/each}
 </main>
