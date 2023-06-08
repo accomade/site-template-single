@@ -10,30 +10,42 @@
   import { nav } from '$lib/conf';
 </script>
 
-<Header/>
+<div class="layout-wrapper">
 
-<main>
-  <slot></slot>
-</main>
+  <Header/>
 
-<Footer nav={nav}/>
+  <main>
+    <slot></slot>
+  </main>
+
+  <Footer nav={nav}/>
+
+</div>
 
 
 {#if $isMenuOpen}
-  <MainNav nav={nav} />
+<MainNav nav={nav} />
 {/if}
+
 
 <div class="ham-wrapper">
   <HamburgerMenuButton/>
 </div>
 
-
 <style>
+  .layout-wrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: column
+  }
+
+
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    flex: 2;
   }
 
 
