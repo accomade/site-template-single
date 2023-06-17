@@ -116,7 +116,7 @@
     },
     {
       "header": "directions",
-      "columnCount": 2,
+      "columnCount": 1,
       "blocks": [
         {
           "kind": "map",
@@ -125,12 +125,6 @@
             "lat": 54.0483609,
             "long": 13.9965374,
             "zoom": 16
-          }
-        },
-        {
-          "kind": "text",
-          "content": {
-            "ref": "directions_html"
           }
         }
       ]
