@@ -30,6 +30,7 @@
 		"node": ">=18 <20"
 	},
 	"dependencies": {
+		"@dinero.js/currencies": "2.0.0-alpha.14",
 		"@fontsource/arizonia": "^4.5.9",
 		"@fontsource/carrois-gothic": "^4.5.10",
 		"@fontsource/raleway": "^4.5.12",
