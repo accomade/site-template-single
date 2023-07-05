@@ -20,9 +20,9 @@
 
 </script>
 
-<button class="not-nav" on:click={close} transition:fade></button>
+<button class="not-nav" on:click={close} transition:fade|global></button>
 
-<nav class="main-nav" class:open={$isMenuOpen} transition:fade>
+<nav class="main-nav" class:open={$isMenuOpen} transition:fade|global>
 	<ul>
 		{#each nav.main as n}
 		<li>

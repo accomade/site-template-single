@@ -18,7 +18,7 @@
   export let spec:Block;
   
   let props:any
-  let component: typeof SvelteComponent
+  let component: typeof SvelteComponent<any>
 
   if(!!spec) {
     switch (spec.kind) {
