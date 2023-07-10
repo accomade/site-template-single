@@ -12,18 +12,18 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.2",
-		"@sveltejs/kit": "^1.22.0",
+		"@sveltejs/kit": "^1.22.1",
 		"@twicpics/components": "^0.19.0",
 		"@types/js-cookie": "^3.0.3",
 		"@types/luxon": "^3.3.0",
 		"@types/web": "^0.0.103",
-		"gdpr-cooco-banner": "^0.0.4",
-		"occuplan": "^0.0.28",
-		"svelte": "^4.0.4",
-		"svelte-check": "^3.4.4",
+		"gdpr-cooco-banner": "^0.0.5",
+		"occuplan": "^0.0.29",
+		"svelte": "^4.0.5",
+		"svelte-check": "^3.4.5",
 		"tslib": "^2.6.0",
 		"typescript": "^5.1.6",
-		"vite": "^4.3.9"
+		"vite": "^4.4.2"
 	},
 	"type": "module",
 	"engines": {
@@ -31,9 +31,9 @@
 	},
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.14",
-		"@fontsource/arizonia": "^5.0.4",
-		"@fontsource/carrois-gothic": "^5.0.4",
-		"@fontsource/raleway": "^5.0.4",
+		"@fontsource/arizonia": "^5.0.5",
+		"@fontsource/carrois-gothic": "^5.0.5",
+		"@fontsource/raleway": "^5.0.5",
 		"dinero.js": "2.0.0-alpha.14",
 		"js-cookie": "^3.0.5",
 		"luxon": "^3.3.0",
