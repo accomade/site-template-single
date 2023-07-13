@@ -5,7 +5,7 @@
       "dateFormat": "dd.MM.yyyy",
       "monthHeader": "{{month}} / {{year}}",
       "nothingAvailable": "Nichts frei für {{forDays}} Tage bis {{maxFutureDate}}",
-      "availableFromFor": "Mindestens {{forDays}} Tage ab dem ${{from}} verfügbar",
+      "availableFromFor": "Mindestens {{forDays}} Tage ab dem {{from}} verfügbar",
 
       "minimumPrice": "Ab {{minPrice}} pro Nacht",
       "maximumPrice": "Maximal {{maxPrice}} pro Nacht",
