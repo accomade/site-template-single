@@ -33,7 +33,6 @@ const handleCookie = () => {
     expires.setDate(expires.getDate() + 365)
     const cl = get(langStore)
 
-    //TODO only set cooking when preference cookies are allowed
     Cookie.set('lang', cl, {
       sameSite: 'strict',
       path: '/',
