@@ -11,19 +11,19 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^2.0.2",
-		"@sveltejs/kit": "^1.22.3",
-		"@twicpics/components": "^0.21.0",
+		"@sveltejs/adapter-static": "^2.0.3",
+		"@sveltejs/kit": "^1.22.5",
+		"@twicpics/components": "^0.22.0",
 		"@types/js-cookie": "^3.0.3",
 		"@types/luxon": "^3.3.1",
-		"@types/web": "^0.0.111",
+		"@types/web": "^0.0.112",
 		"gdpr-cooco-banner": "^0.0.5",
 		"occuplan": "^0.1.0",
-		"svelte": "^4.1.1",
-		"svelte-check": "^3.4.6",
+		"svelte": "^4.2.0",
+		"svelte-check": "^3.5.0",
 		"tslib": "^2.6.1",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.7"
+		"vite": "^4.4.9"
 	},
 	"type": "module",
 	"engines": {
@@ -31,12 +31,12 @@
 	},
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.14",
-		"@fontsource/arizonia": "^5.0.5",
-		"@fontsource/carrois-gothic": "^5.0.5",
-		"@fontsource/raleway": "^5.0.5",
+		"@fontsource/arizonia": "^5.0.8",
+		"@fontsource/carrois-gothic": "^5.0.8",
+		"@fontsource/raleway": "^5.0.8",
 		"dinero.js": "2.0.0-alpha.14",
 		"js-cookie": "^3.0.5",
-		"luxon": "^3.3.0",
+		"luxon": "^3.4.0",
 		"squirrelly": "^9.0.0"
 	}
 }
