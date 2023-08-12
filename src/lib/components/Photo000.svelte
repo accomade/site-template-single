@@ -7,10 +7,11 @@
 	export let photoPath:string;
 	export let className:string;
 	export let alt:string;
+	export let transition = 'none';
 	//export let maxWidth:string;
 	//export let maxHeight:string;
 	export let eager:boolean = false;
-	export let ratio = "none";
+	export let ratio = 'none';
 
 	let mounted = false;
 	onMount( () => {
@@ -28,6 +29,7 @@
 			{ratio}
 			mode="cover"
 			{eager}
+			transition={transition}
 		/>
 	</div>
 {:else}
@@ -39,6 +41,7 @@
 			{ratio}
 			mode="cover"
 			{eager}
+			transition={transition}
 		/>
 	</div>
 {/if}

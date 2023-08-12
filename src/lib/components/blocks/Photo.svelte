@@ -9,11 +9,12 @@
   export let alt:string;
   export let photoPath:string;
   export let eager:boolean = false;
-  export let link:string = "";
+  export let link:string = '';
   export let external:boolean = false;
   export let attribution:string|undefined = undefined;
-  export let ratio = "none";
+  export let ratio = 'none';
   export let frame = false;
+  export let transition = 'none';
 
   export let width="100%"
   export let height="100%"
@@ -34,6 +35,7 @@
       rel="noreferrer noopener">
 
     <Photo000
+      {transition}
       {frame}
       {className}
       {photoPath}
@@ -60,6 +62,7 @@
       href="{link}">
     
     <Photo000
+      {transition}
       {frame}
       {photoPath}
       {className}
@@ -86,6 +89,7 @@
     style="width: {width}; height: {height};">
   
   <Photo000
+    {transition}
     {frame}
     {photoPath}
     {className}

@@ -58,9 +58,11 @@
   {#each gridPhotos as p, i  (p.id)}
     <div 
         class:complete-row={p.zoomed}
-        aria-label="resize" 
+        aria-label="resize"
+        role="button"
+        tabindex="-1"
         on:click={() => zoom(p,i)}
-        on:keypress={() => zoom(p,i)}
+        on:keyup={() => zoom(p,i)}
         class="photo-container">
     
       <PhotoComponent

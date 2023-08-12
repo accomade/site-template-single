@@ -124,6 +124,7 @@ export type JsonBlock =
   AmnetiesBlock |
   AmnetiesCoreBlock |
   WeatherBlock |
+  MapBlock |
   AccoCardBlock |
   undefined
 
