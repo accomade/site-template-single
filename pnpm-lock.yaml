@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@dinero.js/currencies':
-    specifier: 2.0.0-alpha.1
-    version: 2.0.0-alpha.1
+    specifier: 2.0.0-alpha.14
+    version: 2.0.0-alpha.14
   '@fontsource/arizonia':
     specifier: ^5.0.8
     version: 5.0.8
@@ -18,8 +18,8 @@ dependencies:
     specifier: ^5.0.8
     version: 5.0.8
   dinero.js:
-    specifier: 1.9.1
-    version: 1.9.1
+    specifier: 2.0.0-alpha.14
+    version: 2.0.0-alpha.14
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
@@ -81,8 +81,20 @@ packages:
       '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
-  /@dinero.js/currencies@2.0.0-alpha.1:
-    resolution: {integrity: sha512-JoKY6q3AOm2II44qLp6VMGn+j+p6QC39m3DFogKZXsucWIIvzt7c2v04DZrrHWLNnDYNzITOnbQ7f2pGbONjig==}
+  /@dinero.js/calculator-number@2.0.0-alpha.14:
+    resolution: {integrity: sha512-Vmlu6eXNtkFU2cqlrpqfq8KQP9onALf8Es2d34liVa3k3RHjuhizgFUU3V3/tsjOu5WekZq+gYPOr58XVTkB7A==}
+    dependencies:
+      '@dinero.js/core': 2.0.0-alpha.14
+    dev: false
+
+  /@dinero.js/core@2.0.0-alpha.14:
+    resolution: {integrity: sha512-CtKELJ783joUbaU62fRM2xDXb4XYSy0MgOuIkPWgVOS3SYKKb6+2Ec9bNlvrW8lsPROz/RsvCuYVTphrZ79twg==}
+    dependencies:
+      '@dinero.js/currencies': 2.0.0-alpha.14
+    dev: false
+
+  /@dinero.js/currencies@2.0.0-alpha.14:
+    resolution: {integrity: sha512-Ck5ZLjRI7Pl7Y4VkeOst4WEwiN5vZezv8GHcXWsVLUfTNsmkV37VeLYDRAuTUP4akEJyIry+1o1qHYNtLq3eNw==}
     dev: false
 
   /@esbuild/android-arm64@0.18.20:
@@ -587,8 +599,12 @@ packages:
     resolution: {integrity: sha512-KqFl6pOgOW+Y6wJgu80rHpo2/3H07vr8ntR9rkkFIRETewbf5GaYYcakYfiKz89K+sLsuPkQIZaXDMjUObZwWg==}
     dev: true
 
-  /dinero.js@1.9.1:
-    resolution: {integrity: sha512-1HXiF2vv3ZeRQ23yr+9lFxj/PbZqutuYWJnE0qfCB9xYBPnuaJ8lXtli1cJM0TvUXW1JTOaePldmqN5JVNxKSA==}
+  /dinero.js@2.0.0-alpha.14:
+    resolution: {integrity: sha512-dkURHd9P+2TjuSTMUAnvrB7SsL4GbBYG/WPtIBV8M+L7Xf80x84sJcUUTxIS33S4AlkIbVANlaL86w2g5zdrmg==}
+    dependencies:
+      '@dinero.js/calculator-number': 2.0.0-alpha.14
+      '@dinero.js/core': 2.0.0-alpha.14
+      '@dinero.js/currencies': 2.0.0-alpha.14
     dev: false
 
   /es6-promise@3.3.1:
