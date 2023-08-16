@@ -1,8 +1,6 @@
 import type { I18n, Translation } from '$lib/types/i18n'
 
-import { 
-  formatMonthHeader,
-} from './formats.js'
+import formats from './formats.json'
 
 import translations from './translations.json'
 
@@ -13,7 +11,7 @@ const mappedTranslations:I18n = {
 }
 
 for ( const tEntry of Object.entries(translations.translations)) {
-  const [lang, jsonT] = tEntry;
+  const [lang , jsonT] = tEntry;
   const t:Translation = {
     site: jsonT.site,
     cookies: jsonT.cookies,
@@ -43,11 +41,9 @@ for ( const tEntry of Object.entries(translations.translations)) {
       },
       weekendLabel: jsonT.calendar.weekendLabel,
       typeNames: {
-        defaultOccupationsTypeName: jsonT.calendar.typeNames.defaultOccupationsTypeName
+        defaultOccupationTypeName: jsonT.calendar.typeNames.defaultOccupationTypeName
       },
-      monthHeaderFormatFun: (month:string, year:string) => {
-        return formatMonthHeader(lang, month, year)
-      },
+      monthHeaderFormat: formats[lang as keyof typeof formats].monthHeader
     }
   }
 

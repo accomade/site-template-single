@@ -35,13 +35,6 @@ export const format = (templateName, lang, data) => {
 }
 
 
-export const formatMonthHeader = (lang: string, month:string, year:string) => {
-  return format('monthHeader', lang, {
-    month,
-    year,
-  })
-}
-
 export const formatMoney = (lang: string, d: Dinero<number>) => {
   //@ts-ignore
   const locale = formats[lang].locale

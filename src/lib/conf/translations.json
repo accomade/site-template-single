@@ -8,7 +8,7 @@
         "monthLabels": ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
         "weekendLabel": "Wochenende",
         "typeNames": {
-          "defaultOccupationsTypeName": "Belegt"
+          "defaultOccupationTypeName": "Belegt"
         }
       },
       "site": {
@@ -152,7 +152,7 @@
         "monthLabels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         "weekendLabel": "Weekend",
         "typeNames": {
-          "defaultOccupationsTypeName": "Occupied"
+          "defaultOccupationTypeName": "Occupied"
         }
       },
       "site": {

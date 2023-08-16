@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@dinero.js/currencies':
-    specifier: 2.0.0-alpha.14
-    version: 2.0.0-alpha.14
+    specifier: 2.0.0-alpha.1
+    version: 2.0.0-alpha.1
   '@fontsource/arizonia':
     specifier: ^5.0.8
     version: 5.0.8
@@ -18,8 +18,8 @@ dependencies:
     specifier: ^5.0.8
     version: 5.0.8
   dinero.js:
-    specifier: 2.0.0-alpha.14
-    version: 2.0.0-alpha.14
+    specifier: 1.9.1
+    version: 1.9.1
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
@@ -33,10 +33,10 @@ dependencies:
 devDependencies:
   '@sveltejs/adapter-static':
     specifier: ^2.0.3
-    version: 2.0.3(@sveltejs/kit@1.22.5)
+    version: 2.0.3(@sveltejs/kit@1.22.6)
   '@sveltejs/kit':
-    specifier: ^1.22.5
-    version: 1.22.5(svelte@4.2.0)(vite@4.4.9)
+    specifier: ^1.22.6
+    version: 1.22.6(svelte@4.2.0)(vite@4.4.9)
   '@twicpics/components':
     specifier: ^0.22.0
     version: 0.22.0
@@ -47,14 +47,14 @@ devDependencies:
     specifier: ^3.3.1
     version: 3.3.1
   '@types/web':
-    specifier: ^0.0.112
-    version: 0.0.112
+    specifier: ^0.0.113
+    version: 0.0.113
   gdpr-cooco-banner:
     specifier: ^0.0.5
     version: 0.0.5(svelte@4.2.0)
   occuplan:
-    specifier: ^0.1.0
-    version: 0.1.0(svelte@4.2.0)
+    specifier: ^0.1.2
+    version: 0.1.2(svelte@4.2.0)
   svelte:
     specifier: ^4.2.0
     version: 4.2.0
@@ -81,20 +81,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
-  /@dinero.js/calculator-number@2.0.0-alpha.14:
-    resolution: {integrity: sha512-Vmlu6eXNtkFU2cqlrpqfq8KQP9onALf8Es2d34liVa3k3RHjuhizgFUU3V3/tsjOu5WekZq+gYPOr58XVTkB7A==}
-    dependencies:
-      '@dinero.js/core': 2.0.0-alpha.14
-    dev: false
-
-  /@dinero.js/core@2.0.0-alpha.14:
-    resolution: {integrity: sha512-CtKELJ783joUbaU62fRM2xDXb4XYSy0MgOuIkPWgVOS3SYKKb6+2Ec9bNlvrW8lsPROz/RsvCuYVTphrZ79twg==}
-    dependencies:
-      '@dinero.js/currencies': 2.0.0-alpha.14
-    dev: false
-
-  /@dinero.js/currencies@2.0.0-alpha.14:
-    resolution: {integrity: sha512-Ck5ZLjRI7Pl7Y4VkeOst4WEwiN5vZezv8GHcXWsVLUfTNsmkV37VeLYDRAuTUP4akEJyIry+1o1qHYNtLq3eNw==}
+  /@dinero.js/currencies@2.0.0-alpha.1:
+    resolution: {integrity: sha512-JoKY6q3AOm2II44qLp6VMGn+j+p6QC39m3DFogKZXsucWIIvzt7c2v04DZrrHWLNnDYNzITOnbQ7f2pGbONjig==}
     dev: false
 
   /@esbuild/android-arm64@0.18.20:
@@ -362,16 +350,16 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-static@2.0.3(@sveltejs/kit@1.22.5):
+  /@sveltejs/adapter-static@2.0.3(@sveltejs/kit@1.22.6):
     resolution: {integrity: sha512-VUqTfXsxYGugCpMqQv1U0LIdbR3S5nBkMMDmpjGVJyM6Q2jHVMFtdWJCkeHMySc6mZxJ+0eZK3T7IgmUCDrcUQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@sveltejs/kit': 1.22.5(svelte@4.2.0)(vite@4.4.9)
+      '@sveltejs/kit': 1.22.6(svelte@4.2.0)(vite@4.4.9)
     dev: true
 
-  /@sveltejs/kit@1.22.5(svelte@4.2.0)(vite@4.4.9):
-    resolution: {integrity: sha512-LHq+ECucoT6c6/tkrxIQtD8KVNhPFV4QQ+xOKTwBAs/Qdtff8P5gAzsIZiwEaaO6J6sYZoy5RP2VR6m8PSCgLA==}
+  /@sveltejs/kit@1.22.6(svelte@4.2.0)(vite@4.4.9):
+    resolution: {integrity: sha512-SDKxI/QpsReCwIn5czjT53fKlPBybbmMk67d317gUqfeORroBAFN1Z6s/x0E1JYi+04i7kKllS+Sz9wVfmUkAQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -457,8 +445,8 @@ packages:
     resolution: {integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==}
     dev: true
 
-  /@types/web@0.0.112:
-    resolution: {integrity: sha512-IAsSIAwlo7vru2yrEOFTUZNbSwhZKTVeVs8fD4zk/wk8WtYX6Z5ZnpkoWv/nop6Bz9ghrYL9fX6alO2uxEvOgw==}
+  /@types/web@0.0.113:
+    resolution: {integrity: sha512-cHKZeeX0WtKTI7zHH7LSUKxi7yv4hEGWVHRJlMziRxRiUenzZ1Pg4X77VUWNyCFBce5Nlm+usLTndn7o7YvQKg==}
     dev: true
 
   /acorn@8.10.0:
@@ -541,8 +529,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /code-red@1.0.3:
-    resolution: {integrity: sha512-kVwJELqiILQyG5aeuyKFbdsI1fmQy1Cmf7dQ8eGmVuJoaRVdwey7WaMknr2ZFeVSYSKT0rExsa8EGw0aoI/1QQ==}
+  /code-red@1.0.4:
+    resolution: {integrity: sha512-7qJWqItLA8/VPVlKJlFXU+NBlo/qyfs39aJcuMT/2ere32ZqvF5OSxgdM5xOfJJ7O429gg2HM47y8v9P+9wrNw==}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
       '@types/estree': 1.0.1
@@ -599,12 +587,8 @@ packages:
     resolution: {integrity: sha512-KqFl6pOgOW+Y6wJgu80rHpo2/3H07vr8ntR9rkkFIRETewbf5GaYYcakYfiKz89K+sLsuPkQIZaXDMjUObZwWg==}
     dev: true
 
-  /dinero.js@2.0.0-alpha.14:
-    resolution: {integrity: sha512-dkURHd9P+2TjuSTMUAnvrB7SsL4GbBYG/WPtIBV8M+L7Xf80x84sJcUUTxIS33S4AlkIbVANlaL86w2g5zdrmg==}
-    dependencies:
-      '@dinero.js/calculator-number': 2.0.0-alpha.14
-      '@dinero.js/core': 2.0.0-alpha.14
-      '@dinero.js/currencies': 2.0.0-alpha.14
+  /dinero.js@1.9.1:
+    resolution: {integrity: sha512-1HXiF2vv3ZeRQ23yr+9lFxj/PbZqutuYWJnE0qfCB9xYBPnuaJ8lXtli1cJM0TvUXW1JTOaePldmqN5JVNxKSA==}
     dev: false
 
   /es6-promise@3.3.1:
@@ -868,8 +852,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan@0.1.0(svelte@4.2.0):
-    resolution: {integrity: sha512-iSOp+Sl+3NZ0ueOdGjk68RunOfP/9+eXs8eF1+zgKGNHB/LoNPxI25vzWu3eFY2xbf+9SZTsHRVP7q9wIFkJDQ==}
+  /occuplan@0.1.2(svelte@4.2.0):
+    resolution: {integrity: sha512-BBV9f7u4qU4Ok0nIFyJu4HLSmDkVG3poKbZf6jiEHLwHcza2RQ9jFhx5V3+mVDCK5iE2Gvk9d/U5PVdwhN2FKA==}
     engines: {node: '>=18 <20'}
     peerDependencies:
       svelte: ^4.0.5
@@ -914,8 +898,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /postcss@8.4.27:
-    resolution: {integrity: sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==}
+  /postcss@8.4.28:
+    resolution: {integrity: sha512-Z7V5j0cq8oEKyejIKfpD8b4eBy9cwW2JWPk0+fB1HOAMsfHbnAXLLS+PfVWlzMSLQaWttKDt607I0XHmpE67Vw==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.6
@@ -1118,7 +1102,7 @@ packages:
       acorn: 8.10.0
       aria-query: 5.3.0
       axobject-query: 3.2.1
-      code-red: 1.0.3
+      code-red: 1.0.4
       css-tree: 2.3.1
       estree-walker: 3.0.3
       is-reference: 3.0.1
@@ -1185,7 +1169,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.18.20
-      postcss: 8.4.27
+      postcss: 8.4.28
       rollup: 3.28.0
     optionalDependencies:
       fsevents: 2.3.2
