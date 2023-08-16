@@ -16,29 +16,8 @@ for ( const tEntry of Object.entries(translations.translations)) {
     site: jsonT.site,
     cookies: jsonT.cookies,
     calendar: {
-      weekdayLabels: {
-        1: jsonT.calendar.weekdayLabels[0],
-        2: jsonT.calendar.weekdayLabels[1],
-        3: jsonT.calendar.weekdayLabels[2],
-        4: jsonT.calendar.weekdayLabels[3],
-        5: jsonT.calendar.weekdayLabels[4],
-        6: jsonT.calendar.weekdayLabels[5],
-        7: jsonT.calendar.weekdayLabels[6],
-      },
-      monthLabels: {
-        1: jsonT.calendar.monthLabels[0],
-        2: jsonT.calendar.monthLabels[1],
-        3: jsonT.calendar.monthLabels[2],
-        4: jsonT.calendar.monthLabels[3],
-        5: jsonT.calendar.monthLabels[4],
-        6: jsonT.calendar.monthLabels[5],
-        7: jsonT.calendar.monthLabels[6],
-        8: jsonT.calendar.monthLabels[7],
-        9: jsonT.calendar.monthLabels[8],
-        10: jsonT.calendar.monthLabels[9],
-        11: jsonT.calendar.monthLabels[10],
-        12: jsonT.calendar.monthLabels[11],
-      },
+      weekdayLabels: jsonT.calendar.weekdayLabels,
+      monthLabels: jsonT.calendar.monthLabels,
       weekendLabel: jsonT.calendar.weekendLabel,
       typeNames: {
         defaultOccupationTypeName: jsonT.calendar.typeNames.defaultOccupationTypeName
