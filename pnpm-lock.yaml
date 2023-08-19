@@ -47,14 +47,14 @@ devDependencies:
     specifier: ^3.3.1
     version: 3.3.1
   '@types/web':
-    specifier: ^0.0.113
-    version: 0.0.113
+    specifier: ^0.0.114
+    version: 0.0.114
   gdpr-cooco-banner:
     specifier: ^0.0.5
     version: 0.0.5(svelte@4.2.0)
   occuplan:
-    specifier: ^0.1.3
-    version: 0.1.3(svelte@4.2.0)
+    specifier: ^0.1.4
+    version: 0.1.4(svelte@4.2.0)
   svelte:
     specifier: ^4.2.0
     version: 4.2.0
@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^3.5.0
     version: 3.5.0(svelte@4.2.0)
   tslib:
-    specifier: ^2.6.1
-    version: 2.6.1
+    specifier: ^2.6.2
+    version: 2.6.2
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
@@ -457,8 +457,8 @@ packages:
     resolution: {integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==}
     dev: true
 
-  /@types/web@0.0.113:
-    resolution: {integrity: sha512-cHKZeeX0WtKTI7zHH7LSUKxi7yv4hEGWVHRJlMziRxRiUenzZ1Pg4X77VUWNyCFBce5Nlm+usLTndn7o7YvQKg==}
+  /@types/web@0.0.114:
+    resolution: {integrity: sha512-nrkwsB8u0VNHwElFSl6ZCgu0BCbsQu5BPq7mJtBpW7rYBmiLZNWE5KqcHDw8GXQMqWsnFB3EnXsAx7UysQwcMg==}
     dev: true
 
   /acorn@8.10.0:
@@ -868,8 +868,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan@0.1.3(svelte@4.2.0):
-    resolution: {integrity: sha512-OcIfVAF25Ncqh9VIyUQoQxnRKnappfhXT2QfT1FWU3WdscYXgwcCj7Iucw4i022BOfrCXs8hYsZEjphww7tXRQ==}
+  /occuplan@0.1.4(svelte@4.2.0):
+    resolution: {integrity: sha512-uuwyOKhBOKbx71x4M7dxGV3QeCPBFrT2cpwd0NGmCQaf5jPyGITj4tscY+AToAG77mxChGbDI4A9Tf2skV7gpg==}
     engines: {node: '>=18 <20'}
     peerDependencies:
       svelte: ^4.0.5
@@ -1139,8 +1139,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /tslib@2.6.1:
-    resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
   /typescript@5.1.6:

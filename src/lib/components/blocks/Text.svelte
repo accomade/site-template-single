@@ -3,12 +3,27 @@
   import { i18n } from '$lib/conf';
  
   export let ref:string
-  $: trans = i18n.translations[$currentLang]
   
+  $: {
+    console.log('Text lang', $currentLang)
+    console.log('trans', i18n.translations[$currentLang].calendar.weekendLabel)
+  }
+
+  $: trans = i18n.translations[$currentLang];
+  $: out = trans.site[ref] ?? ref
+  
+  const innerHtml = (node:HTMLDivElement) => {
+    node.innerHTML = out;
+    return {
+      update: (html:string) => {
+        node.innerHTML = out
+      }
+    }
+  }
 </script>
 
-<div class="content">
-{@html trans.site[ref]}
+<div class="content" use:innerHtml>
+
 </div>
 
 <style>
