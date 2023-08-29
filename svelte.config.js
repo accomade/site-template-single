@@ -3,6 +3,13 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 
 import Accos from './src/lib/conf/accos.json' assert {type: 'json'};
 
+let accoEntries = []
+if ( !!Accos && Accos.length > 0 ) {
+	accoEntries = Accos.map( (a) => a.path )
+} else {
+	accoEntries = ['dummy_entry']
+}
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,7 +28,7 @@ const config = {
 				"/accomodations",
 				"/imprint",
 				"/terms",
-				...Accos.map( (a) => a.path )
+				...accoEntries
 			]
 		},
 	}
