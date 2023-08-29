@@ -7,7 +7,7 @@ let accoEntries = []
 if ( !!Accos && Accos.length > 0 ) {
 	accoEntries = Accos.map( (a) => a.path )
 } else {
-	accoEntries = ['dummy_entry']
+	accoEntries = ['/accomodations/dummy_entry']
 }
 
 
