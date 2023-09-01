@@ -3,14 +3,16 @@
   import Section from '$lib/components/blocks/Section.svelte';
   import { accos } from '$lib/conf';
   import { page } from '$app/stores';
-  $page.route
+  import { onMount } from 'svelte';
+  
   export let data: App.PageData & Record<string, any>;
   let acco = accos.find( (a) => a.path == $page.url.pathname )
-  $: {
+  
+  onMount( () => {
     if( !acco ) {
       goto('/accomodations')
     }
-  }
+  })
 </script>
 
 <svelte:head>
