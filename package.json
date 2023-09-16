@@ -12,9 +12,9 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
-		"@sveltejs/kit": "^1.24.0",
-		"@twicpics/components": "^0.22.0",
-		"@types/js-cookie": "^3.0.3",
+		"@sveltejs/kit": "^1.25.0",
+		"@twicpics/components": "^0.22.2",
+		"@types/js-cookie": "^3.0.4",
 		"@types/luxon": "^3.3.2",
 		"@types/web": "^0.0.114",
 		"gdpr-cooco-banner": "^0.0.5",
@@ -31,12 +31,12 @@
 	},
 	"dependencies": {
 		"@dinero.js/currencies": "2.0.0-alpha.14",
-		"@fontsource/arizonia": "^5.0.11",
+		"@fontsource/arizonia": "^5.0.12",
 		"@fontsource/carrois-gothic": "^5.0.8",
 		"@fontsource/raleway": "^5.0.8",
 		"dinero.js": "2.0.0-alpha.14",
 		"js-cookie": "^3.0.5",
-		"luxon": "^3.4.2",
+		"luxon": "^3.4.3",
 		"squirrelly": "^9.0.0"
 	}
 }
