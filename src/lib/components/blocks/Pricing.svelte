@@ -27,16 +27,18 @@
 
   const colHeaderStyle = {
     timeRange: 'width: 20%;', 
-    firstNight: 'width: 15%',
-    eachNight: 'width: 15%',
+    firstNight: 'width: 12%',
+    eachNight: 'width: 12%',
+    peopleNum: 'width: 9%',
     extraPerson: 'width: 35%',
-    minNumNights: 'width: 15%'
+    minNumNights: 'width: 12%'
   }
 
   const colCellStyle = {
     timeRange: 'text-align:center;', 
     firstNight: 'text-align:right;',
     eachNight: 'text-align:right;',
+    peopleNum: 'text-align: center;',
     extraPerson: 'text-align:left;',
     minNumNights: 'text-align:right;'
   }
