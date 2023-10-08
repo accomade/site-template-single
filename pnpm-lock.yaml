@@ -9,14 +9,14 @@ dependencies:
     specifier: 2.0.0-alpha.14
     version: 2.0.0-alpha.14
   '@fontsource/arizonia':
-    specifier: ^5.0.14
-    version: 5.0.14
+    specifier: ^5.0.15
+    version: 5.0.15
   '@fontsource/carrois-gothic':
     specifier: ^5.0.8
     version: 5.0.8
   '@fontsource/raleway':
-    specifier: ^5.0.12
-    version: 5.0.12
+    specifier: ^5.0.13
+    version: 5.0.13
   dinero.js:
     specifier: 2.0.0-alpha.14
     version: 2.0.0-alpha.14
@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^0.0.5
     version: 0.0.5(svelte@4.2.1)
   occuplan:
-    specifier: ^0.1.8
-    version: 0.1.8(svelte@4.2.1)
+    specifier: ^0.1.11
+    version: 0.1.11(svelte@4.2.1)
   svelte:
     specifier: ^4.2.1
     version: 4.2.1
@@ -300,16 +300,16 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@fontsource/arizonia@5.0.14:
-    resolution: {integrity: sha512-txXHG+ZbDloM+Q6Uytz1piFScDpEGRprjNH3m/3wLG/qap+DkmccLdBJYL8D5qvG/9/yRzl8GSXLTqhaE7FApg==}
+  /@fontsource/arizonia@5.0.15:
+    resolution: {integrity: sha512-gaEcW54VKHSC0PZAvdu8gIn+z+qsmYx58/Y04PGQ1OjrHeCF471ycNU3n07kdQHU4JrjcnFs7CqQgllf0eT0RA==}
     dev: false
 
   /@fontsource/carrois-gothic@5.0.8:
     resolution: {integrity: sha512-NNGMXylN4TWhOb8yjFQyPoRLNE4Un2QSQxHUfPAgxDh1HQFsyIW6KPUItfM3A0QrqaWoBSDiG0uijnREXPpPSg==}
     dev: false
 
-  /@fontsource/raleway@5.0.12:
-    resolution: {integrity: sha512-ozJah4uGPFGVW3mA4V6h7QkHvbrFR1U1HC4mxTL1dvKfs7t1zg11/lUi8g7EyFraoWUmCzrm9b9mUqJBxZ0h/w==}
+  /@fontsource/raleway@5.0.13:
+    resolution: {integrity: sha512-LWw7+Ahz7CGSQuj6T68N3m8/6Pa9+b+jlDP6TOeyr7HUA+32HDAXFpBv7WSqxeTzRWmPcAJS5IRUkGrYG/hl1w==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -875,11 +875,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan@0.1.8(svelte@4.2.1):
-    resolution: {integrity: sha512-uAfufVjvPfl50VNDxRKFWJFrCF1PFwnyhaLrNyvkQ6+tFBgLiS14bxNAuHYa8b58C/IwoFXW/ltEo+oFIxcWKg==}
+  /occuplan@0.1.11(svelte@4.2.1):
+    resolution: {integrity: sha512-QK6grwBrDQtLFW/qtFefc+MTmWFWYqGbjbTJxmB7QgEmpMWcr96spUF0rrj+uSFiWXvZHxqc77T6Ioh9x6XOIQ==}
     engines: {node: '>=18 <20'}
     peerDependencies:
-      svelte: ^4.0.5
+      svelte: ^4.2.1
     dependencies:
       luxon: 3.4.3
       squirrelly: 9.0.0

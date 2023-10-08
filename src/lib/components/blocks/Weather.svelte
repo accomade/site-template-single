@@ -36,7 +36,7 @@
 
   <a 
     class="weatherwidget-io" 
-    href="https://forecast7.com/{$currentLang}{location}"
+    href="https://forecast7.com/{$currentLang}/{location}"
     data-label_1="{dict[header1] ? dict[header1] : header1}"
     data-label_2="{dict[header2] ? dict[header2] : header2}"
     data-theme="pure" >
