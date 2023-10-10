@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^0.0.5
     version: 0.0.5(svelte@4.2.1)
   occuplan:
-    specifier: ^0.1.11
-    version: 0.1.11(svelte@4.2.1)
+    specifier: ^0.2.0
+    version: 0.2.0(svelte@4.2.1)
   svelte:
     specifier: ^4.2.1
     version: 4.2.1
@@ -875,8 +875,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /occuplan@0.1.11(svelte@4.2.1):
-    resolution: {integrity: sha512-QK6grwBrDQtLFW/qtFefc+MTmWFWYqGbjbTJxmB7QgEmpMWcr96spUF0rrj+uSFiWXvZHxqc77T6Ioh9x6XOIQ==}
+  /occuplan@0.2.0(svelte@4.2.1):
+    resolution: {integrity: sha512-n6rn2S3/nY00l0uqv/YbZSpNFU7bB+rJL/jKlRxzpdP/rpYzD5k7XlotkGhiQtoc7q+wE7uv/zcktj5aY/BzCA==}
     engines: {node: '>=18 <20'}
     peerDependencies:
       svelte: ^4.2.1
