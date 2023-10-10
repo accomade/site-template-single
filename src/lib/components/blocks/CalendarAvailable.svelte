@@ -1,14 +1,11 @@
 <script lang="ts">
   import { OccuPlanAvailableInfo } from 'occuplan'
   import { DateTime } from 'luxon'
-  import { i18n } from '$lib/conf';
   import { dictEntry } from '$lib/conf/translations';
   import Spinner from '$lib/components/Spinner.svelte';
   import { formatAvailability } from '$lib/conf/formats';
 
   import { currentLang } from '$lib/stores/lang';
-  $: trans = i18n.translations[$currentLang] 
-  $: dict = trans.site;
   $: fromFun = ( from:DateTime|null, forDays:number):string => {
     return formatAvailability($currentLang, from, forDays, maxFutureDate)
   }

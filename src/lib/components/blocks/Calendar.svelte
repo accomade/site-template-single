@@ -14,10 +14,10 @@
 
 <div class="cal-wrapper">
   {#if calLoading}
-  <Spinner />
+    <Spinner />
   {/if}
   <OccuPlanWrapper 
-    bind:loading={calLoading}
+    on:result={ () => calLoading = false }
     calUrl={calUrl} 
     headerContent={dict["calendarHeader"]}
     translations={calendar}
