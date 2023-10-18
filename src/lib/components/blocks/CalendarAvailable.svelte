@@ -22,8 +22,9 @@
   <OccuPlanAvailableInfo
       let:available={av}
       {search}
-      bind:loading={calLoading}
-      {calUrl}>
+      on:result={ () => calLoading = false }
+      {calUrl}
+      >
 
       <ul>
         {#each search as s} 
