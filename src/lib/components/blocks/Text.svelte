@@ -28,6 +28,8 @@
 
 <style>
   .content {
+    font-size: 1cqw;
+    
     text-align: left;
     margin-left: 0.2rem;
     margin-right: 0.2rem;
