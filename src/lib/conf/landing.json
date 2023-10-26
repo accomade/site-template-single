@@ -108,7 +108,15 @@
               {
                 "photoPath": "prev/users/template1/beach_6.jpg",
                 "alt": "beach_alt"
-              }
+              },
+              {
+                "photoPath": "prev/users/template1/beach_6.jpg",
+                "alt": "beach_alt"
+              },
+              {
+                "photoPath": "prev/users/template1/beach_6.jpg",
+                "alt": "beach_alt"
+              }              
             ]
           }
         }

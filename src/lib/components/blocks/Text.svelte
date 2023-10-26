@@ -28,7 +28,7 @@
 
 <style>
   .content {
-    font-size: 1cqw;
+    font-size: clamp(1rem, 2cqh, 2rem);
     
     text-align: left;
     margin-left: 0.2rem;

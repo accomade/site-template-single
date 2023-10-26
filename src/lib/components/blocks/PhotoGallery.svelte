@@ -26,7 +26,7 @@
   })
 
   let width = 1000;
-  $: numberOfCols = Math.floor(width/gridPhotoWidth);
+  $: numberOfCols = Math.floor(width / ( (gridPhotoWidth && Number.isInteger(gridPhotoWidth) ) ? gridPhotoWidth : 300));
 
   const zoom = (z:GridPhoto, i:number) => {
     let unzoom = false
