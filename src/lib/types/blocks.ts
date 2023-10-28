@@ -17,7 +17,7 @@ import {
 export interface Section {
   header?: string | undefined
   columnCount?: number | undefined
-  maxWidth?: string
+  padding?: string
   blocks?: Block[]
 }
 
