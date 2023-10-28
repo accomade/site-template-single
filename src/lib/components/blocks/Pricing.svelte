@@ -77,42 +77,74 @@
       </tbody>
     </table>
   {/if}
-  {#if w > 799}
-    <table class="pricing-table">
-      <thead>
-        <tr>
-        {#each columns as h} 
-          <th scope="col" style="{colHeaderStyle[h]}">{@html t( h, dict)}</th>
-        {/each}
-        </tr>
-      </thead>
-      <tbody>
-      {#each filteredEntries as e}
-        <tr>
-          {#each columns as h}
-          <td style="{colCellStyle[h]}">  
-            <PricingNucleus pricingSpec={e} pricingColumn={h} />
-          </td>
+  {#if filteredEntries.length > 0}
+    {#if w > 799}
+      <table class="pricing-table">
+        <thead>
+          <tr>
+          {#each columns as h} 
+            <th scope="col" style="{colHeaderStyle[h]}">{@html t( h, dict)}</th>
           {/each}
-        </tr>
-      {/each}
-      </tbody>
-      {#if footnote}
-      <tfoot>
-        <tr>
-          <td colspan="{columns.length}">
-            {@html t(footnote, dict)}
-          </td>
-        </tr>
-      </tfoot>
-      {/if}
-    </table>
-  {:else if w > 400 && w < 800 }
+          </tr>
+        </thead>
+        <tbody>
+        {#each filteredEntries as e}
+          <tr>
+            {#each columns as h}
+            <td style="{colCellStyle[h]}">  
+              <PricingNucleus pricingSpec={e} pricingColumn={h} />
+            </td>
+            {/each}
+          </tr>
+        {/each}
+        </tbody>
+        {#if footnote}
+        <tfoot>
+          <tr>
+            <td colspan="{columns.length}">
+              {@html t(footnote, dict)}
+            </td>
+          </tr>
+        </tfoot>
+        {/if}
+      </table>
+    {:else if w > 400 && w < 800 }
+      <table class="pricing-table">
+        {#each filteredEntries as e}
+          <thead>
+            <tr>
+              <th colspan="2" scope="col">
+                <PricingNucleus pricingSpec={e} pricingColumn="timeRange" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each columns as h}
+              {#if h !== "timeRange"}
+              <tr>
+                <th scope="row">{@html t(h, dict)}</th>
+                <td><PricingNucleus pricingSpec={e} pricingColumn={h} /></td>
+              </tr>
+              {/if}
+            {/each}
+          </tbody>
+        {/each}
+        {#if footnote}
+        <tfoot>
+          <tr>
+            <td colspan="2">
+              {@html t(footnote, dict)}
+            </td>
+          </tr>
+        </tfoot>
+        {/if}
+      </table>
+    {:else}
     <table class="pricing-table">
       {#each filteredEntries as e}
         <thead>
           <tr>
-            <th colspan="2" scope="col">
+            <th scope="col" class="main-header">
               <PricingNucleus pricingSpec={e} pricingColumn="timeRange" />
             </th>
           </tr>
@@ -122,6 +154,8 @@
             {#if h !== "timeRange"}
             <tr>
               <th scope="row">{@html t(h, dict)}</th>
+            </tr>
+            <tr>
               <td><PricingNucleus pricingSpec={e} pricingColumn={h} /></td>
             </tr>
             {/if}
@@ -131,46 +165,14 @@
       {#if footnote}
       <tfoot>
         <tr>
-          <td colspan="2">
+          <td>
             {@html t(footnote, dict)}
           </td>
         </tr>
       </tfoot>
       {/if}
     </table>
-  {:else}
-  <table class="pricing-table">
-    {#each filteredEntries as e}
-      <thead>
-        <tr>
-          <th scope="col" class="main-header">
-            <PricingNucleus pricingSpec={e} pricingColumn="timeRange" />
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each columns as h}
-          {#if h !== "timeRange"}
-          <tr>
-            <th scope="row">{@html t(h, dict)}</th>
-          </tr>
-          <tr>
-            <td><PricingNucleus pricingSpec={e} pricingColumn={h} /></td>
-          </tr>
-          {/if}
-        {/each}
-      </tbody>
-    {/each}
-    {#if footnote}
-    <tfoot>
-      <tr>
-        <td>
-          {@html t(footnote, dict)}
-        </td>
-      </tr>
-    </tfoot>
     {/if}
-  </table>
   {/if}
 </figure>
 
