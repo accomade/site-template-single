@@ -41,6 +41,13 @@
   .section-wrapper {
     margin-bottom: 2rem;
     width: 100%;
+    overflow-y: clip;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    text-align: center;
   }
 
   h1 {

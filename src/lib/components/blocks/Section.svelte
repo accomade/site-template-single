@@ -8,8 +8,7 @@
 
   export let header: string | undefined = undefined;
   export let columnCount = 2;
-  export let maxWidth = "100rem";
-  export let minWidth = "100%";
+  export let padding:string = "10vw";
   export let blocks: Block[] = [];
   
   let gridTemplateColumns = "1fr";
@@ -23,6 +22,7 @@
   $: {
     if(clientWidth  < 500) {
       gridTemplateColumns = "1fr"
+      padding = "0"
     }
     else if (
       clientWidth < 800 && clientWidth >= 500 &&
@@ -41,7 +41,7 @@
 
 <svelte:window bind:innerWidth={clientWidth}/>
 
-<section style="max-width: {maxWidth}; min-width: {minWidth};">
+<section style="padding-left: {padding}; padding-right: {padding};">
   {#if header} 
   <h2>{ dict[header] ? dict[header] : header } </h2>
   {/if}

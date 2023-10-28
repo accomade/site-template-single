@@ -59,12 +59,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: clip;
+
+    width: 100%;
     
     margin-top: calc(100vh - 1rem);
     text-align: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-
   }
 
   .floating-title {
@@ -105,10 +105,4 @@
     height: 3rem;
   }
 
-  @media( max-width: 500px ) {
-    main {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
 </style>
