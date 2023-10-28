@@ -46,7 +46,7 @@ export const dictEntry = (lang:string, key:string|undefined):string|undefined =>
       }
     }
   }
-  return key
+  return ""
 }
 
 const i18n:I18n = mappedTranslations
