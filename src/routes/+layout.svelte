@@ -1,9 +1,10 @@
 <script lang="ts">
   import '$lib/loadFonts';
 
+  import { i18n } from '$lib/conf/translations';
   import { Banner } from 'gdpr-cooco-banner';
   
-  import { i18n, cookieSettings } from '$lib/conf'
+  import { cookieSettings } from '$lib/conf'
   import { currentLang } from '$lib/stores/lang';
   import { cookieSelection } from '$lib/stores/cookies';
 

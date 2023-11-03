@@ -1,14 +1,11 @@
 <script lang="ts">
-  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
   import type { AmnetyNucleusType, Beds, CoffeeMachine } from '$lib/types/accos';
 
   import CheckSvg from '$lib/components/svg/CheckSVG.svelte';
   import NoCheckSvg from '$lib/components/svg/NoCheckSVG.svelte';
   import { dictEntry } from '$lib/conf/translations'
-  $: trans = i18n.translations[$currentLang] 
-  $: dict = trans.site;
-
+  
   import { 
     formatNumberOf,
     formatSeating,

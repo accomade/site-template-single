@@ -1,11 +1,10 @@
 <script lang="ts">
   import { OccuPlanWrapper } from 'occuplan';
-  import { i18n } from '$lib/conf';
+  import { dictEntry, i18n } from '$lib/conf/translations';
   import Spinner from '$lib/components/Spinner.svelte';
 
   import { currentLang } from '$lib/stores/lang';
   $: calendar = i18n.translations[$currentLang].calendar;
-  $: dict = i18n.translations[$currentLang].site;
     
   export let calUrl:string;
   let calLoading = true;
@@ -19,7 +18,7 @@
   <OccuPlanWrapper 
     on:result={ () => calLoading = false }
     calUrl={calUrl} 
-    headerContent={dict["calendarHeader"]}
+    headerContent={dictEntry($currentLang, "calendarHeader")}
     translations={calendar}
     />
 </div>

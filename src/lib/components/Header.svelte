@@ -1,17 +1,14 @@
 <script lang="ts">
   import { currentLang } from '$lib/stores/lang';
-  import { i18n } from '$lib/conf';
   import Logo from '$lib/components/svg/LogoSVG.svelte';
-  
-  $: trans = i18n.translations[$currentLang] 
-  
+  import { dictEntry } from '$lib/conf/translations';
 </script>
 
 <header>
   <div class="logo"><Logo/></div>
   <div class="text-wrapper">
-    <div class="header"><h1>{trans.site.headerTitle}</h1></div>
-    <div class="slug">{trans.site.headerSlug}</div>
+    <div class="header"><h1>{dictEntry($currentLang, "headerTitle")}</h1></div>
+    <div class="slug">{dictEntry($currentLang,"headerSlug")}</div>
   </div>
 </header>
 

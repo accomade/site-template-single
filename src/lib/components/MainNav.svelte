@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	
-	import { i18n } from '$lib/conf'
   import { currentLang } from '$lib/stores/lang';
+	import { i18n, dictEntry } from '$lib/conf/translations';
+
   
 	import type { Nav } from '$lib/types/nav';
 	import { isMenuOpen } from '$lib/stores/menu';
@@ -12,8 +13,7 @@
 
 	
 	let allTranslations = Object.keys(i18n.translations);
-	$: dict = i18n.translations[$currentLang].site
-
+	
 	const close = () => {
 		isMenuOpen.set(false)
 	}
@@ -33,7 +33,7 @@
 		{#if allTranslations.length > 1}
 		<li>
 			<fieldset>
-				<legend>{ dict['lang'] }</legend>
+				<legend>{ dictEntry($currentLang, 'lang') }</legend>
 		
 				{#each allTranslations as langKey}
 				<div class="radio-wrapper">
@@ -44,7 +44,7 @@
 							id="{langKey}"
 							value="{langKey}"
 							checked={langKey === $currentLang}>
-					<label for="{langKey}">{dict[langKey] ? dict[langKey] : langKey}</label>
+					<label for="{langKey}">{dictEntry($currentLang, langKey)}</label>
 				</div>
 				{/each}
 			</fieldset>

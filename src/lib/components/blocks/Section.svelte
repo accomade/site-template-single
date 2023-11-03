@@ -1,11 +1,9 @@
 <script lang="ts">
   import type { Block } from '$lib/types/blocks'
   import BlockBlock from '$lib/components/blocks/Block.svelte'
-  import { i18n } from '$lib/conf';
+  import { dictEntry } from '$lib/conf/translations';
   import { currentLang } from '$lib/stores/lang';
   
-  $: dict = i18n.translations[$currentLang].site
-
   export let header: string | undefined = undefined;
   export let columnCount = 2;
   export let padding:string = "10vw";
@@ -43,7 +41,7 @@
 
 <section style="padding-left: {padding}; padding-right: {padding};">
   {#if header} 
-  <h2>{ dict[header] ? dict[header] : header } </h2>
+  <h2>{ dictEntry($currentLang, header) } </h2>
   {/if}
   <div 
     class="content"

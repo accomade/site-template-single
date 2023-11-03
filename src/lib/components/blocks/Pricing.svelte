@@ -3,12 +3,8 @@
   import { DateTime } from 'luxon';
   import PricingNucleus from './PricingNucleus.svelte'
 
-  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
-  $: trans = i18n.translations[$currentLang];
-  $: dict = trans.site
-
-  const t = ( c:string, d:typeof dict ) => d[c] ? d[c] : c
+  import { dictEntry } from '$lib/conf/translations';
 
   export let global:PricingEntry|undefined = undefined;
   export let entries:PricingRange[] = [];
@@ -52,25 +48,25 @@
     <table class="pricing-table-global">
       <thead>
         <tr>
-          <th>{t("globalPricing", dict)}</th>
+          <th>{ dictEntry($currentLang,"globalPricing")}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
             {#if global.firstNightPrice}
-              <strong>{@html t("firstNight", dict)}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="firstNight" />
+              <strong>{@html dictEntry($currentLang,"firstNight")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="firstNight" />
             {/if}
             {#if global.perNightPrice}
-              <strong>{@html t("eachNight", dict)}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="eachNight" />
+              <strong>{@html dictEntry($currentLang,"eachNight")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="eachNight" />
             {/if}
             {#if global.additionalPersonPrice1}
               <br><hr>
-              <strong>{@html t("extraPerson", dict)}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="extraPerson" />
+              <strong>{@html dictEntry($currentLang,"extraPerson")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="extraPerson" />
             {/if}
             {#if global.minNumberOfNights}
               <br><hr>
-              <strong>{@html t("minNumNights", dict)}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="minNumNights" />
+              <strong>{@html dictEntry($currentLang,"minNumNights")}:</strong> <PricingNucleus pricingSpec={global} pricingColumn="minNumNights" />
             {/if}
           </td>
         </tr>
@@ -83,7 +79,7 @@
         <thead>
           <tr>
           {#each columns as h} 
-            <th scope="col" style="{colHeaderStyle[h]}">{@html t( h, dict)}</th>
+            <th scope="col" style="{colHeaderStyle[h]}">{@html dictEntry($currentLang, h)}</th>
           {/each}
           </tr>
         </thead>
@@ -102,7 +98,7 @@
         <tfoot>
           <tr>
             <td colspan="{columns.length}">
-              {@html t(footnote, dict)}
+              {@html dictEntry($currentLang,footnote)}
             </td>
           </tr>
         </tfoot>
@@ -122,7 +118,7 @@
             {#each columns as h}
               {#if h !== "timeRange"}
               <tr>
-                <th scope="row">{@html t(h, dict)}</th>
+                <th scope="row">{@html dictEntry($currentLang,h)}</th>
                 <td><PricingNucleus pricingSpec={e} pricingColumn={h} /></td>
               </tr>
               {/if}
@@ -133,7 +129,7 @@
         <tfoot>
           <tr>
             <td colspan="2">
-              {@html t(footnote, dict)}
+              {@html dictEntry($currentLang,footnote)}
             </td>
           </tr>
         </tfoot>
@@ -153,7 +149,7 @@
           {#each columns as h}
             {#if h !== "timeRange"}
             <tr>
-              <th scope="row">{@html t(h, dict)}</th>
+              <th scope="row">{@html dictEntry($currentLang,h)}</th>
             </tr>
             <tr>
               <td><PricingNucleus pricingSpec={e} pricingColumn={h} /></td>
@@ -166,7 +162,7 @@
       <tfoot>
         <tr>
           <td>
-            {@html t(footnote, dict)}
+            {@html dictEntry($currentLang,footnote)}
           </td>
         </tr>
       </tfoot>

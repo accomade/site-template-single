@@ -5,17 +5,17 @@
   import Footer from '$lib/components/Footer.svelte';
   import Section from '$lib/components/blocks/Section.svelte';
 
-  import { i18n, nav, landing } from '$lib/conf'
+  import { nav, landing } from '$lib/conf'
   import { currentLang } from '$lib/stores/lang';
   import { isMenuOpen } from '$lib/stores/menu';
   
-  $: currentTranslation = i18n.translations[$currentLang]
-  $: title = currentTranslation.site.title;
+  import { dictEntry } from '$lib/conf/translations';
+
   
 </script>
 
 <svelte:head>
-  <title>{title}</title>
+  <title>{dictEntry($currentLang, "title")}</title>
 </svelte:head>
 
 <header class="header-image">
@@ -26,7 +26,7 @@
 </header>
 
 <div class="floating-title">
-  <h1>{ title }</h1>
+  <h1>{ dictEntry($currentLang, "title") }</h1>
 </div>
 
 <main>

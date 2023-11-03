@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { i18n } from '$lib/conf';
   import { dictEntry } from '$lib/conf/translations';
   import { 
     formatAdditionalPersonPrice,
@@ -7,7 +6,6 @@
   } from '$lib/conf/formats'
 
   import { currentLang } from '$lib/stores/lang';
-  $: t = i18n.translations[$currentLang];
   import { formatDate, formatMoney } from '$lib/conf/formats';
 
   import type { PricingEntry, PricingRange, PricingColumn} from "$lib/types/accos";

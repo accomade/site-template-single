@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { NavItem } from "$lib/types/nav";
-  import { i18n } from '$lib/conf'
   import ExtLinkSvg  from "./svg/ExtLinkSVG.svelte";
   import { currentLang } from '$lib/stores/lang';  
-  $: dict = i18n.translations[$currentLang].site
-
+  
+  import { dictEntry } from '$lib/conf/translations';
   export let n:NavItem
 
 </script>
@@ -18,17 +17,17 @@
         target="_blank" 
         rel="noreferrer noopener"
         on:click|stopPropagation={close}>
-          { dict[n.key] }
+          { dictEntry($currentLang, n.key) }
       </a>
       <div class="link-icon-wrapper">
         <ExtLinkSvg size="2rem"/>
       </div>
     </div>
     {:else}
-      <a href="{n.path}" on:click|stopPropagation={close}>{ dict[n.key] }</a>
+      <a href="{n.path}" on:click|stopPropagation={close}>{ dictEntry($currentLang, n.key) }</a>
     {/if}
   {:else}
-      <span>{ dict[n.key] }</span>
+      <span>{ dictEntry($currentLang, n.key) }</span>
   {/if}
 </div>
 

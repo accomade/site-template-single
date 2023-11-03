@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { i18n } from '$lib/conf';
   import { currentLang } from '$lib/stores/lang';
+  import { dictEntry } from '$lib/conf/translations';
 
   import LinkSvg from '$lib/components/svg/LinkSVG.svelte';
   import ExtLinkSvg from '$lib/components/svg/ExtLinkSVG.svelte';
@@ -21,7 +21,6 @@
   
   export const className:string = "photo-container-sizing";
 
-  $: dict = i18n.translations[$currentLang].site
   let photoHeight = 0;
 </script>
 
@@ -41,7 +40,7 @@
       {photoPath}
       {eager}
       {ratio}
-      alt={dict[alt] ? dict[alt] : alt} />
+      alt={dictEntry($currentLang, alt)} />
   
     {#if attribution}
     <div 
@@ -68,7 +67,7 @@
       {className}
       {eager}
       {ratio}
-      alt={dict[alt] ? dict[alt] : alt} />
+      alt={dictEntry($currentLang, alt)} />
 
     {#if attribution}
     <div 
@@ -95,7 +94,7 @@
     {className}
     {eager}
     {ratio}
-    alt={dict[alt] ? dict[alt] : alt} />
+    alt={dictEntry($currentLang, alt)} />
 
   {#if attribution}
   <div 

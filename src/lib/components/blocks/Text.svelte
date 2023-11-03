@@ -1,29 +1,12 @@
 <script lang="ts">
   import { currentLang } from '$lib/stores/lang';
-  import { i18n } from '$lib/conf';
- 
-  export let ref:string
-  
-  $: {
-    console.log('Text lang', $currentLang)
-    console.log('trans', i18n.translations[$currentLang].calendar.weekendLabel)
-  }
+  import { dictEntry } from '$lib/conf/translations';
 
-  $: trans = i18n.translations[$currentLang];
-  $: out = trans.site[ref] ?? ref
-  
-  const innerHtml = (node:HTMLDivElement) => {
-    node.innerHTML = out;
-    return {
-      update: (html:string) => {
-        node.innerHTML = out
-      }
-    }
-  }
+  export let ref:string
 </script>
 
-<div class="content" use:innerHtml>
-
+<div class="content">
+  {@html dictEntry($currentLang, ref)}
 </div>
 
 <style>
