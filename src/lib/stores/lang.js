@@ -1,5 +1,5 @@
-import { i18n } from "$lib/conf";
-import { get, writable } from "svelte/store";
+import { i18n } from '$lib/conf/translations';
+import { get, writable } from 'svelte/store';
 import { browser } from '$app/environment'
 import Cookie from 'js-cookie'
 
