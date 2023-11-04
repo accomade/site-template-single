@@ -11,6 +11,7 @@ export interface Translation {
 
 export interface I18n { 
   defaultLang?: string,
+  supportedLangs: string[]
   preferBrowserLang?: boolean,
   translations: {
     [key: string]: Translation

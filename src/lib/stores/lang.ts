@@ -48,7 +48,7 @@ langStore.subscribe( ( val ) => {
       document.documentElement && 
       document.documentElement.lang) {
 
-    document.documentElement.lang=val
+    document.documentElement.lang = val
   }
   handleCookie()
 })

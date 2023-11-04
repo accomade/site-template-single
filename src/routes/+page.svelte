@@ -10,7 +10,6 @@
   import { isMenuOpen } from '$lib/stores/menu';
   
   import { dictEntry } from '$lib/conf/translations';
-
   
 </script>
 

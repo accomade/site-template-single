@@ -12,7 +12,7 @@
 	export let nav:Nav
 
 	
-	let allTranslations = Object.keys(i18n.translations);
+	let allTranslations = i18n.supportedLangs;
 	
 	const close = () => {
 		isMenuOpen.set(false)

@@ -172,6 +172,8 @@
   {/if}
 </figure>
 
+<div class="hud">Component Lang: {$currentLang}</div>
+
 
 <style>
   figure {
@@ -238,4 +240,12 @@
     font-weight: bolder;
   }
 
+
+
+  .hud {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: red;
+  }
 </style>

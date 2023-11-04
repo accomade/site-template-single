@@ -36,6 +36,8 @@
 
 <slot></slot>
 
+<div class="hud">Current Lang: {$currentLang}</div>
+
 <Banner 
   on:analytics={ analyticsCookies }
   on:preferences={ preferenceCookies }
@@ -56,6 +58,13 @@
   *::before,
   *::after { 
     box-sizing: border-box;
+  }
+
+  .hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: red;
   }
 
 </style>
