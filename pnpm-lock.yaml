@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^1.27.3
     version: 1.27.3(svelte@4.2.2)(vite@4.5.0)
   '@twicpics/components':
-    specifier: ^0.22.3
-    version: 0.22.3
+    specifier: ^0.25.0
+    version: 0.25.0
   '@types/js-cookie':
     specifier: ^3.0.5
     version: 3.0.5
@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^3.3.3
     version: 3.3.3
   '@types/web':
-    specifier: ^0.0.114
-    version: 0.0.114
+    specifier: ^0.0.119
+    version: 0.0.119
   gdpr-cooco-banner:
     specifier: ^0.0.5
     version: 0.0.5(svelte@4.2.2)
@@ -439,8 +439,8 @@ packages:
       - supports-color
     dev: true
 
-  /@twicpics/components@0.22.3:
-    resolution: {integrity: sha512-n69OPmHJmGXf1SKdfdLDEgTqxTuh93ZiVN6tsOPie3P4xF3HQrv3/Wx6GE3L6E6rw8TbTR7ElWc0vQ9JSNhkpw==}
+  /@twicpics/components@0.25.0:
+    resolution: {integrity: sha512-ghVBfeK+g/tBZR8GI6BFXhCojl7fzxeQ3C/Cyu6zohuLRricDeOwCvKrhuKS1vl+Q5TJ+CpkmwkAZrq5vkBLfA==}
     dev: true
 
   /@types/cookie@0.5.3:
@@ -463,8 +463,8 @@ packages:
     resolution: {integrity: sha512-QzhsZ1dMGyJbn/D9V80zp4GIA4J4rfAjCCxc3MP+new0E8dyVdSkR735Lx+n3LIaHNFcjHL5+TbziccuT+fdoQ==}
     dev: true
 
-  /@types/web@0.0.114:
-    resolution: {integrity: sha512-nrkwsB8u0VNHwElFSl6ZCgu0BCbsQu5BPq7mJtBpW7rYBmiLZNWE5KqcHDw8GXQMqWsnFB3EnXsAx7UysQwcMg==}
+  /@types/web@0.0.119:
+    resolution: {integrity: sha512-CQVOcEWrxr0MXbQbR3rrw6GHo2mcr8WlhLHQkOKDhhySTjz15/35jk0Zm2FbHRyCvSEjr/J7A2iDD5GRrGxE2A==}
     dev: true
 
   /acorn@8.11.2:
