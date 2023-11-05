@@ -43,6 +43,7 @@
 
 </script>
 
+{#key $currentLang}
 <figure bind:clientWidth={w} class="pricing-wrapper">
   {#if global}
     <table class="pricing-table-global">
@@ -171,9 +172,7 @@
     {/if}
   {/if}
 </figure>
-
-<div class="hud">Component Lang: {$currentLang}</div>
-
+{/key}
 
 <style>
   figure {
@@ -240,12 +239,4 @@
     font-weight: bolder;
   }
 
-
-
-  .hud {
-    position: fixed;
-    top: 0;
-    right: 0;
-    color: red;
-  }
 </style>

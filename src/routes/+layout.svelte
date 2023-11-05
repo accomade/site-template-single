@@ -11,6 +11,8 @@
   // Here is an example of +layout.svelte file
   import { installTwicPics } from "@twicpics/components/sveltekit";
   import "@twicpics/components/style.css";
+    import { onMount } from 'svelte';
+    import { get } from 'svelte/store';
   installTwicPics( {
       "domain": `https://accomade.twic.pics`,
   } );
@@ -32,11 +34,10 @@
     currentSelection.marketing = e.detail.enabled
     cookieSelection.set(currentSelection)
   }
+
 </script>
 
 <slot></slot>
-
-<div class="hud">Current Lang: {$currentLang}</div>
 
 <Banner 
   on:analytics={ analyticsCookies }
@@ -58,13 +59,6 @@
   *::before,
   *::after { 
     box-sizing: border-box;
-  }
-
-  .hud {
-    position: fixed;
-    top: 0;
-    left: 0;
-    color: red;
   }
 
 </style>
