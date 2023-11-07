@@ -6,6 +6,7 @@
   import Photo from '$lib/components/blocks/Photo.svelte';
   import Calendar from '$lib/components/blocks/Calendar.svelte';
   import Map from '$lib/components/blocks/Map.svelte';
+  import LeafletMap from '$lib/components/blocks/LeafletMap.svelte';
   import PhotoGallery from '$lib/components/blocks/PhotoGallery.svelte';
   import Pricing from '$lib/components/blocks/Pricing.svelte';
   import Weather from '$lib/components/blocks/Weather.svelte';
@@ -41,6 +42,10 @@
       case 'map':
         component = Map
         props = spec.content
+        break;
+      case 'leaflet-map':
+        component = LeafletMap;
+        props = spec.content;
         break;
       case 'photo-gallery':
         component = PhotoGallery

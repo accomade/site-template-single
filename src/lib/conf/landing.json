@@ -127,7 +127,7 @@
       "columnCount": 1,
       "blocks": [
         {
-          "kind": "map",
+          "kind": "leaflet-map",
           "content": {
             "address": "Achterstr. 3, 17459 Koserow",
             "lat": 54.0483609,

@@ -1,6 +1,6 @@
 import type { Photo, PhotoGallery } from './photos'
 import type { Calendar, CalendarAvailable } from './calendar'
-import type { Maps } from './maps'
+import type { Maps, LeafletMap } from './maps'
 import type { Weather } from './weather'
 import { 
   type AccoCard, 
@@ -52,6 +52,11 @@ export interface CalendarAvailableBlock {
 export interface MapBlock {
   kind: 'map'
   content: Maps
+}
+
+export interface LeafletMapBlock {
+  kind: 'leaflet-map'
+  content: LeafletMap
 }
 
 export interface PricingBlock {
@@ -110,6 +115,7 @@ export type Block =
   AmnetiesCoreBlock |
   WeatherBlock |
   MapBlock |
+  LeafletMapBlock |
   AccoCardBlock |
   undefined
 
@@ -125,6 +131,7 @@ export type JsonBlock =
   AmnetiesCoreBlock |
   WeatherBlock |
   MapBlock |
+  LeafletMapBlock |
   AccoCardBlock |
   undefined
 
