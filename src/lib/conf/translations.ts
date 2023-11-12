@@ -6,7 +6,7 @@ import translations from './translations.json'
 
 const mappedTranslations:I18n = {
   defaultLang: translations.defaultLang,
-  supportedLangs: ['en', 'de'],
+  supportedLangs: translations.supportedLangs,
   preferBrowserLang: translations.preferBrowserLang,
   translations: {}
 }

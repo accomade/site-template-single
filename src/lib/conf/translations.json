@@ -1,6 +1,7 @@
 {
   "defaultLang": "de",
   "preferBrowserLang": true,
+  "supportedLangs": ["de", "en"],
   "translations": {
     "de": {
       "calendar": {
