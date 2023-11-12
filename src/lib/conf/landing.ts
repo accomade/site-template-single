@@ -9,6 +9,7 @@ const landing:Landing = {
     const s:Section = {
       header: lj.header,
       columnCount: lj.columnCount,
+      padding: lj.padding,
     }
     if(lj.blocks) {
       s.blocks = lj.blocks.map( bj => {

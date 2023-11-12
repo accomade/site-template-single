@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>{dictEntry($currentLang, "title")}</title>
+  <title>{ dictEntry($currentLang, "title") }</title>
 </svelte:head>
 
 <header class="header-image">
@@ -30,7 +30,7 @@
 
 <main>
   {#each landing.sections as s}
-  <Section {...s} />
+    <Section {...s} />
   {/each}
 </main>
 

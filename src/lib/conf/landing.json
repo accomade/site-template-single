@@ -4,6 +4,7 @@
     {
       "header": "town",
       "columnCount": 2,
+      "padding": "10vw",
       "blocks": [
         {
           "kind": "text",
@@ -27,6 +28,7 @@
     {
       "header": "weather",
       "columnCount": 1,
+      "padding": "0",
       "blocks": [
         {
           "kind": "weather",
@@ -80,6 +82,7 @@
     {
       "header": "impressions",
       "columnCount": 1,
+      "padding": "0",
       "blocks": [
         {
           "kind": "photo-gallery",
@@ -125,6 +128,7 @@
     {
       "header": "directions",
       "columnCount": 1,
+      "padding": "10vw",
       "blocks": [
         {
           "kind": "leaflet-map",
