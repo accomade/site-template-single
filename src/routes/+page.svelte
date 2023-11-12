@@ -102,6 +102,7 @@
     top: 1rem;
     width: 3rem;
     height: 3rem;
+    z-index: 999;
   }
 
 </style>

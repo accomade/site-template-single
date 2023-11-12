@@ -44,7 +44,7 @@
 							id="{langKey}"
 							value="{langKey}"
 							checked={langKey === $currentLang}>
-					<label for="{langKey}">{dictEntry($currentLang, langKey)}</label>
+					<label for="{langKey}">{ dictEntry($currentLang, langKey) }</label>
 				</div>
 				{/each}
 			</fieldset>
@@ -59,6 +59,7 @@
 	}
 
 	nav {
+		z-index: 998;
 		position: fixed;
     padding-right: 1rem;
     top: 0;
@@ -86,6 +87,7 @@
     background-color: rgba(0, 0, 0, 0.1);
 		overflow-y: hidden;
 		overflow-x: hidden;
+		
 	}
 
 	li {
