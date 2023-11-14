@@ -11,8 +11,7 @@
   // Here is an example of +layout.svelte file
   import { installTwicPics } from "@twicpics/components/sveltekit";
   import "@twicpics/components/style.css";
-    import { onMount } from 'svelte';
-    import { get } from 'svelte/store';
+  
   installTwicPics( {
       "domain": `https://accomade.twic.pics`,
   } );
