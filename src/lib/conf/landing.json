@@ -22,6 +22,26 @@
             "external": true,
             "height": "40vh"
           }
+        },
+        {
+          "kind": "text",
+          "content": {
+            "ref": "text_example_1"
+          }
+        },
+        {
+          "kind": "text",
+          "content": {
+            "ref": "text_example_2",
+            "minHeight": "10rem",
+            "maxFontSize": "1rem"
+          }
+        },
+        {
+          "kind": "text",
+          "content": {
+            "ref": "text_example_3"
+          }
         }
       ]
     },

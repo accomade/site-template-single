@@ -25,6 +25,9 @@ export interface TextBlock {
   kind: 'text'
   content: {
     ref: string
+    minHeight?: string
+    minFontSize?: string
+    maxFontSize?: string
   }
 }
 
