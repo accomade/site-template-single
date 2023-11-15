@@ -1,4 +1,4 @@
-# FeWo Template 1
+# Accomodation Template 2
 
 
 # Customizable Parts:
@@ -10,18 +10,6 @@
 * landing page
 * global photos / photo gallery
 * ...
-
-## X:1 dynamic content
-
-For every occupation
-* an entry in nav
-* pricing table
-* amneties
-* conditions
-* booking form
-* calendar
-* occupation specific photos
-* description
 
 ## configuration
 
