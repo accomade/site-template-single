@@ -30,11 +30,11 @@
       console.log('Calculated fontSize falsy');
       fontSize = 0.9;
     }
-    return `clamp(${minFontSize}, ${fontSize}rem, ${maxFontSize})`;
+    return `clamp(${minFontSize ?? '0.8rem'}, ${fontSize}rem, ${maxFontSize ?? '4.5rem'})`;
   }
 
   const resized = (n:UIEvent):any => {
-    element.attributeStyleMap.set('font-size', minFontSize)
+    element.attributeStyleMap.set('font-size', minFontSize ?? '0.8rem')
     const newFontSize = calcFontSize();
     element.attributeStyleMap.set('font-size', newFontSize)
   }
