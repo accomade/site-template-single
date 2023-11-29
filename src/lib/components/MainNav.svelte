@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	
-  import { currentLang } from '$lib/stores/lang';
+  import { currentLang, setLang } from '$lib/stores/lang';
 	import { i18n, dictEntry } from '$lib/conf/translations';
 
   
@@ -18,6 +18,14 @@
 		isMenuOpen.set(false)
 	}
 
+
+	const selected = (e:Event) => {
+		if(e.currentTarget) {
+			const element = e.currentTarget as HTMLInputElement
+			setLang(element.value as string);
+		}
+	}
+
 </script>
 
 <button class="not-nav" on:click={close} transition:fade|global></button>
@@ -26,7 +34,7 @@
 	<ul>
 		{#each nav.main as n}
 		<li>
-			<NavItem {n}/>
+			<NavItem {n} on:click={close}/>
 		</li>
 		{/each}
 
@@ -38,8 +46,8 @@
 				{#each allTranslations as langKey}
 				<div class="radio-wrapper">
 					<input 
+							on:change={selected}
 							type="radio"
-							bind:group={$currentLang}
 							name="language"
 							id="{langKey}"
 							value="{langKey}"
