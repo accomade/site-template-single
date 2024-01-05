@@ -220,13 +220,19 @@ export interface AmnetiesCore {
   bedRooms: number
   bathRooms: number
   pets: boolean
+  showPets?: boolean
   wifi: boolean
+  showWifi?: boolean
   smoking: boolean
+  showSmoking?: boolean
   ac: boolean
+  showAc?: boolean
   tv: boolean
+  showTv?: boolean
   parking: boolean
-
+  showParking?: boolean
 }
+
 
 export interface LabeledDesc {
   label: string

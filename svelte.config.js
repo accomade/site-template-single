@@ -20,7 +20,7 @@ const config = {
 			]
 		},
 		paths: {
-			relative: false,
+			relative: true,
 		},
 	}
 };

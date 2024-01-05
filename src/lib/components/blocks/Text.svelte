@@ -34,9 +34,11 @@
   }
 
   const resized = (n:UIEvent):any => {
-    element.attributeStyleMap.set('font-size', minFontSize ? minFontSize : '0.9rem')
+    //element.attributeStyleMap.set('font-size', minFontSize ? minFontSize : '0.9rem')
+    element.style.setProperty('font-size', minFontSize ? minFontSize : '0.9rem')
     const newFontSize = calcFontSize();
-    element.attributeStyleMap.set('font-size', newFontSize)
+    element.style.setProperty('font-size', newFontSize)
+    //element.attributeStyleMap.set('font-size', newFontSize)
   }
 
   let unsub:Unsubscriber
@@ -46,10 +48,14 @@
       let content = dictEntry(lang, ref);
       hiddenElement.innerHTML = content;
       
-      element.attributeStyleMap.set('font-size', minFontSize ? minFontSize : '0.9rem')
+      //element.attributeStyleMap.set('font-size', minFontSize ? minFontSize : '0.9rem')
+      element.style.setProperty('font-size', minFontSize ? minFontSize : '0.9rem')
+
       element.innerHTML = content;
+
       const newFontSize = calcFontSize();
-      element.attributeStyleMap.set('font-size', newFontSize)
+      //element.attributeStyleMap.set('font-size', newFontSize)
+      element.style.setProperty('font-size', newFontSize)
     });
   })
 

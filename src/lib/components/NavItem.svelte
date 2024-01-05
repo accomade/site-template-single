@@ -11,23 +11,23 @@
   <div class="wrapper" class:sub={n.sub}>
   {#if n.path}
     {#if n.external}
-    <div class="ext-link-wrapper">
-      <a 
-        on:click
-        href="{n.path}" 
-        target="_blank" 
-        rel="noreferrer noopener">
-          { dictEntry($currentLang, n.key) }
-      </a>
-      <div class="link-icon-wrapper">
-        <ExtLinkSvg size="2rem"/>
+      <div class="ext-link-wrapper">
+        <a 
+          on:click
+          href="{n.path}" 
+          target="_blank" 
+          rel="noreferrer noopener">
+            { dictEntry($currentLang, n.key) }
+        </a>
+        <div class="link-icon-wrapper">
+          <ExtLinkSvg size="2rem"/>
+        </div>
       </div>
-    </div>
     {:else}
       <a on:click href="{n.path}">{ dictEntry($currentLang, n.key) }</a>
     {/if}
   {:else}
-      <span>{ dictEntry($currentLang, n.key) }</span>
+    <span>{ dictEntry($currentLang, n.key) }</span>
   {/if}
 </div>
 
