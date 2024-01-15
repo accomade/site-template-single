@@ -17,6 +17,8 @@ const config = {
 				"/",
 				"/imprint",
 				"/terms",
+				"/sitemap.xml",
+				
 			]
 		},
 		paths: {
