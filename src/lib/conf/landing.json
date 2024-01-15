@@ -29,9 +29,9 @@
         {
           "kind": "text",
           "content": {
-            "minHeight": "2rem",
-            "maxFontSize": "2rem",
-            "ref": "amneties"
+            "headerFontSize": "2rem",
+            "textFontSize": "2rem",
+            "ref": "amneties-ref"
           }
         },
         {
